@@ -1,0 +1,239 @@
+@prefix nr:    <http://example.org/nutrireason#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix swrl:  <http://www.w3.org/2003/11/swrl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+
+###############################################################################
+# NutriReason T-Box (Iteration 1)  --  Team krr-08-nutrireason
+###############################################################################
+
+<http://example.org/nutrireason> a owl:Ontology ;
+    rdfs:label "NutriReason Ontology"@en ;
+    rdfs:comment "Knowledge-grounded advisory ontology for health-constrained dietary planning."@en ;
+    owl:versionInfo "Iteration 1" .
+
+###############################################################################
+# 1. CLASSES
+###############################################################################
+
+nr:Food a owl:Class ; rdfs:label "Food"@en ;
+    rdfs:comment "Any food item (D1, D3)."@en .
+nr:Dish a owl:Class ; rdfs:subClassOf nr:Food ; rdfs:label "Dish"@en ;
+    rdfs:comment "Prepared dish (D2)."@en .
+nr:Ingredient a owl:Class ; rdfs:subClassOf nr:Food ; rdfs:label "Ingredient"@en ;
+    rdfs:comment "Component of a dish (D2)."@en .
+
+nr:FoodGroup a owl:Class ; rdfs:label "Food group"@en ;
+    rdfs:comment "e.g. Oil seed, Dairy (D1 Group column)."@en .
+nr:FoodType  a owl:Class ; rdfs:label "Food type"@en ;
+    rdfs:comment "e.g. Nut and seed, Dairy (D1 Type column)."@en .
+nr:FoodClass a owl:Class ; rdfs:label "Food class"@en ;
+    rdfs:comment "Plant origin / Animal origin (D1 Class column)."@en .
+
+nr:Allergen a owl:Class ; rdfs:label "Allergen"@en .
+nr:NutAllergen        a owl:Class ; rdfs:subClassOf nr:Allergen ; rdfs:label "Nut allergen"@en .
+nr:TreeNutAllergen    a owl:Class ; rdfs:subClassOf nr:NutAllergen ; rdfs:label "Tree-nut allergen"@en .
+nr:PeanutAllergen     a owl:Class ; rdfs:subClassOf nr:NutAllergen ; rdfs:label "Peanut allergen"@en .
+nr:DairyAllergen      a owl:Class ; rdfs:subClassOf nr:Allergen ; rdfs:label "Dairy allergen"@en .
+nr:GlutenAllergen     a owl:Class ; rdfs:subClassOf nr:Allergen ; rdfs:label "Gluten allergen"@en .
+
+nr:HealthCondition a owl:Class ; rdfs:label "Health condition"@en .
+nr:FoodAllergy     a owl:Class ; rdfs:subClassOf nr:HealthCondition ; rdfs:label "Food allergy"@en .
+nr:FoodIntolerance a owl:Class ; rdfs:subClassOf nr:HealthCondition ; rdfs:label "Food intolerance"@en .
+nr:ChronicDisease  a owl:Class ; rdfs:subClassOf nr:HealthCondition ; rdfs:label "Chronic disease"@en .
+
+nr:Nutrient    a owl:Class ; rdfs:label "Nutrient"@en .
+nr:DietaryRule a owl:Class ; rdfs:label "Dietary rule"@en ;
+    rdfs:comment "One rule per condition limit (D4)."@en .
+nr:Guideline   a owl:Class ; rdfs:label "Guideline"@en .
+
+# Disjointness of the top-level categories
+[] a owl:AllDisjointClasses ;
+   owl:members ( nr:Food nr:FoodGroup nr:FoodType nr:FoodClass nr:Allergen
+                 nr:HealthCondition nr:Nutrient nr:DietaryRule nr:Guideline ) .
+
+# ---- Inferred classes (never asserted; classified by reasoner / rules) -------
+# RC1 + RC2: defined with datatype restrictions (HermiT/Pellet) and also hasValue
+# restriction on unsafeFor so that unsafeFor is derived from class membership.
+
+nr:HighSugarFood a owl:Class ;
+    rdfs:label "High-sugar food"@en ;
+    rdfs:subClassOf nr:Food ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( nr:Food
+            [ a owl:Restriction ; owl:onProperty nr:sugarPer100g ;
+              owl:someValuesFrom [ a rdfs:Datatype ; owl:onDatatype xsd:decimal ;
+                  owl:withRestrictions ( [ xsd:minExclusive "22.5"^^xsd:decimal ] ) ] ] ) ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty nr:unsafeFor ; owl:hasValue nr:Type2Diabetes ] .
+
+nr:HighSodiumFood a owl:Class ;
+    rdfs:label "High-sodium food"@en ;
+    rdfs:subClassOf nr:Food ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( nr:Food
+            [ a owl:Restriction ; owl:onProperty nr:sodiumPer100g ;
+              owl:someValuesFrom [ a rdfs:Datatype ; owl:onDatatype xsd:decimal ;
+                  owl:withRestrictions ( [ xsd:minExclusive "600"^^xsd:decimal ] ) ] ] ) ] ;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty nr:unsafeFor ; owl:hasValue nr:Hypertension ] .
+
+nr:LowSugarFood a owl:Class ;
+    rdfs:label "Low-sugar food"@en ;
+    rdfs:subClassOf nr:Food ;
+    owl:equivalentClass [ a owl:Class ;
+        owl:intersectionOf ( nr:Food
+            [ a owl:Restriction ; owl:onProperty nr:sugarPer100g ;
+              owl:someValuesFrom [ a rdfs:Datatype ; owl:onDatatype xsd:decimal ;
+                  owl:withRestrictions ( [ xsd:maxInclusive "5.0"^^xsd:decimal ] ) ] ] ) ] .
+
+###############################################################################
+# 2. OBJECT PROPERTIES
+###############################################################################
+
+nr:hasIngredient a owl:ObjectProperty ;
+    rdfs:label "has ingredient"@en ;
+    rdfs:domain nr:Dish ; rdfs:range nr:Ingredient ;
+    owl:inverseOf nr:isIngredientOf .                                   # RC4
+
+nr:isIngredientOf a owl:ObjectProperty ;
+    rdfs:label "is ingredient of"@en ;
+    rdfs:domain nr:Ingredient ; rdfs:range nr:Dish .
+
+nr:containsAllergen a owl:ObjectProperty ;
+    rdfs:label "contains allergen"@en ;
+    rdfs:domain nr:Food ; rdfs:range nr:Allergen ;
+    owl:propertyChainAxiom ( nr:hasIngredient nr:containsAllergen ) .   # RC5 (a dish inherits its ingredients' allergens)
+
+nr:belongsToGroup a owl:ObjectProperty ;
+    rdfs:label "belongs to group"@en ;
+    rdfs:domain nr:Food ; rdfs:range nr:FoodGroup .
+
+nr:partOfCategory a owl:ObjectProperty , owl:TransitiveProperty ;       # RC3
+    rdfs:label "part of category"@en ;
+    rdfs:comment "Group -> Type -> Class; transitivity gives Group -> Class."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( nr:FoodGroup nr:FoodType ) ] ;
+    rdfs:range  [ a owl:Class ; owl:unionOf ( nr:FoodType nr:FoodClass ) ] .
+
+nr:triggers a owl:ObjectProperty ;
+    rdfs:label "triggers"@en ;
+    rdfs:domain nr:Allergen ; rdfs:range nr:HealthCondition .
+
+nr:unsafeFor a owl:ObjectProperty ;
+    rdfs:label "unsafe for"@en ;
+    rdfs:comment "Inferred only; never asserted in the A-Box."@en ;
+    rdfs:domain nr:Food ; rdfs:range nr:HealthCondition ;
+    owl:propertyChainAxiom ( nr:containsAllergen nr:triggers ) .        # OWL-native form of rule R1
+
+nr:hasRule a owl:ObjectProperty ;
+    rdfs:label "has rule"@en ;
+    rdfs:domain nr:HealthCondition ; rdfs:range nr:DietaryRule ;
+    owl:inverseOf nr:appliesTo .                                        # RC4
+
+nr:appliesTo a owl:ObjectProperty ;
+    rdfs:label "applies to"@en ;
+    rdfs:domain nr:DietaryRule ; rdfs:range nr:HealthCondition .
+
+nr:restrictsNutrient a owl:ObjectProperty ;
+    rdfs:label "restricts nutrient"@en ;
+    rdfs:domain nr:DietaryRule ; rdfs:range nr:Nutrient .
+
+nr:hasSource a owl:ObjectProperty ;
+    rdfs:label "has source"@en ;
+    rdfs:domain nr:DietaryRule ; rdfs:range nr:Guideline .
+
+# Optional extension (annotation): lets allergen rules (D4 rows 4-5) point at an allergen CLASS.
+nr:restrictsAllergenClass a owl:AnnotationProperty ;
+    rdfs:label "restricts allergen class"@en ;
+    rdfs:comment "Points a DietaryRule at an Allergen subclass, e.g. nr:NutAllergen."@en .
+
+###############################################################################
+# 3. DATATYPE PROPERTIES  (rdfs:label is built in)
+###############################################################################
+
+nr:sugarPer100g a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "sugar per 100 g"@en ; rdfs:comment "Grams per 100 g (D3)."@en ;
+    rdfs:domain nr:Food ; rdfs:range xsd:decimal .
+nr:sodiumPer100g a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "sodium per 100 g"@en ; rdfs:comment "Milligrams per 100 g (D3)."@en ;
+    rdfs:domain nr:Food ; rdfs:range xsd:decimal .
+nr:caloriesPer100g a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "calories per 100 g"@en ; rdfs:comment "kcal per 100 g (D3)."@en ;
+    rdfs:domain nr:Food ; rdfs:range xsd:decimal .
+nr:thresholdValue a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "threshold value"@en ;
+    rdfs:domain nr:DietaryRule ; rdfs:range xsd:decimal .
+nr:ruleAction a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "rule action"@en ; rdfs:comment "\"avoid\" or \"limit\" style action (D4)."@en ;
+    rdfs:domain nr:DietaryRule ; rdfs:range xsd:string .
+
+###############################################################################
+# 4. NAMED INDIVIDUALS (schema-level, shared by the A-Box)
+###############################################################################
+
+nr:NutAllergy         a owl:NamedIndividual , nr:FoodAllergy     ; rdfs:label "Nut allergy"@en .
+nr:LactoseIntolerance a owl:NamedIndividual , nr:FoodIntolerance ; rdfs:label "Lactose intolerance"@en .
+nr:Type2Diabetes      a owl:NamedIndividual , nr:ChronicDisease  ; rdfs:label "Type 2 diabetes"@en .
+nr:Hypertension       a owl:NamedIndividual , nr:ChronicDisease  ; rdfs:label "Hypertension"@en .
+
+nr:Sugar    a owl:NamedIndividual , nr:Nutrient ; rdfs:label "Sugar"@en .
+nr:Sodium   a owl:NamedIndividual , nr:Nutrient ; rdfs:label "Sodium"@en .
+nr:Calories a owl:NamedIndividual , nr:Nutrient ; rdfs:label "Calories"@en .
+
+nr:WHO a owl:NamedIndividual , nr:Guideline ; rdfs:label "World Health Organization"@en .
+nr:ADA a owl:NamedIndividual , nr:Guideline ; rdfs:label "American Diabetes Association"@en .
+nr:NIH a owl:NamedIndividual , nr:Guideline ; rdfs:label "National Institutes of Health"@en .
+
+###############################################################################
+# 5. hasValue RESTRICTIONS linking allergen classes to conditions (RC2)
+###############################################################################
+
+nr:NutAllergen   rdfs:subClassOf [ a owl:Restriction ; owl:onProperty nr:triggers ; owl:hasValue nr:NutAllergy ] .
+nr:DairyAllergen rdfs:subClassOf [ a owl:Restriction ; owl:onProperty nr:triggers ; owl:hasValue nr:LactoseIntolerance ] .
+
+###############################################################################
+# 6. SWRL RULES  (for Protege + SWRL-capable reasoners)
+#    Variables
+###############################################################################
+
+nr:vf a swrl:Variable . nr:va a swrl:Variable . nr:vc a swrl:Variable .
+nr:vs a swrl:Variable . nr:vn a swrl:Variable .
+
+# R1: containsAllergen(f,a) ^ triggers(a,c) -> unsafeFor(f,c)
+nr:R1 a swrl:Imp ; rdfs:label "R1 allergen-triggered unsafety"@en ;
+  swrl:body ( [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate nr:containsAllergen ;
+                swrl:argument1 nr:vf ; swrl:argument2 nr:va ]
+              [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate nr:triggers ;
+                swrl:argument1 nr:va ; swrl:argument2 nr:vc ] ) ;
+  swrl:head ( [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate nr:unsafeFor ;
+                swrl:argument1 nr:vf ; swrl:argument2 nr:vc ] ) .
+
+# R2: sugarPer100g(f,s) ^ s > 22.5 -> HighSugarFood(f) ^ unsafeFor(f, Type2Diabetes)
+nr:R2 a swrl:Imp ; rdfs:label "R2 high sugar"@en ;
+  swrl:body ( [ a swrl:DatavaluedPropertyAtom ; swrl:propertyPredicate nr:sugarPer100g ;
+                swrl:argument1 nr:vf ; swrl:argument2 nr:vs ]
+              [ a swrl:BuiltinAtom ; swrl:builtin swrlb:greaterThan ;
+                swrl:arguments ( nr:vs "22.5"^^xsd:decimal ) ] ) ;
+  swrl:head ( [ a swrl:ClassAtom ; swrl:classPredicate nr:HighSugarFood ; swrl:argument1 nr:vf ]
+              [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate nr:unsafeFor ;
+                swrl:argument1 nr:vf ; swrl:argument2 nr:Type2Diabetes ] ) .
+
+# R3: sodiumPer100g(f,n) ^ n > 600 -> HighSodiumFood(f) ^ unsafeFor(f, Hypertension)
+nr:R3 a swrl:Imp ; rdfs:label "R3 high sodium"@en ;
+  swrl:body ( [ a swrl:DatavaluedPropertyAtom ; swrl:propertyPredicate nr:sodiumPer100g ;
+                swrl:argument1 nr:vf ; swrl:argument2 nr:vn ]
+              [ a swrl:BuiltinAtom ; swrl:builtin swrlb:greaterThan ;
+                swrl:arguments ( nr:vn "600"^^xsd:decimal ) ] ) ;
+  swrl:head ( [ a swrl:ClassAtom ; swrl:classPredicate nr:HighSodiumFood ; swrl:argument1 nr:vf ]
+              [ a swrl:IndividualPropertyAtom ; swrl:propertyPredicate nr:unsafeFor ;
+                swrl:argument1 nr:vf ; swrl:argument2 nr:Hypertension ] ) .
+
+# R4: sugarPer100g(f,s) ^ s <= 5 -> LowSugarFood(f)
+nr:R4 a swrl:Imp ; rdfs:label "R4 low sugar"@en ;
+  swrl:body ( [ a swrl:DatavaluedPropertyAtom ; swrl:propertyPredicate nr:sugarPer100g ;
+                swrl:argument1 nr:vf ; swrl:argument2 nr:vs ]
+              [ a swrl:BuiltinAtom ; swrl:builtin swrlb:lessThanOrEqual ;
+                swrl:arguments ( nr:vs "5.0"^^xsd:decimal ) ] ) ;
+  swrl:head ( [ a swrl:ClassAtom ; swrl:classPredicate nr:LowSugarFood ; swrl:argument1 nr:vf ] ) .
