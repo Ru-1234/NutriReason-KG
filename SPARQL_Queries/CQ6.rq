@@ -1,0 +1,21 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# CQ6 - Which dishes include an ingredient whose sodium is above the hypertension limit?
+# Category: multi-hop + inference. Dish -> hasIngredient -> Ingredient -> sodiumPer100g > limit stored in the WHO rule.
+SELECT ?dishLabel (GROUP_CONCAT(DISTINCT ?ingLabel; separator=", ") AS ?highSodiumIngredients) (MAX(?sodium) AS ?maxSodiumMg)
+WHERE {
+  nr:Hypertension nr:hasRule ?rule .
+  ?rule nr:restrictsNutrient nr:Sodium ; nr:thresholdValue ?limit .
+  ?dish a nr:Dish ; rdfs:label ?dishLabel ; nr:hasIngredient ?ing .
+  ?ing rdfs:label ?ingLabel ; nr:sodiumPer100g ?sodium .
+  FILTER(?sodium > ?limit)
+}
+GROUP BY ?dishLabel
+ORDER BY DESC(?maxSodiumMg) ?dishLabel

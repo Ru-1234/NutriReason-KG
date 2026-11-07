@@ -1,0 +1,30 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# CQ2 - Which foods should a person with BOTH type 2 diabetes and hypertension avoid, and why?
+# Category: multi-hop + inference (UNION of rules R2 and R3). Limits are read from the D4 rule nodes, not hard-coded.
+# ?both = TRUE means the food breaks both rules. Remove LIMIT to see every food.
+SELECT ?foodLabel ?sugar ?sodium ?both ?why
+WHERE {
+  nr:Type2Diabetes nr:hasRule ?r1 .
+  ?r1 nr:ruleAction ?act1 ; nr:restrictsNutrient nr:Sugar ; nr:thresholdValue ?sugarLimit ; nr:hasSource ?g1 .
+  nr:Hypertension  nr:hasRule ?r2 .
+  ?r2 nr:ruleAction ?act2 ; nr:restrictsNutrient nr:Sodium ; nr:thresholdValue ?sodiumLimit ; nr:hasSource ?g2 .
+  FILTER(STR(?act1) = "avoid" && STR(?act2) = "avoid")
+  ?food rdfs:label ?foodLabel ; nr:sugarPer100g ?sugar ; nr:sodiumPer100g ?sodium .
+  FILTER(?sugar > ?sugarLimit || ?sodium > ?sodiumLimit)
+  BIND(?sugar > ?sugarLimit  AS ?hiSugar)
+  BIND(?sodium > ?sodiumLimit AS ?hiSodium)
+  BIND(?hiSugar && ?hiSodium AS ?both)
+  BIND(IF(?hiSugar,  CONCAT("Type 2 diabetes: sugar ", STR(?sugar), " g > ", STR(?sugarLimit), " g (", REPLACE(STR(?g1), "^.*#", ""), ")"), "") AS ?whySugar)
+  BIND(IF(?hiSodium, CONCAT("Hypertension: sodium ", STR(?sodium), " mg > ", STR(?sodiumLimit), " mg (", REPLACE(STR(?g2), "^.*#", ""), ")"), "") AS ?whySodium)
+  BIND(CONCAT(?whySugar, IF(?both, " | ", ""), ?whySodium) AS ?why)
+}
+ORDER BY DESC(?both) DESC(?sodium) DESC(?sugar)
+LIMIT 50

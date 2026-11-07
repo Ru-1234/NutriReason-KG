@@ -1,0 +1,24 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# CQ3 - Which foods are safe for lactose intolerance AND low in sugar (<= 5 g per 100 g)?
+# Category: inference + aggregation/filtering.
+# "Safe" = no nr:unsafeFor LactoseIntolerance triple (open-world, so FILTER NOT EXISTS).
+# nr:belongsToGroup is required so that we only trust foods that D1 actually classified (otherwise "no allergen data" would look like "safe").
+SELECT ?foodLabel ?sugar ?groupLabel
+WHERE {
+  ?food a nr:LowSugarFood ;                       # inferred by R4
+        rdfs:label ?foodLabel ;
+        nr:sugarPer100g ?sugar ;
+        nr:belongsToGroup ?g .
+  ?g rdfs:label ?groupLabel .
+  FILTER NOT EXISTS { ?food nr:unsafeFor nr:LactoseIntolerance }   # R1 + RC2
+}
+ORDER BY ?sugar ?foodLabel
+LIMIT 50

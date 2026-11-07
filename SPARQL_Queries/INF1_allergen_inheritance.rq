@@ -1,0 +1,26 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# INFERENCE 1 - Ingredient allergen inheritance (RC2 + RC5 + R1).
+# Explicit facts : dish hasIngredient ingredient ; ingredient containsAllergen allergen ; allergen is-a PeanutAllergen / TreeNutAllergen (subclass of NutAllergen)
+# Rule knowledge : NutAllergen subClassOf (triggers hasValue NutAllergy) ; hasIngredient o containsAllergen -> containsAllergen ; containsAllergen o triggers -> unsafeFor
+# Inferred facts : allergen triggers NutAllergy ; dish containsAllergen allergen ; dish unsafeFor NutAllergy
+SELECT ?dishLabel ?ingredientLabel ?allergenLabel ?allergenClass ?inferredTriggers ?dishInheritsAllergen ?dishUnsafeFor
+WHERE {
+  VALUES ?dish { dish:chicken_satay dish:almond_cookies dish:pecan_pie }
+  ?dish rdfs:label ?dishLabel ; nr:hasIngredient ?ing .
+  ?ing  rdfs:label ?ingredientLabel ; nr:containsAllergen ?a .
+  ?a a ?allergenClass ; rdfs:label ?allergenLabel .
+  ?allergenClass rdfs:subClassOf* nr:NutAllergen .
+  ?a nr:triggers ?inferredTriggers .
+  ?dish nr:containsAllergen ?a .
+  BIND("yes (inferred)" AS ?dishInheritsAllergen)
+  ?dish nr:unsafeFor ?dishUnsafeFor .
+  FILTER(?dishUnsafeFor = nr:NutAllergy)
+}

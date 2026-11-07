@@ -1,0 +1,23 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# CQ10 - Which foods are safe for ALL FOUR conditions at the same time?
+# Category: inference + aggregation/filtering. Safe = NO nr:unsafeFor triple of any kind (nut allergy, lactose, T2D, hypertension).
+# Only foods classified by D1 (have a group) are listed, so "safe" is backed by allergen data. Remove LIMIT for all 633.
+SELECT ?foodLabel ?groupLabel ?sugar ?sodium
+WHERE {
+  ?food rdfs:label ?foodLabel ;
+        nr:sugarPer100g ?sugar ;
+        nr:sodiumPer100g ?sodium ;
+        nr:belongsToGroup ?g .
+  ?g rdfs:label ?groupLabel .
+  FILTER NOT EXISTS { ?food nr:unsafeFor ?anyCondition }
+}
+ORDER BY ?groupLabel ?foodLabel
+LIMIT 50

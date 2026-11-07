@@ -1,0 +1,19 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# CQ5 - Average sodium per 100 g in each food group; which group is highest?
+# Category: aggregation. First row of the result = highest group.
+SELECT ?groupLabel (ROUND(AVG(?sodium)) AS ?avgSodiumMg) (COUNT(?food) AS ?foodsInGroup)
+WHERE {
+  ?food nr:belongsToGroup ?g ;
+        nr:sodiumPer100g ?sodium .
+  ?g rdfs:label ?groupLabel .
+}
+GROUP BY ?groupLabel
+ORDER BY DESC(?avgSodiumMg)

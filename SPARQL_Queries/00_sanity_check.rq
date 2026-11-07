@@ -1,0 +1,23 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# 00 - Import check. Expect: Food ~5235, Dish 259, Ingredient 239, FoodGroup 33, DietaryRule 5.
+# Run it BEFORE and AFTER rules_graphdb.ru (the unsafeFor row appears only after the rules).
+SELECT ?what (COUNT(*) AS ?count) WHERE {
+  { ?x rdf:type nr:Food        BIND("Food" AS ?what) }
+  UNION { ?x rdf:type nr:Dish        BIND("Dish" AS ?what) }
+  UNION { ?x rdf:type nr:Ingredient  BIND("Ingredient" AS ?what) }
+  UNION { ?x rdf:type nr:FoodGroup   BIND("FoodGroup" AS ?what) }
+  UNION { ?x rdf:type nr:Allergen    BIND("Allergen (generic nr:Allergen nodes)" AS ?what) }
+  UNION { ?x rdf:type nr:DietaryRule BIND("DietaryRule" AS ?what) }
+  UNION { ?x nr:unsafeFor ?c         BIND("unsafeFor triples (INFERRED)" AS ?what) }
+  UNION { ?x rdf:type nr:HighSodiumFood BIND("HighSodiumFood (INFERRED)" AS ?what) }
+  UNION { ?x rdf:type nr:HighSugarFood  BIND("HighSugarFood (INFERRED)" AS ?what) }
+  UNION { ?x rdf:type nr:LowSugarFood   BIND("LowSugarFood (INFERRED)" AS ?what) }
+} GROUP BY ?what ORDER BY ?what

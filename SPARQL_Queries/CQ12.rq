@@ -1,0 +1,23 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# CQ12 - Which dishes contain a nut allergen although no nut word appears in the dish name?
+# Category: multi-hop + aggregation/filtering (LLM-difficult: depends on the dataset recipes).
+SELECT DISTINCT ?dishLabel ?hiddenIngredient ?allergenLabel
+WHERE {
+  ?dish a nr:Dish ;
+        rdfs:label ?dishLabel ;
+        nr:hasIngredient ?ing .
+  ?ing  rdfs:label ?hiddenIngredient ;
+        nr:containsAllergen ?a .
+  ?a nr:triggers nr:NutAllergy ;
+     rdfs:label ?allergenLabel .
+  FILTER(!REGEX(?dishLabel, "nut|almond|peanut|walnut|cashew|pecan|pistachio|hazelnut", "i"))
+}
+ORDER BY ?dishLabel

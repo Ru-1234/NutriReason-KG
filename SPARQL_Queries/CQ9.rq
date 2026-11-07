@@ -1,0 +1,29 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# CQ9 - Exact sugar and sodium of a food, and does it pass the diabetes and hypertension rules?
+# Category: inference. Thresholds come from the rule nodes. OPTIONAL shows the food group when D1 knows it.
+# CHANGE the foods in VALUES (any food: URI works; list with  SELECT ?f WHERE {?f a nr:Food} LIMIT 20).
+SELECT ?foodLabel ?sugar ?sugarLimit ?diabetesRule ?sodium ?sodiumLimit ?hypertensionRule ?groupLabel
+WHERE {
+  VALUES ?food {
+    food:cheese_cheddar
+    food:bread_white_commly_prep_incl_soft_bread_crumbs
+    food:chocolate_syrup
+    food:bacon_bits_meatless
+    food:broccoli_raw
+  }
+  rule:type2diabetes_sugar_avoid nr:thresholdValue ?sugarLimit .
+  rule:hypertension_sodium_avoid nr:thresholdValue ?sodiumLimit .
+  ?food rdfs:label ?foodLabel ; nr:sugarPer100g ?sugar ; nr:sodiumPer100g ?sodium .
+  BIND(IF(?sugar  > ?sugarLimit,  "FAILS (avoid)", "passes") AS ?diabetesRule)
+  BIND(IF(?sodium > ?sodiumLimit, "FAILS (avoid)", "passes") AS ?hypertensionRule)
+  OPTIONAL { ?food nr:belongsToGroup ?g . ?g rdfs:label ?groupLabel }
+}
+ORDER BY ?foodLabel

@@ -1,0 +1,24 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# CQ7 - Which plant-origin foods are linked to an allergy?
+# Category: multi-hop + inference. Uses the TRANSITIVE property path: Group -> Type -> Class (RC3).
+# Remove LIMIT to see all rows; change "Plant origin" to "Animal origin" for the other class.
+SELECT DISTINCT ?foodLabel ?groupLabel ?allergenLabel
+WHERE {
+  ?food nr:belongsToGroup ?g ;
+        nr:containsAllergen ?a ;
+        rdfs:label ?foodLabel .
+  ?g rdfs:label ?groupLabel ;
+     nr:partOfCategory+ ?class .
+  ?class a nr:FoodClass ; rdfs:label "Plant origin"@en .
+  ?a rdfs:label ?allergenLabel .
+}
+ORDER BY ?groupLabel ?foodLabel
+LIMIT 100

@@ -1,0 +1,22 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# INFERENCE 3 - Low-sugar rule R4.
+# Explicit fact  : food nr:sugarPer100g = value (stored from USDA).
+# Rule knowledge : sugarPer100g <= 5  ->  LowSugarFood
+# Inferred fact  : food a nr:LowSugarFood
+SELECT ?foodLabel ?sugarG ?inferredClass
+WHERE {
+  VALUES ?food { food:broccoli_raw food:rice_brown_long_grain_ckd food:cheese_cheddar }
+  ?food rdfs:label ?foodLabel ;
+        nr:sugarPer100g ?sugarG ;
+        a ?inferredClass .
+  FILTER(?inferredClass = nr:LowSugarFood)
+}
+ORDER BY ?sugarG

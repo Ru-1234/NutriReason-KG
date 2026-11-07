@@ -1,0 +1,42 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# CQ8 - For a given dish, which conditions is it unsafe for, and which ingredient causes each?
+# Category: multi-hop + inference. CHANGE the dish in VALUES (try dish:almond_cookies, dish:baked_ziti, dish:chicken_satay, dish:kheer).
+SELECT ?dishLabel ?conditionLabel ?causeLabel ?because
+WHERE {
+  VALUES ?dish { dish:almond_cookies }
+  ?dish rdfs:label ?dishLabel .
+  {
+    # allergy / intolerance: ingredient -> allergen -> condition
+    ?dish nr:hasIngredient ?ing .
+    ?ing  nr:containsAllergen ?a ; rdfs:label ?causeLabel .
+    ?a    nr:triggers ?cond ; rdfs:label ?allergenLabel .
+    BIND(CONCAT("contains allergen: ", ?allergenLabel) AS ?because)
+  }
+  UNION
+  {
+    # nutrient rules (R2 / R3) fired on an ingredient
+    ?dish nr:hasIngredient ?ing .
+    ?ing  nr:unsafeFor ?cond ; rdfs:label ?causeLabel .
+    FILTER(?cond IN (nr:Type2Diabetes, nr:Hypertension))
+    BIND("nutrient above the rule limit" AS ?because)
+  }
+  UNION
+  {
+    # allergen asserted directly on the dish (D2 Allergens column) and not explained by an ingredient
+    ?dish nr:containsAllergen ?a .
+    FILTER NOT EXISTS { ?dish nr:hasIngredient/nr:containsAllergen ?a }
+    ?a nr:triggers ?cond ; rdfs:label ?allergenLabel .
+    BIND("(dish itself)" AS ?causeLabel)
+    BIND(CONCAT("contains allergen: ", ?allergenLabel) AS ?because)
+  }
+  ?cond rdfs:label ?conditionLabel .
+}
+ORDER BY ?conditionLabel ?causeLabel

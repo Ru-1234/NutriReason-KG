@@ -1,0 +1,18 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# CQ13 - Which foods have sodium above the hypertension limit, ranked highest to lowest, with exact values?
+# Category: aggregation/filtering. The limit (600 mg) is read from the WHO rule node.
+# Row order = rank (ORDER BY DESC). OPTIONAL shows the food group when D1 knows it. Remove LIMIT for the full list.
+SELECT ?foodLabel ?sodiumMg ?limitMg ?groupLabel
+WHERE {
+  nr:Hypertension nr:hasRule ?rule .
+  ?rule nr:restrictsNutrient nr:Sodium ;
+        nr:thresholdValue ?limitMg .
+  ?food rdfs:label ?foodLabel ;
+        nr:sodiumPer100g ?sodiumMg .
+  FILTER(?sodiumMg > ?limitMg)
+  OPTIONAL { ?food nr:belongsToGroup ?g . ?g rdfs:label ?groupLabel }
+}
+ORDER BY DESC(?sodiumMg) ?foodLabel
+LIMIT 25

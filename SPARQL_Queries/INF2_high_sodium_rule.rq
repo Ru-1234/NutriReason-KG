@@ -1,0 +1,24 @@
+PREFIX nr:   <http://example.org/nutrireason#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX dish: <http://example.org/nutrireason/resource/dish/>
+PREFIX food: <http://example.org/nutrireason/resource/food/>
+PREFIX cls:  <http://example.org/nutrireason/resource/class/>
+PREFIX rule: <http://example.org/nutrireason/resource/rule/>
+
+# INFERENCE 2 - High-sodium rule R3.
+# Explicit fact  : food nr:sodiumPer100g = value (stored from USDA).
+# Rule knowledge : sodiumPer100g > 600  ->  HighSodiumFood  AND  unsafeFor Hypertension
+# Inferred facts : food a nr:HighSodiumFood ; food nr:unsafeFor nr:Hypertension
+SELECT ?foodLabel ?sodiumMg ?inferredClass ?inferredUnsafeFor
+WHERE {
+  ?food rdfs:label ?foodLabel ;
+        nr:sodiumPer100g ?sodiumMg ;
+        a ?inferredClass ;
+        nr:unsafeFor ?inferredUnsafeFor .
+  FILTER(?inferredClass = nr:HighSodiumFood && ?inferredUnsafeFor = nr:Hypertension)
+  FILTER(?sodiumMg > 600)
+}
+ORDER BY DESC(?sodiumMg)
+LIMIT 10
