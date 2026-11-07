@@ -1,0 +1,6 @@
+Condition,RestrictedNutrient,ThresholdValue,ThresholdUnit,RuleAction,GuidelineSource
+Type2Diabetes,Sugar,22.5,g_per_100g,avoid,ADA
+Hypertension,Sodium,600,mg_per_100g,avoid,WHO
+Type2Diabetes,Sugar,5.0,g_per_100g,limit_low_sugar,ADA
+NutAllergy,Allergen,NutAllergen,N/A,avoid,NIH
+LactoseIntolerance,Allergen,DairyAllergen,N/A,avoid,NIH
