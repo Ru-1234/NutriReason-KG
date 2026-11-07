@@ -1,59 +1,132 @@
-# NutriReason – Data Cleaning & Transformation Description (Iteration 1)
+# NutriReason – Data Cleaning and Transformation (Iteration 1)
 
-Team krr-08-nutrireason · AI-3001 KRR
+Team krr-08-nutrireason · AI-3001 Knowledge Representation & Reasoning
 
-Script: `build_kg.py` (pandas + rdflib). Run: `python build_kg.py --data-dir data --out abox.ttl --tbox ontology/nutrireason_tbox.ttl`
+## 1. Overview
 
-## 1. Common cleaning steps (all four datasets)
-1. Read every column as text (`dtype=str`, UTF-8 with BOM stripped) so IDs and "None"/"N/A" are not silently converted.
-2. Trim and collapse whitespace in headers and cells.
-3. Treat `""`, `None`, `N/A`, `NaN`, `null`, `-` as missing values.
-4. Drop exact duplicate rows, then duplicates on the dataset's natural key (see below).
-5. Validate required columns; fail early with a clear message if one is missing.
-6. Log every drop/assertion so the progress report can quote the counts.
+We use four datasets. One Python script, `build_kg.py` (pandas + rdflib), cleans them and turns them into RDF triples in Turtle format.
 
-## 2. Dataset-specific steps
+| Dataset | Source | What it gives us |
+|---|---|---|
+| D1 | Kaggle – Food: Allergens and Allergies | Food groups, types, classes and which allergy a food is linked to |
+| D2 | Kaggle – Food Ingredients and Allergens | Dishes, their ingredients and their allergens |
+| D3 | USDA National Nutrient Database | Calories, sodium and sugar for each food |
+| D4 | Curated dietary rules | Rules for each health condition, with the guideline that supports it |
 
-**D1 – Food: Allergens and Allergies (taxonomy + allergy links)**
-- Dedupe on the singularised food name (`Almonds`/`Almond`).
-- `Class`, `Type`, `Group` become `nr:FoodClass`, `nr:FoodType`, `nr:FoodGroup` individuals. Links: Group `partOfCategory` Type, Type `partOfCategory` Class (transitive in the T-Box, so Group → Class is inferred).
-- `Allergy` is split on `/` ("Milk allergy / Lactose intolerance"). Each part maps to an allergen individual: first by keyword in the food name (Almond → `alg:almond`), otherwise by label fragment (nut → `nut_generic`, milk/lactose → `dairy`, gluten → `wheat`, legume → `soy`), otherwise a new generic allergen (e.g. "Broccoli allergy" → `alg:broccoli`).
-- The D1 food is linked to D3 by head-word match (Butter ↔ `BUTTER,WITH SALT`). If D3 has matches, the group and allergens are copied onto those D3 nodes and no duplicate node is created. If not (Almond, Barley, Soybean), a standalone `food:` node is created.
+Run command:
 
-**D2 – Food Ingredients and Allergens (dishes)**
-- Dedupe on dish-name slug.
-- Ingredients come from `Main Ingredient`, `Sweetener`, `Fat/Oil` and the comma-separated `Seasoning`; "None" is dropped and ingredients are de-duplicated per dish.
-- Each ingredient is resolved against the food index. One match reuses that food node (and adds type `nr:Ingredient`); several matches create `ing:` with the mean of the USDA values and a comment saying so; no match creates a plain `ing:` node.
-- Allergens on ingredients come from the D1 link plus whole-word keyword rules (flour → wheat, butter/cheese → dairy, etc.).
-- The dish `Allergens` column is used as a check: any listed allergen not already derived from an ingredient is asserted on the dish directly (e.g. Wheat and Celery for Chicken Noodle Soup). Everything else is left for the property chain to infer.
-- `Prediction` is dropped (it only restates that allergens are present).
+```
+python build_kg.py --data-dir data --out abox.ttl --tbox ontology/nutrireason_tbox.ttl
+```
 
-**D3 – USDA nutrients**
-- Coerce Calories/Sodium/Sugar to numbers; drop rows with missing or negative values; dedupe on `ID`, then on description slug.
-- Label: `BUTTER,WITH SALT` → "Butter, With Salt". Values stored as `xsd:decimal` (2 dp): sugar in g, sodium in mg, calories in kcal, all per 100 g. The USDA `ID` is kept as `dct:identifier`.
-- Protein, fat and carbohydrate are not used by any CQ and are not loaded.
+The script processes the datasets in this order: **D3 → D1 → D2 → D4**. D3 goes first because it creates the food nodes with nutrient values. D1 then adds groups and allergens to those nodes. D2 uses the finished food list to find its ingredients. D4 is separate and goes last.
 
-**D4 – Dietary rules**
-- Condition, guideline and nutrient strings are mapped to the T-Box individuals (`nr:Type2Diabetes`, `nr:ADA`, `nr:Sugar` …); unknown values are skipped with a warning.
-- One `nr:DietaryRule` per row, linked with `hasRule` (the inverse `appliesTo` is inferred, not stored). Numeric thresholds become `nr:thresholdValue`; `RuleAction` becomes `nr:ruleAction`.
-- Allergen rows (`RestrictedNutrient = Allergen`) have no numeric threshold, so the allergen class goes in the annotation property `nr:restrictsAllergenClass`.
+## 2. Cleaning steps used for all four datasets
 
-## 3. URI design
+1. **Read everything as text.** Every column is read as a string (UTF-8, with the byte-order mark removed). This stops IDs and values like "None" or "N/A" from being changed by accident.
+2. **Fix spaces.** Extra spaces are removed from column names and cells.
+3. **Find missing values.** These are all treated as missing: an empty cell, `None`, `N/A`, `NA`, `NaN`, `null` and `-` (any letter case).
+4. **Remove duplicates.** Exact duplicate rows are dropped first. Then each dataset is checked on its own key:
+   - D1: the food name, after plural folding (so "Almonds" and "Almond" count as one)
+   - D2: the dish name
+   - D3: the `ID`, then the description
+   - D4: exact duplicates only
+5. **Check columns.** If a required column is missing, the script stops with a clear message.
+6. **Log the changes.** The script prints how many rows it read and dropped, so we can quote the numbers.
+
+## 3. Names to URIs: lower-case ASCII slugs
+
+Every name becomes the last part of a URI in the same way:
+
+1. Remove accents and any non-ASCII characters (`Crème Brûlée` becomes `Creme Brulee`).
+2. Change everything to lower case.
+3. Replace every group of characters that is not a letter or digit with one underscore.
+4. Remove underscores at the start and end.
+
+| Original value | Slug |
+|---|---|
+| `BUTTER,WITH SALT` | `butter_with_salt` |
+| `Almond Cookies` | `almond_cookies` |
+| `Nut and seed` | `nut_and_seed` |
+| `Type2Diabetes` + `Sugar` + `avoid` | `type2diabetes_sugar_avoid` |
+
+For matching names between datasets, the script also uses a simple plural fix: it removes a final "s" (`almonds` becomes `almond`) and turns words ending in "oes" into their singular form (`potatoes` becomes `potato`). Words ending in "ss", "us" or "is" are left alone. This fix is only used for matching and for ingredient URIs. USDA food URIs use the full description.
+
+## 4. What we do with each dataset
+
+### D3 – USDA nutrients (creates the `nr:Food` nodes)
+- Calories, Sodium and Sugar are converted to numbers.
+- A row is dropped if it has no description, or if calories, sodium or sugar is missing or negative.
+- Duplicates are removed by `ID` and then by description.
+- Each food gets a label (`BUTTER,WITH SALT` becomes "Butter, With Salt") and three values: `caloriesPer100g`, `sodiumPer100g` and `sugarPer100g`. Units are kcal, mg and g per 100 g. They are stored as `xsd:decimal` with two decimals.
+- The USDA `ID` is kept as `dct:identifier`.
+- Protein, fat and carbohydrate are not loaded, because none of our competency questions use them.
+- The script also builds a list that links each food's first word (for example "butter") to its food nodes. D1 and D2 use this list.
+
+### D1 – Allergens and food taxonomy
+- Rows with no food or no group are dropped.
+- `Class`, `Type` and `Group` become `nr:FoodClass`, `nr:FoodType` and `nr:FoodGroup` nodes.
+- They are linked with `partOfCategory`: group → type → class. In the ontology this property is transitive, so a group is also linked to its class.
+- The `Allergy` column is split on "/" (for example "Milk allergy / Lactose intolerance"). The allergen is chosen in this order:
+  1. a keyword in the food name (Almond → `alg:almond`);
+  2. if nothing was found, a keyword in the allergy label (nut → general nut allergen, milk or lactose → dairy, gluten → wheat, legume → soy);
+  3. if still nothing, a new general allergen named from the label (for example "Broccoli allergy" → `alg:broccoli`).
+- Linking to D3: the D1 food is matched to USDA foods by its first word (Butter matches `BUTTER,WITH SALT`). Every matching USDA food gets the group and the allergens. If there is no match, a new standalone `food:` node is created.
+
+### D2 – Dishes and ingredients
+- Each dish becomes an `nr:Dish`.
+- Ingredients are taken from `Main Ingredient`, `Sweetener`, `Fat/Oil` and the comma-separated `Seasoning`. Missing values are removed, and an ingredient is only counted once per dish.
+- Each ingredient name is looked up in the food list:
+  - **One match:** we reuse that food node and also mark it as `nr:Ingredient`.
+  - **Several matches:** we create a new ingredient node (`ing:`) with the average of the matching USDA values, and add a comment that says so.
+  - **No match:** we create a plain ingredient node with no nutrient values.
+- Ingredient allergens come from the D1 link and from simple keywords (flour → wheat, butter or cheese → dairy, and so on).
+- The dish's own `Allergens` column is used as a second check. If a listed allergen is not already explained by an ingredient, it is added directly to the dish. All other dish allergens come from the ingredients through the ontology's property chain.
+- The `Prediction` column is dropped. It only repeats that allergens are present.
+
+### D4 – Dietary rules
+- The condition, guideline and nutrient text are mapped to the named individuals of the ontology (`nr:Type2Diabetes`, `nr:ADA`, `nr:Sugar` and so on). Unknown values are skipped with a warning.
+- Each row becomes one `nr:DietaryRule`. It is linked to its condition with `hasRule` and to its guideline with `hasSource`. It also gets `ruleAction` and, for numeric rows, `thresholdValue`.
+- Allergen rows have no number. The allergen class from the `ThresholdValue` column is stored with `restrictsAllergenClass`.
+- `ThresholdUnit` is not loaded. The units (g or mg per 100 g) are written in the ontology comments.
+
+## 5. URI design
 
 | Entity | Pattern | Example |
 |---|---|---|
 | Vocabulary (T-Box) | `http://example.org/nutrireason#Name` | `nr:Dish`, `nr:NutAllergy`, `nr:ADA` |
-| Food (D1/D3) | `…/resource/food/<slug>` | `food:cheese_cheddar` |
+| Food (D3, or D1 only) | `http://example.org/nutrireason/resource/food/<slug>` | `food:cheese_cheddar` |
 | Dish (D2) | `…/resource/dish/<slug>` | `dish:almond_cookies` |
-| Ingredient (D2, unmatched) | `…/resource/ingredient/<slug>` | `ing:parmesan_cheese` |
-| Food group / type / class | `…/resource/group/`, `type/`, `class/` | `grp:dairy`, `typ:nut_and_seed`, `cls:plant_origin` |
+| Ingredient (D2) | `…/resource/ingredient/<slug>` | `ing:parmesan_cheese` |
+| Food group, type, class | `…/resource/group/`, `type/`, `class/` | `grp:dairy`, `typ:nut_and_seed`, `cls:plant_origin` |
 | Allergen | `…/resource/allergen/<key>` | `alg:almond` |
 | Dietary rule | `…/resource/rule/<condition>_<nutrient>_<action>` | `rule:hypertension_sodium_avoid` |
 
-Rules: slugs are lower-case ASCII with `_`; the URI is built from the cleaned name so the same entity from two datasets gets one URI; schema-level individuals (conditions, nutrients, guidelines) live in `nr:` because they are part of the model; every instance carries `dct:source` (D1–D4) for traceability.
+- Conditions, nutrients and guidelines (such as `nr:Hypertension`, `nr:Sodium`, `nr:WHO`) are part of the model, so they live in the `nr:` namespace.
+- Because slugs are built from the cleaned name, the same food in two datasets gets the same URI when the script can match them.
+- Every instance has a `dct:source` value (D1, D2, D3 or D4), so we can trace where it came from.
 
-## 4. Known limitations (mention in the report)
-- Allergen keyword rules are simple (e.g. "peanut butter" gets both peanut and dairy; Caesar dressing gets none). Extend `ALLERGENS` or add a curated override CSV for the full dataset.
-- Ingredients with several USDA matches get averaged values, flagged by `rdfs:comment`.
-- Ingredients with no USDA match (salt, sugar, flour) have no sodium/sugar, so they cannot trigger the nutrient rules.
-- The 5-row samples give 226 A-Box triples (622 with the T-Box); the full Kaggle/USDA files will clear the 500-triple minimum easily.
+## 6. Example
+
+For the D3 row `1001,"BUTTER,WITH SALT",717,…,714,0.06`, plus the D1 row for Butter, the script writes:
+
+```turtle
+food:butter_with_salt a nr:Food ;
+    rdfs:label "Butter, With Salt"@en ;
+    nr:caloriesPer100g 717.00 ;
+    nr:sodiumPer100g 714.00 ;
+    nr:sugarPer100g 0.06 ;
+    nr:belongsToGroup grp:dairy ;
+    nr:containsAllergen alg:dairy ;
+    dct:identifier "1001" ;
+    dct:source "D3", "D1" .
+```
+
+## 7. Limitations
+
+- Allergens are found with a simple keyword list. For example, "peanut butter" gets both peanut and dairy, and "Caesar dressing" gets none. The `ALLERGENS` list in the script can be extended.
+- A D1 food is linked to every USDA food that starts with the same word, so "Almond" is linked to almond butter and other almond foods.
+- Some D1 allergy labels have no known keyword and become general allergens.
+- Ingredients with no USDA match (for example salt, sugar and flour) have no sodium or sugar value.
+- When an ingredient matches several USDA foods, its values are an average, and a comment on the node says so.
+- Dishes have no nutrient values of their own.

@@ -52,7 +52,7 @@ ALLERGENS = {
     "pistachio":  ("Pistachio", NR.TreeNutAllergen, ["pistachio"]),
     "pine_nut":   ("Pine nut", NR.TreeNutAllergen, ["pine nut"]),
     "peanut":     ("Peanut", NR.PeanutAllergen, ["peanut"]),
-    "nut_generic": ("Nut (unspecified)", NR.NutAllergen, []),
+    "nut_generic": ("Nut (unspecified)", NR.NutAllergen, ["nut", "nuts"]),
     "wheat":      ("Wheat / Gluten", NR.GlutenAllergen,
                    ["wheat", "flour", "noodle", "pasta", "barley", "bread", "rye", "gluten"]),
     "dairy":      ("Dairy", NR.DairyAllergen,
@@ -95,6 +95,8 @@ def slug(text) -> str:
 
 def singular(word: str) -> str:
     """Crude plural folding for matching keys (almonds -> almond)."""
+    if word.endswith("oes"):
+        return word[:-2]
     if len(word) > 3 and word.endswith("s") and not word.endswith(("ss", "us", "is")):
         return word[:-1]
     return word

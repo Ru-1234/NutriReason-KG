@@ -32,14 +32,14 @@ dish:aloo_gobi a nr:Dish ;
     rdfs:label "Aloo Gobi"@en ;
     nr:hasIngredient ing:cauliflower,
         ing:oil,
-        ing:potatoe,
+        ing:potato,
         ing:spice ;
     dct:source "D2" .
 
 dish:aloo_paratha a nr:Dish ;
     rdfs:label "Aloo Paratha"@en ;
     nr:hasIngredient ing:ghee,
-        ing:potatoe,
+        ing:potato,
         ing:spice,
         ing:wheat_flour ;
     dct:source "D2" .
@@ -103,7 +103,6 @@ dish:baked_apple a nr:Dish ;
 
 dish:baked_brie a nr:Dish ;
     rdfs:label "Baked Brie"@en ;
-    nr:containsAllergen alg:nuts ;
     nr:hasIngredient ing:brie_cheese,
         ing:herb,
         ing:nut ;
@@ -407,7 +406,7 @@ dish:caprese_salad a nr:Dish ;
     nr:hasIngredient food:basil_fresh,
         food:olive_oil,
         ing:mozzarella_cheese,
-        ing:tomatoe ;
+        ing:tomato ;
     dct:source "D2" .
 
 dish:caprese_sandwich a nr:Dish ;
@@ -415,7 +414,7 @@ dish:caprese_sandwich a nr:Dish ;
     nr:hasIngredient food:basil_fresh,
         food:olive_oil,
         ing:mozzarella_cheese,
-        ing:tomatoe ;
+        ing:tomato ;
     dct:source "D2" .
 
 dish:caprese_skewers a nr:Dish ;
@@ -423,7 +422,7 @@ dish:caprese_skewers a nr:Dish ;
     nr:hasIngredient food:basil_fresh,
         food:olive_oil,
         ing:mozzarella_cheese,
-        ing:tomatoe ;
+        ing:tomato ;
     dct:source "D2" .
 
 dish:caramel_apple a nr:Dish ;
@@ -808,7 +807,7 @@ dish:french_fries a nr:Dish ;
     rdfs:label "French Fries"@en ;
     nr:hasIngredient food:salt_table,
         food:vegetable_oil_palm_kernel,
-        ing:potatoe ;
+        ing:potato ;
     dct:source "D2" .
 
 dish:french_onion_soup a nr:Dish ;
@@ -847,7 +846,7 @@ dish:gazpacho a nr:Dish ;
     nr:hasIngredient food:garlic_raw,
         food:olive_oil,
         ing:herb,
-        ing:tomatoe ;
+        ing:tomato ;
     dct:source "D2" .
 
 dish:gobi_manchurian a nr:Dish ;
@@ -871,7 +870,7 @@ dish:greek_gyro_wrap a nr:Dish ;
     nr:containsAllergen alg:dairy ;
     nr:hasIngredient ing:lamb,
         ing:onion,
-        ing:tomatoe,
+        ing:tomato,
         ing:tzatziki_sauce ;
     dct:source "D2" .
 
@@ -888,7 +887,7 @@ dish:greek_lemon_potatoes a nr:Dish ;
     nr:hasIngredient food:lemon_juice_raw,
         food:olive_oil,
         ing:herb,
-        ing:potatoe ;
+        ing:potato ;
     dct:source "D2" .
 
 dish:greek_moussaka a nr:Dish ;
@@ -896,7 +895,7 @@ dish:greek_moussaka a nr:Dish ;
     nr:hasIngredient food:olive_oil,
         ing:eggplant,
         ing:ground_meat,
-        ing:potatoe ;
+        ing:potato ;
     dct:source "D2" .
 
 dish:greek_salad a nr:Dish ;
@@ -1176,7 +1175,7 @@ dish:mango_salsa a nr:Dish ;
 dish:margherita_pasta a nr:Dish ;
     rdfs:label "Margherita Pasta"@en ;
     nr:hasIngredient food:olive_oil,
-        ing:fresh_tomatoe,
+        ing:fresh_tomato,
         ing:mozzarella,
         ing:pasta ;
     dct:source "D2" .
@@ -1201,7 +1200,7 @@ dish:mashed_potatoes a nr:Dish ;
     nr:hasIngredient food:salt_table,
         ing:butter,
         ing:pepper,
-        ing:potatoe ;
+        ing:potato ;
     dct:source "D2" .
 
 dish:matar_paneer a nr:Dish ;
@@ -1404,7 +1403,7 @@ dish:peanut_butter a nr:Dish ;
 
 dish:pecan_pie a nr:Dish ;
     rdfs:label "Pecan Pie"@en ;
-    nr:containsAllergen alg:nuts,
+    nr:containsAllergen alg:nut_generic,
         alg:wheat ;
     nr:hasIngredient ing:butter,
         ing:corn_syrup,
@@ -1430,7 +1429,7 @@ dish:pesto_pasta_salad a nr:Dish ;
     rdfs:label "Pesto Pasta Salad"@en ;
     nr:hasIngredient ing:pasta,
         ing:pesto_sauce,
-        ing:tomatoe,
+        ing:tomato,
         ing:vegetable ;
     dct:source "D2" .
 
@@ -1581,7 +1580,7 @@ dish:ratatouille a nr:Dish ;
     rdfs:label "Ratatouille"@en ;
     nr:hasIngredient food:olive_oil,
         ing:eggplant,
-        ing:tomatoe ;
+        ing:tomato ;
     dct:source "D2" .
 
 dish:ratatouille_pasta a nr:Dish ;
@@ -1643,13 +1642,13 @@ dish:salsa a nr:Dish ;
     rdfs:label "Salsa"@en ;
     nr:hasIngredient ing:cilantro,
         ing:onion,
-        ing:tomatoe ;
+        ing:tomato ;
     dct:source "D2" .
 
 dish:samosa a nr:Dish ;
     rdfs:label "Samosa"@en ;
     nr:hasIngredient ing:ghee,
-        ing:potatoe,
+        ing:potato,
         ing:spice ;
     dct:source "D2" .
 
@@ -1805,7 +1804,7 @@ dish:stuffed_tomatoes a nr:Dish ;
     rdfs:label "Stuffed Tomatoes"@en ;
     nr:hasIngredient ing:breadcrumb,
         ing:herb,
-        ing:tomatoe ;
+        ing:tomato ;
     dct:source "D2" .
 
 dish:sushi a nr:Dish ;
@@ -1846,12 +1845,12 @@ dish:sweet_and_sour_chicken a nr:Dish ;
 
 dish:sweet_potato_casserole a nr:Dish ;
     rdfs:label "Sweet Potato Casserole"@en ;
-    nr:containsAllergen alg:nuts ;
+    nr:containsAllergen alg:nut_generic ;
     nr:hasIngredient food:cinnamon_ground,
         food:nutmeg_ground,
         ing:brown_sugar,
         ing:butter,
-        ing:sweet_potatoe ;
+        ing:sweet_potato ;
     dct:source "D2" .
 
 dish:sweet_potato_fries a nr:Dish ;
@@ -1859,7 +1858,7 @@ dish:sweet_potato_fries a nr:Dish ;
     nr:hasIngredient food:paprika,
         food:salt_table,
         food:vegetable_oil_palm_kernel,
-        ing:sweet_potatoe ;
+        ing:sweet_potato ;
     dct:source "D2" .
 
 dish:tandoori_chicken a nr:Dish ;
@@ -1921,14 +1920,14 @@ dish:tomato_bruschetta a nr:Dish ;
     nr:hasIngredient food:basil_fresh,
         food:garlic_raw,
         food:olive_oil,
-        ing:tomatoe ;
+        ing:tomato ;
     dct:source "D2" .
 
 dish:tomato_soup a nr:Dish ;
     rdfs:label "Tomato Soup"@en ;
     nr:hasIngredient food:salt_table,
         ing:sugar,
-        ing:tomatoe ;
+        ing:tomato ;
     dct:source "D2" .
 
 dish:tuna_salad a nr:Dish ;
@@ -2065,6 +2064,7 @@ dish:zucchini_noodles a nr:Dish ;
 dish:zucchini_noodles_with_pesto a nr:Dish ;
     rdfs:label "Zucchini Noodles with Pesto"@en ;
     nr:containsAllergen alg:dairy,
+        alg:nut_generic,
         alg:pine_nut ;
     nr:hasIngredient food:olive_oil,
         ing:pesto_sauce,
@@ -36101,299 +36101,410 @@ food:potato_soup_inst_dry_mix a nr:Food ;
 
 food:potatoes_bkd_flesh_skn_w_salt a nr:Food ;
     rdfs:label "Potatoes, Bkd, Flesh & Skn, W/ Salt"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 93.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 10.00 ;
     nr:sugarPer100g 1.18 ;
     dct:identifier "11828" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_bkd_flesh_w_salt a nr:Food ;
     rdfs:label "Potatoes, Bkd, Flesh, W/Salt"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 93.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 241.00 ;
     nr:sugarPer100g 1.70 ;
     dct:identifier "11829" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_bkd_flesh_wo_salt a nr:Food ;
     rdfs:label "Potatoes, Bkd, Flesh, Wo/Salt"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 93.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 5.00 ;
     nr:sugarPer100g 1.70 ;
     dct:identifier "11363" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_bkd_skn_w_salt a nr:Food ;
     rdfs:label "Potatoes, Bkd, Skn, W/ Salt"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 198.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 257.00 ;
     nr:sugarPer100g 1.40 ;
     dct:identifier "11830" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_bkd_skn_wo_salt a nr:Food ;
     rdfs:label "Potatoes, Bkd, Skn, Wo/Salt"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 198.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 21.00 ;
     nr:sugarPer100g 1.40 ;
     dct:identifier "11364" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_bld_ckd_in_skn_flesh_w_salt a nr:Food ;
     rdfs:label "Potatoes, Bld, Ckd In Skn, Flesh, W/Salt"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 87.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 240.00 ;
     nr:sugarPer100g 0.87 ;
     dct:identifier "11831" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_bld_ckd_in_skn_flesh_wo_salt a nr:Food ;
     rdfs:label "Potatoes, Bld, Ckd In Skn, Flesh, Wo/Salt"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 87.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 4.00 ;
     nr:sugarPer100g 0.87 ;
     dct:identifier "11365" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_bld_ckd_wo_skn_flesh_w_salt a nr:Food ;
     rdfs:label "Potatoes, Bld, Ckd Wo/ Skn, Flesh, W/ Salt"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 86.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 241.00 ;
     nr:sugarPer100g 0.85 ;
     dct:identifier "11833" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_bld_ckd_wo_skn_flesh_wo_salt a nr:Food ;
     rdfs:label "Potatoes, Bld, Ckd Wo/ Skn, Flesh, Wo/ Salt"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 86.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 5.00 ;
     nr:sugarPer100g 0.85 ;
     dct:identifier "11367" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_cnd_drnd_sol_no_salt a nr:Food ;
     rdfs:label "Potatoes, Cnd, Drnd Sol, No Salt"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 62.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 5.00 ;
     nr:sugarPer100g 0.59 ;
     dct:identifier "43311" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_fr_fr_all_types_salt_not_added_in_proc_frz_as_purch a nr:Food ;
     rdfs:label "Potatoes, Fr Fr, All Types, Salt Not Added In Proc, Frz, As Purch"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 150.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 23.00 ;
     nr:sugarPer100g 0.20 ;
     dct:identifier "11842" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_fr_fr_all_types_salt_not_added_in_proc_frz_ovn_htd a nr:Food ;
     rdfs:label "Potatoes, Fr Fr, All Types, Salt Not Added In Proc, Frz, Ovn-Htd"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 172.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 32.00 ;
     nr:sugarPer100g 0.28 ;
     dct:identifier "11841" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_fr_fr_crnkl_or_reg_salt_added_in_proc_frz_as_purch a nr:Food ;
     rdfs:label "Potatoes, Fr Fr, Crnkl Or Reg, Salt Added In Proc, Frz, As Purch"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 174.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 358.00 ;
     nr:sugarPer100g 0.21 ;
     dct:identifier "11359" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_fr_fr_crnkl_reg_cut_salt_added_in_proc_frz_oven_htd a nr:Food ;
     rdfs:label "Potatoes, Fr Fr, Crnkl/Reg Cut, Salt Added In Proc, Frz, Oven-Htd"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 166.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 391.00 ;
     nr:sugarPer100g 0.29 ;
     dct:identifier "11360" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_french_fr_all_types_salt_added_in_proc_frz_oven_htd a nr:Food ;
     rdfs:label "Potatoes, French Fr, All Types, Salt Added In Proc, Frz, Oven Htd"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 164.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 388.00 ;
     nr:sugarPer100g 0.28 ;
     dct:identifier "11403" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_french_fr_all_types_salt_added_in_proc_frz_unprep a nr:Food ;
     rdfs:label "Potatoes, French Fr, All Types, Salt Added In Proc, Frz, Unprep"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 147.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 332.00 ;
     nr:sugarPer100g 0.20 ;
     dct:identifier "11402" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_french_fr_shoestring_salt_added_in_proc_frz_as_prch a nr:Food ;
     rdfs:label "Potatoes, French Fr, Shoestring, Salt Added In Proc, Frz, As Prch"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 167.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 322.00 ;
     nr:sugarPer100g 0.20 ;
     dct:identifier "11394" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_french_fr_shoestrng_salt_added_in_proc_frz_oven_htd a nr:Food ;
     rdfs:label "Potatoes, French Fr, Shoestrng, Salt Added In Proc, Frz, Oven-Htd"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 199.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 400.00 ;
     nr:sugarPer100g 0.31 ;
     dct:identifier "11395" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_french_fr_stk_fries_salt_added_in_proc_frz_as_prch a nr:Food ;
     rdfs:label "Potatoes, French Fr, Stk Fries, Salt Added In Proc, Frz, As Prch"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 133.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 317.00 ;
     nr:sugarPer100g 0.20 ;
     dct:identifier "11411" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_french_fr_stk_fries_salt_added_in_proc_frz_oven_htd a nr:Food ;
     rdfs:label "Potatoes, French Fr, Stk Fries, Salt Added In Proc, Frz, Oven-Htd"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 152.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 373.00 ;
     nr:sugarPer100g 0.25 ;
     dct:identifier "11412" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_frz_whl_unprep a nr:Food ;
     rdfs:label "Potatoes, Frz, Whl, Unprep"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 78.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 25.00 ;
     nr:sugarPer100g 0.78 ;
     dct:identifier "11400" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_hashed_brown_frz_pln_prep a nr:Food ;
     rdfs:label "Potatoes, Hashed Brown, Frz, Pln, Prep"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 218.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 34.00 ;
     nr:sugarPer100g 1.57 ;
     dct:identifier "11391" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_hashed_brown_home_prepared a nr:Food ;
     rdfs:label "Potatoes, Hashed Brown, Home-Prepared"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 265.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 342.00 ;
     nr:sugarPer100g 1.49 ;
     dct:identifier "11370" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_mshd_dehyd_flakes_wo_milk_dry_form a nr:Food ;
     rdfs:label "Potatoes, Mshd, Dehyd, Flakes Wo/Milk, Dry Form"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 354.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 104.00 ;
     nr:sugarPer100g 3.36 ;
     dct:identifier "11378" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_mshd_dehyd_granules_w_milk_dry_form a nr:Food ;
     rdfs:label "Potatoes, Mshd, Dehyd, Granules W/Milk, Dry Form"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 357.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 82.00 ;
     nr:sugarPer100g 3.37 ;
     dct:identifier "11382" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_mshd_dehyd_granules_wo_milk_dry_form a nr:Food ;
     rdfs:label "Potatoes, Mshd, Dehyd, Granules Wo/Milk, Dry Form"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 372.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 67.00 ;
     nr:sugarPer100g 3.47 ;
     dct:identifier "11380" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_mshd_dehyd_prep_from_flakes_wo_milk_whl_milk_but a nr:Food ;
     rdfs:label "Potatoes, Mshd, Dehyd, Prep From Flakes Wo/ Milk, Whl Milk & But"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 97.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 164.00 ;
     nr:sugarPer100g 1.61 ;
     dct:identifier "11379" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_mshd_dehyd_prep_from_gran_w_milk_h2o_marg_added a nr:Food ;
     rdfs:label "Potatoes, Mshd, Dehyd, Prep From Gran W/ Milk, H2O & Marg Added"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 116.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 172.00 ;
     nr:sugarPer100g 1.74 ;
     dct:identifier "11383" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_mshd_home_prepared_whl_milk_added a nr:Food ;
     rdfs:label "Potatoes, Mshd, Home-Prepared, Whl Milk Added"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 83.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 302.00 ;
     nr:sugarPer100g 1.48 ;
     dct:identifier "11657" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_mshd_home_prepared_whl_milk_butter_added a nr:Food ;
     rdfs:label "Potatoes, Mshd, Home-Prepared, Whl Milk & Butter Added"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 113.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 317.00 ;
     nr:sugarPer100g 1.43 ;
     dct:identifier "11934" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_mshd_home_prepared_whl_milk_margarine_added a nr:Food ;
     rdfs:label "Potatoes, Mshd, Home-Prepared, Whl Milk & Margarine Added"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 113.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 333.00 ;
     nr:sugarPer100g 1.41 ;
     dct:identifier "11371" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_red_flesh_skn_bkd a nr:Food ;
     rdfs:label "Potatoes, Red, Flesh & Skn, Bkd"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 89.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 12.00 ;
     nr:sugarPer100g 1.43 ;
     dct:identifier "11358" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_red_flesh_skn_raw a nr:Food ;
     rdfs:label "Potatoes, Red, Flesh & Skn, Raw"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 70.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 18.00 ;
     nr:sugarPer100g 1.29 ;
     dct:identifier "11355" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_russet_flesh_skn_bkd a nr:Food ;
     rdfs:label "Potatoes, Russet, Flesh & Skn, Bkd"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 97.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 14.00 ;
     nr:sugarPer100g 1.08 ;
     dct:identifier "11356" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_russet_flesh_skn_raw a nr:Food ;
     rdfs:label "Potatoes, Russet, Flesh & Skn, Raw"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 79.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 5.00 ;
     nr:sugarPer100g 0.62 ;
     dct:identifier "11353" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_white_flesh_skn_bkd a nr:Food ;
     rdfs:label "Potatoes, White, Flesh & Skn, Bkd"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 94.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 7.00 ;
     nr:sugarPer100g 1.53 ;
     dct:identifier "11357" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:potatoes_white_flesh_skn_raw a nr:Food ;
     rdfs:label "Potatoes, White, Flesh & Skn, Raw"@en ;
+    nr:belongsToGroup grp:potato ;
     nr:caloriesPer100g 69.00 ;
+    nr:containsAllergen alg:potato ;
     nr:sodiumPer100g 16.00 ;
     nr:sugarPer100g 1.15 ;
     dct:identifier "11354" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:poultry_food_products_ground_turkey_cooked a nr:Food ;
     rdfs:label "Poultry Food Products, Ground Turkey, Cooked"@en ;
@@ -43046,12 +43157,6 @@ food:tomatillos_raw a nr:Food ;
     dct:identifier "11954" ;
     dct:source "D3" .
 
-food:tomato a nr:Food ;
-    rdfs:label "Tomato"@en ;
-    nr:belongsToGroup grp:solanceous_vegetable ;
-    nr:containsAllergen alg:nightshade ;
-    dct:source "D1" .
-
 food:tomato_juc_cnd_w_salt a nr:Food ;
     rdfs:label "Tomato Juc, Cnd, W/Salt"@en ;
     nr:caloriesPer100g 17.00 ;
@@ -43150,75 +43255,102 @@ food:tomato_veg_juc_lo_na a nr:Food ;
 
 food:tomatoes_crushed_canned a nr:Food ;
     rdfs:label "Tomatoes, Crushed, Canned"@en ;
+    nr:belongsToGroup grp:solanceous_vegetable ;
     nr:caloriesPer100g 32.00 ;
+    nr:containsAllergen alg:nightshade ;
     nr:sodiumPer100g 132.00 ;
     nr:sugarPer100g 4.40 ;
     dct:identifier "11693" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:tomatoes_green_raw a nr:Food ;
     rdfs:label "Tomatoes, Green, Raw"@en ;
+    nr:belongsToGroup grp:solanceous_vegetable ;
     nr:caloriesPer100g 23.00 ;
+    nr:containsAllergen alg:nightshade ;
     nr:sodiumPer100g 13.00 ;
     nr:sugarPer100g 4.00 ;
     dct:identifier "11527" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:tomatoes_red_ripe_ckd a nr:Food ;
     rdfs:label "Tomatoes, Red, Ripe, Ckd"@en ;
+    nr:belongsToGroup grp:solanceous_vegetable ;
     nr:caloriesPer100g 18.00 ;
+    nr:containsAllergen alg:nightshade ;
     nr:sodiumPer100g 11.00 ;
     nr:sugarPer100g 2.49 ;
     dct:identifier "11530" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:tomatoes_red_ripe_ckd_w_salt a nr:Food ;
     rdfs:label "Tomatoes, Red, Ripe, Ckd, W/ Salt"@en ;
+    nr:belongsToGroup grp:solanceous_vegetable ;
     nr:caloriesPer100g 18.00 ;
+    nr:containsAllergen alg:nightshade ;
     nr:sodiumPer100g 247.00 ;
     nr:sugarPer100g 2.49 ;
     dct:identifier "11884" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:tomatoes_red_ripe_cnd_packed_in_tomato_juc a nr:Food ;
     rdfs:label "Tomatoes, Red, Ripe, Cnd, Packed In Tomato Juc"@en ;
+    nr:belongsToGroup grp:solanceous_vegetable ;
     nr:caloriesPer100g 17.00 ;
+    nr:containsAllergen alg:nightshade ;
     nr:sodiumPer100g 143.00 ;
     nr:sugarPer100g 2.38 ;
     dct:identifier "11531" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:tomatoes_red_ripe_cnd_packed_in_tomato_juc_no_salt_added a nr:Food ;
     rdfs:label "Tomatoes, Red, Ripe, Cnd, Packed In Tomato Juc, No Salt Added"@en ;
+    nr:belongsToGroup grp:solanceous_vegetable ;
     nr:caloriesPer100g 17.00 ;
+    nr:containsAllergen alg:nightshade ;
     nr:sodiumPer100g 10.00 ;
     nr:sugarPer100g 2.38 ;
     dct:identifier "11885" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:tomatoes_red_ripe_cnd_stwd a nr:Food ;
     rdfs:label "Tomatoes, Red, Ripe, Cnd, Stwd"@en ;
+    nr:belongsToGroup grp:solanceous_vegetable ;
     nr:caloriesPer100g 26.00 ;
+    nr:containsAllergen alg:nightshade ;
     nr:sodiumPer100g 221.00 ;
     nr:sugarPer100g 3.52 ;
     dct:identifier "11533" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:tomatoes_red_ripe_raw_year_rnd_average a nr:Food ;
     rdfs:label "Tomatoes, Red, Ripe, Raw, Year Rnd Average"@en ;
+    nr:belongsToGroup grp:solanceous_vegetable ;
     nr:caloriesPer100g 18.00 ;
+    nr:containsAllergen alg:nightshade ;
     nr:sodiumPer100g 5.00 ;
     nr:sugarPer100g 2.63 ;
     dct:identifier "11529" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:tomatoes_sun_dried a nr:Food ;
     rdfs:label "Tomatoes, Sun-Dried"@en ;
+    nr:belongsToGroup grp:solanceous_vegetable ;
     nr:caloriesPer100g 258.00 ;
+    nr:containsAllergen alg:nightshade ;
     nr:sodiumPer100g 247.00 ;
     nr:sugarPer100g 37.59 ;
     dct:identifier "11955" ;
-    dct:source "D3" .
+    dct:source "D1",
+        "D3" .
 
 food:toppings_marshmllw_crm a nr:Food ;
     rdfs:label "Toppings, Marshmllw Crm"@en ;
@@ -46219,7 +46351,7 @@ ing:fish_salmon_tuna a nr:Ingredient ;
     rdfs:label "Fish (salmon, tuna)"@en ;
     dct:source "D2" .
 
-ing:fresh_tomatoe a nr:Ingredient ;
+ing:fresh_tomato a nr:Ingredient ;
     rdfs:label "Fresh tomatoes"@en ;
     dct:source "D2" .
 
@@ -46442,16 +46574,6 @@ ing:pork_rib a nr:Ingredient ;
     rdfs:label "Pork ribs"@en ;
     dct:source "D2" .
 
-ing:potato a nr:Ingredient ;
-    rdfs:label "Potato"@en ;
-    nr:belongsToGroup grp:potato ;
-    nr:caloriesPer100g 85.00 ;
-    nr:containsAllergen alg:potato ;
-    nr:sodiumPer100g 8.00 ;
-    nr:sugarPer100g 0.98 ;
-    dct:source "D2" ;
-    rdfs:comment "Nutrient values are the mean of 2 USDA entries (D3)." .
-
 ing:raisin a nr:Ingredient ;
     rdfs:label "Raisins"@en ;
     nr:caloriesPer100g 300.50 ;
@@ -46646,9 +46768,6 @@ alg:mint a nr:Allergen ;
 
 alg:mushroom a nr:Allergen ;
     rdfs:label "Mushroom"@en .
-
-alg:nut_generic a nr:NutAllergen ;
-    rdfs:label "Nut (unspecified)"@en .
 
 alg:pork a nr:Allergen ;
     rdfs:label "Pork"@en .
@@ -46947,9 +47066,15 @@ ing:sushi_rice a nr:Ingredient ;
     rdfs:label "Sushi rice"@en ;
     dct:source "D2" .
 
-ing:sweet_potatoe a nr:Ingredient ;
+ing:sweet_potato a nr:Ingredient ;
     rdfs:label "Sweet potatoes"@en ;
-    dct:source "D2" .
+    nr:belongsToGroup grp:potato ;
+    nr:caloriesPer100g 90.89 ;
+    nr:containsAllergen alg:potato ;
+    nr:sodiumPer100g 88.11 ;
+    nr:sugarPer100g 7.67 ;
+    dct:source "D2" ;
+    rdfs:comment "Nutrient values are the mean of 9 USDA entries (D3)." .
 
 ing:taco_seasoning a nr:Ingredient ;
     rdfs:label "Taco seasoning"@en ;
@@ -47009,12 +47134,6 @@ typ:spice_and_herb a nr:FoodType ;
 alg:banana a nr:Allergen ;
     rdfs:label "Banana"@en .
 
-alg:nightshade a nr:Allergen ;
-    rdfs:label "Nightshade"@en .
-
-alg:nuts a nr:Allergen ;
-    rdfs:label "Nuts"@en .
-
 food:bacon_meatless a nr:Food,
         nr:Ingredient ;
     rdfs:label "Bacon, Meatless"@en ;
@@ -47044,10 +47163,6 @@ food:nutmeg_ground a nr:Food,
     nr:sugarPer100g 28.49 ;
     dct:identifier "2025" ;
     dct:source "D3" .
-
-grp:solanceous_vegetable a nr:FoodGroup ;
-    rdfs:label "Solanceous vegetable"@en ;
-    nr:partOfCategory typ:vegetable .
 
 ing:banana a nr:Ingredient ;
     rdfs:label "Bananas"@en ;
@@ -47181,6 +47296,7 @@ ing:lentil a nr:Ingredient ;
 ing:nut a nr:Ingredient ;
     rdfs:label "Nuts"@en ;
     nr:caloriesPer100g 561.00 ;
+    nr:containsAllergen alg:nut_generic ;
     nr:sodiumPer100g 125.80 ;
     nr:sugarPer100g 13.91 ;
     dct:source "D2" ;
@@ -47269,6 +47385,9 @@ ing:vanilla_extract a nr:Ingredient ;
 
 alg:alpha_gal_syndrome a nr:Allergen ;
     rdfs:label "Alpha-Gal Syndrome"@en .
+
+alg:nut_generic a nr:NutAllergen ;
+    rdfs:label "Nut (unspecified)"@en .
 
 alg:pecan a nr:TreeNutAllergen ;
     rdfs:label "Pecan"@en .
@@ -47381,14 +47500,6 @@ ing:mixed_vegetable a nr:Ingredient ;
     rdfs:label "Mixed vegetables"@en ;
     dct:source "D2" .
 
-ing:potatoe a nr:Ingredient ;
-    rdfs:label "Potatoes"@en ;
-    nr:caloriesPer100g 145.16 ;
-    nr:sodiumPer100g 161.59 ;
-    nr:sugarPer100g 1.15 ;
-    dct:source "D2" ;
-    rdfs:comment "Nutrient values are the mean of 37 USDA entries (D3)." .
-
 ing:shrimp a nr:Ingredient ;
     rdfs:label "Shrimp"@en ;
     nr:caloriesPer100g 133.00 ;
@@ -47430,6 +47541,17 @@ ing:pasta a nr:Ingredient ;
     rdfs:label "Pasta"@en ;
     nr:containsAllergen alg:wheat ;
     dct:source "D2" .
+
+ing:potato a nr:Ingredient ;
+    rdfs:label "Potato"@en,
+        "Potatoes"@en ;
+    nr:belongsToGroup grp:potato ;
+    nr:caloriesPer100g 142.08 ;
+    nr:containsAllergen alg:potato ;
+    nr:sodiumPer100g 153.72 ;
+    nr:sugarPer100g 1.14 ;
+    dct:source "D2" ;
+    rdfs:comment "Nutrient values are the mean of 39 USDA entries (D3)." .
 
 ing:yogurt_milk_culture a nr:Ingredient ;
     rdfs:label "Yogurt (milk, cultures)"@en ;
@@ -47510,9 +47632,11 @@ grp:sugar_source a nr:FoodGroup ;
     rdfs:label "Sugar source"@en ;
     nr:partOfCategory typ:vegetable .
 
-ing:tomatoe a nr:Ingredient ;
+ing:tomato a nr:Ingredient ;
     rdfs:label "Tomatoes"@en ;
+    nr:belongsToGroup grp:solanceous_vegetable ;
     nr:caloriesPer100g 47.44 ;
+    nr:containsAllergen alg:nightshade ;
     nr:sodiumPer100g 114.33 ;
     nr:sugarPer100g 6.88 ;
     dct:source "D2" ;
@@ -47522,8 +47646,15 @@ typ:vegetable a nr:FoodType ;
     rdfs:label "Vegetable"@en ;
     nr:partOfCategory cls:plant_origin .
 
+alg:nightshade a nr:Allergen ;
+    rdfs:label "Nightshade"@en .
+
 alg:shellfish a nr:Allergen ;
     rdfs:label "Shellfish"@en .
+
+grp:solanceous_vegetable a nr:FoodGroup ;
+    rdfs:label "Solanceous vegetable"@en ;
+    nr:partOfCategory typ:vegetable .
 
 ing:cheese a nr:Ingredient ;
     rdfs:label "Cheese"@en ;
@@ -47612,13 +47743,6 @@ grp:tea a nr:FoodGroup ;
 
 alg:histamine a nr:Allergen ;
     rdfs:label "Histamine"@en .
-
-alg:potato a nr:Allergen ;
-    rdfs:label "Potato"@en .
-
-grp:potato a nr:FoodGroup ;
-    rdfs:label "Potato"@en ;
-    nr:partOfCategory typ:vegetable .
 
 alg:hypersensitivity a nr:Allergen ;
     rdfs:label "Hypersensitivity"@en .
@@ -47737,6 +47861,13 @@ food:olive_oil a nr:Food,
 
 alg:poultry a nr:Allergen ;
     rdfs:label "Poultry"@en .
+
+alg:potato a nr:Allergen ;
+    rdfs:label "Potato"@en .
+
+grp:potato a nr:FoodGroup ;
+    rdfs:label "Potato"@en ;
+    nr:partOfCategory typ:vegetable .
 
 ing:sugar a nr:Ingredient ;
     rdfs:label "Sugar"@en ;
