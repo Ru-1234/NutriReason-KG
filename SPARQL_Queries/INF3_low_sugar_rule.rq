@@ -20,3 +20,4 @@ WHERE {
   FILTER(?inferredClass = nr:LowSugarFood)
 }
 ORDER BY ?sugarG
+LIMIT 10

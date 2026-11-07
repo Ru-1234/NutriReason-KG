@@ -17,3 +17,4 @@ WHERE {
 }
 GROUP BY ?groupLabel
 ORDER BY DESC(?avgSodiumMg)
+LIMIT 10

@@ -21,3 +21,4 @@ WHERE {
   FILTER(!REGEX(?dishLabel, "nut|almond|peanut|walnut|cashew|pecan|pistachio|hazelnut", "i"))
 }
 ORDER BY ?dishLabel
+LIMIT 10

@@ -20,4 +20,4 @@ WHERE {
   FILTER NOT EXISTS { ?food nr:unsafeFor ?anyCondition }
 }
 ORDER BY ?groupLabel ?foodLabel
-LIMIT 50
+LIMIT 10

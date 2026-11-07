@@ -21,4 +21,4 @@ WHERE {
   ?a rdfs:label ?allergenLabel .
 }
 ORDER BY ?groupLabel ?foodLabel
-LIMIT 100
+LIMIT 10

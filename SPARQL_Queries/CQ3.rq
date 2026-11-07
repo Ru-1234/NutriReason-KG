@@ -21,4 +21,4 @@ WHERE {
   FILTER NOT EXISTS { ?food nr:unsafeFor nr:LactoseIntolerance }   # R1 + RC2
 }
 ORDER BY ?sugar ?foodLabel
-LIMIT 50
+LIMIT 10

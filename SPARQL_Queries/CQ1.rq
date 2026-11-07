@@ -29,3 +29,4 @@ WHERE {
   ?via  rdfs:label ?viaLabel .
 }
 ORDER BY ?kind ?itemLabel
+LIMIT 10

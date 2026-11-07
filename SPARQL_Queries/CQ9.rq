@@ -27,3 +27,4 @@ WHERE {
   OPTIONAL { ?food nr:belongsToGroup ?g . ?g rdfs:label ?groupLabel }
 }
 ORDER BY ?foodLabel
+LIMIT 10

@@ -24,3 +24,4 @@ WHERE {
   FILTER(STR(?action) = "avoid")
 }
 ORDER BY ?foodLabel ?conditionLabel
+LIMIT 10

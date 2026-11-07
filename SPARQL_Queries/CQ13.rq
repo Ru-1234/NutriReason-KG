@@ -15,4 +15,4 @@ WHERE {
   OPTIONAL { ?food nr:belongsToGroup ?g . ?g rdfs:label ?groupLabel }
 }
 ORDER BY DESC(?sodiumMg) ?foodLabel
-LIMIT 25
+LIMIT 15

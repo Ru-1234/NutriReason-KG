@@ -19,3 +19,4 @@ WHERE {
 }
 GROUP BY ?dishLabel
 ORDER BY DESC(?maxSodiumMg) ?dishLabel
+LIMIT 10

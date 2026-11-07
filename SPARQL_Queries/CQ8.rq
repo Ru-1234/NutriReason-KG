@@ -40,3 +40,4 @@ WHERE {
   ?cond rdfs:label ?conditionLabel .
 }
 ORDER BY ?conditionLabel ?causeLabel
+LIMIT 10

@@ -27,4 +27,4 @@ WHERE {
   BIND(CONCAT(?whySugar, IF(?both, " | ", ""), ?whySodium) AS ?why)
 }
 ORDER BY DESC(?both) DESC(?sodium) DESC(?sugar)
-LIMIT 50
+LIMIT 10
