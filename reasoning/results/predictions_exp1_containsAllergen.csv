@@ -1,0 +1,61 @@
+status,head,relation,predicted_tail,rank,score,recovers_held_out_link
+PREDICTION (not a fact),"Chicken, Stewing, Meat Only, Raw",nr:containsAllergen,Potato,1,-11.558,False
+PREDICTION (not a fact),"Chicken, Stewing, Meat Only, Raw",nr:containsAllergen,"Chicken, Stewing, Meat Only, Raw",2,-11.936,False
+PREDICTION (not a fact),"Chicken, Stewing, Meat Only, Raw",nr:containsAllergen,Offal,3,-12.321,False
+PREDICTION (not a fact),"Milk, Filled, Fluid, W/Lauric Acid Oil",nr:containsAllergen,"Milk, Filled, Fluid, W/Lauric Acid Oil",1,-11.936,False
+PREDICTION (not a fact),"Milk, Filled, Fluid, W/Lauric Acid Oil",nr:containsAllergen,Dairy,2,-12.464,True
+PREDICTION (not a fact),"Milk, Filled, Fluid, W/Lauric Acid Oil",nr:containsAllergen,Dairy,3,-13.019,False
+PREDICTION (not a fact),"Mackerel, Pacific&Jack, Mxd Sp, Ckd, Dry Heat",nr:containsAllergen,"Mackerel, Pacific&Jack, Mxd Sp, Ckd, Dry Heat",1,-11.936,False
+PREDICTION (not a fact),"Mackerel, Pacific&Jack, Mxd Sp, Ckd, Dry Heat",nr:containsAllergen,Fish,2,-12.021,True
+PREDICTION (not a fact),"Mackerel, Pacific&Jack, Mxd Sp, Ckd, Dry Heat",nr:containsAllergen,Cruciferous,3,-12.429,False
+PREDICTION (not a fact),"Asparagus, Cnd, Drnd Sol",nr:containsAllergen,"Asparagus, Cnd, Drnd Sol",1,-11.936,False
+PREDICTION (not a fact),"Asparagus, Cnd, Drnd Sol",nr:containsAllergen,Allium,2,-12.789,True
+PREDICTION (not a fact),"Asparagus, Cnd, Drnd Sol",nr:containsAllergen,Seed,3,-12.822,False
+PREDICTION (not a fact),"Cheese, Mexican Blend",nr:containsAllergen,"Cheese, Mexican Blend",1,-11.936,False
+PREDICTION (not a fact),"Cheese, Mexican Blend",nr:containsAllergen,"Pork, Bacon, Rendered Fat, Ckd",2,-12.627,False
+PREDICTION (not a fact),"Cheese, Mexican Blend",nr:containsAllergen,Dairy,3,-12.705,True
+PREDICTION (not a fact),"Corn, Swt, Yel, Cnd, Brine Pk, Reg Pk, Sol&Liquids",nr:containsAllergen,"Corn, Swt, Yel, Cnd, Brine Pk, Reg Pk, Sol&Liquids",1,-11.936,False
+PREDICTION (not a fact),"Corn, Swt, Yel, Cnd, Brine Pk, Reg Pk, Sol&Liquids",nr:containsAllergen,Wheat / Gluten,2,-12.257,False
+PREDICTION (not a fact),"Corn, Swt, Yel, Cnd, Brine Pk, Reg Pk, Sol&Liquids",nr:containsAllergen,Potato,3,-12.386,False
+PREDICTION (not a fact),"Beans, Snap, Grn, Frz, All Styles, Unprep",nr:containsAllergen,"Beans, Snap, Grn, Frz, All Styles, Unprep",1,-11.936,False
+PREDICTION (not a fact),"Beans, Snap, Grn, Frz, All Styles, Unprep",nr:containsAllergen,Soy / Legume,2,-12.365,True
+PREDICTION (not a fact),"Beans, Snap, Grn, Frz, All Styles, Unprep",nr:containsAllergen,"Rye Flour, Light",3,-12.912,False
+PREDICTION (not a fact),Baked Apple,nr:containsAllergen,Wheat / Gluten,1,-10.711,True
+PREDICTION (not a fact),Baked Apple,nr:containsAllergen,Baked Apple,2,-11.936,False
+PREDICTION (not a fact),Baked Apple,nr:containsAllergen,Nut (unspecified),3,-12.027,False
+PREDICTION (not a fact),"Pears, Cnd, Hvy Syrup Pk, Sol&Liquids",nr:containsAllergen,"Pears, Cnd, Hvy Syrup Pk, Sol&Liquids",1,-11.936,False
+PREDICTION (not a fact),"Pears, Cnd, Hvy Syrup Pk, Sol&Liquids",nr:containsAllergen,Oral  Syndrome,2,-12.253,True
+PREDICTION (not a fact),"Pears, Cnd, Hvy Syrup Pk, Sol&Liquids",nr:containsAllergen,Pome fruit,3,-12.298,False
+PREDICTION (not a fact),"Leeks, (Bulb&Lower Leaf-Portion), Ckd, Bld, Drnd, Wo/Salt",nr:containsAllergen,Cucurbitaceous vegetable,1,-11.868,False
+PREDICTION (not a fact),"Leeks, (Bulb&Lower Leaf-Portion), Ckd, Bld, Drnd, Wo/Salt",nr:containsAllergen,"Leeks, (Bulb&Lower Leaf-Portion), Ckd, Bld, Drnd, Wo/Salt",2,-11.936,False
+PREDICTION (not a fact),"Leeks, (Bulb&Lower Leaf-Portion), Ckd, Bld, Drnd, Wo/Salt",nr:containsAllergen,Allium,3,-12.424,True
+PREDICTION (not a fact),"Okra, Frz, Ckd, Bld, Drnd, W/ Salt",nr:containsAllergen,"Okra, Frz, Ckd, Bld, Drnd, W/ Salt",1,-11.936,False
+PREDICTION (not a fact),"Okra, Frz, Ckd, Bld, Drnd, W/ Salt",nr:containsAllergen,Chicken,2,-12.887,False
+PREDICTION (not a fact),"Okra, Frz, Ckd, Bld, Drnd, W/ Salt",nr:containsAllergen,"Bread, Salvadoran Swt Chs (Quesadilla Salvadorena)",3,-13.079,False
+PREDICTION (not a fact),"Chicken, Broilers Or Fryers, Thigh, Meat & Skn, Ckd, Rotisserie, O",nr:containsAllergen,"Chicken, Broilers Or Fryers, Thigh, Meat & Skn, Ckd, Rotisserie, O",1,-11.936,False
+PREDICTION (not a fact),"Chicken, Broilers Or Fryers, Thigh, Meat & Skn, Ckd, Rotisserie, O",nr:containsAllergen,"Bread, Salvadoran Swt Chs (Quesadilla Salvadorena)",2,-12.156,False
+PREDICTION (not a fact),"Chicken, Broilers Or Fryers, Thigh, Meat & Skn, Ckd, Rotisserie, O",nr:containsAllergen,Potato,3,-12.494,False
+PREDICTION (not a fact),Rapeseed,nr:containsAllergen,Rapeseed,1,-11.936,False
+PREDICTION (not a fact),Rapeseed,nr:containsAllergen,Cruciferous,2,-12.413,False
+PREDICTION (not a fact),Rapeseed,nr:containsAllergen,Allergen,3,-12.776,False
+PREDICTION (not a fact),"Chicken, Broilers Or Fryers, Meat&Skn, Ckd, Fried, Batter",nr:containsAllergen,"Chicken, Broilers Or Fryers, Meat&Skn, Ckd, Fried, Batter",1,-11.936,False
+PREDICTION (not a fact),"Chicken, Broilers Or Fryers, Meat&Skn, Ckd, Fried, Batter",nr:containsAllergen,Offal,2,-12.016,False
+PREDICTION (not a fact),"Chicken, Broilers Or Fryers, Meat&Skn, Ckd, Fried, Batter",nr:containsAllergen,Seed,3,-12.319,False
+PREDICTION (not a fact),"Carrots, Baby, Raw",nr:containsAllergen,"Carrots, Baby, Raw",1,-11.936,False
+PREDICTION (not a fact),"Carrots, Baby, Raw",nr:containsAllergen,Cruciferous,2,-12.185,False
+PREDICTION (not a fact),"Carrots, Baby, Raw",nr:containsAllergen,Potato,3,-12.505,False
+PREDICTION (not a fact),"Cheese, Past Process, American, Fort W/ Vitamin D",nr:containsAllergen,Cucurbitaceous vegetable,1,-11.264,False
+PREDICTION (not a fact),"Cheese, Past Process, American, Fort W/ Vitamin D",nr:containsAllergen,"Cheese, Past Process, American, Fort W/ Vitamin D",2,-11.936,False
+PREDICTION (not a fact),"Cheese, Past Process, American, Fort W/ Vitamin D",nr:containsAllergen,Seed,3,-12.571,False
+PREDICTION (not a fact),"Potatoes, French Fr, Stk Fries, Salt Added In Proc, Frz, As Prch",nr:containsAllergen,"Potatoes, French Fr, Stk Fries, Salt Added In Proc, Frz, As Prch",1,-11.936,False
+PREDICTION (not a fact),"Potatoes, French Fr, Stk Fries, Salt Added In Proc, Frz, As Prch",nr:containsAllergen,Potato,2,-12.248,True
+PREDICTION (not a fact),"Potatoes, French Fr, Stk Fries, Salt Added In Proc, Frz, As Prch",nr:containsAllergen,Soy / Legume,3,-12.634,False
+PREDICTION (not a fact),"Apples, Raw, Wo/Skn, Ckd, Bld",nr:containsAllergen,"Apples, Raw, Wo/Skn, Ckd, Bld",1,-11.936,False
+PREDICTION (not a fact),"Apples, Raw, Wo/Skn, Ckd, Bld",nr:containsAllergen,Cruciferous,2,-12.472,False
+PREDICTION (not a fact),"Apples, Raw, Wo/Skn, Ckd, Bld",nr:containsAllergen,"Bread, Salvadoran Swt Chs (Quesadilla Salvadorena)",3,-12.747,False
+PREDICTION (not a fact),"Tea, Rtd, Arizona Iced Tea, W/ Lemon Flavor",nr:containsAllergen,Potato,1,-10.897,False
+PREDICTION (not a fact),"Tea, Rtd, Arizona Iced Tea, W/ Lemon Flavor",nr:containsAllergen,Soy / Legume,2,-11.909,False
+PREDICTION (not a fact),"Tea, Rtd, Arizona Iced Tea, W/ Lemon Flavor",nr:containsAllergen,"Tea, Rtd, Arizona Iced Tea, W/ Lemon Flavor",3,-11.936,False
+PREDICTION (not a fact),"Milk, Cnd, Evap, Wo/ Added Vit A & Vitamin D",nr:containsAllergen,"Milk, Cnd, Evap, Wo/ Added Vit A & Vitamin D",1,-11.936,False
+PREDICTION (not a fact),"Milk, Cnd, Evap, Wo/ Added Vit A & Vitamin D",nr:containsAllergen,Dairy,2,-12.855,True
+PREDICTION (not a fact),"Milk, Cnd, Evap, Wo/ Added Vit A & Vitamin D",nr:containsAllergen,"Pork, Frsh, Loin, Whl, Ln&Fat, Raw",3,-13.178,False
