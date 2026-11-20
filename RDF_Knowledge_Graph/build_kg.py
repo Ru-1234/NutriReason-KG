@@ -66,6 +66,13 @@ ALLERGENS = {
 ALLERGY_LABEL_TO_KEY = [("nut", "nut_generic"), ("milk", "dairy"), ("lactose", "dairy"),
                         ("gluten", "wheat"), ("legume", "soy")]
 
+# D1 'Allergy' values that do not name a food allergen. They describe a nutrient
+# (sugar), a hormone/drug (insulin), an organ (thyroid), a toxin (ochratoxin), a
+# non-food trigger (water: aquagenic urticaria) or are too generic to model.
+# Rows with these labels keep their food group but get no nr:containsAllergen link.
+NON_ALLERGEN_LABELS = {"sugar", "intolerance", "insulin", "thyroid", "ochratoxin",
+                       "aquagenic urticaria", "hypersensitivity", ""}
+
 CONDITIONS = {"nutallergy": NR.NutAllergy, "lactoseintolerance": NR.LactoseIntolerance,
               "type2diabetes": NR.Type2Diabetes, "hypertension": NR.Hypertension}
 NUTRIENTS = {"sugar": NR.Sugar, "sodium": NR.Sodium, "calories": NR.Calories}
@@ -206,7 +213,12 @@ def build_d1(g: Graph, df: pd.DataFrame, food_index: dict, d1_info: dict):
                     if part in frag.lower():
                         keys.add(key)
                 if not keys:  # e.g. 'Broccoli allergy' -> dynamic allergen
-                    name = re.sub(r"(?i)\ballerg(y|ies)\b", "", frag).strip()
+                    # strip only a trailing 'Allergy' so 'Oral Allergy Syndrome' keeps its name
+                    name = re.sub(r"(?i)\s*\ballerg(y|ies)\s*$", "", frag).strip()
+                    if name.lower() in NON_ALLERGEN_LABELS:
+                        log.info("D1: %s -> label '%s' is not a food allergen, skipped",
+                                 r["Food"], frag)
+                        continue
                     k = slug(name)
                     allergen_node(g, k, label=name.title())
                     keys.add(k)

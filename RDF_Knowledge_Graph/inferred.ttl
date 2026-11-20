@@ -10,7 +10,6 @@ alg:walnut nr:triggers nr:NutAllergy .
 
 dish:almond_cookies nr:containsAllergen alg:almond,
         alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:NutAllergy,
@@ -22,33 +21,29 @@ dish:aloo_gobi nr:containsAllergen alg:cruciferous,
 dish:aloo_paratha nr:containsAllergen alg:potato,
         alg:wheat .
 
-dish:apple nr:containsAllergen alg:oral_syndrome ;
+dish:apple nr:containsAllergen alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:Type2Diabetes .
 
-dish:apple_cider nr:containsAllergen alg:oral_syndrome,
-        alg:sugar ;
+dish:apple_cider nr:containsAllergen alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:Type2Diabetes .
 
 dish:apple_crisp nr:containsAllergen alg:dairy,
-        alg:oral_syndrome,
-        alg:sugar ;
+        alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:apple_pie nr:containsAllergen alg:dairy,
-        alg:oral_syndrome,
-        alg:sugar ;
+        alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:avocado_toast nr:containsAllergen alg:oral_syndrome ;
+dish:avocado_toast nr:containsAllergen alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:Hypertension .
 
 dish:bacon_wrapped_shrimp nr:unsafeFor nr:Hypertension .
 
 dish:baked_apple nr:containsAllergen alg:dairy,
-        alg:oral_syndrome,
-        alg:sugar ;
+        alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -78,14 +73,12 @@ dish:baked_ziti nr:containsAllergen alg:dairy,
 
 dish:banana_bread nr:containsAllergen alg:banana,
         alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:banana_pudding nr:containsAllergen alg:banana,
-        alg:dairy,
-        alg:sugar ;
+        alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -113,36 +106,30 @@ dish:beef_wellington nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance .
 
 dish:berry_cobbler nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:berry_crumble nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:berry_crumble nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:berry_parfait nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:berry_parfait nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:berry_smoothie nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:berry_smoothie nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:biryani nr:containsAllergen alg:rice .
 
 dish:blueberry_muffins nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:blueberry_pancakes nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
@@ -152,8 +139,7 @@ dish:brussels_sprouts nr:containsAllergen alg:cruciferous .
 dish:buffalo_wings nr:containsAllergen alg:chicken .
 
 dish:butter_chicken nr:containsAllergen alg:chicken,
-        alg:dairy,
-        alg:sugar ;
+        alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -199,25 +185,21 @@ dish:caprese_skewers nr:containsAllergen alg:dairy,
         alg:nightshade ;
     nr:unsafeFor nr:LactoseIntolerance .
 
-dish:caramel_apple nr:containsAllergen alg:oral_syndrome ;
+dish:caramel_apple nr:containsAllergen alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:Type2Diabetes .
 
 dish:caramel_popcorn nr:containsAllergen alg:corn,
-        alg:dairy,
-        alg:sugar ;
+        alg:dairy ;
     nr:unsafeFor nr:Hypertension,
         nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:caramelized_onions nr:containsAllergen alg:allium,
-        alg:dairy,
-        alg:sugar ;
+        alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:carrot_cake nr:containsAllergen alg:hypersensitivity,
-        alg:sugar ;
-    nr:unsafeFor nr:LactoseIntolerance,
+dish:carrot_cake nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:cheddar_cheese nr:containsAllergen alg:dairy ;
@@ -308,36 +290,30 @@ dish:chicken_stir_fry nr:containsAllergen alg:chicken,
 dish:chicken_teriyaki nr:containsAllergen alg:chicken .
 
 dish:chicken_tikka_masala nr:containsAllergen alg:chicken,
-        alg:dairy,
-        alg:sugar ;
+        alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:chocolate_cake nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:chocolate_chip_cookies nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:chocolate_chip_pancakes nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:chocolate_mousse nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:chocolate_mousse nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:chole_bhature nr:containsAllergen alg:sugar ;
-    nr:unsafeFor nr:Type2Diabetes .
+dish:chole_bhature nr:unsafeFor nr:Type2Diabetes .
 
 dish:chole_kulche nr:containsAllergen alg:wheat .
 
@@ -345,7 +321,6 @@ dish:cilantro_lime_chicken nr:containsAllergen alg:chicken,
         alg:citrus .
 
 dish:cinnamon_rolls nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
@@ -389,8 +364,7 @@ dish:french_onion_soup nr:containsAllergen alg:allium,
     nr:unsafeFor nr:Hypertension,
         nr:LactoseIntolerance .
 
-dish:fruit_salad nr:containsAllergen alg:sugar ;
-    nr:unsafeFor nr:Type2Diabetes .
+dish:fruit_salad nr:unsafeFor nr:Type2Diabetes .
 
 dish:garlic_bread nr:containsAllergen alg:allium,
         alg:dairy,
@@ -438,23 +412,21 @@ dish:green_smoothie nr:containsAllergen alg:almond,
         alg:dairy,
         alg:histamine,
         alg:honey,
-        alg:oral_syndrome ;
+        alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:NutAllergy,
         nr:Type2Diabetes .
 
-dish:gulab_jamun nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:gulab_jamun nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:hawaiian_pizza nr:containsAllergen alg:oral_syndrome ;
+dish:hawaiian_pizza nr:containsAllergen alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:Hypertension,
         nr:LactoseIntolerance .
 
 dish:honey_glazed_carrots nr:containsAllergen alg:dairy,
-        alg:honey,
-        alg:hypersensitivity ;
+        alg:honey ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -470,25 +442,21 @@ dish:honey_soy_glazed_salmon nr:containsAllergen alg:allium,
         alg:soy ;
     nr:unsafeFor nr:Type2Diabetes .
 
-dish:jalebi nr:containsAllergen alg:sugar,
-        alg:wheat ;
+dish:jalebi nr:containsAllergen alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:key_lime_pie nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:key_lime_pie nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:kheer nr:containsAllergen alg:nut_generic,
-        alg:rice,
-        alg:sugar ;
+        alg:rice ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:NutAllergy,
         nr:Type2Diabetes .
 
 dish:lemon_bars nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
@@ -508,13 +476,11 @@ dish:lemon_herb_roasted_chicken nr:containsAllergen alg:chicken,
 dish:lemon_pepper_chicken nr:containsAllergen alg:chicken .
 
 dish:lemon_poppy_seed_muffins nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:lemonade nr:containsAllergen alg:sugar ;
-    nr:unsafeFor nr:Type2Diabetes .
+dish:lemonade nr:unsafeFor nr:Type2Diabetes .
 
 dish:lentil_curry nr:containsAllergen alg:dairy,
         alg:soy ;
@@ -539,19 +505,17 @@ dish:malai_kofta nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance .
 
 dish:mango_coconut_popsicles nr:containsAllergen alg:dairy,
-        alg:oral_syndrome,
-        alg:sugar ;
+        alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:mango_lassi nr:containsAllergen alg:dairy,
-        alg:oral_syndrome,
-        alg:sugar ;
+        alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:mango_salsa nr:containsAllergen alg:citrus,
-        alg:oral_syndrome .
+        alg:oral_allergy_syndrome .
 
 dish:margherita_pasta nr:containsAllergen alg:dairy,
         alg:wheat ;
@@ -571,15 +535,13 @@ dish:mashed_potatoes nr:containsAllergen alg:dairy,
 dish:matar_paneer nr:containsAllergen alg:soy ;
     nr:unsafeFor nr:LactoseIntolerance .
 
-dish:milk_chocolate nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:milk_chocolate nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:miso_soup nr:containsAllergen alg:soy .
 
 dish:mixed_berry_pie nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
@@ -593,13 +555,11 @@ dish:mushroom_risotto nr:containsAllergen alg:dairy ;
 dish:mushroom_soup nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance .
 
-dish:oatmeal nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:oatmeal nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:oatmeal_raisin_cookies nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
@@ -614,21 +574,18 @@ dish:onion_rings nr:containsAllergen alg:allium,
 
 dish:orange_chicken nr:containsAllergen alg:chicken .
 
-dish:orange_juice nr:containsAllergen alg:citrus,
-        alg:sugar ;
+dish:orange_juice nr:containsAllergen alg:citrus ;
     nr:unsafeFor nr:Type2Diabetes .
 
 dish:palak_paneer nr:containsAllergen alg:histamine ;
     nr:unsafeFor nr:LactoseIntolerance .
 
 dish:pancake_stack nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:pancakes nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
@@ -650,15 +607,13 @@ dish:pav_bhaji nr:containsAllergen alg:dairy,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance .
 
-dish:peanut_butter nr:containsAllergen alg:peanut,
-        alg:sugar ;
+dish:peanut_butter nr:containsAllergen alg:peanut ;
     nr:unsafeFor nr:Hypertension,
         nr:NutAllergy,
         nr:Type2Diabetes .
 
 dish:pecan_pie nr:containsAllergen alg:dairy,
-        alg:pecan,
-        alg:sugar ;
+        alg:pecan ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:NutAllergy,
         nr:Type2Diabetes .
@@ -675,8 +630,7 @@ dish:pesto_pizza nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance .
 
 dish:pineapple_upside_down_cake nr:containsAllergen alg:dairy,
-        alg:oral_syndrome,
-        alg:sugar,
+        alg:oral_allergy_syndrome,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
@@ -684,8 +638,7 @@ dish:pineapple_upside_down_cake nr:containsAllergen alg:dairy,
 dish:prawn_curry nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance .
 
-dish:pumpkin_pie nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:pumpkin_pie nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -704,8 +657,7 @@ dish:quiche_lorraine nr:containsAllergen alg:dairy,
         nr:LactoseIntolerance .
 
 dish:rabri nr:containsAllergen alg:dairy,
-        alg:nut_generic,
-        alg:sugar ;
+        alg:nut_generic ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:NutAllergy,
         nr:Type2Diabetes .
@@ -713,24 +665,20 @@ dish:rabri nr:containsAllergen alg:dairy,
 dish:rajma_chawal nr:containsAllergen alg:soy .
 
 dish:ranch_dressing nr:containsAllergen alg:allium,
-        alg:dairy,
-        alg:sugar ;
+        alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:rasgulla nr:containsAllergen alg:sugar ;
-    nr:unsafeFor nr:LactoseIntolerance,
+dish:rasgulla nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
 dish:rasmalai nr:containsAllergen alg:dairy,
-        alg:nut_generic,
-        alg:sugar ;
+        alg:nut_generic ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:NutAllergy,
         nr:Type2Diabetes .
 
-dish:raspberry_cheesecake nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:raspberry_cheesecake nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -741,8 +689,7 @@ dish:ratatouille nr:containsAllergen alg:nightshade .
 dish:ratatouille_pasta nr:containsAllergen alg:wheat .
 
 dish:rice_pudding nr:containsAllergen alg:dairy,
-        alg:rice,
-        alg:sugar ;
+        alg:rice ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -781,12 +728,10 @@ dish:shrimp_scampi_pasta nr:containsAllergen alg:allium,
     nr:unsafeFor nr:Hypertension,
         nr:LactoseIntolerance .
 
-dish:soy_milk nr:containsAllergen alg:soy,
-        alg:sugar ;
+dish:soy_milk nr:containsAllergen alg:soy ;
     nr:unsafeFor nr:Type2Diabetes .
 
-dish:spaghetti_bolognese nr:containsAllergen alg:sugar ;
-    nr:unsafeFor nr:Type2Diabetes .
+dish:spaghetti_bolognese nr:unsafeFor nr:Type2Diabetes .
 
 dish:spinach_and_feta_stuffed_chicken nr:containsAllergen alg:chicken,
         alg:dairy,
@@ -804,8 +749,7 @@ dish:spinach_stuffed_chicken nr:containsAllergen alg:allium,
         alg:chicken,
         alg:histamine .
 
-dish:strawberry_shortcake nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:strawberry_shortcake nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -816,8 +760,7 @@ dish:strawberry_smoothie nr:containsAllergen alg:dairy,
 
 dish:strawberry_spinach_salad nr:containsAllergen alg:histamine .
 
-dish:strawberry_yogurt nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:strawberry_yogurt nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -843,8 +786,7 @@ dish:sushi_bowl nr:containsAllergen alg:soy .
 dish:sushi_rolls nr:containsAllergen alg:soy .
 
 dish:sweet_and_sour_chicken nr:containsAllergen alg:chicken,
-        alg:oral_syndrome,
-        alg:sugar ;
+        alg:oral_allergy_syndrome ;
     nr:unsafeFor nr:Type2Diabetes .
 
 dish:sweet_potato_casserole nr:containsAllergen alg:dairy,
@@ -864,8 +806,7 @@ dish:teriyaki_beef nr:containsAllergen alg:soy .
 
 dish:teriyaki_salmon nr:containsAllergen alg:fish .
 
-dish:tiramisu nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:tiramisu nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -880,8 +821,7 @@ dish:tofu_stir_fry nr:containsAllergen alg:soy .
 dish:tomato_bruschetta nr:containsAllergen alg:allium,
         alg:nightshade .
 
-dish:tomato_soup nr:containsAllergen alg:nightshade,
-        alg:sugar ;
+dish:tomato_soup nr:containsAllergen alg:nightshade ;
     nr:unsafeFor nr:Hypertension,
         nr:Type2Diabetes .
 
@@ -895,18 +835,15 @@ dish:tuna_sandwich nr:containsAllergen alg:fish ;
 dish:vada_pav nr:containsAllergen alg:potato .
 
 dish:vanilla_cupcakes nr:containsAllergen alg:dairy,
-        alg:sugar,
         alg:wheat ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:vanilla_ice_cream nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:vanilla_ice_cream nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
-dish:vanilla_yogurt nr:containsAllergen alg:dairy,
-        alg:sugar ;
+dish:vanilla_yogurt nr:containsAllergen alg:dairy ;
     nr:unsafeFor nr:LactoseIntolerance,
         nr:Type2Diabetes .
 
@@ -927,8 +864,7 @@ dish:watermelon_salad nr:containsAllergen alg:dairy ;
 dish:wheat_bread nr:containsAllergen alg:wheat ;
     nr:unsafeFor nr:Hypertension .
 
-dish:zucchini_bread nr:containsAllergen alg:sugar,
-        alg:wheat ;
+dish:zucchini_bread nr:containsAllergen alg:wheat ;
     nr:unsafeFor nr:Type2Diabetes .
 
 dish:zucchini_noodles nr:containsAllergen alg:allium .

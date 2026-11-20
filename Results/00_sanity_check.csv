@@ -1,0 +1,11 @@
+what,count
+Allergen (generic nr:Allergen nodes),37
+DietaryRule,5
+Dish,259
+Food,5235
+FoodGroup,33
+HighSodiumFood (INFERRED),902
+HighSugarFood (INFERRED),669
+Ingredient,239
+LowSugarFood (INFERRED),3602
+unsafeFor triples (INFERRED),2071

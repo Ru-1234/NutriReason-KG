@@ -1,0 +1,6 @@
+foodLabel,sugar,sugarLimit,diabetesRule,sodium,sodiumLimit,hypertensionRule,groupLabel
+"Bacon Bits, Meatless",0.00,22.50,passes,1770.00,600.00,FAILS (avoid),
+"Bread, White, Commly Prep (Incl Soft Bread Crumbs)",5.07,22.50,passes,491.00,600.00,passes,
+"Broccoli, Raw",1.70,22.50,passes,33.00,600.00,passes,Cruciferous vegetable
+"Cheese, Cheddar",0.52,22.50,passes,621.00,600.00,FAILS (avoid),Dairy
+Chocolate Syrup,49.65,22.50,FAILS (avoid),72.00,600.00,passes,

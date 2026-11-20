@@ -1,0 +1,11 @@
+itemLabel,kind,viaLabel,allergenLabel,allergenClass
+Almond Cookies,Dish (via ingredient),Almonds,Almond,nr:TreeNutAllergen
+Baked Brie,Dish (via ingredient),Nuts,Nut (unspecified),nr:NutAllergen
+Chicken Satay,Dish (via ingredient),Peanut butter,Peanut,nr:PeanutAllergen
+Green Smoothie,Dish (via ingredient),Almond milk,Almond,nr:TreeNutAllergen
+Kheer,Dish (via ingredient),Nuts,Nut (unspecified),nr:NutAllergen
+Peanut Butter,Dish (via ingredient),Peanuts,Peanut,nr:PeanutAllergen
+Pecan Pie,Dish (via ingredient),Pecans,Pecan,nr:TreeNutAllergen
+Rabri,Dish (via ingredient),Nuts,Nut (unspecified),nr:NutAllergen
+Rasmalai,Dish (via ingredient),Nuts,Nut (unspecified),nr:NutAllergen
+Almond milk,Food (direct),Almond milk,Almond,nr:TreeNutAllergen

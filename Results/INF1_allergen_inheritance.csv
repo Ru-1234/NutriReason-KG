@@ -1,0 +1,4 @@
+dishLabel,ingredientLabel,allergenLabel,allergenClass,inferredTriggers,dishInheritsAllergen,dishUnsafeFor
+Chicken Satay,Peanut butter,Peanut,nr:PeanutAllergen,nr:NutAllergy,yes (inferred),nr:NutAllergy
+Almond Cookies,Almonds,Almond,nr:TreeNutAllergen,nr:NutAllergy,yes (inferred),nr:NutAllergy
+Pecan Pie,Pecans,Pecan,nr:TreeNutAllergen,nr:NutAllergy,yes (inferred),nr:NutAllergy

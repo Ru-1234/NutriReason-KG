@@ -1,0 +1,8 @@
+foodLabel,conditionLabel,ruleLabel,guidelineLabel
+Almond Cookies,Lactose intolerance,LactoseIntolerance / Allergen / avoid,National Institutes of Health
+Almond Cookies,Nut allergy,NutAllergy / Allergen / avoid,National Institutes of Health
+Almond Cookies,Type 2 diabetes,Type2Diabetes / Sugar / avoid,American Diabetes Association
+"Bacon Bits, Meatless",Hypertension,Hypertension / Sodium / avoid,World Health Organization
+Baked Ziti,Hypertension,Hypertension / Sodium / avoid,World Health Organization
+Baked Ziti,Lactose intolerance,LactoseIntolerance / Allergen / avoid,National Institutes of Health
+Chocolate Syrup,Type 2 diabetes,Type2Diabetes / Sugar / avoid,American Diabetes Association

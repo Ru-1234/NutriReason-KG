@@ -14,7 +14,7 @@
 <http://example.org/nutrireason> a owl:Ontology ;
     rdfs:label "NutriReason Ontology"@en ;
     rdfs:comment "Knowledge-grounded advisory ontology for health-constrained dietary planning."@en ;
-    owl:versionInfo "Iteration 1" .
+    owl:versionInfo "Iteration 2" .
 
 ###############################################################################
 # 1. CLASSES
@@ -39,7 +39,8 @@ nr:NutAllergen        a owl:Class ; rdfs:subClassOf nr:Allergen ; rdfs:label "Nu
 nr:TreeNutAllergen    a owl:Class ; rdfs:subClassOf nr:NutAllergen ; rdfs:label "Tree-nut allergen"@en .
 nr:PeanutAllergen     a owl:Class ; rdfs:subClassOf nr:NutAllergen ; rdfs:label "Peanut allergen"@en .
 nr:DairyAllergen      a owl:Class ; rdfs:subClassOf nr:Allergen ; rdfs:label "Dairy allergen"@en .
-nr:GlutenAllergen     a owl:Class ; rdfs:subClassOf nr:Allergen ; rdfs:label "Gluten allergen"@en .
+nr:GlutenAllergen     a owl:Class ; rdfs:subClassOf nr:Allergen ; rdfs:label "Gluten allergen"@en ;
+    rdfs:comment "Tracked for allergen queries (CQ4, CQ11) but deliberately not linked to a condition: the project scope is four conditions (nut allergy, lactose intolerance, type 2 diabetes, hypertension) and D4 has no gluten rule. Adding nr:CeliacDisease plus a hasValue restriction would enable it."@en .
 
 nr:HealthCondition a owl:Class ; rdfs:label "Health condition"@en .
 nr:FoodAllergy     a owl:Class ; rdfs:subClassOf nr:HealthCondition ; rdfs:label "Food allergy"@en .

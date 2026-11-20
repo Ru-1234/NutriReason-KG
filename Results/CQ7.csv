@@ -1,0 +1,11 @@
+foodLabel,groupLabel,allergenLabel
+Blackberry,Berry,Salicylate
+Blueberry,Berry,Salicylate
+Cranberry,Berry,Salicylate
+Huckleberry,Berry,Salicylate
+Raspberry,Berry,Salicylate
+Strawberry,Berry,Salicylate
+"Barley, Hulled",Cereal grain,Wheat / Gluten
+"Barley, Pearled, Cooked",Cereal grain,Wheat / Gluten
+"Barley, Pearled, Raw",Cereal grain,Wheat / Gluten
+Buckwheat,Cereal grain,Wheat / Gluten
