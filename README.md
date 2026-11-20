@@ -25,7 +25,7 @@ cp .env.example .env        # then put your Groq API key in .env (never commit i
 ## Run
 ```bash
 python RDF_Knowledge_Graph/build_kg.py --data-dir Dataset --out RDF_Knowledge_Graph/abox.ttl --tbox Ontology/nutrireason_tbox.ttl   # rebuild A-Box (optional)
-python reasoning/materialize.py            # run rules -> RDF_Knowledge_Graph/inferred.ttl (7,673 inferred triples)
+python reasoning/materialize.py            # run rules -> RDF_Knowledge_Graph/inferred.ttl (7,609 inferred triples)
 python run_all_queries.py                  # all SPARQL queries offline (rdflib), CSVs in Results/
 python reasoning/link_prediction.py        # TransE / RotatE, writes reasoning/results/
 python retrieval/retriever.py "Why is Almond Cookies unsafe?"   # prints the retrieval JSON

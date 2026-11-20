@@ -1,4 +1,4 @@
-# NutriReason – Data Cleaning and Transformation (Iteration 1)
+# NutriReason – Data Cleaning and Transformation (updated in Iteration 2)
 
 Team krr-08-nutrireason · AI-3001 Knowledge Representation & Reasoning
 
@@ -16,7 +16,7 @@ We use four datasets. One Python script, `build_kg.py` (pandas + rdflib), cleans
 Run command:
 
 ```
-python build_kg.py --data-dir data --out abox.ttl --tbox ontology/nutrireason_tbox.ttl
+python RDF_Knowledge_Graph/build_kg.py --data-dir Dataset --out RDF_Knowledge_Graph/abox.ttl --tbox Ontology/nutrireason_tbox.ttl
 ```
 
 The script processes the datasets in this order: **D3 → D1 → D2 → D4**. D3 goes first because it creates the food nodes with nutrient values. D1 then adds groups and allergens to those nodes. D2 uses the finished food list to find its ingredients. D4 is separate and goes last.
@@ -70,7 +70,8 @@ For matching names between datasets, the script also uses a simple plural fix: i
 - The `Allergy` column is split on "/" (for example "Milk allergy / Lactose intolerance"). The allergen is chosen in this order:
   1. a keyword in the food name (Almond → `alg:almond`);
   2. if nothing was found, a keyword in the allergy label (nut → general nut allergen, milk or lactose → dairy, gluten → wheat, legume → soy);
-  3. if still nothing, a new general allergen named from the label (for example "Broccoli allergy" → `alg:broccoli`).
+  3. if still nothing, a new general allergen named from the label (for example "Broccoli allergy" → `alg:broccoli`). Only a trailing "Allergy" is removed, so "Oral Allergy Syndrome" keeps its full name.
+- **Labels that are not food allergens are skipped** (added in Iteration 2): Sugar, Insulin, Thyroid, Ochratoxin, Aquagenic Urticaria, Hypersensitivity and a bare "Allergy". They name a nutrient, a hormone, an organ, a toxin, water or nothing specific. The food keeps its group but gets no allergen link, and the script logs each skipped row. This affected 18 D1 foods (for example Fructose, Artichoke, Turnip root) and removed 64 inferred triples.
 - Linking to D3: the D1 food is matched to USDA foods by its first word (Butter matches `BUTTER,WITH SALT`). Every matching USDA food gets the group and the allergens. If there is no match, a new standalone `food:` node is created.
 
 ### D2 – Dishes and ingredients
@@ -126,7 +127,8 @@ food:butter_with_salt a nr:Food ;
 
 - Allergens are found with a simple keyword list. For example, "peanut butter" gets both peanut and dairy, and "Caesar dressing" gets none. The `ALLERGENS` list in the script can be extended.
 - A D1 food is linked to every USDA food that starts with the same word, so "Almond" is linked to almond butter and other almond foods.
-- Some D1 allergy labels have no known keyword and become general allergens.
+- Some D1 allergy labels have no known keyword and become general allergens. Labels that are clearly not food allergens are skipped (see D1 above); the list is `NON_ALLERGEN_LABELS` in the script.
+- Gluten allergens are stored but do not trigger any condition: our scope is four conditions and D4 has no gluten rule.
 - Ingredients with no USDA match (for example salt, sugar and flour) have no sodium or sugar value.
 - When an ingredient matches several USDA foods, its values are an average, and a comment on the node says so.
 - Dishes have no nutrient values of their own.

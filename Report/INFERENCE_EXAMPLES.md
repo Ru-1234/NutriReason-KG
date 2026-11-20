@@ -2,7 +2,7 @@
 
 All three were produced by running `Ontology/rules_graphdb.ru` in GraphDB (SPARQL -> Update) and then the query shown.
 Before the rules run, each query returns **0 rows** (see `Results/*_BEFORE_rules.csv`). After it, they return rows.
-The rules script adds 7,673 triples (42,478 -> 50,151 in my offline check; use your own GraphDB numbers in the report).
+The rules script adds 7,609 triples (42,424 -> 50,033 in the offline rdflib check, after the Iteration 2 allergen clean-up; Iteration 1 was 7,673). Confirm with GraphDB numbers in the report.
 
 ## Example 1 - Ingredient allergen inheritance (query: `INF1_allergen_inheritance.rq`)
 | Step | Content |
