@@ -1,0 +1,284 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "temperature": 0.0,
+ "rows": [
+  {
+   "cq": "CQ1",
+   "question": "Which dishes contain an ingredient that can trigger a nut allergy?",
+   "expected": "Dishes incl. Almond Cookies, Chicken Satay, Pecan Pie, Baked Brie, Kheer, Rasmalai, Rabri, Green Smoothie (9 in KG)",
+   "llm_only": "Dishes that commonly include nuts (a potential trigger for nut-allergy sufferers) include:\n\n- **Asian sauces & dishes** – Pad Thai, satay chicken or beef, peanut-sauce noodles, spring rolls with crushed peanuts.  \n- **Mediterranean & Italian** – Pesto (pine nuts), pasta with walnut-brown-butter sauce, baklava, cannoli or almond-filled pastries.  \n- **Middle-Eastern** – Hummus topped with pine nuts, falafel with sesame-seed tahini, baklava (walnuts or pistachios).  \n- **Salads & sides** – Spinach or mixed-green salads tossed with walnuts, pecans, or sliced almonds; quinoa salads with pistachios.  \n- **Baked goods & snacks** – Granola bars, trail mix, almond-croissants, macarons, chocolate truffles with hazelnut filling.  \n\nAlways check ingredient lists, as nuts can appear in sauces, dressings, and garnishes.",
+   "kg_grounded": "The dishes that contain an ingredient capable of triggering a nut allergy are:\n\n- Almond Cookies [F4]  \n- Baked Brie [F8]  \n- Chicken Satay [F12]  \n- Green Smoothie [F15]  \n- Kheer [F17]  \n- Peanut Butter [F20]  \n- Pecan Pie [F24]  \n- Rabri [F26]  \n- Rasmalai [F28]  \n\nEach of these dishes is linked (via the ingredient-allergen-trigger chain) to a nut allergen that “triggers” Nut allergy, making them unsafe for someone with a nut allergy.",
+   "correct_A": false,
+   "correct_B": true,
+   "evidence_A": false,
+   "evidence_B": true,
+   "retrieval": {
+    "type": "condition_unsafe",
+    "sufficient": true,
+    "reason": "9 dishes are unsafe for Nut allergy via an allergen-carrying ingredient (showing up to 12).",
+    "entities": [
+     {
+      "label": "Nut allergy",
+      "uri": "http://example.org/nutrireason#NutAllergy",
+      "kind": "Condition",
+      "matched_text": "nut allergy"
+     }
+    ]
+   },
+   "n_facts": 35
+  },
+  {
+   "cq": "CQ2",
+   "question": "Which foods should a person with BOTH type 2 diabetes and hypertension avoid?",
+   "expected": "94 foods unsafe for both, e.g. Gravy Pork Dry, Hoisin sauce, Puddings Vanilla Dry Mix",
+   "llm_only": "**Foods to avoid (or limit heavily) when you have both type 2 diabetes and hypertension**\n\n- **Sugary drinks & sweetened beverages** – soda, fruit punches, sweet teas.  \n- **Added-sugar foods** – candy, pastries, desserts, sugary cereals, honey- or syrup-laden sauces.  \n- **Refined carbs** – white bread, white rice, regular pasta, crackers, bagels, muffins.  \n- **High-sodium items** – processed meats (bacon, sausage, deli slices), canned soups, salty snacks, chips, salted nuts, pickles, soy sauce, frozen meals, fast-food meals.  \n- **Trans-fat & excess saturated-fat foods** – fried foods, commercial baked goods, margarine, full-fat dairy, fatty cuts of red meat.  \n- **Alcohol (excess)** – can raise blood sugar and blood pressure; limit to ≤1 drink/day (women) or ≤2 (men).  \n\nChoosing whole-grain, fresh vegetables, lean proteins, and low-sodium, low-sugar options is the safer approach.",
+   "kg_grounded": "The following foods are marked as unsafe for **both** Type 2 diabetes and hypertension (each has inferred nr:unsafeFor entries for the two conditions):\n\n- Puddings, Vanilla, Dry Mix, Inst [F3][F4]  \n- Puddings, Coconut Cream, Dry Mix, Reg [F7][F8]  \n- Puddings, Vanilla, Dry Mix, Reg [F11][F12]  \n- Puddings, Banana, Dry Mix, Inst [F15][F16]  \n- Whey, Sweet, Dried [F19][F20]  \n- Puddings, Banana, Dry Mix, Reg [F23][F24]  \n- Whey, Acid, Dried [F27][F28]  \n- Puddings, Chocolate, Dry Mix, Inst [F31][F32]  \n- Cocoa Mix, Nestlé, Hot Cocoa Mix Rich Chocolate with Marshmallows [F35][F36]  \n- Desserts, Pudding, Coconut Cream, Dry Mix, Inst [F39][F40]  \n\nThese items appear in the knowledge graph as unsafe for both conditions (inferred).",
+   "correct_A": false,
+   "correct_B": true,
+   "evidence_A": false,
+   "evidence_B": true,
+   "retrieval": {
+    "type": "both_conditions",
+    "sufficient": true,
+    "reason": "94 foods are unsafe for both Type 2 diabetes and Hypertension; top 10 by sugar shown.",
+    "entities": [
+     {
+      "label": "Type 2 diabetes",
+      "uri": "http://example.org/nutrireason#Type2Diabetes",
+      "kind": "Condition",
+      "matched_text": "type 2 diabetes"
+     },
+     {
+      "label": "Hypertension",
+      "uri": "http://example.org/nutrireason#Hypertension",
+      "kind": "Condition",
+      "matched_text": "hypertension"
+     }
+    ]
+   },
+   "n_facts": 52
+  },
+  {
+   "cq": "CQ4",
+   "question": "Which food groups have the most foods linked to an allergy?",
+   "expected": "Dairy (181), Offal (155), Pulse (83), Cereal grain (66), Potato (57)",
+   "llm_only": "The food groups with the highest number of allergy-triggering items are:\n\n| Food group | Common allergenic foods |\n|------------|--------------------------|\n| **Dairy** | Cow’s milk, cheese, yogurt, butter |\n| **Eggs** | Egg whites and yolks (especially whites) |\n| **Tree nuts** | Almonds, walnuts, cashews, pistachios, hazelnuts, Brazil nuts, pecans, macadamia nuts |\n| **Peanuts** | All forms of peanuts and peanut butter |\n| **Soy** | Soybeans, tofu, soy milk, soy sauce, edamame |\n| **Wheat (gluten-containing grains)** | Wheat flour, bread, pasta, cereals, barley, rye |\n| **Fish** | Salmon, tuna, cod, halibut, etc. |\n| **Shellfish** | Shrimp, crab, lobster, clams, mussels, oysters |\n\nThese eight categories (often called the “Big 8”) account for the majority of food-allergy reactions worldwide.",
+   "kg_grounded": "The food groups with the greatest numbers of foods linked to an allergen are:\n\n1. **Dairy** – 181 foods [F1]  \n2. **Offal** – 155 foods [F2]  \n\nThese two groups have the highest counts among all listed categories.",
+   "correct_A": false,
+   "correct_B": true,
+   "evidence_A": false,
+   "evidence_B": true,
+   "retrieval": {
+    "type": "group_stats",
+    "sufficient": true,
+    "reason": "Aggregates computed by SPARQL GROUP BY over explicit facts.",
+    "entities": []
+   },
+   "n_facts": 8
+  },
+  {
+   "cq": "CQ5",
+   "question": "Which food group has the highest average sodium per 100 g, and what is the value?",
+   "expected": "Egg, 523 mg (then Dairy 370, Fish 304)",
+   "llm_only": "The food group with the highest average sodium content per 100 g is **condiments & sauces** (e.g., soy sauce, fish sauce, bouillon). Their mean sodium level is roughly **6 000 mg Na per 100 g**—far above any other major food group.",
+   "kg_grounded": "The food group with the highest average sodium per 100 g is **Egg**, with an average of **522.8 mg** per 100 g [F1].",
+   "correct_A": false,
+   "correct_B": true,
+   "evidence_A": false,
+   "evidence_B": true,
+   "retrieval": {
+    "type": "group_stats",
+    "sufficient": true,
+    "reason": "Aggregates computed by SPARQL GROUP BY over explicit facts.",
+    "entities": [
+     {
+      "label": "Sodium",
+      "uri": "http://example.org/nutrireason#Sodium",
+      "kind": "Nutrient",
+      "matched_text": "sodium"
+     }
+    ]
+   },
+   "n_facts": 8
+  },
+  {
+   "cq": "CQ8",
+   "question": "For the dish Almond Cookies, which conditions is it unsafe for and which ingredient causes each?",
+   "expected": "Nut allergy <- Almonds; Lactose intolerance <- Butter; Type 2 diabetes <- Sugar",
+   "llm_only": "**Almond Cookies – unsafe for:**\n\n| Condition | Ingredient that makes it unsafe |\n|-----------|---------------------------------|\n| Tree-nut allergy (almond allergy) | **Almonds** (ground or sliced) |\n| Gluten intolerance / Celiac disease | **Wheat flour** (or any other gluten-containing flour) |\n| Dairy allergy or lactose intolerance | **Butter / milk** (often used for richness) |\n| Egg allergy | **Eggs** (used as binder) |\n| Soy allergy (if soy lecithin is added) | **Soy lecithin** (common emulsifier) |\n\nIf any of these ingredients are omitted or substituted with safe alternatives, the cookie can become suitable for the corresponding condition.",
+   "kg_grounded": "- **Lactose intolerance** – caused by the **butter** (which contains dairy) [F2][F5][F6][F15]  \n- **Nut allergy** – caused by the **almonds** (which contain almond) [F1][F7][F8][F16]  \n- **Type 2 diabetes** – caused by the **sugar** [F4][F19][F17]",
+   "correct_A": false,
+   "correct_B": true,
+   "evidence_A": false,
+   "evidence_B": true,
+   "retrieval": {
+    "type": "dish_profile",
+    "sufficient": true,
+    "reason": "Relevant facts retrieved.",
+    "entities": [
+     {
+      "label": "Almond Cookies",
+      "uri": "http://example.org/nutrireason/resource/dish/almond_cookies",
+      "kind": "Dish",
+      "matched_text": "almond cooky"
+     }
+    ]
+   },
+   "n_facts": 19
+  },
+  {
+   "cq": "CQ9",
+   "question": "What are the exact sugar and sodium per 100 g of Cheddar cheese, and does it pass the diabetes and hypertension rules?",
+   "expected": "Sugar 0.52 g (passes), sodium 621 mg > 600 (fails hypertension)",
+   "llm_only": "**Cheddar cheese (per 100 g)**  \n- **Sugar:** ~0.5 g (lactose)  \n- **Sodium:** ~620 mg  \n\n**Rule check**  \n- **Diabetes rule:** ≤ 5 g sugar/100 g → **Pass** (0.5 g < 5 g).  \n- **Hypertension rule:** ≤ 600 mg sodium/100 g → **Fail** (≈620 mg > 600 mg).  \n\nSo cheddar meets the diabetes criterion but exceeds the sodium limit for the hypertension guideline.",
+   "kg_grounded": "Cheddar cheese contains **0.52 g sugar per 100 g** [F1] and **621 mg sodium per 100 g** [F2].  \n\n- For Type 2 diabetes, the avoid-threshold for sugar is 22.5 g/100 g [F13]; 0.52 g is well below this, so it **passes the diabetes rule**.  \n- For hypertension, the avoid-threshold for sodium is 600 mg/100 g [F14]; 621 mg exceeds this, so it **fails the hypertension rule** (also inferred as unsafe for hypertension [F6]).",
+   "correct_A": false,
+   "correct_B": true,
+   "evidence_A": false,
+   "evidence_B": true,
+   "retrieval": {
+    "type": "food_profile",
+    "sufficient": true,
+    "reason": "Relevant facts retrieved.",
+    "entities": [
+     {
+      "label": "Hypertension",
+      "uri": "http://example.org/nutrireason#Hypertension",
+      "kind": "Condition",
+      "matched_text": "hypertension"
+     },
+     {
+      "label": "Type 2 diabetes",
+      "uri": "http://example.org/nutrireason#Type2Diabetes",
+      "kind": "Condition",
+      "matched_text": "diabetes"
+     },
+     {
+      "label": "Cheddar Cheese",
+      "uri": "http://example.org/nutrireason/resource/dish/cheddar_cheese",
+      "kind": "Dish",
+      "matched_text": "cheddar cheese"
+     },
+     {
+      "label": "Sugar",
+      "uri": "http://example.org/nutrireason/resource/allergen/sugar",
+      "kind": "Allergen",
+      "matched_text": "sugar"
+     },
+     {
+      "label": "Sodium",
+      "uri": "http://example.org/nutrireason#Sodium",
+      "kind": "Nutrient",
+      "matched_text": "sodium"
+     }
+    ]
+   },
+   "n_facts": 14
+  },
+  {
+   "cq": "CQ11",
+   "question": "Which allergens appear most often across all dishes?",
+   "expected": "Dairy 137 dishes, Sugar 62, Wheat/Gluten 59, Chicken 44",
+   "llm_only": "The allergens that show up most frequently in a wide range of dishes are:\n\n1. **Gluten (wheat)** – breads, pastas, sauces, batters, and many processed foods.  \n2. **Dairy (milk, cheese, butter, cream)** – used in sauces, desserts, baked goods, and many savory dishes.  \n3. **Eggs** – common in batters, baked goods, sauces, and dressings.  \n4. **Soy** – soy sauce, tofu, processed meats, and many packaged foods.  \n5. **Peanuts** – sauces, spreads, baked goods, and many Asian-style dishes.  \n6. **Tree nuts** (almonds, walnuts, etc.) – often in desserts, sauces, and salads.  \n7. **Fish** and **shellfish** – prevalent in seafood cuisines and many processed seafood products.  \n\nThese eight allergens (the “Big 8”) account for the majority of allergen exposures across most culinary traditions.",
+   "kg_grounded": "The allergen that appears most often across all dishes is **Dairy**, which is present in 137 dishes (including those inherited from ingredients)【F1】. (All counts are inferred.)",
+   "correct_A": false,
+   "correct_B": true,
+   "evidence_A": false,
+   "evidence_B": false,
+   "retrieval": {
+    "type": "allergen_frequency",
+    "sufficient": true,
+    "reason": "Counts include allergens inherited from ingredients (property chain, inferred) - tagged inferred.",
+    "entities": []
+   },
+   "n_facts": 8
+  },
+  {
+   "cq": "CQ12",
+   "question": "Which dishes contain a nut allergen although no nut word appears in the dish name?",
+   "expected": "Baked Brie, Chicken Satay, Green Smoothie, Kheer, Rabri, Rasmalai",
+   "llm_only": "Many popular dishes hide nuts even though “nut” isn’t in the name. Common examples include:\n\n- **Pesto** – often made with pine nuts.  \n- **Pad Thai** – traditional recipes use crushed peanuts.  \n- **Chicken or beef satay** – served with peanut sauce.  \n- **Mole sauce** – Mexican mole can contain almonds or peanuts.  \n- **Baklava** – layers of phyllo filled with pistachios or walnuts.  \n- **Hummus** – some varieties add tahini (sesame) and toasted pine nuts.  \n- **Granola bars / energy bites** – may contain almonds, cashews, or peanuts.  \n- **Curry sauces** – especially Thai red/green curry, which can include cashew paste.  \n\nAlways check the ingredient list or ask the chef, as nut content varies by recipe.",
+   "kg_grounded": "The dishes that carry a nut allergen even though “nut” does not appear in their names are:\n\n- **Baked Brie** – contains Nuts → nut allergen → unsafe for Nut allergy【F1】【F2】【F3】【F4】  \n- **Chicken Satay** – contains Peanut butter → Peanut → nut allergen → unsafe【F5】【F6】【F7】【F8】  \n- **Green Smoothie** – contains Almond milk → Almond → nut allergen → unsafe【F9】【F10】【F11】【F12】  \n- **Kheer** – contains Nuts → nut allergen → unsafe【F13】【F2】【F3】【F14】  \n- **Rabri** – contains Nuts → nut allergen → unsafe【F15】【F2】【F3】【F16】  \n- **Rasmalai** – contains Nuts → nut allergen → unsafe【F17】【F2】【F3】【F18】\n\nThese six dishes are unsafe for a Nut allergy despite lacking the word “nut” in their titles.",
+   "correct_A": false,
+   "correct_B": true,
+   "evidence_A": false,
+   "evidence_B": false,
+   "retrieval": {
+    "type": "condition_unsafe",
+    "sufficient": true,
+    "reason": "6 dishes are unsafe for Nut allergy via an allergen-carrying ingredient (showing up to 12).",
+    "entities": [
+     {
+      "label": "Nut allergy",
+      "uri": "http://example.org/nutrireason#NutAllergy",
+      "kind": "Condition",
+      "matched_text": "nut allergen"
+     }
+    ]
+   },
+   "n_facts": 27
+  },
+  {
+   "cq": "CQ13",
+   "question": "Which foods have sodium above the hypertension limit, ranked highest first, with exact values?",
+   "expected": "Salt, Table 38,758 mg; Baking soda 27,360; Beef broth powder 26,000 (902 foods > 600 mg)",
+   "llm_only": "**Foods that exceed the 1,500 mg/day hypertension limit (per typical serving), ranked highest → lowest**\n\n| Food (typical serving) | Sodium (mg) |\n|------------------------|------------|\n| **Soy sauce** (1 Tbsp) | 1,020 mg |\n| **Cured ham** (3 oz) | 1,200 mg |\n| **Bacon** (3 slices) | 1,050 mg |\n| **Canned chicken broth** (1 cup) | 1,800 mg |\n| **Canned baked beans** (½ cup) | 800 mg |\n| **Pizza (pepperoni, 1 slice)** | 720 mg |\n| **Cheddar cheese** (1 oz) | 180 mg |\n| **Salted peanuts** (1 oz) | 150 mg |\n| **Pickles** (3 large) | 600 mg |\n| **Instant ramen (flavor packet)** | 1,700 mg |\n\nAll listed items contain more sodium than the 1,500 mg daily limit recommended for hypertension control. Adjust portion sizes accordingly.",
+   "kg_grounded": "Salt, Table – 38 758 mg / 100 g [F1]  \nLeavening Agents, Baking Soda – 27 360 mg / 100 g [F2]  \nSoup, Bf Broth Or Bouillon (Pdr, Dry) – 26 000 mg / 100 g [F3]  \nSoup, Beef Broth (Cubed, Dry) – 24 000 mg / 100 g [F4]  \nSoup, Chick Broth Cubes (Dry) – 24 000 mg / 100 g [F5]  \nSoup, Chick Broth Or Bouillon (Dry) – 23 875 mg / 100 g [F6]  \nAdobo Fresco – 17 152 mg / 100 g [F7]  \nLeavening Agents, Baking Pdr (Double-Acting, Na Al Sulfate) – 10 600 mg / 100 g [F8]  \nJellyfish, Dried, Salted – 9 690 mg / 100 g [F9]  \nSoup, Bf Noodle (Dry, Mix) – 8 408 mg / 100 g [F10]  \nCampbell Soup Co, Pace, Dry Taco Seas Mix – 8 068 mg / 100 g [F11]  \nSoup, Onion (Dry, Mix) – 8 031 mg / 100 g [F12]  \nLeavening Agents, Baking Pdr (Double-Acting, Straight PO₄) – 7 893 mg / 100 g [F13]  \nSauce, Fish, Ready-To-Serve – 7 851 mg / 100 g [F14]  \nCod, Atlantic, Dried & Salted – 7 027 mg / 100 g [F15]   (All values exceed the hypertension sodium limit of 600 mg / 100 g)",
+   "correct_A": false,
+   "correct_B": true,
+   "evidence_A": false,
+   "evidence_B": true,
+   "retrieval": {
+    "type": "top_nutrient",
+    "sufficient": true,
+    "reason": "Relevant facts retrieved.",
+    "entities": [
+     {
+      "label": "Hypertension",
+      "uri": "http://example.org/nutrireason#Hypertension",
+      "kind": "Condition",
+      "matched_text": "hypertension"
+     },
+     {
+      "label": "Sodium",
+      "uri": "http://example.org/nutrireason#Sodium",
+      "kind": "Nutrient",
+      "matched_text": "sodium"
+     }
+    ]
+   },
+   "n_facts": 34
+  },
+  {
+   "cq": "CQ14",
+   "question": "Which guideline supports the rule that makes Bacon Bits, Meatless unsafe for hypertension?",
+   "expected": "Bacon bits -> Hypertension -> sodium rule -> WHO",
+   "llm_only": "The rule that classifies **Bacon Bits (including meat-less versions) as unsafe for people with hypertension** is backed by the **American Heart Association (AHA) Sodium Guidelines** and the **DASH (Dietary Approaches to Stop Hypertension) recommendations**. Both sources advise:\n\n* **Limit sodium to ≤1,500 mg/day** for individuals with hypertension (AHA) and **≤2,300 mg/day** for the general population (DASH/2020-2025 Dietary Guidelines for Americans).  \n* Processed “bacon-bits” products—meat or plant-based—often contain **>300 mg sodium per ¼ cup**, quickly exceeding these limits.\n\nThus, the AHA’s sodium-restriction guideline and the DASH diet’s low-sodium recommendation are the primary standards that deem bacon-bits unsafe for hypertensive patients.",
+   "kg_grounded": "The rule that makes Bacon Bits, Meatless unsafe for hypertension is supported by the World Health Organization guideline [ F3 ].",
+   "correct_A": false,
+   "correct_B": true,
+   "evidence_A": false,
+   "evidence_B": false,
+   "retrieval": {
+    "type": "rule_info",
+    "sufficient": true,
+    "reason": "Relevant facts retrieved.",
+    "entities": [
+     {
+      "label": "Hypertension",
+      "uri": "http://example.org/nutrireason#Hypertension",
+      "kind": "Condition",
+      "matched_text": "hypertension"
+     },
+     {
+      "label": "Bacon Bits, Meatless",
+      "uri": "http://example.org/nutrireason/resource/food/bacon_bits_meatless",
+      "kind": "Food",
+      "matched_text": "bacon bit meatless"
+     }
+    ]
+   },
+   "n_facts": 5
+  }
+ ]
+}
