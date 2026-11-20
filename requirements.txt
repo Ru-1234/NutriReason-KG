@@ -1,0 +1,6 @@
+pandas
+rdflib
+pykeen
+torch
+streamlit
+requests
