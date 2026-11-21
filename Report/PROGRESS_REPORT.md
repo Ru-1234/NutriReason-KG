@@ -67,7 +67,7 @@ Full description: `Report/DATA_PIPELINE.md`.
 
 ---
 
-# PART B - ITERATION 2 (Modern KG Reasoning & KG-Grounded LLM) - status on 20 Nov
+# PART B - ITERATION 2 (Modern KG Reasoning & KG-Grounded LLM) - current status
 
 ## B1. Planned work division
 | Member | Assigned part |
@@ -77,43 +77,47 @@ Full description: `Report/DATA_PIPELINE.md`.
 | Zamin | LLM application + UI + 10-CQ evaluation + explainability examples |
 
 ## B2. Completed so far
-**Iteration 1 fixes (Romaisa, 20 Nov):**
+**Iteration 1 fixes (Romaisa):**
 - `build_kg.py` now skips D1 labels that are not food allergens (`NON_ALLERGEN_LABELS`: Sugar, Insulin, Thyroid, Ochratoxin, Aquagenic Urticaria, Hypersensitivity, and a bare "Allergy"). This affected 18 D1 foods and removed 64 incorrect inferred triples (7,673 -> 7,609).
 - Fixed a naming bug that shortened "Oral Allergy Syndrome" to "Oral Syndrome", and could create an empty allergen URI from a bare "Allergy" label.
 - Documented in the T-Box why `GlutenAllergen` triggers no condition (scope is four conditions; D4 has no gluten rule).
 - Rebuilt `abox.ttl` (42,027 triples) and `inferred.ttl`, re-ran all 18 queries, and updated `README.md`, `DATA_PIPELINE.md`, `INFERENCE_EXAMPLES.md` and this report. CQ11 now lists only real allergens (Dairy 137, Wheat/Gluten 59, Chicken 44, ...).
 
-**First working version of the full pipeline (committed by Zamin, 20 Nov):**
+**First working version of the full pipeline (committed by Zamin):**
 - `reasoning/materialize.py` keeps rule-inferred triples in a separate `inferred.ttl`. `reasoning/link_prediction.py` runs TransE and RotatE (PyKEEN) against a popularity baseline: Exp 1 hides 15% of `containsAllergen` links on the explicit graph; Exp 2 hides 15% of `unsafeFor` links on the materialised graph. Predictions are labelled "PREDICTION (not a fact)".
 - `retrieval/retriever.py`: entity linking, SPARQL templates, explicit/inferred tags, insufficient-evidence flag.
 - `app/llm.py` (Groq, `openai/gpt-oss-120b`, temperature 0) and `app/streamlit_app.py`.
 - `evaluation/run_eval.py`, `unseen_check.py`, `explainability.py`, `manual_review.md`, and the report builder.
 
-**Results so far (computed before the 20 Nov KG fix; must be re-run):**
-| Experiment | Model | MRR | Hits@1 | Hits@10 |
-|---|---|---|---|---|
-| Exp 1 `containsAllergen` (explicit) | RotatE | 0.602 | 0.312 | 0.972 |
-| | TransE | 0.303 | 0.047 | 0.755 |
-| | Popularity baseline | 0.374 | 0.228 | 0.710 |
-| Exp 2 `unsafeFor` (materialised) | RotatE | 0.566 | 0.240 | 1.000 |
-| | TransE | 0.521 | 0.145 | 0.943 |
-| | Popularity baseline | 0.731 | 0.510 | 1.000 |
+**Link prediction re-run on the cleaned KG (Romaisa):**
+- Re-ran `reasoning/link_prediction.py` (TransE, RotatE, popularity baseline; 3 random seeds, 200 epochs, embedding dimension 100) on the cleaned KG. The earlier numbers are kept in `reasoning/results/metrics_before_kg_fix.md` for comparison.
+
+| Experiment | Model | MRR (mean ± std) | Hits@1 | Hits@3 | Hits@10 |
+|---|---|---|---|---|---|
+| Exp 1 `containsAllergen` (explicit graph, 148 test links) | RotatE | **0.612 ± 0.017** | 0.329 | 0.899 | 0.966 |
+| | TransE | 0.315 ± 0.013 | 0.059 | 0.518 | 0.750 |
+| | Popularity baseline | 0.420 ± 0.052 | 0.259 | 0.489 | 0.793 |
+| Exp 2 `unsafeFor` (materialised graph, 310 test links) | RotatE | 0.662 ± 0.037 | 0.376 | 0.999 | 1.000 |
+| | TransE | 0.535 ± 0.027 | 0.189 | 0.871 | 0.942 |
+| | Popularity baseline | **0.731 ± 0.015** | 0.510 | 0.986 | 1.000 |
+
+Before vs after the KG clean-up (MRR): Exp 1 RotatE 0.602 -> 0.612, TransE 0.303 -> 0.315; Exp 2 RotatE 0.566 -> 0.662, TransE 0.521 -> 0.535. RotatE clearly beats the baseline in Exp 1 (0.612 vs 0.420). In Exp 2 the baseline still has the best MRR and Hits@1 (see B3).
 
 10-CQ evaluation: LLM only 0/10 correct, KG-grounded 10/10. Answers with unsupported claims: 9/10 vs 1/10. This is a development-set score, because the same CQs were used to debug the retriever (see `evaluation/manual_review.md`).
 
 ## B3. Known issues
-- **Exp 2:** the popularity baseline beats both embedding models (MRR 0.731 vs 0.566). `unsafeFor` has only 4 possible tails, and its links are produced by the rules from other facts, so the task is partly circular. This needs analysis or a redesign.
-- **TransE Hits@1 = 0.047 in Exp 1:** TransE struggles with many-to-one relations (many foods -> one allergen). RotatE handles these better.
-- **Stale numbers:** the evaluation, link prediction metrics and report PDF were produced before the KG fix. For example, the CQ11 expected answer still lists "Sugar 62". All of these must be regenerated.
+- **Exp 2:** the popularity baseline still beats both embedding models on MRR (0.731 vs 0.662 for RotatE after the re-run), although RotatE now matches it on Hits@3/Hits@10. `unsafeFor` has only 4 possible tails, and its links are produced by the rules from other facts, so the task is partly circular. This needs analysis or a redesign.
+- **TransE Hits@1 = 0.059 in Exp 1 (below the baseline):** TransE struggles with many-to-one relations (many foods -> one allergen). RotatE handles these better.
+- **Stale numbers:** the 10-CQ evaluation and the report PDF were produced before the KG fix (the link prediction metrics are now updated). For example, the CQ11 expected answer still lists "Sugar 62". All of these must be regenerated.
 - **Workload:** the first versions of all three Iteration 2 components were committed from one account in a single session. Each member is taking ownership of their assigned part and committing their own improvements before the deadline (brief §6.2, §7).
 
-## B4. Remaining work (to 29 Nov)
+## B4. Remaining work (before the deadline)
 | Task | Owner | Status |
 |---|---|---|
-| Re-run `link_prediction.py` on the fixed KG; update metrics and predictions | Romaisa | Pending |
+| Re-run `link_prediction.py` on the fixed KG; update metrics and predictions | Romaisa | Done |
 | Analyse/redesign Exp 2; add a third model (DistMult/ComplEx) and/or a real KG-completion experiment with manual plausibility check | Romaisa | Pending |
 | Write the "Modern KG reasoning" report section with citations (Bordes et al. 2013 TransE; Sun et al. 2019 RotatE; PyKEEN docs) | Romaisa | Pending |
-| Review, improve and own the retrieval layer; write the retrieval report section | Maham | Pending (starting 21-22 Nov) |
+| Review, improve and own the retrieval layer; write the retrieval report section | Maham | In progress |
 | Re-run the 10-CQ evaluation and explainability examples on the fixed KG; update the comparison table | Zamin | Pending |
 | Reload GraphDB with the updated T-Box/A-Box and rules; fresh screenshots | Maham | Pending |
 | 3-5 minute demo video (stored externally) | All | Pending |
@@ -122,6 +126,6 @@ Full description: `Report/DATA_PIPELINE.md`.
 ## B5. Iteration 2 member contributions (so far)
 | Member | GitHub | Work done | Representative commits |
 |---|---|---|---|
-| Romaisa | `Ru-1234` | Iteration 1 KG fixes (non-allergen labels, naming bug, gluten scope); rebuilt KG and inferred graph; re-ran queries; updated docs and this report | (hash to be added after push) |
-| Muhammad Zamin | `zamin-muhammad` | First version of the link prediction, retrieval, LLM app, evaluation and report builder (AI-assisted) | `928916c` link prediction + materialisation; `10ce4f4` retrieval layer; `1f5e592` LLM client + Streamlit app; `1fc1f50` 10-CQ evaluation + explainability; `fa870c4` README + report builder; `bd724ea` report PDF |
+| Romaisa | `Ru-1234` | Iteration 1 KG fixes (non-allergen labels, naming bug, gluten scope); rebuilt KG and inferred graph; re-ran queries; updated docs and this report; re-ran link prediction on the cleaned KG with before/after comparison | `c4f7f35` KG fix + rebuilt A-Box, inferred graph and query results; `a0f5c60` docs + progress report; link prediction re-run (this commit) |
+| Muhammad Zamin | `zamin-muhammad` | First version of the link prediction, retrieval, LLM app, evaluation and report builder (AI-assisted) | `928916c` link prediction + materialisation; `10ce4f4` retrieval layer; `1f5e592` LLM client + Streamlit app; `1fc1f50` 10-CQ evaluation + explainability; `fa870c4` README + report builder; `b0724ea` report PDF |
 | Maham | `mahamanjum99` | Retrieval layer ownership and improvements | - |

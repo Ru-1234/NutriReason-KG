@@ -1,61 +1,61 @@
 status,head,relation,predicted_tail,rank,score,recovers_held_out_link
-PREDICTION (not a fact),"Martha White Foods, Martha White'S Bttrmlk Biscuit Mix, Dry",nr:unsafeFor,"Martha White Foods, Martha White'S Bttrmlk Biscuit Mix, Dry",1,-13.523,False
-PREDICTION (not a fact),"Martha White Foods, Martha White'S Bttrmlk Biscuit Mix, Dry",nr:unsafeFor,Hypertension,2,-14.667,True
-PREDICTION (not a fact),"Martha White Foods, Martha White'S Bttrmlk Biscuit Mix, Dry",nr:unsafeFor,"Pork, Frsh, Loin, Blade (Chops Or Roasts), Bone-In, Ln, Raw",3,-15.033,False
-PREDICTION (not a fact),"Milk, Human, Mature, Fluid",nr:unsafeFor,"Milk, Human, Mature, Fluid",1,-13.523,False
-PREDICTION (not a fact),"Milk, Human, Mature, Fluid",nr:unsafeFor,Lactose intolerance,2,-14.177,True
-PREDICTION (not a fact),"Milk, Human, Mature, Fluid",nr:unsafeFor,Type 2 diabetes,3,-15.402,False
-PREDICTION (not a fact),"Cookies, Sugar, Commly Prep, Spl Dietary",nr:unsafeFor,"Cookies, Sugar, Commly Prep, Spl Dietary",1,-13.523,False
-PREDICTION (not a fact),"Cookies, Sugar, Commly Prep, Spl Dietary",nr:unsafeFor,Type 2 diabetes,2,-14.838,True
-PREDICTION (not a fact),"Cookies, Sugar, Commly Prep, Spl Dietary",nr:unsafeFor,"Pork, Frsh, Loin, Blade (Roasts), Bnless, Ln, Ckd, Rstd",3,-16.017,False
-PREDICTION (not a fact),"Cake, Pound, Bimbo Bakeries Usa, Panque Casero, Home Bkd Style",nr:unsafeFor,"Cake, Pound, Bimbo Bakeries Usa, Panque Casero, Home Bkd Style",1,-13.523,False
-PREDICTION (not a fact),"Cake, Pound, Bimbo Bakeries Usa, Panque Casero, Home Bkd Style",nr:unsafeFor,Type 2 diabetes,2,-14.341,True
-PREDICTION (not a fact),"Cake, Pound, Bimbo Bakeries Usa, Panque Casero, Home Bkd Style",nr:unsafeFor,Allergen,3,-15.654,False
-PREDICTION (not a fact),"Muffin, Blueberry, Commly Prep, Low-Fat",nr:unsafeFor,"Muffin, Blueberry, Commly Prep, Low-Fat",1,-13.523,False
-PREDICTION (not a fact),"Muffin, Blueberry, Commly Prep, Low-Fat",nr:unsafeFor,Type 2 diabetes,2,-14.149,True
-PREDICTION (not a fact),"Muffin, Blueberry, Commly Prep, Low-Fat",nr:unsafeFor,Nut allergy,3,-16.057,False
-PREDICTION (not a fact),Sausage and Pepper Pizza,nr:unsafeFor,Sausage and Pepper Pizza,1,-13.523,False
-PREDICTION (not a fact),Sausage and Pepper Pizza,nr:unsafeFor,Chronic disease,2,-13.919,False
-PREDICTION (not a fact),Sausage and Pepper Pizza,nr:unsafeFor,Food intolerance,3,-14.116,False
-PREDICTION (not a fact),"Nabisco, Nabisco Snackwell'S Fat Free Devil'S Fd Cookie Cakes",nr:unsafeFor,"Nabisco, Nabisco Snackwell'S Fat Free Devil'S Fd Cookie Cakes",1,-13.523,False
-PREDICTION (not a fact),"Nabisco, Nabisco Snackwell'S Fat Free Devil'S Fd Cookie Cakes",nr:unsafeFor,Type 2 diabetes,2,-14.003,True
-PREDICTION (not a fact),"Nabisco, Nabisco Snackwell'S Fat Free Devil'S Fd Cookie Cakes",nr:unsafeFor,Hypertension,3,-15.495,False
-PREDICTION (not a fact),Caramel Popcorn,nr:unsafeFor,Chronic disease,1,-12.892,False
-PREDICTION (not a fact),Caramel Popcorn,nr:unsafeFor,Caramel Popcorn,2,-13.523,False
-PREDICTION (not a fact),Caramel Popcorn,nr:unsafeFor,Basmati rice,3,-13.571,False
-PREDICTION (not a fact),Sausage Pizza,nr:unsafeFor,Sausage Pizza,1,-13.523,False
-PREDICTION (not a fact),Sausage Pizza,nr:unsafeFor,Chronic disease,2,-14.205,False
-PREDICTION (not a fact),Sausage Pizza,nr:unsafeFor,Lactose intolerance,3,-14.864,True
-PREDICTION (not a fact),"Sweeteners, Tabletop, Sucralose, Splenda Packets",nr:unsafeFor,"Sweeteners, Tabletop, Sucralose, Splenda Packets",1,-13.523,False
-PREDICTION (not a fact),"Sweeteners, Tabletop, Sucralose, Splenda Packets",nr:unsafeFor,Type 2 diabetes,2,-14.698,True
-PREDICTION (not a fact),"Sweeteners, Tabletop, Sucralose, Splenda Packets",nr:unsafeFor,"Campbell Soup Company, V8 Veg Juc, Spicy Hot V8",3,-15.837,False
-PREDICTION (not a fact),"Turkey Bacon, Cooked",nr:unsafeFor,"Turkey Bacon, Cooked",1,-13.523,False
-PREDICTION (not a fact),"Turkey Bacon, Cooked",nr:unsafeFor,Hypertension,2,-13.572,True
-PREDICTION (not a fact),"Turkey Bacon, Cooked",nr:unsafeFor,"Crackers, Saltines, Lo Salt (Incl Oyster, Soda, Soup)",3,-15.09,False
-PREDICTION (not a fact),Green Smoothie,nr:unsafeFor,Green Smoothie,1,-13.523,False
-PREDICTION (not a fact),Green Smoothie,nr:unsafeFor,Basmati rice,2,-13.713,False
-PREDICTION (not a fact),Green Smoothie,nr:unsafeFor,Semolina,3,-13.759,False
-PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Corn Pops",nr:unsafeFor,"Cereals Rte, Kellogg, Kellogg'S Corn Pops",1,-13.523,False
-PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Corn Pops",nr:unsafeFor,Type 2 diabetes,2,-13.714,True
-PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Corn Pops",nr:unsafeFor,"Plums, Raw",3,-15.671,False
-PREDICTION (not a fact),Milk,nr:unsafeFor,Milk,1,-13.523,False
-PREDICTION (not a fact),Milk,nr:unsafeFor,Lactose intolerance,2,-13.71,True
-PREDICTION (not a fact),Milk,nr:unsafeFor,Masala spices,3,-15.403,False
-PREDICTION (not a fact),"Candies, Caramels",nr:unsafeFor,"Candies, Caramels",1,-13.523,False
-PREDICTION (not a fact),"Candies, Caramels",nr:unsafeFor,Type 2 diabetes,2,-14.98,True
-PREDICTION (not a fact),"Candies, Caramels",nr:unsafeFor,Hypertension,3,-15.389,False
-PREDICTION (not a fact),"Sandwich Sprd, W/Chopd Pickle, Reg, Unspec Oils",nr:unsafeFor,"Sandwich Sprd, W/Chopd Pickle, Reg, Unspec Oils",1,-13.523,False
-PREDICTION (not a fact),"Sandwich Sprd, W/Chopd Pickle, Reg, Unspec Oils",nr:unsafeFor,Hypertension,2,-14.222,True
-PREDICTION (not a fact),"Sandwich Sprd, W/Chopd Pickle, Reg, Unspec Oils",nr:unsafeFor,"Wheat Flr, White (Industrial), 13% Prot, Bleached, Enr",3,-15.304,False
-PREDICTION (not a fact),Hormel Pillow Pak Sliced Turkey Pepperoni,nr:unsafeFor,Hormel Pillow Pak Sliced Turkey Pepperoni,1,-13.523,False
-PREDICTION (not a fact),Hormel Pillow Pak Sliced Turkey Pepperoni,nr:unsafeFor,Hypertension,2,-14.276,True
-PREDICTION (not a fact),Hormel Pillow Pak Sliced Turkey Pepperoni,nr:unsafeFor,"Frankfurter, Lo Na",3,-15.051,False
-PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Honey Crunch Corn Flakes",nr:unsafeFor,"Cereals Rte, Kellogg, Kellogg'S Honey Crunch Corn Flakes",1,-13.523,False
-PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Honey Crunch Corn Flakes",nr:unsafeFor,Chronic disease,2,-14.519,False
-PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Honey Crunch Corn Flakes",nr:unsafeFor,Type 2 diabetes,3,-14.574,True
-PREDICTION (not a fact),"Milk, Dry, Nonfat, Inst, W/ Added Vit A & Vitamin D",nr:unsafeFor,"Milk, Dry, Nonfat, Inst, W/ Added Vit A & Vitamin D",1,-13.523,False
-PREDICTION (not a fact),"Milk, Dry, Nonfat, Inst, W/ Added Vit A & Vitamin D",nr:unsafeFor,Lactose intolerance,2,-13.619,True
-PREDICTION (not a fact),"Milk, Dry, Nonfat, Inst, W/ Added Vit A & Vitamin D",nr:unsafeFor,Hypertension,3,-14.612,False
-PREDICTION (not a fact),Lemon Bars,nr:unsafeFor,Lemon Bars,1,-13.523,False
-PREDICTION (not a fact),Lemon Bars,nr:unsafeFor,Chronic disease,2,-13.949,False
-PREDICTION (not a fact),Lemon Bars,nr:unsafeFor,Garlic Bread,3,-14.043,False
+PREDICTION (not a fact),"Martha White Foods, Martha White'S Bttrmlk Biscuit Mix, Dry",nr:unsafeFor,"Martha White Foods, Martha White'S Bttrmlk Biscuit Mix, Dry",1,-13.921,False
+PREDICTION (not a fact),"Martha White Foods, Martha White'S Bttrmlk Biscuit Mix, Dry",nr:unsafeFor,Hypertension,2,-14.663,True
+PREDICTION (not a fact),"Martha White Foods, Martha White'S Bttrmlk Biscuit Mix, Dry",nr:unsafeFor,Lactose intolerance,3,-14.957,False
+PREDICTION (not a fact),"Milk, Human, Mature, Fluid",nr:unsafeFor,Lactose intolerance,1,-13.756,True
+PREDICTION (not a fact),"Milk, Human, Mature, Fluid",nr:unsafeFor,"Milk, Human, Mature, Fluid",2,-13.921,False
+PREDICTION (not a fact),"Milk, Human, Mature, Fluid",nr:unsafeFor,"Campbell Soup Company, Pace, Pico De Gallo",3,-15.781,False
+PREDICTION (not a fact),"Cookies, Sugar, Commly Prep, Spl Dietary",nr:unsafeFor,"Cookies, Sugar, Commly Prep, Spl Dietary",1,-13.921,False
+PREDICTION (not a fact),"Cookies, Sugar, Commly Prep, Spl Dietary",nr:unsafeFor,Type 2 diabetes,2,-14.206,True
+PREDICTION (not a fact),"Cookies, Sugar, Commly Prep, Spl Dietary",nr:unsafeFor,owl:NamedIndividual,3,-15.466,False
+PREDICTION (not a fact),"Cake, Pound, Bimbo Bakeries Usa, Panque Casero, Home Bkd Style",nr:unsafeFor,"Cake, Pound, Bimbo Bakeries Usa, Panque Casero, Home Bkd Style",1,-13.921,False
+PREDICTION (not a fact),"Cake, Pound, Bimbo Bakeries Usa, Panque Casero, Home Bkd Style",nr:unsafeFor,Type 2 diabetes,2,-14.713,True
+PREDICTION (not a fact),"Cake, Pound, Bimbo Bakeries Usa, Panque Casero, Home Bkd Style",nr:unsafeFor,owl:NamedIndividual,3,-15.716,False
+PREDICTION (not a fact),"Muffin, Blueberry, Commly Prep, Low-Fat",nr:unsafeFor,"Muffin, Blueberry, Commly Prep, Low-Fat",1,-13.921,False
+PREDICTION (not a fact),"Muffin, Blueberry, Commly Prep, Low-Fat",nr:unsafeFor,Type 2 diabetes,2,-14.763,True
+PREDICTION (not a fact),"Muffin, Blueberry, Commly Prep, Low-Fat",nr:unsafeFor,owl:NamedIndividual,3,-15.667,False
+PREDICTION (not a fact),Sausage and Pepper Pizza,nr:unsafeFor,owl:NamedIndividual,1,-12.686,False
+PREDICTION (not a fact),Sausage and Pepper Pizza,nr:unsafeFor,Marshmallows,2,-13.784,False
+PREDICTION (not a fact),Sausage and Pepper Pizza,nr:unsafeFor,Sausage and Pepper Pizza,3,-13.921,False
+PREDICTION (not a fact),"Nabisco, Nabisco Snackwell'S Fat Free Devil'S Fd Cookie Cakes",nr:unsafeFor,"Nabisco, Nabisco Snackwell'S Fat Free Devil'S Fd Cookie Cakes",1,-13.921,False
+PREDICTION (not a fact),"Nabisco, Nabisco Snackwell'S Fat Free Devil'S Fd Cookie Cakes",nr:unsafeFor,Type 2 diabetes,2,-15.03,True
+PREDICTION (not a fact),"Nabisco, Nabisco Snackwell'S Fat Free Devil'S Fd Cookie Cakes",nr:unsafeFor,"Figs, Cnd, Hvy Syrup Pk, Sol&Liquids",3,-15.985,False
+PREDICTION (not a fact),Caramel Popcorn,nr:unsafeFor,owl:NamedIndividual,1,-12.49,False
+PREDICTION (not a fact),Caramel Popcorn,nr:unsafeFor,Nut allergy,2,-12.974,False
+PREDICTION (not a fact),Caramel Popcorn,nr:unsafeFor,Spinach Salad,3,-13.082,False
+PREDICTION (not a fact),Sausage Pizza,nr:unsafeFor,owl:NamedIndividual,1,-13.579,False
+PREDICTION (not a fact),Sausage Pizza,nr:unsafeFor,Sausage Pizza,2,-13.921,False
+PREDICTION (not a fact),Sausage Pizza,nr:unsafeFor,Lactose intolerance,3,-14.397,True
+PREDICTION (not a fact),"Sweeteners, Tabletop, Sucralose, Splenda Packets",nr:unsafeFor,"Sweeteners, Tabletop, Sucralose, Splenda Packets",1,-13.921,False
+PREDICTION (not a fact),"Sweeteners, Tabletop, Sucralose, Splenda Packets",nr:unsafeFor,Type 2 diabetes,2,-15.538,True
+PREDICTION (not a fact),"Sweeteners, Tabletop, Sucralose, Splenda Packets",nr:unsafeFor,owl:NamedIndividual,3,-16.244,False
+PREDICTION (not a fact),"Turkey Bacon, Cooked",nr:unsafeFor,"Turkey Bacon, Cooked",1,-13.921,False
+PREDICTION (not a fact),"Turkey Bacon, Cooked",nr:unsafeFor,Hypertension,2,-14.315,True
+PREDICTION (not a fact),"Turkey Bacon, Cooked",nr:unsafeFor,owl:NamedIndividual,3,-15.152,False
+PREDICTION (not a fact),Green Smoothie,nr:unsafeFor,Nut allergy,1,-13.24,True
+PREDICTION (not a fact),Green Smoothie,nr:unsafeFor,owl:NamedIndividual,2,-13.243,False
+PREDICTION (not a fact),Green Smoothie,nr:unsafeFor,Green Smoothie,3,-13.921,False
+PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Corn Pops",nr:unsafeFor,"Cereals Rte, Kellogg, Kellogg'S Corn Pops",1,-13.921,False
+PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Corn Pops",nr:unsafeFor,Lactose intolerance,2,-16.078,False
+PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Corn Pops",nr:unsafeFor,Type 2 diabetes,3,-16.209,True
+PREDICTION (not a fact),Milk,nr:unsafeFor,Lactose intolerance,1,-13.296,True
+PREDICTION (not a fact),Milk,nr:unsafeFor,Milk,2,-13.921,False
+PREDICTION (not a fact),Milk,nr:unsafeFor,owl:NamedIndividual,3,-14.199,False
+PREDICTION (not a fact),"Candies, Caramels",nr:unsafeFor,"Candies, Caramels",1,-13.921,False
+PREDICTION (not a fact),"Candies, Caramels",nr:unsafeFor,Type 2 diabetes,2,-14.99,True
+PREDICTION (not a fact),"Candies, Caramels",nr:unsafeFor,Lactose intolerance,3,-15.391,False
+PREDICTION (not a fact),"Sandwich Sprd, W/Chopd Pickle, Reg, Unspec Oils",nr:unsafeFor,"Sandwich Sprd, W/Chopd Pickle, Reg, Unspec Oils",1,-13.921,False
+PREDICTION (not a fact),"Sandwich Sprd, W/Chopd Pickle, Reg, Unspec Oils",nr:unsafeFor,Hypertension,2,-15.011,True
+PREDICTION (not a fact),"Sandwich Sprd, W/Chopd Pickle, Reg, Unspec Oils",nr:unsafeFor,owl:NamedIndividual,3,-15.775,False
+PREDICTION (not a fact),Hormel Pillow Pak Sliced Turkey Pepperoni,nr:unsafeFor,Hormel Pillow Pak Sliced Turkey Pepperoni,1,-13.921,False
+PREDICTION (not a fact),Hormel Pillow Pak Sliced Turkey Pepperoni,nr:unsafeFor,Hypertension,2,-14.56,True
+PREDICTION (not a fact),Hormel Pillow Pak Sliced Turkey Pepperoni,nr:unsafeFor,"Pork, Frsh, Loin, Top Loin (Chops), Bnless, Ln & Fat, Raw",3,-15.35,False
+PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Honey Crunch Corn Flakes",nr:unsafeFor,"Cereals Rte, Kellogg, Kellogg'S Honey Crunch Corn Flakes",1,-13.921,False
+PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Honey Crunch Corn Flakes",nr:unsafeFor,"Beef, Loin, Top Sirlin Petite Rst, Bnls, Ln, 0"" Fat, Choc, Ckd, Rstd",2,-14.243,False
+PREDICTION (not a fact),"Cereals Rte, Kellogg, Kellogg'S Honey Crunch Corn Flakes",nr:unsafeFor,Type 2 diabetes,3,-14.408,True
+PREDICTION (not a fact),"Milk, Dry, Nonfat, Inst, W/ Added Vit A & Vitamin D",nr:unsafeFor,Lactose intolerance,1,-13.49,True
+PREDICTION (not a fact),"Milk, Dry, Nonfat, Inst, W/ Added Vit A & Vitamin D",nr:unsafeFor,"Milk, Dry, Nonfat, Inst, W/ Added Vit A & Vitamin D",2,-13.921,False
+PREDICTION (not a fact),"Milk, Dry, Nonfat, Inst, W/ Added Vit A & Vitamin D",nr:unsafeFor,owl:NamedIndividual,3,-14.901,False
+PREDICTION (not a fact),Lemon Bars,nr:unsafeFor,Lactose intolerance,1,-13.386,True
+PREDICTION (not a fact),Lemon Bars,nr:unsafeFor,owl:NamedIndividual,2,-13.472,False
+PREDICTION (not a fact),Lemon Bars,nr:unsafeFor,Lemon Bars,3,-13.921,False
