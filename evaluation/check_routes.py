@@ -14,8 +14,16 @@ Usage (from the repo root):
   python evaluation/check_routes.py --save before    # also write evaluation/results/routes_before.txt
   python evaluation/check_routes.py --save after     # write routes_after.txt and compare with routes_before.txt
   python evaluation/check_routes.py -v               # also print the reason for every question
+
+The script always runs with PYTHONHASHSEED=0 (see below), so the output is the same on every run.
 """
-import hashlib, json, os, sys
+import hashlib, json, os, subprocess, sys
+
+# rdflib returns rows of queries without ORDER BY in an order that depends on Python's string-hash seed, which is
+# random for every new process. Then two runs of the SAME code can pick different example rows and give different
+# fingerprints. Fix the seed so "before" and "after" runs are comparable: restart this script once with seed 0.
+if os.environ.get("PYTHONHASHSEED") != "0":
+    sys.exit(subprocess.run([sys.executable] + sys.argv, env={**os.environ, "PYTHONHASHSEED": "0"}).returncode)
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from retrieval.retriever import KGRetriever

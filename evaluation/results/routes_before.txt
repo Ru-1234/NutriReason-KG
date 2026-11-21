@@ -1,16 +1,16 @@
 # CQ
-CQ1  | condition_unsafe  | sufficient=True  | facts= 34 | 96516c5e | Nut allergy[Condition]
+CQ1  | condition_unsafe  | sufficient=True  | facts= 35 | 83a512aa | Nut allergy[Condition]
 CQ2  | both_conditions   | sufficient=True  | facts= 52 | a3aa4a8c | Type 2 diabetes[Condition], Hypertension[Condition]
 CQ4  | group_stats       | sufficient=True  | facts=  8 | 61d7a5b6 | -
 CQ5  | group_stats       | sufficient=True  | facts=  8 | c1daaa8f | Sodium[Nutrient]
-CQ8  | dish_profile      | sufficient=True  | facts= 17 | d83dc01e | Almond Cookies[Dish]
-CQ9  | food_profile      | sufficient=True  | facts= 14 | 29c9a3f3 | Hypertension[Condition], Type 2 diabetes[Condition], Cheddar Cheese[Dish], Sugar[Ingredient], Sodium[Nutrient]
-CQ11 | allergen_frequency| sufficient=True  | facts=  8 | bb604569 | -
-CQ12 | condition_unsafe  | sufficient=True  | facts= 25 | 0c473914 | Nut allergy[Condition]
-CQ13 | top_nutrient      | sufficient=True  | facts= 34 | 46f37b5d | Hypertension[Condition], Sodium[Nutrient]
+CQ8  | dish_profile      | sufficient=True  | facts= 17 | a2d6efcf | Almond Cookies[Dish]
+CQ9  | food_profile      | sufficient=True  | facts= 14 | a167f642 | Hypertension[Condition], Type 2 diabetes[Condition], Cheddar Cheese[Dish], Sugar[Ingredient], Sodium[Nutrient]
+CQ11 | allergen_frequency| sufficient=True  | facts=  8 | 74200991 | -
+CQ12 | condition_unsafe  | sufficient=True  | facts= 25 | 2603b8ed | Nut allergy[Condition]
+CQ13 | top_nutrient      | sufficient=True  | facts= 34 | 418c6cf6 | Hypertension[Condition], Sodium[Nutrient]
 CQ14 | rule_info         | sufficient=True  | facts=  5 | 9fe1dbc9 | Hypertension[Condition], Bacon Bits, Meatless[Food]
 # EXTRA
-X1   | condition_unsafe  | sufficient=True  | facts= 34 | 96516c5e | Nut allergy[Condition], Fruit[FoodType]
+X1   | condition_unsafe  | sufficient=True  | facts= 35 | 83a512aa | Nut allergy[Condition], Fruit[FoodType]
       Q: Can I eat dragon fruit curry if I have a nut allergy?
       reason: 9 dishes are unsafe for Nut allergy via an allergen-carrying ingredient (showing up to 12).
 X2   | safe_for          | sufficient=True  | facts= 44 | e85f450b | Type 2 diabetes[Condition], Fruit[FoodType]
@@ -31,10 +31,10 @@ X6   | food_profile      | sufficient=True  | facts= 10 | ab919a09 | Type 2 diab
 X7   | safe_for          | sufficient=True  | facts= 47 | f742c564 | Lactose intolerance[Condition], Sugar[Ingredient]
       Q: Which foods are safe for lactose intolerance and also low in sugar?
       reason: 565 foods that the graph classifies (they have a food group) have NO unsafeFor link to Lactose intolerance; 12 shown. 'Safe' = absence of an unsafeFor fact (open-world caveat).
-X8   | dish_profile      | sufficient=True  | facts= 15 | fec7abb2 | Nut allergy[Condition], Chicken Satay[Dish]
+X8   | dish_profile      | sufficient=True  | facts= 15 | f9ba0781 | Nut allergy[Condition], Chicken Satay[Dish]
       Q: Is Chicken Satay safe for someone with a nut allergy?
       reason: Relevant facts retrieved.
-X9   | food_profile      | sufficient=True  | facts= 14 | b68adad7 | Cheese[Ingredient], Sodium[Nutrient]
+X9   | food_profile      | sufficient=True  | facts= 14 | df90ec1f | Cheese[Ingredient], Sodium[Nutrient]
       Q: Is chedar cheese high in sodium?
       reason: Relevant facts retrieved.
 X10  | dish_profile      | sufficient=True  | facts= 16 | 31c9c76b | Lactose intolerance[Condition], Kheer[Dish]
