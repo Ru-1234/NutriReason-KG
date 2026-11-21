@@ -1,0 +1,868 @@
+status,food,food_uri,context,predicted_allergen,rank,score,as_confident_as_median_known_link
+PREDICTION (not a fact),BBQ Ribs,http://example.org/nutrireason/resource/dish/bbq_ribs,"ingredient: BBQ sauce; ingredient: Brown sugar; ingredient: Pork ribs; ingredient: Vegetable Oil, Palm Kernel",Shellfish,1,-10.866,False
+PREDICTION (not a fact),BBQ Ribs,http://example.org/nutrireason/resource/dish/bbq_ribs,"ingredient: BBQ sauce; ingredient: Brown sugar; ingredient: Pork ribs; ingredient: Vegetable Oil, Palm Kernel",Nut (unspecified),2,-11.181,False
+PREDICTION (not a fact),BBQ Ribs,http://example.org/nutrireason/resource/dish/bbq_ribs,"ingredient: BBQ sauce; ingredient: Brown sugar; ingredient: Pork ribs; ingredient: Vegetable Oil, Palm Kernel",Wheat / Gluten,3,-11.196,False
+PREDICTION (not a fact),Beef Burger,http://example.org/nutrireason/resource/dish/beef_burger,"ingredient: Ground beef; ingredient: Pepper; ingredient: Salt, Table; ingredient: Vegetable Oil, Palm Kernel",Eggs,1,-10.143,False
+PREDICTION (not a fact),Beef Burger,http://example.org/nutrireason/resource/dish/beef_burger,"ingredient: Ground beef; ingredient: Pepper; ingredient: Salt, Table; ingredient: Vegetable Oil, Palm Kernel",Shellfish,2,-10.906,False
+PREDICTION (not a fact),Beef Burger,http://example.org/nutrireason/resource/dish/beef_burger,"ingredient: Ground beef; ingredient: Pepper; ingredient: Salt, Table; ingredient: Vegetable Oil, Palm Kernel",Wheat / Gluten,3,-11.179,False
+PREDICTION (not a fact),Beef Burritos,http://example.org/nutrireason/resource/dish/beef_burritos,"ingredient: Ground beef; ingredient: Taco seasoning; ingredient: Vegetable Oil, Palm Kernel",Shellfish,1,-10.824,False
+PREDICTION (not a fact),Beef Burritos,http://example.org/nutrireason/resource/dish/beef_burritos,"ingredient: Ground beef; ingredient: Taco seasoning; ingredient: Vegetable Oil, Palm Kernel",Wheat / Gluten,2,-11.288,False
+PREDICTION (not a fact),Beef Burritos,http://example.org/nutrireason/resource/dish/beef_burritos,"ingredient: Ground beef; ingredient: Taco seasoning; ingredient: Vegetable Oil, Palm Kernel",Eggs,3,-11.313,False
+PREDICTION (not a fact),Beef Chili,http://example.org/nutrireason/resource/dish/beef_chili,ingredient: Chili Powder; ingredient: Ground beef,Shellfish,1,-10.868,False
+PREDICTION (not a fact),Beef Chili,http://example.org/nutrireason/resource/dish/beef_chili,ingredient: Chili Powder; ingredient: Ground beef,Eggs,2,-10.963,False
+PREDICTION (not a fact),Beef Chili,http://example.org/nutrireason/resource/dish/beef_chili,ingredient: Chili Powder; ingredient: Ground beef,Wheat / Gluten,3,-11.3,False
+PREDICTION (not a fact),Beef Kabobs,http://example.org/nutrireason/resource/dish/beef_kabobs,ingredient: Beef; ingredient: Olive oil; ingredient: Seasonings,Shellfish,1,-10.128,False
+PREDICTION (not a fact),Beef Kabobs,http://example.org/nutrireason/resource/dish/beef_kabobs,ingredient: Beef; ingredient: Olive oil; ingredient: Seasonings,Pork,2,-10.277,False
+PREDICTION (not a fact),Beef Kabobs,http://example.org/nutrireason/resource/dish/beef_kabobs,ingredient: Beef; ingredient: Olive oil; ingredient: Seasonings,Anchovies,3,-10.871,False
+PREDICTION (not a fact),Beef Tacos,http://example.org/nutrireason/resource/dish/beef_tacos,"ingredient: Ground beef; ingredient: Taco seasoning; ingredient: Vegetable Oil, Palm Kernel",Shellfish,1,-11.135,False
+PREDICTION (not a fact),Beef Tacos,http://example.org/nutrireason/resource/dish/beef_tacos,"ingredient: Ground beef; ingredient: Taco seasoning; ingredient: Vegetable Oil, Palm Kernel",Eggs,2,-11.525,False
+PREDICTION (not a fact),Beef Tacos,http://example.org/nutrireason/resource/dish/beef_tacos,"ingredient: Ground beef; ingredient: Taco seasoning; ingredient: Vegetable Oil, Palm Kernel",Wheat / Gluten,3,-11.617,False
+PREDICTION (not a fact),Black Bean Soup,http://example.org/nutrireason/resource/dish/black_bean_soup,ingredient: Black beans; ingredient: Olive oil; ingredient: Vegetables,Wheat / Gluten,1,-10.988,False
+PREDICTION (not a fact),Black Bean Soup,http://example.org/nutrireason/resource/dish/black_bean_soup,ingredient: Black beans; ingredient: Olive oil; ingredient: Vegetables,Anchovies,2,-11.145,False
+PREDICTION (not a fact),Black Bean Soup,http://example.org/nutrireason/resource/dish/black_bean_soup,ingredient: Black beans; ingredient: Olive oil; ingredient: Vegetables,Eggs,3,-11.197,False
+PREDICTION (not a fact),Chana Masala,http://example.org/nutrireason/resource/dish/chana_masala,ingredient: Chickpeas; ingredient: Masala spices; ingredient: Oil,Shellfish,1,-11.357,False
+PREDICTION (not a fact),Chana Masala,http://example.org/nutrireason/resource/dish/chana_masala,ingredient: Chickpeas; ingredient: Masala spices; ingredient: Oil,Wheat / Gluten,2,-11.682,False
+PREDICTION (not a fact),Chana Masala,http://example.org/nutrireason/resource/dish/chana_masala,ingredient: Chickpeas; ingredient: Masala spices; ingredient: Oil,Eggs,3,-11.699,False
+PREDICTION (not a fact),Chole Bhature,http://example.org/nutrireason/resource/dish/chole_bhature,ingredient: Chickpeas; ingredient: Chole masala; ingredient: Ghee; ingredient: Spices; ingredient: Sugar,Wheat / Gluten,1,-10.917,False
+PREDICTION (not a fact),Chole Bhature,http://example.org/nutrireason/resource/dish/chole_bhature,ingredient: Chickpeas; ingredient: Chole masala; ingredient: Ghee; ingredient: Spices; ingredient: Sugar,Cocoa,2,-10.919,False
+PREDICTION (not a fact),Chole Bhature,http://example.org/nutrireason/resource/dish/chole_bhature,ingredient: Chickpeas; ingredient: Chole masala; ingredient: Ghee; ingredient: Spices; ingredient: Sugar,Shellfish,3,-11.16,False
+PREDICTION (not a fact),Cucumber Salad,http://example.org/nutrireason/resource/dish/cucumber_salad,"ingredient: Cucumbers; ingredient: Dill; ingredient: Lemon Juice, Raw; ingredient: Olive oil",Shellfish,1,-10.135,False
+PREDICTION (not a fact),Cucumber Salad,http://example.org/nutrireason/resource/dish/cucumber_salad,"ingredient: Cucumbers; ingredient: Dill; ingredient: Lemon Juice, Raw; ingredient: Olive oil",Anchovies,2,-10.759,False
+PREDICTION (not a fact),Cucumber Salad,http://example.org/nutrireason/resource/dish/cucumber_salad,"ingredient: Cucumbers; ingredient: Dill; ingredient: Lemon Juice, Raw; ingredient: Olive oil",Eggs,3,-11.038,False
+PREDICTION (not a fact),Fruit Salad,http://example.org/nutrireason/resource/dish/fruit_salad,"ingredient: Lemon Juice, Raw; ingredient: Mixed fruits; ingredient: Sugar",Wheat / Gluten,1,-10.503,False
+PREDICTION (not a fact),Fruit Salad,http://example.org/nutrireason/resource/dish/fruit_salad,"ingredient: Lemon Juice, Raw; ingredient: Mixed fruits; ingredient: Sugar",Shellfish,2,-10.521,False
+PREDICTION (not a fact),Fruit Salad,http://example.org/nutrireason/resource/dish/fruit_salad,"ingredient: Lemon Juice, Raw; ingredient: Mixed fruits; ingredient: Sugar",Cocoa,3,-10.689,False
+PREDICTION (not a fact),Hyderabadi Biryani,http://example.org/nutrireason/resource/dish/hyderabadi_biryani,ingredient: Basmati rice; ingredient: Ghee; ingredient: Meat/vegetables; ingredient: Spices,Shellfish,1,-10.697,False
+PREDICTION (not a fact),Hyderabadi Biryani,http://example.org/nutrireason/resource/dish/hyderabadi_biryani,ingredient: Basmati rice; ingredient: Ghee; ingredient: Meat/vegetables; ingredient: Spices,Coconut,2,-11.122,False
+PREDICTION (not a fact),Hyderabadi Biryani,http://example.org/nutrireason/resource/dish/hyderabadi_biryani,ingredient: Basmati rice; ingredient: Ghee; ingredient: Meat/vegetables; ingredient: Spices,Eggs,3,-11.727,False
+PREDICTION (not a fact),Lemonade,http://example.org/nutrireason/resource/dish/lemonade,"ingredient: Lemon Juice, Raw; ingredient: Sugar; ingredient: Water",Shellfish,1,-10.403,False
+PREDICTION (not a fact),Lemonade,http://example.org/nutrireason/resource/dish/lemonade,"ingredient: Lemon Juice, Raw; ingredient: Sugar; ingredient: Water",Cocoa,2,-10.466,False
+PREDICTION (not a fact),Lemonade,http://example.org/nutrireason/resource/dish/lemonade,"ingredient: Lemon Juice, Raw; ingredient: Sugar; ingredient: Water",Wheat / Gluten,3,-10.468,False
+PREDICTION (not a fact),Minestrone Soup,http://example.org/nutrireason/resource/dish/minestrone_soup,ingredient: Olive oil; ingredient: Tomato broth; ingredient: Vegetables,Wheat / Gluten,1,-11.072,False
+PREDICTION (not a fact),Minestrone Soup,http://example.org/nutrireason/resource/dish/minestrone_soup,ingredient: Olive oil; ingredient: Tomato broth; ingredient: Vegetables,Anchovies,2,-11.176,False
+PREDICTION (not a fact),Minestrone Soup,http://example.org/nutrireason/resource/dish/minestrone_soup,ingredient: Olive oil; ingredient: Tomato broth; ingredient: Vegetables,Shellfish,3,-11.2,False
+PREDICTION (not a fact),Mutton Biryani,http://example.org/nutrireason/resource/dish/mutton_biryani,ingredient: Basmati rice; ingredient: Ghee; ingredient: Mutton; ingredient: Spices,Shellfish,1,-10.819,False
+PREDICTION (not a fact),Mutton Biryani,http://example.org/nutrireason/resource/dish/mutton_biryani,ingredient: Basmati rice; ingredient: Ghee; ingredient: Mutton; ingredient: Spices,Coconut,2,-11.347,False
+PREDICTION (not a fact),Mutton Biryani,http://example.org/nutrireason/resource/dish/mutton_biryani,ingredient: Basmati rice; ingredient: Ghee; ingredient: Mutton; ingredient: Spices,Wheat / Gluten,3,-11.775,False
+PREDICTION (not a fact),Pani Puri,http://example.org/nutrireason/resource/dish/pani_puri,"ingredient: Chutney; ingredient: Semolina; ingredient: Spiced water; ingredient: Tamarinds, Raw",Coconut,1,-11.11,False
+PREDICTION (not a fact),Pani Puri,http://example.org/nutrireason/resource/dish/pani_puri,"ingredient: Chutney; ingredient: Semolina; ingredient: Spiced water; ingredient: Tamarinds, Raw",Eggs,2,-11.402,False
+PREDICTION (not a fact),Pani Puri,http://example.org/nutrireason/resource/dish/pani_puri,"ingredient: Chutney; ingredient: Semolina; ingredient: Spiced water; ingredient: Tamarinds, Raw",Shellfish,3,-11.463,False
+PREDICTION (not a fact),Paniyaram,http://example.org/nutrireason/resource/dish/paniyaram,ingredient: Curry leaves; ingredient: Fermented batter; ingredient: Mustard seeds; ingredient: Oil,Shellfish,1,-11.569,False
+PREDICTION (not a fact),Paniyaram,http://example.org/nutrireason/resource/dish/paniyaram,ingredient: Curry leaves; ingredient: Fermented batter; ingredient: Mustard seeds; ingredient: Oil,Eggs,2,-11.828,False
+PREDICTION (not a fact),Paniyaram,http://example.org/nutrireason/resource/dish/paniyaram,ingredient: Curry leaves; ingredient: Fermented batter; ingredient: Mustard seeds; ingredient: Oil,Wheat / Gluten,3,-11.859,False
+PREDICTION (not a fact),Quinoa Salad,http://example.org/nutrireason/resource/dish/quinoa_salad,"ingredient: Herbs; ingredient: Lemon Juice, Raw; ingredient: Olive oil; ingredient: Quinoa",Shellfish,1,-10.268,False
+PREDICTION (not a fact),Quinoa Salad,http://example.org/nutrireason/resource/dish/quinoa_salad,"ingredient: Herbs; ingredient: Lemon Juice, Raw; ingredient: Olive oil; ingredient: Quinoa",Anchovies,2,-10.894,False
+PREDICTION (not a fact),Quinoa Salad,http://example.org/nutrireason/resource/dish/quinoa_salad,"ingredient: Herbs; ingredient: Lemon Juice, Raw; ingredient: Olive oil; ingredient: Quinoa",Eggs,3,-11.296,False
+PREDICTION (not a fact),Quinoa Stuffed Peppers,http://example.org/nutrireason/resource/dish/quinoa_stuffed_peppers,ingredient: Olive oil; ingredient: Quinoa; ingredient: Spices; ingredient: Vegetables,Coconut,1,-10.464,False
+PREDICTION (not a fact),Quinoa Stuffed Peppers,http://example.org/nutrireason/resource/dish/quinoa_stuffed_peppers,ingredient: Olive oil; ingredient: Quinoa; ingredient: Spices; ingredient: Vegetables,Shellfish,2,-10.645,False
+PREDICTION (not a fact),Quinoa Stuffed Peppers,http://example.org/nutrireason/resource/dish/quinoa_stuffed_peppers,ingredient: Olive oil; ingredient: Quinoa; ingredient: Spices; ingredient: Vegetables,Wheat / Gluten,3,-10.951,False
+PREDICTION (not a fact),Ratatouille Pizza,http://example.org/nutrireason/resource/dish/ratatouille_pizza,ingredient: Olive oil; ingredient: Pizza dough; ingredient: Ratatouille vegetables,Pork,1,-10.402,False
+PREDICTION (not a fact),Ratatouille Pizza,http://example.org/nutrireason/resource/dish/ratatouille_pizza,ingredient: Olive oil; ingredient: Pizza dough; ingredient: Ratatouille vegetables,Shellfish,2,-10.686,False
+PREDICTION (not a fact),Ratatouille Pizza,http://example.org/nutrireason/resource/dish/ratatouille_pizza,ingredient: Olive oil; ingredient: Pizza dough; ingredient: Ratatouille vegetables,Wheat / Gluten,3,-10.82,False
+PREDICTION (not a fact),Ratatouille Tart,http://example.org/nutrireason/resource/dish/ratatouille_tart,ingredient: Herbs; ingredient: Olive oil; ingredient: Puff pastry; ingredient: Vegetables,Wheat / Gluten,1,-10.354,False
+PREDICTION (not a fact),Ratatouille Tart,http://example.org/nutrireason/resource/dish/ratatouille_tart,ingredient: Herbs; ingredient: Olive oil; ingredient: Puff pastry; ingredient: Vegetables,Shellfish,2,-11.157,False
+PREDICTION (not a fact),Ratatouille Tart,http://example.org/nutrireason/resource/dish/ratatouille_tart,ingredient: Herbs; ingredient: Olive oil; ingredient: Puff pastry; ingredient: Vegetables,Fish,3,-11.206,False
+PREDICTION (not a fact),Spaghetti Bolognese,http://example.org/nutrireason/resource/dish/spaghetti_bolognese,ingredient: Ground beef; ingredient: Olive oil; ingredient: Sugar; ingredient: Tomato sauce,Wheat / Gluten,1,-10.245,False
+PREDICTION (not a fact),Spaghetti Bolognese,http://example.org/nutrireason/resource/dish/spaghetti_bolognese,ingredient: Ground beef; ingredient: Olive oil; ingredient: Sugar; ingredient: Tomato sauce,Cocoa,2,-10.813,False
+PREDICTION (not a fact),Spaghetti Bolognese,http://example.org/nutrireason/resource/dish/spaghetti_bolognese,ingredient: Ground beef; ingredient: Olive oil; ingredient: Sugar; ingredient: Tomato sauce,Shellfish,3,-10.931,False
+PREDICTION (not a fact),Vegetable Biryani,http://example.org/nutrireason/resource/dish/vegetable_biryani,ingredient: Basmati rice; ingredient: Ghee; ingredient: Mixed vegetables; ingredient: Spices,Shellfish,1,-10.501,False
+PREDICTION (not a fact),Vegetable Biryani,http://example.org/nutrireason/resource/dish/vegetable_biryani,ingredient: Basmati rice; ingredient: Ghee; ingredient: Mixed vegetables; ingredient: Spices,Coconut,2,-11.227,False
+PREDICTION (not a fact),Vegetable Biryani,http://example.org/nutrireason/resource/dish/vegetable_biryani,ingredient: Basmati rice; ingredient: Ghee; ingredient: Mixed vegetables; ingredient: Spices,Dairy,3,-11.554,False
+PREDICTION (not a fact),Vegetable Soup,http://example.org/nutrireason/resource/dish/vegetable_soup,ingredient: Mixed vegetables; ingredient: Olive oil; ingredient: Seasonings,Shellfish,1,-10.419,False
+PREDICTION (not a fact),Vegetable Soup,http://example.org/nutrireason/resource/dish/vegetable_soup,ingredient: Mixed vegetables; ingredient: Olive oil; ingredient: Seasonings,Pork,2,-10.987,False
+PREDICTION (not a fact),Vegetable Soup,http://example.org/nutrireason/resource/dish/vegetable_soup,ingredient: Mixed vegetables; ingredient: Olive oil; ingredient: Seasonings,Anchovies,3,-11.304,False
+PREDICTION (not a fact),Veggie Burger,http://example.org/nutrireason/resource/dish/veggie_burger,"ingredient: Mixed vegetables; ingredient: Seasonings; ingredient: Vegetable Oil, Palm Kernel",Shellfish,1,-10.208,False
+PREDICTION (not a fact),Veggie Burger,http://example.org/nutrireason/resource/dish/veggie_burger,"ingredient: Mixed vegetables; ingredient: Seasonings; ingredient: Vegetable Oil, Palm Kernel",Pork,2,-10.531,False
+PREDICTION (not a fact),Veggie Burger,http://example.org/nutrireason/resource/dish/veggie_burger,"ingredient: Mixed vegetables; ingredient: Seasonings; ingredient: Vegetable Oil, Palm Kernel",Wheat / Gluten,3,-11.177,False
+PREDICTION (not a fact),Veggie Omelette,http://example.org/nutrireason/resource/dish/veggie_omelette,"ingredient: Mixed vegetables; ingredient: Olive oil; ingredient: Pepper; ingredient: Salt, Table",Eggs,1,-10.334,False
+PREDICTION (not a fact),Veggie Omelette,http://example.org/nutrireason/resource/dish/veggie_omelette,"ingredient: Mixed vegetables; ingredient: Olive oil; ingredient: Pepper; ingredient: Salt, Table",Shellfish,2,-10.487,False
+PREDICTION (not a fact),Veggie Omelette,http://example.org/nutrireason/resource/dish/veggie_omelette,"ingredient: Mixed vegetables; ingredient: Olive oil; ingredient: Pepper; ingredient: Salt, Table",Anchovies,3,-10.737,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_ckd_bld_drnd_w_salt,group: Composite vegetable,Ltp,1,-9.63,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_ckd_bld_drnd_w_salt,group: Composite vegetable,Ragweed,2,-10.189,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_ckd_bld_drnd_w_salt,group: Composite vegetable,Potato,3,-11.879,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_ckd_bld_drnd_wo_salt,group: Composite vegetable,Ltp,1,-9.196,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_ckd_bld_drnd_wo_salt,group: Composite vegetable,Ragweed,2,-10.106,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_ckd_bld_drnd_wo_salt,group: Composite vegetable,Pepper,3,-11.721,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_frz_ckd_bld_drnd_w_salt,group: Composite vegetable,Ltp,1,-9.439,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_frz_ckd_bld_drnd_w_salt,group: Composite vegetable,Ragweed,2,-10.168,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_frz_ckd_bld_drnd_w_salt,group: Composite vegetable,Citrus,3,-11.939,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_frz_ckd_bld_drnd_wo_salt,group: Composite vegetable,Ltp,1,-9.248,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_frz_ckd_bld_drnd_wo_salt,group: Composite vegetable,Ragweed,2,-10.214,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_frz_ckd_bld_drnd_wo_salt,group: Composite vegetable,Honey,3,-11.88,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Raw",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_raw,group: Composite vegetable,Ltp,1,-8.975,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Raw",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_raw,group: Composite vegetable,Ragweed,2,-9.958,False
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Raw",http://example.org/nutrireason/resource/food/artichokes_globe_or_french_raw,group: Composite vegetable,Citrus,3,-11.897,False
+PREDICTION (not a fact),"Bacon, Meatless",http://example.org/nutrireason/resource/food/bacon_meatless,used in: Bacon-Wrapped Shrimp; used in: Pasta Carbonara; used in: Quiche Lorraine,Dairy,1,-9.962,False
+PREDICTION (not a fact),"Bacon, Meatless",http://example.org/nutrireason/resource/food/bacon_meatless,used in: Bacon-Wrapped Shrimp; used in: Pasta Carbonara; used in: Quiche Lorraine,Wheat / Gluten,2,-10.812,False
+PREDICTION (not a fact),"Bacon, Meatless",http://example.org/nutrireason/resource/food/bacon_meatless,used in: Bacon-Wrapped Shrimp; used in: Pasta Carbonara; used in: Quiche Lorraine,Celery,3,-10.898,False
+PREDICTION (not a fact),"Basil, Fresh",http://example.org/nutrireason/resource/food/basil_fresh,used in: Caprese Salad; used in: Caprese Sandwich; used in: Caprese Skewers; used in: Margherita Pizza; used in: Pesto Pasta; used in: Pesto Pizza; used in: Tomato Bruschetta,Dairy,1,-10.061,False
+PREDICTION (not a fact),"Basil, Fresh",http://example.org/nutrireason/resource/food/basil_fresh,used in: Caprese Salad; used in: Caprese Sandwich; used in: Caprese Skewers; used in: Margherita Pizza; used in: Pesto Pasta; used in: Pesto Pizza; used in: Tomato Bruschetta,Nightshade,2,-10.46,False
+PREDICTION (not a fact),"Basil, Fresh",http://example.org/nutrireason/resource/food/basil_fresh,used in: Caprese Salad; used in: Caprese Sandwich; used in: Caprese Skewers; used in: Margherita Pizza; used in: Pesto Pasta; used in: Pesto Pizza; used in: Tomato Bruschetta,Allium,3,-10.961,False
+PREDICTION (not a fact),Cacao bean,http://example.org/nutrireason/resource/food/cacao_bean,group: Beverage seed,Honey,1,-11.702,False
+PREDICTION (not a fact),Cacao bean,http://example.org/nutrireason/resource/food/cacao_bean,group: Beverage seed,Mint,2,-11.818,False
+PREDICTION (not a fact),Cacao bean,http://example.org/nutrireason/resource/food/cacao_bean,group: Beverage seed,Poultry,3,-11.825,False
+PREDICTION (not a fact),Canola oil,http://example.org/nutrireason/resource/food/canola_oil,group: Oil,Honey,1,-11.756,False
+PREDICTION (not a fact),Canola oil,http://example.org/nutrireason/resource/food/canola_oil,group: Oil,Allium,2,-11.838,False
+PREDICTION (not a fact),Canola oil,http://example.org/nutrireason/resource/food/canola_oil,group: Oil,Soy / Legume,3,-11.872,False
+PREDICTION (not a fact),"Capers, Canned",http://example.org/nutrireason/resource/food/capers_canned,used in: Chicken Piccata,Citrus,1,-10.184,False
+PREDICTION (not a fact),"Capers, Canned",http://example.org/nutrireason/resource/food/capers_canned,used in: Chicken Piccata,Chicken,2,-10.685,False
+PREDICTION (not a fact),"Capers, Canned",http://example.org/nutrireason/resource/food/capers_canned,used in: Chicken Piccata,Dairy,3,-10.698,False
+PREDICTION (not a fact),"Carrot, Dehydrated",http://example.org/nutrireason/resource/food/carrot_dehydrated,group: Umbelliferous vegetable,Celery,1,-9.742,False
+PREDICTION (not a fact),"Carrot, Dehydrated",http://example.org/nutrireason/resource/food/carrot_dehydrated,group: Umbelliferous vegetable,Ltp,2,-11.893,False
+PREDICTION (not a fact),"Carrot, Dehydrated",http://example.org/nutrireason/resource/food/carrot_dehydrated,group: Umbelliferous vegetable,Nightshade,3,-11.932,False
+PREDICTION (not a fact),"Carrots, Baby, Raw",http://example.org/nutrireason/resource/food/carrots_baby_raw,group: Umbelliferous vegetable,Celery,1,-9.768,False
+PREDICTION (not a fact),"Carrots, Baby, Raw",http://example.org/nutrireason/resource/food/carrots_baby_raw,group: Umbelliferous vegetable,Nightshade,2,-11.714,False
+PREDICTION (not a fact),"Carrots, Baby, Raw",http://example.org/nutrireason/resource/food/carrots_baby_raw,group: Umbelliferous vegetable,Fish,3,-11.745,False
+PREDICTION (not a fact),"Carrots, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/carrots_ckd_bld_drnd_w_salt,group: Umbelliferous vegetable,Celery,1,-9.611,False
+PREDICTION (not a fact),"Carrots, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/carrots_ckd_bld_drnd_w_salt,group: Umbelliferous vegetable,Ltp,2,-11.681,False
+PREDICTION (not a fact),"Carrots, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/carrots_ckd_bld_drnd_w_salt,group: Umbelliferous vegetable,Honey,3,-11.831,False
+PREDICTION (not a fact),"Carrots, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/carrots_ckd_bld_drnd_wo_salt,group: Umbelliferous vegetable,Celery,1,-9.726,False
+PREDICTION (not a fact),"Carrots, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/carrots_ckd_bld_drnd_wo_salt,group: Umbelliferous vegetable,Ltp,2,-11.777,False
+PREDICTION (not a fact),"Carrots, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/carrots_ckd_bld_drnd_wo_salt,group: Umbelliferous vegetable,Dairy,3,-11.789,False
+PREDICTION (not a fact),"Carrots, Cnd, No Salt, Drnd Sol",http://example.org/nutrireason/resource/food/carrots_cnd_no_salt_drnd_sol,group: Umbelliferous vegetable,Celery,1,-9.876,False
+PREDICTION (not a fact),"Carrots, Cnd, No Salt, Drnd Sol",http://example.org/nutrireason/resource/food/carrots_cnd_no_salt_drnd_sol,group: Umbelliferous vegetable,Dairy,2,-11.968,False
+PREDICTION (not a fact),"Carrots, Cnd, No Salt, Drnd Sol",http://example.org/nutrireason/resource/food/carrots_cnd_no_salt_drnd_sol,group: Umbelliferous vegetable,Allium,3,-11.977,False
+PREDICTION (not a fact),"Carrots, Cnd, No Salt, Sol&Liquids",http://example.org/nutrireason/resource/food/carrots_cnd_no_salt_sol_liquids,group: Umbelliferous vegetable,Celery,1,-9.674,False
+PREDICTION (not a fact),"Carrots, Cnd, No Salt, Sol&Liquids",http://example.org/nutrireason/resource/food/carrots_cnd_no_salt_sol_liquids,group: Umbelliferous vegetable,Nightshade,2,-11.962,False
+PREDICTION (not a fact),"Carrots, Cnd, No Salt, Sol&Liquids",http://example.org/nutrireason/resource/food/carrots_cnd_no_salt_sol_liquids,group: Umbelliferous vegetable,Histamine,3,-11.977,False
+PREDICTION (not a fact),"Carrots, Cnd, Reg Pk, Drnd Sol",http://example.org/nutrireason/resource/food/carrots_cnd_reg_pk_drnd_sol,group: Umbelliferous vegetable,Celery,1,-9.879,False
+PREDICTION (not a fact),"Carrots, Cnd, Reg Pk, Drnd Sol",http://example.org/nutrireason/resource/food/carrots_cnd_reg_pk_drnd_sol,group: Umbelliferous vegetable,Histamine,2,-11.843,False
+PREDICTION (not a fact),"Carrots, Cnd, Reg Pk, Drnd Sol",http://example.org/nutrireason/resource/food/carrots_cnd_reg_pk_drnd_sol,group: Umbelliferous vegetable,Ltp,3,-11.956,False
+PREDICTION (not a fact),"Carrots, Cnd, Reg Pk, Sol&Liquids",http://example.org/nutrireason/resource/food/carrots_cnd_reg_pk_sol_liquids,group: Umbelliferous vegetable,Celery,1,-9.867,False
+PREDICTION (not a fact),"Carrots, Cnd, Reg Pk, Sol&Liquids",http://example.org/nutrireason/resource/food/carrots_cnd_reg_pk_sol_liquids,group: Umbelliferous vegetable,Ltp,2,-11.908,False
+PREDICTION (not a fact),"Carrots, Cnd, Reg Pk, Sol&Liquids",http://example.org/nutrireason/resource/food/carrots_cnd_reg_pk_sol_liquids,group: Umbelliferous vegetable,Dairy,3,-12.018,False
+PREDICTION (not a fact),"Carrots, Frozen, Unprepared",http://example.org/nutrireason/resource/food/carrots_frozen_unprepared,group: Umbelliferous vegetable,Celery,1,-9.739,False
+PREDICTION (not a fact),"Carrots, Frozen, Unprepared",http://example.org/nutrireason/resource/food/carrots_frozen_unprepared,group: Umbelliferous vegetable,Nightshade,2,-11.704,False
+PREDICTION (not a fact),"Carrots, Frozen, Unprepared",http://example.org/nutrireason/resource/food/carrots_frozen_unprepared,group: Umbelliferous vegetable,Ltp,3,-11.736,False
+PREDICTION (not a fact),"Carrots, Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/carrots_frz_ckd_bld_drnd_w_salt,group: Umbelliferous vegetable,Celery,1,-9.945,False
+PREDICTION (not a fact),"Carrots, Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/carrots_frz_ckd_bld_drnd_w_salt,group: Umbelliferous vegetable,Ltp,2,-11.948,False
+PREDICTION (not a fact),"Carrots, Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/carrots_frz_ckd_bld_drnd_w_salt,group: Umbelliferous vegetable,Fish,3,-11.959,False
+PREDICTION (not a fact),"Carrots, Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/carrots_frz_ckd_bld_drnd_wo_salt,group: Umbelliferous vegetable,Celery,1,-9.485,False
+PREDICTION (not a fact),"Carrots, Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/carrots_frz_ckd_bld_drnd_wo_salt,group: Umbelliferous vegetable,Nightshade,2,-11.735,False
+PREDICTION (not a fact),"Carrots, Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/carrots_frz_ckd_bld_drnd_wo_salt,group: Umbelliferous vegetable,Histamine,3,-11.827,False
+PREDICTION (not a fact),"Carrots, Raw",http://example.org/nutrireason/resource/food/carrots_raw,group: Umbelliferous vegetable,Celery,1,-9.793,False
+PREDICTION (not a fact),"Carrots, Raw",http://example.org/nutrireason/resource/food/carrots_raw,group: Umbelliferous vegetable,Dairy,2,-12.042,False
+PREDICTION (not a fact),"Carrots, Raw",http://example.org/nutrireason/resource/food/carrots_raw,group: Umbelliferous vegetable,Histamine,3,-12.065,False
+PREDICTION (not a fact),Chicory,http://example.org/nutrireason/resource/food/chicory,group: Composite vegetable,Ltp,1,-9.184,False
+PREDICTION (not a fact),Chicory,http://example.org/nutrireason/resource/food/chicory,group: Composite vegetable,Ragweed,2,-10.046,False
+PREDICTION (not a fact),Chicory,http://example.org/nutrireason/resource/food/chicory,group: Composite vegetable,Citrus,3,-11.846,False
+PREDICTION (not a fact),Chili Powder,http://example.org/nutrireason/resource/food/chili_powder,used in: Beef Chili,Dairy,1,-10.774,False
+PREDICTION (not a fact),Chili Powder,http://example.org/nutrireason/resource/food/chili_powder,used in: Beef Chili,Honey,2,-11.125,False
+PREDICTION (not a fact),Chili Powder,http://example.org/nutrireason/resource/food/chili_powder,used in: Beef Chili,Histamine,3,-11.338,False
+PREDICTION (not a fact),"Cinnamon, Ground",http://example.org/nutrireason/resource/food/cinnamon_ground,used in: Apple Cider; used in: Apple Crisp; used in: Apple Pie; used in: Baked Apple; used in: Berry Crumble; used in: Carrot Cake; used in: Cinnamon Rolls; used in: Oatmeal; used in: Pumpkin Pie; use,Dairy,1,-10.375,False
+PREDICTION (not a fact),"Cinnamon, Ground",http://example.org/nutrireason/resource/food/cinnamon_ground,used in: Apple Cider; used in: Apple Crisp; used in: Apple Pie; used in: Baked Apple; used in: Berry Crumble; used in: Carrot Cake; used in: Cinnamon Rolls; used in: Oatmeal; used in: Pumpkin Pie; use,Oral Allergy Syndrome,2,-10.9,False
+PREDICTION (not a fact),"Cinnamon, Ground",http://example.org/nutrireason/resource/food/cinnamon_ground,used in: Apple Cider; used in: Apple Crisp; used in: Apple Pie; used in: Baked Apple; used in: Berry Crumble; used in: Carrot Cake; used in: Cinnamon Rolls; used in: Oatmeal; used in: Pumpkin Pie; use,Honey,3,-10.996,False
+PREDICTION (not a fact),Coconut oil,http://example.org/nutrireason/resource/food/coconut_oil,group: Oil; used in: Malabar Fish Curry,Honey,1,-10.827,False
+PREDICTION (not a fact),Coconut oil,http://example.org/nutrireason/resource/food/coconut_oil,group: Oil; used in: Malabar Fish Curry,Dairy,2,-10.902,False
+PREDICTION (not a fact),Coconut oil,http://example.org/nutrireason/resource/food/coconut_oil,group: Oil; used in: Malabar Fish Curry,Citrus,3,-11.078,False
+PREDICTION (not a fact),Coffee bean,http://example.org/nutrireason/resource/food/coffee_bean,group: Beverage seed,Honey,1,-11.6,False
+PREDICTION (not a fact),Coffee bean,http://example.org/nutrireason/resource/food/coffee_bean,group: Beverage seed,Mint,2,-11.835,False
+PREDICTION (not a fact),Coffee bean,http://example.org/nutrireason/resource/food/coffee_bean,group: Beverage seed,Soy / Legume,3,-11.846,False
+PREDICTION (not a fact),Corn oil,http://example.org/nutrireason/resource/food/corn_oil,group: Oil,Nightshade,1,-11.752,False
+PREDICTION (not a fact),Corn oil,http://example.org/nutrireason/resource/food/corn_oil,group: Oil,Honey,2,-11.754,False
+PREDICTION (not a fact),Corn oil,http://example.org/nutrireason/resource/food/corn_oil,group: Oil,Histamine,3,-11.906,False
+PREDICTION (not a fact),"Cucumber, Peeled, Raw",http://example.org/nutrireason/resource/food/cucumber_peeled_raw,group: Cucurbitaceous vegetable,Potato,1,-12.011,False
+PREDICTION (not a fact),"Cucumber, Peeled, Raw",http://example.org/nutrireason/resource/food/cucumber_peeled_raw,group: Cucurbitaceous vegetable,Nightshade,2,-12.059,False
+PREDICTION (not a fact),"Cucumber, Peeled, Raw",http://example.org/nutrireason/resource/food/cucumber_peeled_raw,group: Cucurbitaceous vegetable,Fish,3,-12.098,False
+PREDICTION (not a fact),"Cucumber, With Peel, Raw",http://example.org/nutrireason/resource/food/cucumber_with_peel_raw,group: Cucurbitaceous vegetable,Nightshade,1,-11.933,False
+PREDICTION (not a fact),"Cucumber, With Peel, Raw",http://example.org/nutrireason/resource/food/cucumber_with_peel_raw,group: Cucurbitaceous vegetable,Citrus,2,-11.964,False
+PREDICTION (not a fact),"Cucumber, With Peel, Raw",http://example.org/nutrireason/resource/food/cucumber_with_peel_raw,group: Cucurbitaceous vegetable,Honey,3,-12.034,False
+PREDICTION (not a fact),Curry Powder,http://example.org/nutrireason/resource/food/curry_powder,used in: Chicken Curry; used in: Lentil Curry,Soy / Legume,1,-10.724,False
+PREDICTION (not a fact),Curry Powder,http://example.org/nutrireason/resource/food/curry_powder,used in: Chicken Curry; used in: Lentil Curry,Dairy,2,-10.725,False
+PREDICTION (not a fact),Curry Powder,http://example.org/nutrireason/resource/food/curry_powder,used in: Chicken Curry; used in: Lentil Curry,Chicken,3,-10.855,False
+PREDICTION (not a fact),"Endive, Raw",http://example.org/nutrireason/resource/food/endive_raw,group: Composite vegetable,Ltp,1,-9.32,False
+PREDICTION (not a fact),"Endive, Raw",http://example.org/nutrireason/resource/food/endive_raw,group: Composite vegetable,Ragweed,2,-9.987,False
+PREDICTION (not a fact),"Endive, Raw",http://example.org/nutrireason/resource/food/endive_raw,group: Composite vegetable,Citrus,3,-11.912,False
+PREDICTION (not a fact),Fructose,http://example.org/nutrireason/resource/food/fructose,group: Sugar source,Histamine,1,-11.686,False
+PREDICTION (not a fact),Fructose,http://example.org/nutrireason/resource/food/fructose,group: Sugar source,Ltp,2,-11.687,False
+PREDICTION (not a fact),Fructose,http://example.org/nutrireason/resource/food/fructose,group: Sugar source,Mushroom,3,-11.717,False
+PREDICTION (not a fact),Ghrkin,http://example.org/nutrireason/resource/food/ghrkin,group: Cucurbitaceous vegetable,Nightshade,1,-11.968,False
+PREDICTION (not a fact),Ghrkin,http://example.org/nutrireason/resource/food/ghrkin,group: Cucurbitaceous vegetable,Potato,2,-12.107,False
+PREDICTION (not a fact),Ghrkin,http://example.org/nutrireason/resource/food/ghrkin,group: Cucurbitaceous vegetable,Alpha-Gal Syndrome,3,-12.112,False
+PREDICTION (not a fact),Glucose,http://example.org/nutrireason/resource/food/glucose,group: Sugar source,Oral Allergy Syndrome,1,-11.942,False
+PREDICTION (not a fact),Glucose,http://example.org/nutrireason/resource/food/glucose,group: Sugar source,Ltp,2,-11.983,False
+PREDICTION (not a fact),Glucose,http://example.org/nutrireason/resource/food/glucose,group: Sugar source,Soy / Legume,3,-12.073,False
+PREDICTION (not a fact),Grapeseed oil,http://example.org/nutrireason/resource/food/grapeseed_oil,group: Oil,Honey,1,-11.566,False
+PREDICTION (not a fact),Grapeseed oil,http://example.org/nutrireason/resource/food/grapeseed_oil,group: Oil,Histamine,2,-11.842,False
+PREDICTION (not a fact),Grapeseed oil,http://example.org/nutrireason/resource/food/grapeseed_oil,group: Oil,Dairy,3,-11.862,False
+PREDICTION (not a fact),Groundnut oil,http://example.org/nutrireason/resource/food/groundnut_oil,group: Oil,Honey,1,-11.534,False
+PREDICTION (not a fact),Groundnut oil,http://example.org/nutrireason/resource/food/groundnut_oil,group: Oil,Histamine,2,-11.739,False
+PREDICTION (not a fact),Groundnut oil,http://example.org/nutrireason/resource/food/groundnut_oil,group: Oil,Allium,3,-11.81,False
+PREDICTION (not a fact),Japanese persimmon,http://example.org/nutrireason/resource/food/japanese_persimmon,group: Tropical fruit,Banana,1,-9.279,False
+PREDICTION (not a fact),Japanese persimmon,http://example.org/nutrireason/resource/food/japanese_persimmon,group: Tropical fruit,Oral Allergy Syndrome,2,-9.739,False
+PREDICTION (not a fact),Japanese persimmon,http://example.org/nutrireason/resource/food/japanese_persimmon,group: Tropical fruit,Honey,3,-11.758,False
+PREDICTION (not a fact),"Lemon Juice, Raw",http://example.org/nutrireason/resource/food/lemon_juice_raw,used in: Cucumber Salad; used in: Fruit Salad; used in: Greek Lemon Chicken; used in: Greek Lemon Potatoes; used in: Lemon Bars; used in: Lemon Garlic Chicken; used in: Lemon Garlic Shrimp; used in: L,Dairy,1,-10.904,False
+PREDICTION (not a fact),"Lemon Juice, Raw",http://example.org/nutrireason/resource/food/lemon_juice_raw,used in: Cucumber Salad; used in: Fruit Salad; used in: Greek Lemon Chicken; used in: Greek Lemon Potatoes; used in: Lemon Bars; used in: Lemon Garlic Chicken; used in: Lemon Garlic Shrimp; used in: L,Allium,2,-11.084,False
+PREDICTION (not a fact),"Lemon Juice, Raw",http://example.org/nutrireason/resource/food/lemon_juice_raw,used in: Cucumber Salad; used in: Fruit Salad; used in: Greek Lemon Chicken; used in: Greek Lemon Potatoes; used in: Lemon Bars; used in: Lemon Garlic Chicken; used in: Lemon Garlic Shrimp; used in: L,Soy / Legume,3,-11.18,False
+PREDICTION (not a fact),"Lime Juice, Raw",http://example.org/nutrireason/resource/food/lime_juice_raw,used in: Key Lime Pie,Dairy,1,-10.697,False
+PREDICTION (not a fact),"Lime Juice, Raw",http://example.org/nutrireason/resource/food/lime_juice_raw,used in: Key Lime Pie,Citrus,2,-10.753,False
+PREDICTION (not a fact),"Lime Juice, Raw",http://example.org/nutrireason/resource/food/lime_juice_raw,used in: Key Lime Pie,Honey,3,-10.84,False
+PREDICTION (not a fact),Makuwauri melon,http://example.org/nutrireason/resource/food/makuwauri_melon,group: Cucurbitaceous vegetable,Nightshade,1,-12.081,False
+PREDICTION (not a fact),Makuwauri melon,http://example.org/nutrireason/resource/food/makuwauri_melon,group: Cucurbitaceous vegetable,Stone Fruit,2,-12.134,False
+PREDICTION (not a fact),Makuwauri melon,http://example.org/nutrireason/resource/food/makuwauri_melon,group: Cucurbitaceous vegetable,Allium,3,-12.179,False
+PREDICTION (not a fact),"Melon, Banana (Navajo)",http://example.org/nutrireason/resource/food/melon_banana_navajo,group: Cucurbitaceous vegetable,Mushroom,1,-11.992,False
+PREDICTION (not a fact),"Melon, Banana (Navajo)",http://example.org/nutrireason/resource/food/melon_banana_navajo,group: Cucurbitaceous vegetable,Chicken,2,-12.097,False
+PREDICTION (not a fact),"Melon, Banana (Navajo)",http://example.org/nutrireason/resource/food/melon_banana_navajo,group: Cucurbitaceous vegetable,Potato,3,-12.126,False
+PREDICTION (not a fact),"Melons, Cantaloupe, Raw",http://example.org/nutrireason/resource/food/melons_cantaloupe_raw,group: Cucurbitaceous vegetable,Ltp,1,-11.796,False
+PREDICTION (not a fact),"Melons, Cantaloupe, Raw",http://example.org/nutrireason/resource/food/melons_cantaloupe_raw,group: Cucurbitaceous vegetable,Fish,2,-11.825,False
+PREDICTION (not a fact),"Melons, Cantaloupe, Raw",http://example.org/nutrireason/resource/food/melons_cantaloupe_raw,group: Cucurbitaceous vegetable,Allium,3,-11.837,False
+PREDICTION (not a fact),"Melons, Casaba, Raw",http://example.org/nutrireason/resource/food/melons_casaba_raw,group: Cucurbitaceous vegetable,Fish,1,-12.141,False
+PREDICTION (not a fact),"Melons, Casaba, Raw",http://example.org/nutrireason/resource/food/melons_casaba_raw,group: Cucurbitaceous vegetable,Allium,2,-12.202,False
+PREDICTION (not a fact),"Melons, Casaba, Raw",http://example.org/nutrireason/resource/food/melons_casaba_raw,group: Cucurbitaceous vegetable,Mint,3,-12.245,False
+PREDICTION (not a fact),"Melons, Honeydew, Raw",http://example.org/nutrireason/resource/food/melons_honeydew_raw,group: Cucurbitaceous vegetable,Potato,1,-11.974,False
+PREDICTION (not a fact),"Melons, Honeydew, Raw",http://example.org/nutrireason/resource/food/melons_honeydew_raw,group: Cucurbitaceous vegetable,Honey,2,-11.994,False
+PREDICTION (not a fact),"Melons, Honeydew, Raw",http://example.org/nutrireason/resource/food/melons_honeydew_raw,group: Cucurbitaceous vegetable,Nightshade,3,-12.005,False
+PREDICTION (not a fact),Mineral water,http://example.org/nutrireason/resource/food/mineral_water,group: Mineral water,Nightshade,1,-11.452,False
+PREDICTION (not a fact),Mineral water,http://example.org/nutrireason/resource/food/mineral_water,group: Mineral water,Honey,2,-11.697,False
+PREDICTION (not a fact),Mineral water,http://example.org/nutrireason/resource/food/mineral_water,group: Mineral water,Citrus,3,-11.711,False
+PREDICTION (not a fact),Mitsuba,http://example.org/nutrireason/resource/food/mitsuba,group: Umbelliferous vegetable,Celery,1,-9.548,False
+PREDICTION (not a fact),Mitsuba,http://example.org/nutrireason/resource/food/mitsuba,group: Umbelliferous vegetable,Dairy,2,-11.851,False
+PREDICTION (not a fact),Mitsuba,http://example.org/nutrireason/resource/food/mitsuba,group: Umbelliferous vegetable,Histamine,3,-11.858,False
+PREDICTION (not a fact),Mustard oil,http://example.org/nutrireason/resource/food/mustard_oil,group: Oil,Honey,1,-11.784,False
+PREDICTION (not a fact),Mustard oil,http://example.org/nutrireason/resource/food/mustard_oil,group: Oil,Allium,2,-11.944,False
+PREDICTION (not a fact),Mustard oil,http://example.org/nutrireason/resource/food/mustard_oil,group: Oil,Dairy,3,-11.946,False
+PREDICTION (not a fact),"Mustard, Prepared, Yellow",http://example.org/nutrireason/resource/food/mustard_prepared_yellow,used in: Egg Salad Sandwich; used in: Honey Mustard Chicken,Honey,1,-9.522,False
+PREDICTION (not a fact),"Mustard, Prepared, Yellow",http://example.org/nutrireason/resource/food/mustard_prepared_yellow,used in: Egg Salad Sandwich; used in: Honey Mustard Chicken,Celery,2,-10.286,False
+PREDICTION (not a fact),"Mustard, Prepared, Yellow",http://example.org/nutrireason/resource/food/mustard_prepared_yellow,used in: Egg Salad Sandwich; used in: Honey Mustard Chicken,Chicken,3,-10.758,False
+PREDICTION (not a fact),"Nutmeg, Ground",http://example.org/nutrireason/resource/food/nutmeg_ground,used in: Pumpkin Pie; used in: Pumpkin Soup; used in: Sweet Potato Casserole,Dairy,1,-10.431,False
+PREDICTION (not a fact),"Nutmeg, Ground",http://example.org/nutrireason/resource/food/nutmeg_ground,used in: Pumpkin Pie; used in: Pumpkin Soup; used in: Sweet Potato Casserole,Honey,2,-11.154,False
+PREDICTION (not a fact),"Nutmeg, Ground",http://example.org/nutrireason/resource/food/nutmeg_ground,used in: Pumpkin Pie; used in: Pumpkin Soup; used in: Sweet Potato Casserole,Citrus,3,-11.174,False
+PREDICTION (not a fact),Olive oil,http://example.org/nutrireason/resource/food/olive_oil,group: Oil; used in: Avocado Toast; used in: Baked Chicken Wings; used in: Baked Salmon; used in: Beef Kabobs; used in: Black Bean Soup; used in: Brussels Sprouts; used in: Cabbage Rolls; used in: Cae,Dairy,1,-10.346,False
+PREDICTION (not a fact),Olive oil,http://example.org/nutrireason/resource/food/olive_oil,group: Oil; used in: Avocado Toast; used in: Baked Chicken Wings; used in: Baked Salmon; used in: Beef Kabobs; used in: Black Bean Soup; used in: Brussels Sprouts; used in: Cabbage Rolls; used in: Cae,Citrus,2,-10.81,False
+PREDICTION (not a fact),Olive oil,http://example.org/nutrireason/resource/food/olive_oil,group: Oil; used in: Avocado Toast; used in: Baked Chicken Wings; used in: Baked Salmon; used in: Beef Kabobs; used in: Black Bean Soup; used in: Brussels Sprouts; used in: Cabbage Rolls; used in: Cae,Histamine,3,-11.159,False
+PREDICTION (not a fact),Paprika,http://example.org/nutrireason/resource/food/paprika,used in: Sweet Potato Fries,Honey,1,-10.672,False
+PREDICTION (not a fact),Paprika,http://example.org/nutrireason/resource/food/paprika,used in: Sweet Potato Fries,Dairy,2,-10.821,False
+PREDICTION (not a fact),Paprika,http://example.org/nutrireason/resource/food/paprika,used in: Sweet Potato Fries,Citrus,3,-10.831,False
+PREDICTION (not a fact),"Parsley, Dried",http://example.org/nutrireason/resource/food/parsley_dried,group: Umbelliferous vegetable,Celery,1,-9.76,False
+PREDICTION (not a fact),"Parsley, Dried",http://example.org/nutrireason/resource/food/parsley_dried,group: Umbelliferous vegetable,Nightshade,2,-11.747,False
+PREDICTION (not a fact),"Parsley, Dried",http://example.org/nutrireason/resource/food/parsley_dried,group: Umbelliferous vegetable,Dairy,3,-11.957,False
+PREDICTION (not a fact),"Parsley, Frsh",http://example.org/nutrireason/resource/food/parsley_frsh,group: Umbelliferous vegetable,Celery,1,-9.704,False
+PREDICTION (not a fact),"Parsley, Frsh",http://example.org/nutrireason/resource/food/parsley_frsh,group: Umbelliferous vegetable,Ltp,2,-11.814,False
+PREDICTION (not a fact),"Parsley, Frsh",http://example.org/nutrireason/resource/food/parsley_frsh,group: Umbelliferous vegetable,Potato,3,-11.884,False
+PREDICTION (not a fact),"Parsnips, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/parsnips_ckd_bld_drnd_w_salt,group: Umbelliferous vegetable,Celery,1,-9.702,False
+PREDICTION (not a fact),"Parsnips, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/parsnips_ckd_bld_drnd_w_salt,group: Umbelliferous vegetable,Nightshade,2,-11.87,False
+PREDICTION (not a fact),"Parsnips, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/parsnips_ckd_bld_drnd_w_salt,group: Umbelliferous vegetable,Histamine,3,-11.892,False
+PREDICTION (not a fact),"Parsnips, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/parsnips_ckd_bld_drnd_wo_salt,group: Umbelliferous vegetable,Celery,1,-9.825,False
+PREDICTION (not a fact),"Parsnips, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/parsnips_ckd_bld_drnd_wo_salt,group: Umbelliferous vegetable,Honey,2,-11.925,False
+PREDICTION (not a fact),"Parsnips, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/parsnips_ckd_bld_drnd_wo_salt,group: Umbelliferous vegetable,Fish,3,-11.997,False
+PREDICTION (not a fact),"Parsnips, Raw",http://example.org/nutrireason/resource/food/parsnips_raw,group: Umbelliferous vegetable,Celery,1,-9.556,False
+PREDICTION (not a fact),"Parsnips, Raw",http://example.org/nutrireason/resource/food/parsnips_raw,group: Umbelliferous vegetable,Ltp,2,-11.76,False
+PREDICTION (not a fact),"Parsnips, Raw",http://example.org/nutrireason/resource/food/parsnips_raw,group: Umbelliferous vegetable,Fish,3,-11.844,False
+PREDICTION (not a fact),"Pastry, Pastelitos De Guava (Guava Pastries)",http://example.org/nutrireason/resource/food/pastry_pastelitos_de_guava_guava_pastries,used in: Chicken Pot Pie,Dairy,1,-10.533,False
+PREDICTION (not a fact),"Pastry, Pastelitos De Guava (Guava Pastries)",http://example.org/nutrireason/resource/food/pastry_pastelitos_de_guava_guava_pastries,used in: Chicken Pot Pie,Citrus,2,-11.076,False
+PREDICTION (not a fact),"Pastry, Pastelitos De Guava (Guava Pastries)",http://example.org/nutrireason/resource/food/pastry_pastelitos_de_guava_guava_pastries,used in: Chicken Pot Pie,Chicken,3,-11.081,False
+PREDICTION (not a fact),"Pectin, Liquid",http://example.org/nutrireason/resource/food/pectin_liquid,used in: Strawberry Yogurt,Dairy,1,-10.527,False
+PREDICTION (not a fact),"Pectin, Liquid",http://example.org/nutrireason/resource/food/pectin_liquid,used in: Strawberry Yogurt,Honey,2,-10.861,False
+PREDICTION (not a fact),"Pectin, Liquid",http://example.org/nutrireason/resource/food/pectin_liquid,used in: Strawberry Yogurt,Banana,3,-10.956,False
+PREDICTION (not a fact),Phyllo Dough,http://example.org/nutrireason/resource/food/phyllo_dough,used in: Greek Spanakopita,Histamine,1,-10.506,False
+PREDICTION (not a fact),Phyllo Dough,http://example.org/nutrireason/resource/food/phyllo_dough,used in: Greek Spanakopita,Dairy,2,-10.511,False
+PREDICTION (not a fact),Phyllo Dough,http://example.org/nutrireason/resource/food/phyllo_dough,used in: Greek Spanakopita,Honey,3,-11.101,False
+PREDICTION (not a fact),Poppy Seed,http://example.org/nutrireason/resource/food/poppy_seed,used in: Lemon Poppy Seed Muffins,Dairy,1,-10.625,False
+PREDICTION (not a fact),Poppy Seed,http://example.org/nutrireason/resource/food/poppy_seed,used in: Lemon Poppy Seed Muffins,Honey,2,-10.895,False
+PREDICTION (not a fact),Poppy Seed,http://example.org/nutrireason/resource/food/poppy_seed,used in: Lemon Poppy Seed Muffins,Wheat / Gluten,3,-11.049,False
+PREDICTION (not a fact),"Pumpkin, Canned, With Salt",http://example.org/nutrireason/resource/food/pumpkin_canned_with_salt,group: Cucurbitaceous vegetable,Nightshade,1,-11.924,False
+PREDICTION (not a fact),"Pumpkin, Canned, With Salt",http://example.org/nutrireason/resource/food/pumpkin_canned_with_salt,group: Cucurbitaceous vegetable,Stone Fruit,2,-11.978,False
+PREDICTION (not a fact),"Pumpkin, Canned, With Salt",http://example.org/nutrireason/resource/food/pumpkin_canned_with_salt,group: Cucurbitaceous vegetable,Honey,3,-12.057,False
+PREDICTION (not a fact),"Pumpkin, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/pumpkin_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Ltp,1,-11.99,False
+PREDICTION (not a fact),"Pumpkin, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/pumpkin_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Honey,2,-12.093,False
+PREDICTION (not a fact),"Pumpkin, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/pumpkin_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Allium,3,-12.17,False
+PREDICTION (not a fact),"Pumpkin, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/pumpkin_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Stone Fruit,1,-11.9,False
+PREDICTION (not a fact),"Pumpkin, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/pumpkin_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Dairy,2,-12.076,False
+PREDICTION (not a fact),"Pumpkin, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/pumpkin_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Ltp,3,-12.077,False
+PREDICTION (not a fact),"Pumpkin, Cnd, Wo/Salt",http://example.org/nutrireason/resource/food/pumpkin_cnd_wo_salt,group: Cucurbitaceous vegetable,Alpha-Gal Syndrome,1,-12.043,False
+PREDICTION (not a fact),"Pumpkin, Cnd, Wo/Salt",http://example.org/nutrireason/resource/food/pumpkin_cnd_wo_salt,group: Cucurbitaceous vegetable,Allium,2,-12.081,False
+PREDICTION (not a fact),"Pumpkin, Cnd, Wo/Salt",http://example.org/nutrireason/resource/food/pumpkin_cnd_wo_salt,group: Cucurbitaceous vegetable,Nightshade,3,-12.112,False
+PREDICTION (not a fact),"Pumpkin, Flowers, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/pumpkin_flowers_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Mint,1,-12.058,False
+PREDICTION (not a fact),"Pumpkin, Flowers, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/pumpkin_flowers_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Allium,2,-12.059,False
+PREDICTION (not a fact),"Pumpkin, Flowers, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/pumpkin_flowers_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Salicylate,3,-12.083,False
+PREDICTION (not a fact),"Pumpkin, Raw",http://example.org/nutrireason/resource/food/pumpkin_raw,group: Cucurbitaceous vegetable,Honey,1,-12.0,False
+PREDICTION (not a fact),"Pumpkin, Raw",http://example.org/nutrireason/resource/food/pumpkin_raw,group: Cucurbitaceous vegetable,Chicken,2,-12.079,False
+PREDICTION (not a fact),"Pumpkin, Raw",http://example.org/nutrireason/resource/food/pumpkin_raw,group: Cucurbitaceous vegetable,Mint,3,-12.115,False
+PREDICTION (not a fact),Radish leaf,http://example.org/nutrireason/resource/food/radish_leaf,group: Cruciferous vegetable,Cruciferous,1,-9.426,False
+PREDICTION (not a fact),Radish leaf,http://example.org/nutrireason/resource/food/radish_leaf,group: Cruciferous vegetable,Broccoli,2,-10.271,False
+PREDICTION (not a fact),Radish leaf,http://example.org/nutrireason/resource/food/radish_leaf,group: Cruciferous vegetable,Ltp,3,-11.921,False
+PREDICTION (not a fact),Radish root,http://example.org/nutrireason/resource/food/radish_root,group: Cruciferous vegetable,Cruciferous,1,-8.919,False
+PREDICTION (not a fact),Radish root,http://example.org/nutrireason/resource/food/radish_root,group: Cruciferous vegetable,Broccoli,2,-9.667,False
+PREDICTION (not a fact),Radish root,http://example.org/nutrireason/resource/food/radish_root,group: Cruciferous vegetable,Mint,3,-11.797,False
+PREDICTION (not a fact),Ricebran oil,http://example.org/nutrireason/resource/food/ricebran_oil,group: Oil,Honey,1,-11.567,False
+PREDICTION (not a fact),Ricebran oil,http://example.org/nutrireason/resource/food/ricebran_oil,group: Oil,Allium,2,-11.637,False
+PREDICTION (not a fact),Ricebran oil,http://example.org/nutrireason/resource/food/ricebran_oil,group: Oil,Dairy,3,-11.652,False
+PREDICTION (not a fact),"Salsify, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/salsify_ckd_bld_drnd_w_salt,group: Composite vegetable,Ltp,1,-9.22,False
+PREDICTION (not a fact),"Salsify, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/salsify_ckd_bld_drnd_w_salt,group: Composite vegetable,Ragweed,2,-10.013,False
+PREDICTION (not a fact),"Salsify, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/salsify_ckd_bld_drnd_w_salt,group: Composite vegetable,Beer,3,-11.829,False
+PREDICTION (not a fact),"Salsify, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/salsify_ckd_bld_drnd_wo_salt,group: Composite vegetable,Ltp,1,-9.665,False
+PREDICTION (not a fact),"Salsify, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/salsify_ckd_bld_drnd_wo_salt,group: Composite vegetable,Ragweed,2,-10.354,False
+PREDICTION (not a fact),"Salsify, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/salsify_ckd_bld_drnd_wo_salt,group: Composite vegetable,Citrus,3,-12.04,False
+PREDICTION (not a fact),"Salt, Table",http://example.org/nutrireason/resource/food/salt_table,used in: Avocado Toast; used in: Beef Burger; used in: Caramel Popcorn; used in: Cheddar Cheese; used in: Chicken Noodle Soup; used in: Fish Sticks; used in: French Fries; used in: Mashed Potatoes; us,Honey,1,-10.688,False
+PREDICTION (not a fact),"Salt, Table",http://example.org/nutrireason/resource/food/salt_table,used in: Avocado Toast; used in: Beef Burger; used in: Caramel Popcorn; used in: Cheddar Cheese; used in: Chicken Noodle Soup; used in: Fish Sticks; used in: French Fries; used in: Mashed Potatoes; us,Dairy,2,-10.762,False
+PREDICTION (not a fact),"Salt, Table",http://example.org/nutrireason/resource/food/salt_table,used in: Avocado Toast; used in: Beef Burger; used in: Caramel Popcorn; used in: Cheddar Cheese; used in: Chicken Noodle Soup; used in: Fish Sticks; used in: French Fries; used in: Mashed Potatoes; us,Celery,3,-10.965,False
+PREDICTION (not a fact),Shungiku,http://example.org/nutrireason/resource/food/shungiku,group: Composite vegetable,Ltp,1,-9.24,False
+PREDICTION (not a fact),Shungiku,http://example.org/nutrireason/resource/food/shungiku,group: Composite vegetable,Ragweed,2,-10.209,False
+PREDICTION (not a fact),Shungiku,http://example.org/nutrireason/resource/food/shungiku,group: Composite vegetable,Citrus,3,-11.859,False
+PREDICTION (not a fact),"Squash, Indian, Raw (Navajo)",http://example.org/nutrireason/resource/food/squash_indian_raw_navajo,group: Cucurbitaceous vegetable,Nightshade,1,-12.12,False
+PREDICTION (not a fact),"Squash, Indian, Raw (Navajo)",http://example.org/nutrireason/resource/food/squash_indian_raw_navajo,group: Cucurbitaceous vegetable,Potato,2,-12.129,False
+PREDICTION (not a fact),"Squash, Indian, Raw (Navajo)",http://example.org/nutrireason/resource/food/squash_indian_raw_navajo,group: Cucurbitaceous vegetable,Honey,3,-12.133,False
+PREDICTION (not a fact),"Squash, Smmr, All Var, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_all_var_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Chicken,1,-12.03,False
+PREDICTION (not a fact),"Squash, Smmr, All Var, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_all_var_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Potato,2,-12.044,False
+PREDICTION (not a fact),"Squash, Smmr, All Var, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_all_var_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Honey,3,-12.203,False
+PREDICTION (not a fact),"Squash, Smmr, All Var, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_all_var_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Mushroom,1,-11.776,False
+PREDICTION (not a fact),"Squash, Smmr, All Var, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_all_var_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Nightshade,2,-11.86,False
+PREDICTION (not a fact),"Squash, Smmr, All Var, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_all_var_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Ltp,3,-11.88,False
+PREDICTION (not a fact),"Squash, Smmr, All Var, Raw",http://example.org/nutrireason/resource/food/squash_smmr_all_var_raw,group: Cucurbitaceous vegetable,Nightshade,1,-11.914,False
+PREDICTION (not a fact),"Squash, Smmr, All Var, Raw",http://example.org/nutrireason/resource/food/squash_smmr_all_var_raw,group: Cucurbitaceous vegetable,Mint,2,-12.092,False
+PREDICTION (not a fact),"Squash, Smmr, All Var, Raw",http://example.org/nutrireason/resource/food/squash_smmr_all_var_raw,group: Cucurbitaceous vegetable,Dairy,3,-12.103,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Allium,1,-12.009,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Fish,2,-12.079,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Nightshade,3,-12.093,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck & Straightneck, Ckd, Bld, Drnd, Wo/ Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Dairy,1,-12.127,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck & Straightneck, Ckd, Bld, Drnd, Wo/ Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Allium,2,-12.13,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck & Straightneck, Ckd, Bld, Drnd, Wo/ Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Nightshade,3,-12.154,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Cnd, Drnd, Solid, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_cnd_drnd_solid_wo_salt,group: Cucurbitaceous vegetable,Mint,1,-12.138,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Cnd, Drnd, Solid, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_cnd_drnd_solid_wo_salt,group: Cucurbitaceous vegetable,Chicken,2,-12.185,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Cnd, Drnd, Solid, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_cnd_drnd_solid_wo_salt,group: Cucurbitaceous vegetable,Stone Fruit,3,-12.23,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_frz_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Nightshade,1,-11.848,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_frz_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Fish,2,-11.914,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_frz_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Allium,3,-11.952,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_frz_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Ltp,1,-12.079,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_frz_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Honey,2,-12.117,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_frz_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Mint,3,-12.17,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Raw",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_raw,group: Cucurbitaceous vegetable,Nightshade,1,-11.957,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Raw",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_raw,group: Cucurbitaceous vegetable,Allium,2,-11.974,False
+PREDICTION (not a fact),"Squash, Smmr, Crookneck&Straightneck, Raw",http://example.org/nutrireason/resource/food/squash_smmr_crookneck_straightneck_raw,group: Cucurbitaceous vegetable,Ltp,3,-12.037,False
+PREDICTION (not a fact),"Squash, Smmr, Scallop, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_scallop_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Honey,1,-11.967,False
+PREDICTION (not a fact),"Squash, Smmr, Scallop, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_scallop_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Citrus,2,-11.974,False
+PREDICTION (not a fact),"Squash, Smmr, Scallop, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_scallop_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Chicken,3,-12.117,False
+PREDICTION (not a fact),"Squash, Smmr, Scallop, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_scallop_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Mint,1,-11.973,False
+PREDICTION (not a fact),"Squash, Smmr, Scallop, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_scallop_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Mushroom,2,-12.013,False
+PREDICTION (not a fact),"Squash, Smmr, Scallop, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_scallop_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Fish,3,-12.018,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Nightshade,1,-12.004,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Rice,2,-12.059,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Allium,3,-12.091,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Chicken,1,-11.986,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Honey,2,-12.005,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Mint,3,-12.053,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_frz_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Mushroom,1,-11.891,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_frz_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Nightshade,2,-11.954,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Frz, Ckd, Bld, Drnd, W/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_frz_ckd_bld_drnd_w_salt,group: Cucurbitaceous vegetable,Mint,3,-12.012,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_frz_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Mint,1,-12.012,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_frz_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Potato,2,-12.028,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Frz, Ckd, Bld, Drnd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_frz_ckd_bld_drnd_wo_salt,group: Cucurbitaceous vegetable,Mushroom,3,-12.039,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Frz, Unprep",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_frz_unprep,group: Cucurbitaceous vegetable,Mint,1,-11.693,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Frz, Unprep",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_frz_unprep,group: Cucurbitaceous vegetable,Mushroom,2,-11.87,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Frz, Unprep",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_frz_unprep,group: Cucurbitaceous vegetable,Nightshade,3,-11.916,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Raw",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_raw,group: Cucurbitaceous vegetable,Dairy,1,-12.125,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Raw",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_raw,group: Cucurbitaceous vegetable,Fish,2,-12.19,False
+PREDICTION (not a fact),"Squash, Smmr, Zucchini, Incl Skn, Raw",http://example.org/nutrireason/resource/food/squash_smmr_zucchini_incl_skn_raw,group: Cucurbitaceous vegetable,Nightshade,3,-12.197,False
+PREDICTION (not a fact),"Squash, Summer, Scallop, Raw",http://example.org/nutrireason/resource/food/squash_summer_scallop_raw,group: Cucurbitaceous vegetable,Mint,1,-11.696,False
+PREDICTION (not a fact),"Squash, Summer, Scallop, Raw",http://example.org/nutrireason/resource/food/squash_summer_scallop_raw,group: Cucurbitaceous vegetable,Chicken,2,-11.957,False
+PREDICTION (not a fact),"Squash, Summer, Scallop, Raw",http://example.org/nutrireason/resource/food/squash_summer_scallop_raw,group: Cucurbitaceous vegetable,Honey,3,-11.992,False
+PREDICTION (not a fact),"Squash, Winter, Hubbard, Raw",http://example.org/nutrireason/resource/food/squash_winter_hubbard_raw,group: Cucurbitaceous vegetable,Chicken,1,-12.089,False
+PREDICTION (not a fact),"Squash, Winter, Hubbard, Raw",http://example.org/nutrireason/resource/food/squash_winter_hubbard_raw,group: Cucurbitaceous vegetable,Nightshade,2,-12.143,False
+PREDICTION (not a fact),"Squash, Winter, Hubbard, Raw",http://example.org/nutrireason/resource/food/squash_winter_hubbard_raw,group: Cucurbitaceous vegetable,Alpha-Gal Syndrome,3,-12.16,False
+PREDICTION (not a fact),"Squash, Wntr, All Var, Ckd, Bkd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_all_var_ckd_bkd_w_salt,group: Cucurbitaceous vegetable,Mint,1,-12.06,False
+PREDICTION (not a fact),"Squash, Wntr, All Var, Ckd, Bkd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_all_var_ckd_bkd_w_salt,group: Cucurbitaceous vegetable,Stone Fruit,2,-12.124,False
+PREDICTION (not a fact),"Squash, Wntr, All Var, Ckd, Bkd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_all_var_ckd_bkd_w_salt,group: Cucurbitaceous vegetable,Chicken,3,-12.229,False
+PREDICTION (not a fact),"Squash, Wntr, All Var, Ckd, Bkd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_all_var_ckd_bkd_wo_salt,group: Cucurbitaceous vegetable,Honey,1,-11.941,False
+PREDICTION (not a fact),"Squash, Wntr, All Var, Ckd, Bkd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_all_var_ckd_bkd_wo_salt,group: Cucurbitaceous vegetable,Allium,2,-11.974,False
+PREDICTION (not a fact),"Squash, Wntr, All Var, Ckd, Bkd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_all_var_ckd_bkd_wo_salt,group: Cucurbitaceous vegetable,Histamine,3,-11.988,False
+PREDICTION (not a fact),"Squash, Wntr, All Var, Raw",http://example.org/nutrireason/resource/food/squash_wntr_all_var_raw,group: Cucurbitaceous vegetable,Nightshade,1,-12.024,False
+PREDICTION (not a fact),"Squash, Wntr, All Var, Raw",http://example.org/nutrireason/resource/food/squash_wntr_all_var_raw,group: Cucurbitaceous vegetable,Histamine,2,-12.142,False
+PREDICTION (not a fact),"Squash, Wntr, All Var, Raw",http://example.org/nutrireason/resource/food/squash_wntr_all_var_raw,group: Cucurbitaceous vegetable,Allium,3,-12.149,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Ckd, Bkd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_butternut_ckd_bkd_w_salt,group: Cucurbitaceous vegetable,Citrus,1,-11.898,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Ckd, Bkd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_butternut_ckd_bkd_w_salt,group: Cucurbitaceous vegetable,Chicken,2,-12.068,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Ckd, Bkd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_butternut_ckd_bkd_w_salt,group: Cucurbitaceous vegetable,Fish,3,-12.099,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Ckd, Bkd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_butternut_ckd_bkd_wo_salt,group: Cucurbitaceous vegetable,Nightshade,1,-12.104,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Ckd, Bkd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_butternut_ckd_bkd_wo_salt,group: Cucurbitaceous vegetable,Allium,2,-12.156,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Ckd, Bkd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_butternut_ckd_bkd_wo_salt,group: Cucurbitaceous vegetable,Mint,3,-12.178,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Frz, Unprep",http://example.org/nutrireason/resource/food/squash_wntr_butternut_frz_unprep,group: Cucurbitaceous vegetable,Nightshade,1,-12.144,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Frz, Unprep",http://example.org/nutrireason/resource/food/squash_wntr_butternut_frz_unprep,group: Cucurbitaceous vegetable,Chicken,2,-12.144,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Frz, Unprep",http://example.org/nutrireason/resource/food/squash_wntr_butternut_frz_unprep,group: Cucurbitaceous vegetable,Alpha-Gal Syndrome,3,-12.145,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Raw",http://example.org/nutrireason/resource/food/squash_wntr_butternut_raw,group: Cucurbitaceous vegetable,Allium,1,-11.964,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Raw",http://example.org/nutrireason/resource/food/squash_wntr_butternut_raw,group: Cucurbitaceous vegetable,Nightshade,2,-11.969,False
+PREDICTION (not a fact),"Squash, Wntr, Butternut, Raw",http://example.org/nutrireason/resource/food/squash_wntr_butternut_raw,group: Cucurbitaceous vegetable,Ltp,3,-12.096,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Bkd, W/ Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_bkd_w_salt,group: Cucurbitaceous vegetable,Honey,1,-11.925,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Bkd, W/ Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_bkd_w_salt,group: Cucurbitaceous vegetable,Mushroom,2,-11.946,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Bkd, W/ Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_bkd_w_salt,group: Cucurbitaceous vegetable,Fish,3,-11.985,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Bkd, Wo/ Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_bkd_wo_salt,group: Cucurbitaceous vegetable,Allium,1,-11.904,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Bkd, Wo/ Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_bkd_wo_salt,group: Cucurbitaceous vegetable,Stone Fruit,2,-11.969,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Bkd, Wo/ Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_bkd_wo_salt,group: Cucurbitaceous vegetable,Mushroom,3,-11.98,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Ckd, Bld, Mshd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_ckd_bld_mshd_w_salt,group: Cucurbitaceous vegetable,Honey,1,-11.993,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Ckd, Bld, Mshd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_ckd_bld_mshd_w_salt,group: Cucurbitaceous vegetable,Alpha-Gal Syndrome,2,-12.092,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Ckd, Bld, Mshd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_ckd_bld_mshd_w_salt,group: Cucurbitaceous vegetable,Soy / Legume,3,-12.117,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Ckd, Bld, Mshd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_ckd_bld_mshd_wo_salt,group: Cucurbitaceous vegetable,Nightshade,1,-11.908,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Ckd, Bld, Mshd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_ckd_bld_mshd_wo_salt,group: Cucurbitaceous vegetable,Stone Fruit,2,-12.037,False
+PREDICTION (not a fact),"Squash, Wntr, Hubbard, Ckd, Bld, Mshd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_hubbard_ckd_bld_mshd_wo_salt,group: Cucurbitaceous vegetable,Potato,3,-12.044,False
+PREDICTION (not a fact),"Squash, Wntr, Spaghetti, Ckd, Bld, Drnd, Or Bkd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_spaghetti_ckd_bld_drnd_or_bkd_w_salt,group: Cucurbitaceous vegetable,Chicken,1,-12.065,False
+PREDICTION (not a fact),"Squash, Wntr, Spaghetti, Ckd, Bld, Drnd, Or Bkd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_spaghetti_ckd_bld_drnd_or_bkd_w_salt,group: Cucurbitaceous vegetable,Allium,2,-12.124,False
+PREDICTION (not a fact),"Squash, Wntr, Spaghetti, Ckd, Bld, Drnd, Or Bkd, W/Salt",http://example.org/nutrireason/resource/food/squash_wntr_spaghetti_ckd_bld_drnd_or_bkd_w_salt,group: Cucurbitaceous vegetable,Ltp,3,-12.159,False
+PREDICTION (not a fact),"Squash, Wntr, Spaghetti, Ckd, Bld, Drnd, Or Bkd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_spaghetti_ckd_bld_drnd_or_bkd_wo_salt,group: Cucurbitaceous vegetable,Allium,1,-11.979,False
+PREDICTION (not a fact),"Squash, Wntr, Spaghetti, Ckd, Bld, Drnd, Or Bkd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_spaghetti_ckd_bld_drnd_or_bkd_wo_salt,group: Cucurbitaceous vegetable,Rice,2,-11.988,False
+PREDICTION (not a fact),"Squash, Wntr, Spaghetti, Ckd, Bld, Drnd, Or Bkd, Wo/Salt",http://example.org/nutrireason/resource/food/squash_wntr_spaghetti_ckd_bld_drnd_or_bkd_wo_salt,group: Cucurbitaceous vegetable,Citrus,3,-12.009,False
+PREDICTION (not a fact),"Squash, Wntr, Spaghetti, Raw",http://example.org/nutrireason/resource/food/squash_wntr_spaghetti_raw,group: Cucurbitaceous vegetable,Nightshade,1,-12.131,False
+PREDICTION (not a fact),"Squash, Wntr, Spaghetti, Raw",http://example.org/nutrireason/resource/food/squash_wntr_spaghetti_raw,group: Cucurbitaceous vegetable,Honey,2,-12.145,False
+PREDICTION (not a fact),"Squash, Wntr, Spaghetti, Raw",http://example.org/nutrireason/resource/food/squash_wntr_spaghetti_raw,group: Cucurbitaceous vegetable,Chicken,3,-12.169,False
+PREDICTION (not a fact),Sugar beet,http://example.org/nutrireason/resource/food/sugar_beet,group: Sugar source,Histamine,1,-11.585,False
+PREDICTION (not a fact),Sugar beet,http://example.org/nutrireason/resource/food/sugar_beet,group: Sugar source,Ltp,2,-11.635,False
+PREDICTION (not a fact),Sugar beet,http://example.org/nutrireason/resource/food/sugar_beet,group: Sugar source,Dairy,3,-11.68,False
+PREDICTION (not a fact),"Sugar, Turbinado",http://example.org/nutrireason/resource/food/sugar_turbinado,group: Sugar source,Ltp,1,-11.691,False
+PREDICTION (not a fact),"Sugar, Turbinado",http://example.org/nutrireason/resource/food/sugar_turbinado,group: Sugar source,Citrus,2,-11.792,False
+PREDICTION (not a fact),"Sugar, Turbinado",http://example.org/nutrireason/resource/food/sugar_turbinado,group: Sugar source,Mint,3,-11.841,False
+PREDICTION (not a fact),Sugarcane,http://example.org/nutrireason/resource/food/sugarcane,group: Sugar source,Ltp,1,-11.665,False
+PREDICTION (not a fact),Sugarcane,http://example.org/nutrireason/resource/food/sugarcane,group: Sugar source,Dairy,2,-11.873,False
+PREDICTION (not a fact),Sugarcane,http://example.org/nutrireason/resource/food/sugarcane,group: Sugar source,Histamine,3,-11.918,False
+PREDICTION (not a fact),"Sugars, Brown",http://example.org/nutrireason/resource/food/sugars_brown,group: Sugar source,Ltp,1,-11.762,False
+PREDICTION (not a fact),"Sugars, Brown",http://example.org/nutrireason/resource/food/sugars_brown,group: Sugar source,Oral Allergy Syndrome,2,-11.78,False
+PREDICTION (not a fact),"Sugars, Brown",http://example.org/nutrireason/resource/food/sugars_brown,group: Sugar source,Mushroom,3,-11.788,False
+PREDICTION (not a fact),"Sugars, Granulated",http://example.org/nutrireason/resource/food/sugars_granulated,group: Sugar source,Ltp,1,-11.727,False
+PREDICTION (not a fact),"Sugars, Granulated",http://example.org/nutrireason/resource/food/sugars_granulated,group: Sugar source,Oral Allergy Syndrome,2,-11.804,False
+PREDICTION (not a fact),"Sugars, Granulated",http://example.org/nutrireason/resource/food/sugars_granulated,group: Sugar source,Dairy,3,-11.843,False
+PREDICTION (not a fact),"Sugars, Maple",http://example.org/nutrireason/resource/food/sugars_maple,group: Sugar source,Dairy,1,-11.792,False
+PREDICTION (not a fact),"Sugars, Maple",http://example.org/nutrireason/resource/food/sugars_maple,group: Sugar source,Histamine,2,-11.91,False
+PREDICTION (not a fact),"Sugars, Maple",http://example.org/nutrireason/resource/food/sugars_maple,group: Sugar source,Celery,3,-11.93,False
+PREDICTION (not a fact),"Sugars, Powdered",http://example.org/nutrireason/resource/food/sugars_powdered,group: Sugar source,Dairy,1,-11.758,False
+PREDICTION (not a fact),"Sugars, Powdered",http://example.org/nutrireason/resource/food/sugars_powdered,group: Sugar source,Ltp,2,-11.821,False
+PREDICTION (not a fact),"Sugars, Powdered",http://example.org/nutrireason/resource/food/sugars_powdered,group: Sugar source,Histamine,3,-11.912,False
+PREDICTION (not a fact),Sunflower oil,http://example.org/nutrireason/resource/food/sunflower_oil,group: Oil,Honey,1,-11.724,False
+PREDICTION (not a fact),Sunflower oil,http://example.org/nutrireason/resource/food/sunflower_oil,group: Oil,Dairy,2,-11.857,False
+PREDICTION (not a fact),Sunflower oil,http://example.org/nutrireason/resource/food/sunflower_oil,group: Oil,Histamine,3,-11.867,False
+PREDICTION (not a fact),"Tamarinds, Raw",http://example.org/nutrireason/resource/food/tamarinds_raw,used in: Malabar Fish Curry; used in: Pani Puri,Dairy,1,-10.854,False
+PREDICTION (not a fact),"Tamarinds, Raw",http://example.org/nutrireason/resource/food/tamarinds_raw,used in: Malabar Fish Curry; used in: Pani Puri,Honey,2,-11.071,False
+PREDICTION (not a fact),"Tamarinds, Raw",http://example.org/nutrireason/resource/food/tamarinds_raw,used in: Malabar Fish Curry; used in: Pani Puri,Soy / Legume,3,-11.198,False
+PREDICTION (not a fact),"Turmeric, Ground",http://example.org/nutrireason/resource/food/turmeric_ground,used in: Tofu Scramble,Soy / Legume,1,-10.788,False
+PREDICTION (not a fact),"Turmeric, Ground",http://example.org/nutrireason/resource/food/turmeric_ground,used in: Tofu Scramble,Honey,2,-10.903,False
+PREDICTION (not a fact),"Turmeric, Ground",http://example.org/nutrireason/resource/food/turmeric_ground,used in: Tofu Scramble,Dairy,3,-11.195,False
+PREDICTION (not a fact),Turnip leaf,http://example.org/nutrireason/resource/food/turnip_leaf,group: Cruciferous vegetable,Cruciferous,1,-9.438,False
+PREDICTION (not a fact),Turnip leaf,http://example.org/nutrireason/resource/food/turnip_leaf,group: Cruciferous vegetable,Broccoli,2,-9.711,False
+PREDICTION (not a fact),Turnip leaf,http://example.org/nutrireason/resource/food/turnip_leaf,group: Cruciferous vegetable,Ltp,3,-11.827,False
+PREDICTION (not a fact),Turnip root,http://example.org/nutrireason/resource/food/turnip_root,group: Cruciferous vegetable,Cruciferous,1,-9.297,False
+PREDICTION (not a fact),Turnip root,http://example.org/nutrireason/resource/food/turnip_root,group: Cruciferous vegetable,Broccoli,2,-9.605,False
+PREDICTION (not a fact),Turnip root,http://example.org/nutrireason/resource/food/turnip_root,group: Cruciferous vegetable,Ragweed,3,-11.857,False
+PREDICTION (not a fact),"Vegetable Oil, Palm Kernel",http://example.org/nutrireason/resource/food/vegetable_oil_palm_kernel,group: Oil; used in: BBQ Ribs; used in: Beef Burger; used in: Beef Burritos; used in: Beef Stir-Fry; used in: Beef Tacos; used in: Beef and Broccoli; used in: Beef and Mushroom Stir-Fry; used in: Buff,Honey,1,-10.38,False
+PREDICTION (not a fact),"Vegetable Oil, Palm Kernel",http://example.org/nutrireason/resource/food/vegetable_oil_palm_kernel,group: Oil; used in: BBQ Ribs; used in: Beef Burger; used in: Beef Burritos; used in: Beef Stir-Fry; used in: Beef Tacos; used in: Beef and Broccoli; used in: Beef and Mushroom Stir-Fry; used in: Buff,Chicken,2,-10.443,False
+PREDICTION (not a fact),"Vegetable Oil, Palm Kernel",http://example.org/nutrireason/resource/food/vegetable_oil_palm_kernel,group: Oil; used in: BBQ Ribs; used in: Beef Burger; used in: Beef Burritos; used in: Beef Stir-Fry; used in: Beef Tacos; used in: Beef and Broccoli; used in: Beef and Mushroom Stir-Fry; used in: Buff,Allium,3,-10.719,False
+PREDICTION (not a fact),Water melon,http://example.org/nutrireason/resource/food/water_melon,group: Cucurbitaceous vegetable,Nightshade,1,-12.061,False
+PREDICTION (not a fact),Water melon,http://example.org/nutrireason/resource/food/water_melon,group: Cucurbitaceous vegetable,Potato,2,-12.095,False
+PREDICTION (not a fact),Water melon,http://example.org/nutrireason/resource/food/water_melon,group: Cucurbitaceous vegetable,Honey,3,-12.102,False
+PREDICTION (not a fact),"Watercress, Raw",http://example.org/nutrireason/resource/food/watercress_raw,group: Cruciferous vegetable,Cruciferous,1,-9.187,False
+PREDICTION (not a fact),"Watercress, Raw",http://example.org/nutrireason/resource/food/watercress_raw,group: Cruciferous vegetable,Broccoli,2,-9.835,False
+PREDICTION (not a fact),"Watercress, Raw",http://example.org/nutrireason/resource/food/watercress_raw,group: Cruciferous vegetable,Ltp,3,-11.977,False
+PREDICTION (not a fact),"Watermelon, Raw",http://example.org/nutrireason/resource/food/watermelon_raw,used in: Watermelon Salad,Dairy,1,-10.329,False
+PREDICTION (not a fact),"Watermelon, Raw",http://example.org/nutrireason/resource/food/watermelon_raw,used in: Watermelon Salad,Honey,2,-11.016,False
+PREDICTION (not a fact),"Watermelon, Raw",http://example.org/nutrireason/resource/food/watermelon_raw,used in: Watermelon Salad,Histamine,3,-11.058,False
+PREDICTION (not a fact),Alfredo sauce,http://example.org/nutrireason/resource/ingredient/alfredo_sauce,used in: Chicken Alfredo Pizza,Dairy,1,-11.702,False
+PREDICTION (not a fact),Alfredo sauce,http://example.org/nutrireason/resource/ingredient/alfredo_sauce,used in: Chicken Alfredo Pizza,Citrus,2,-11.722,False
+PREDICTION (not a fact),Alfredo sauce,http://example.org/nutrireason/resource/ingredient/alfredo_sauce,used in: Chicken Alfredo Pizza,Wheat / Gluten,3,-11.724,False
+PREDICTION (not a fact),Arborio rice,http://example.org/nutrireason/resource/ingredient/arborio_rice,used in: Mushroom Risotto,Dairy,1,-11.014,False
+PREDICTION (not a fact),Arborio rice,http://example.org/nutrireason/resource/ingredient/arborio_rice,used in: Mushroom Risotto,Wheat / Gluten,2,-11.685,False
+PREDICTION (not a fact),Arborio rice,http://example.org/nutrireason/resource/ingredient/arborio_rice,used in: Mushroom Risotto,Honey,3,-12.075,False
+PREDICTION (not a fact),Baking powder,http://example.org/nutrireason/resource/ingredient/baking_powder,used in: Pancakes,Wheat / Gluten,1,-11.374,False
+PREDICTION (not a fact),Baking powder,http://example.org/nutrireason/resource/ingredient/baking_powder,used in: Pancakes,Dairy,2,-11.561,False
+PREDICTION (not a fact),Baking powder,http://example.org/nutrireason/resource/ingredient/baking_powder,used in: Pancakes,Honey,3,-12.169,False
+PREDICTION (not a fact),Balsamic glaze,http://example.org/nutrireason/resource/ingredient/balsamic_glaze,used in: Brussels Sprouts; used in: Roasted Brussels Sprouts,Dairy,1,-11.801,False
+PREDICTION (not a fact),Balsamic glaze,http://example.org/nutrireason/resource/ingredient/balsamic_glaze,used in: Brussels Sprouts; used in: Roasted Brussels Sprouts,Cruciferous,2,-11.893,False
+PREDICTION (not a fact),Balsamic glaze,http://example.org/nutrireason/resource/ingredient/balsamic_glaze,used in: Brussels Sprouts; used in: Roasted Brussels Sprouts,Wheat / Gluten,3,-12.192,False
+PREDICTION (not a fact),Balsamic vinegar,http://example.org/nutrireason/resource/ingredient/balsamic_vinegar,used in: Spinach Salad,Histamine,1,-11.589,False
+PREDICTION (not a fact),Balsamic vinegar,http://example.org/nutrireason/resource/ingredient/balsamic_vinegar,used in: Spinach Salad,Dairy,2,-11.874,False
+PREDICTION (not a fact),Balsamic vinegar,http://example.org/nutrireason/resource/ingredient/balsamic_vinegar,used in: Spinach Salad,Wheat / Gluten,3,-12.203,False
+PREDICTION (not a fact),Basmati rice,http://example.org/nutrireason/resource/ingredient/basmati_rice,used in: Chicken Biryani; used in: Hyderabadi Biryani; used in: Mutton Biryani; used in: Prawn Biryani; used in: Vegetable Biryani,Dairy,1,-12.137,False
+PREDICTION (not a fact),Basmati rice,http://example.org/nutrireason/resource/ingredient/basmati_rice,used in: Chicken Biryani; used in: Hyderabadi Biryani; used in: Mutton Biryani; used in: Prawn Biryani; used in: Vegetable Biryani,Nut (unspecified),2,-12.293,False
+PREDICTION (not a fact),Basmati rice,http://example.org/nutrireason/resource/ingredient/basmati_rice,used in: Chicken Biryani; used in: Hyderabadi Biryani; used in: Mutton Biryani; used in: Prawn Biryani; used in: Vegetable Biryani,Wheat / Gluten,3,-12.452,False
+PREDICTION (not a fact),BBQ sauce,http://example.org/nutrireason/resource/ingredient/bbq_sauce,used in: BBQ Ribs,Wheat / Gluten,1,-11.617,False
+PREDICTION (not a fact),BBQ sauce,http://example.org/nutrireason/resource/ingredient/bbq_sauce,used in: BBQ Ribs,Dairy,2,-11.7,False
+PREDICTION (not a fact),BBQ sauce,http://example.org/nutrireason/resource/ingredient/bbq_sauce,used in: BBQ Ribs,Nut (unspecified),3,-12.191,False
+PREDICTION (not a fact),Beef,http://example.org/nutrireason/resource/ingredient/beef,used in: Beef Kabobs; used in: Beef Stir-Fry; used in: Beef Stroganoff; used in: Beef Wellington; used in: Beef and Broccoli; used in: Beef and Mushroom Stir-Fry; used in: Teriyaki Beef,Dairy,1,-11.489,False
+PREDICTION (not a fact),Beef,http://example.org/nutrireason/resource/ingredient/beef,used in: Beef Kabobs; used in: Beef Stir-Fry; used in: Beef Stroganoff; used in: Beef Wellington; used in: Beef and Broccoli; used in: Beef and Mushroom Stir-Fry; used in: Teriyaki Beef,Wheat / Gluten,2,-11.776,False
+PREDICTION (not a fact),Beef,http://example.org/nutrireason/resource/ingredient/beef,used in: Beef Kabobs; used in: Beef Stir-Fry; used in: Beef Stroganoff; used in: Beef Wellington; used in: Beef and Broccoli; used in: Beef and Mushroom Stir-Fry; used in: Teriyaki Beef,Honey,3,-12.132,False
+PREDICTION (not a fact),Beef broth,http://example.org/nutrireason/resource/ingredient/beef_broth,used in: French Onion Soup,Dairy,1,-10.82,False
+PREDICTION (not a fact),Beef broth,http://example.org/nutrireason/resource/ingredient/beef_broth,used in: French Onion Soup,Wheat / Gluten,2,-10.913,False
+PREDICTION (not a fact),Beef broth,http://example.org/nutrireason/resource/ingredient/beef_broth,used in: French Onion Soup,Allium,3,-11.928,False
+PREDICTION (not a fact),Bell peppers,http://example.org/nutrireason/resource/ingredient/bell_pepper,used in: Sausage and Pepper Pizza; used in: Stuffed Bell Peppers; used in: Sweet and Sour Chicken,Dairy,1,-11.713,False
+PREDICTION (not a fact),Bell peppers,http://example.org/nutrireason/resource/ingredient/bell_pepper,used in: Sausage and Pepper Pizza; used in: Stuffed Bell Peppers; used in: Sweet and Sour Chicken,Wheat / Gluten,2,-11.811,False
+PREDICTION (not a fact),Bell peppers,http://example.org/nutrireason/resource/ingredient/bell_pepper,used in: Sausage and Pepper Pizza; used in: Stuffed Bell Peppers; used in: Sweet and Sour Chicken,Citrus,3,-11.902,False
+PREDICTION (not a fact),Biryani masala,http://example.org/nutrireason/resource/ingredient/biryani_masala,used in: Biryani,Rice,1,-11.583,False
+PREDICTION (not a fact),Biryani masala,http://example.org/nutrireason/resource/ingredient/biryani_masala,used in: Biryani,Wheat / Gluten,2,-11.694,False
+PREDICTION (not a fact),Biryani masala,http://example.org/nutrireason/resource/ingredient/biryani_masala,used in: Biryani,Dairy,3,-11.823,False
+PREDICTION (not a fact),Black beans,http://example.org/nutrireason/resource/ingredient/black_bean,used in: Black Bean Soup,Dairy,1,-11.767,False
+PREDICTION (not a fact),Black beans,http://example.org/nutrireason/resource/ingredient/black_bean,used in: Black Bean Soup,Wheat / Gluten,2,-11.862,False
+PREDICTION (not a fact),Black beans,http://example.org/nutrireason/resource/ingredient/black_bean,used in: Black Bean Soup,Celery,3,-12.411,False
+PREDICTION (not a fact),Blueberries,http://example.org/nutrireason/resource/ingredient/blueberrie,used in: Blueberry Muffins; used in: Blueberry Pancakes,Wheat / Gluten,1,-11.471,False
+PREDICTION (not a fact),Blueberries,http://example.org/nutrireason/resource/ingredient/blueberrie,used in: Blueberry Muffins; used in: Blueberry Pancakes,Dairy,2,-11.538,False
+PREDICTION (not a fact),Blueberries,http://example.org/nutrireason/resource/ingredient/blueberrie,used in: Blueberry Muffins; used in: Blueberry Pancakes,Nut (unspecified),3,-12.477,False
+PREDICTION (not a fact),Brandy,http://example.org/nutrireason/resource/ingredient/brandy,used in: Lobster Bisque,Dairy,1,-10.804,False
+PREDICTION (not a fact),Brandy,http://example.org/nutrireason/resource/ingredient/brandy,used in: Lobster Bisque,Wheat / Gluten,2,-11.686,False
+PREDICTION (not a fact),Brandy,http://example.org/nutrireason/resource/ingredient/brandy,used in: Lobster Bisque,Honey,3,-11.972,False
+PREDICTION (not a fact),Breadcrumbs,http://example.org/nutrireason/resource/ingredient/breadcrumb,used in: Stuffed Mushrooms; used in: Stuffed Portobello Mushrooms; used in: Stuffed Tomatoes,Dairy,1,-11.174,False
+PREDICTION (not a fact),Breadcrumbs,http://example.org/nutrireason/resource/ingredient/breadcrumb,used in: Stuffed Mushrooms; used in: Stuffed Portobello Mushrooms; used in: Stuffed Tomatoes,Wheat / Gluten,2,-11.922,False
+PREDICTION (not a fact),Breadcrumbs,http://example.org/nutrireason/resource/ingredient/breadcrumb,used in: Stuffed Mushrooms; used in: Stuffed Portobello Mushrooms; used in: Stuffed Tomatoes,Nightshade,3,-12.092,False
+PREDICTION (not a fact),Brown sugar,http://example.org/nutrireason/resource/ingredient/brown_sugar,used in: BBQ Ribs; used in: Sweet Potato Casserole,Dairy,1,-11.415,False
+PREDICTION (not a fact),Brown sugar,http://example.org/nutrireason/resource/ingredient/brown_sugar,used in: BBQ Ribs; used in: Sweet Potato Casserole,Wheat / Gluten,2,-11.639,False
+PREDICTION (not a fact),Brown sugar,http://example.org/nutrireason/resource/ingredient/brown_sugar,used in: BBQ Ribs; used in: Sweet Potato Casserole,Nut (unspecified),3,-12.209,False
+PREDICTION (not a fact),Buffalo sauce,http://example.org/nutrireason/resource/ingredient/buffalo_sauce,used in: Buffalo Wings,Dairy,1,-11.697,False
+PREDICTION (not a fact),Buffalo sauce,http://example.org/nutrireason/resource/ingredient/buffalo_sauce,used in: Buffalo Wings,Chicken,2,-11.702,False
+PREDICTION (not a fact),Buffalo sauce,http://example.org/nutrireason/resource/ingredient/buffalo_sauce,used in: Buffalo Wings,Wheat / Gluten,3,-11.752,False
+PREDICTION (not a fact),Burger bun,http://example.org/nutrireason/resource/ingredient/burger_bun,used in: Grilled Portobello Mushroom Burger,Dairy,1,-11.83,False
+PREDICTION (not a fact),Burger bun,http://example.org/nutrireason/resource/ingredient/burger_bun,used in: Grilled Portobello Mushroom Burger,Wheat / Gluten,2,-11.973,False
+PREDICTION (not a fact),Burger bun,http://example.org/nutrireason/resource/ingredient/burger_bun,used in: Grilled Portobello Mushroom Burger,Citrus,3,-12.567,False
+PREDICTION (not a fact),Butternut squash,http://example.org/nutrireason/resource/ingredient/butternut_squash,used in: Butternut Squash Soup,Dairy,1,-10.97,False
+PREDICTION (not a fact),Butternut squash,http://example.org/nutrireason/resource/ingredient/butternut_squash,used in: Butternut Squash Soup,Wheat / Gluten,2,-11.627,False
+PREDICTION (not a fact),Butternut squash,http://example.org/nutrireason/resource/ingredient/butternut_squash,used in: Butternut Squash Soup,Honey,3,-12.135,False
+PREDICTION (not a fact),Caesar dressing,http://example.org/nutrireason/resource/ingredient/caesar_dressing,used in: Caesar Pasta Salad; used in: Caesar Salad Wrap; used in: Caesar Shrimp Skewers; used in: Caesar Wrap; used in: Chicken Caesar Wrap,Dairy,1,-11.255,False
+PREDICTION (not a fact),Caesar dressing,http://example.org/nutrireason/resource/ingredient/caesar_dressing,used in: Caesar Pasta Salad; used in: Caesar Salad Wrap; used in: Caesar Shrimp Skewers; used in: Caesar Wrap; used in: Chicken Caesar Wrap,Wheat / Gluten,2,-11.782,False
+PREDICTION (not a fact),Caesar dressing,http://example.org/nutrireason/resource/ingredient/caesar_dressing,used in: Caesar Pasta Salad; used in: Caesar Salad Wrap; used in: Caesar Shrimp Skewers; used in: Caesar Wrap; used in: Chicken Caesar Wrap,Chicken,3,-12.008,False
+PREDICTION (not a fact),Caramel,http://example.org/nutrireason/resource/ingredient/caramel,used in: Caramel Apple,Oral Allergy Syndrome,1,-11.387,False
+PREDICTION (not a fact),Caramel,http://example.org/nutrireason/resource/ingredient/caramel,used in: Caramel Apple,Wheat / Gluten,2,-11.516,False
+PREDICTION (not a fact),Caramel,http://example.org/nutrireason/resource/ingredient/caramel,used in: Caramel Apple,Dairy,3,-11.555,False
+PREDICTION (not a fact),Cardamom,http://example.org/nutrireason/resource/ingredient/cardamom,used in: Kheer; used in: Mango Lassi; used in: Rabri; used in: Rasmalai,Nut (unspecified),1,-10.601,False
+PREDICTION (not a fact),Cardamom,http://example.org/nutrireason/resource/ingredient/cardamom,used in: Kheer; used in: Mango Lassi; used in: Rabri; used in: Rasmalai,Dairy,2,-11.066,False
+PREDICTION (not a fact),Cardamom,http://example.org/nutrireason/resource/ingredient/cardamom,used in: Kheer; used in: Mango Lassi; used in: Rabri; used in: Rasmalai,Wheat / Gluten,3,-12.168,False
+PREDICTION (not a fact),Cardamom syrup,http://example.org/nutrireason/resource/ingredient/cardamom_syrup,used in: Gulab Jamun,Dairy,1,-11.317,False
+PREDICTION (not a fact),Cardamom syrup,http://example.org/nutrireason/resource/ingredient/cardamom_syrup,used in: Gulab Jamun,Wheat / Gluten,2,-11.725,False
+PREDICTION (not a fact),Cardamom syrup,http://example.org/nutrireason/resource/ingredient/cardamom_syrup,used in: Gulab Jamun,Nut (unspecified),3,-12.22,False
+PREDICTION (not a fact),Carrots,http://example.org/nutrireason/resource/ingredient/carrot,group: Umbelliferous vegetable; used in: Carrot Cake; used in: Honey Glazed Carrots,Celery,1,-9.352,False
+PREDICTION (not a fact),Carrots,http://example.org/nutrireason/resource/ingredient/carrot,group: Umbelliferous vegetable; used in: Carrot Cake; used in: Honey Glazed Carrots,Honey,2,-9.921,False
+PREDICTION (not a fact),Carrots,http://example.org/nutrireason/resource/ingredient/carrot,group: Umbelliferous vegetable; used in: Carrot Cake; used in: Honey Glazed Carrots,Dairy,3,-10.947,False
+PREDICTION (not a fact),Chickpeas,http://example.org/nutrireason/resource/ingredient/chickpea,used in: Chana Masala; used in: Chole Bhature; used in: Chole Kulche,Wheat / Gluten,1,-11.485,False
+PREDICTION (not a fact),Chickpeas,http://example.org/nutrireason/resource/ingredient/chickpea,used in: Chana Masala; used in: Chole Bhature; used in: Chole Kulche,Dairy,2,-11.938,False
+PREDICTION (not a fact),Chickpeas,http://example.org/nutrireason/resource/ingredient/chickpea,used in: Chana Masala; used in: Chole Bhature; used in: Chole Kulche,Celery,3,-12.405,False
+PREDICTION (not a fact),Chocolate,http://example.org/nutrireason/resource/ingredient/chocolate,used in: Chocolate Mousse; used in: S'mores,Dairy,1,-11.295,False
+PREDICTION (not a fact),Chocolate,http://example.org/nutrireason/resource/ingredient/chocolate,used in: Chocolate Mousse; used in: S'mores,Wheat / Gluten,2,-12.015,False
+PREDICTION (not a fact),Chocolate,http://example.org/nutrireason/resource/ingredient/chocolate,used in: Chocolate Mousse; used in: S'mores,Citrus,3,-12.371,False
+PREDICTION (not a fact),Chocolate chips,http://example.org/nutrireason/resource/ingredient/chocolate_chip,used in: Chocolate Chip Cookies; used in: Chocolate Chip Pancakes,Wheat / Gluten,1,-11.245,False
+PREDICTION (not a fact),Chocolate chips,http://example.org/nutrireason/resource/ingredient/chocolate_chip,used in: Chocolate Chip Cookies; used in: Chocolate Chip Pancakes,Dairy,2,-11.466,False
+PREDICTION (not a fact),Chocolate chips,http://example.org/nutrireason/resource/ingredient/chocolate_chip,used in: Chocolate Chip Cookies; used in: Chocolate Chip Pancakes,Honey,3,-12.259,False
+PREDICTION (not a fact),Chole masala,http://example.org/nutrireason/resource/ingredient/chole_masala,used in: Chole Bhature,Dairy,1,-11.839,False
+PREDICTION (not a fact),Chole masala,http://example.org/nutrireason/resource/ingredient/chole_masala,used in: Chole Bhature,Wheat / Gluten,2,-11.852,False
+PREDICTION (not a fact),Chole masala,http://example.org/nutrireason/resource/ingredient/chole_masala,used in: Chole Bhature,Nut (unspecified),3,-12.362,False
+PREDICTION (not a fact),Chutney,http://example.org/nutrireason/resource/ingredient/chutney,used in: Dosa; used in: Pani Puri; used in: Vada Pav,Rice,1,-11.715,False
+PREDICTION (not a fact),Chutney,http://example.org/nutrireason/resource/ingredient/chutney,used in: Dosa; used in: Pani Puri; used in: Vada Pav,Dairy,2,-11.718,False
+PREDICTION (not a fact),Chutney,http://example.org/nutrireason/resource/ingredient/chutney,used in: Dosa; used in: Pani Puri; used in: Vada Pav,Wheat / Gluten,3,-11.804,False
+PREDICTION (not a fact),Cilantro,http://example.org/nutrireason/resource/ingredient/cilantro,used in: Cilantro Lime Chicken; used in: Salsa,Citrus,1,-10.981,False
+PREDICTION (not a fact),Cilantro,http://example.org/nutrireason/resource/ingredient/cilantro,used in: Cilantro Lime Chicken; used in: Salsa,Nightshade,2,-11.193,False
+PREDICTION (not a fact),Cilantro,http://example.org/nutrireason/resource/ingredient/cilantro,used in: Cilantro Lime Chicken; used in: Salsa,Wheat / Gluten,3,-11.589,False
+PREDICTION (not a fact),Cocoa,http://example.org/nutrireason/resource/ingredient/cocoa,used in: Tiramisu,Dairy,1,-11.461,False
+PREDICTION (not a fact),Cocoa,http://example.org/nutrireason/resource/ingredient/cocoa,used in: Tiramisu,Wheat / Gluten,2,-12.022,False
+PREDICTION (not a fact),Cocoa,http://example.org/nutrireason/resource/ingredient/cocoa,used in: Tiramisu,Banana,3,-12.153,False
+PREDICTION (not a fact),Cocoa powder,http://example.org/nutrireason/resource/ingredient/cocoa_powder,used in: Chocolate Cake,Wheat / Gluten,1,-11.249,False
+PREDICTION (not a fact),Cocoa powder,http://example.org/nutrireason/resource/ingredient/cocoa_powder,used in: Chocolate Cake,Dairy,2,-11.575,False
+PREDICTION (not a fact),Cocoa powder,http://example.org/nutrireason/resource/ingredient/cocoa_powder,used in: Chocolate Cake,Banana,3,-12.216,False
+PREDICTION (not a fact),Cod,http://example.org/nutrireason/resource/ingredient/cod,used in: Baked Cod,Dairy,1,-11.192,False
+PREDICTION (not a fact),Cod,http://example.org/nutrireason/resource/ingredient/cod,used in: Baked Cod,Citrus,2,-11.427,False
+PREDICTION (not a fact),Cod,http://example.org/nutrireason/resource/ingredient/cod,used in: Baked Cod,Wheat / Gluten,3,-11.702,False
+PREDICTION (not a fact),Coffee,http://example.org/nutrireason/resource/ingredient/coffee,used in: Tiramisu,Dairy,1,-11.222,False
+PREDICTION (not a fact),Coffee,http://example.org/nutrireason/resource/ingredient/coffee,used in: Tiramisu,Wheat / Gluten,2,-11.676,False
+PREDICTION (not a fact),Coffee,http://example.org/nutrireason/resource/ingredient/coffee,used in: Tiramisu,Banana,3,-11.964,False
+PREDICTION (not a fact),Cookies,http://example.org/nutrireason/resource/ingredient/cookie,used in: Banana Pudding,Banana,1,-10.833,False
+PREDICTION (not a fact),Cookies,http://example.org/nutrireason/resource/ingredient/cookie,used in: Banana Pudding,Dairy,2,-11.528,False
+PREDICTION (not a fact),Cookies,http://example.org/nutrireason/resource/ingredient/cookie,used in: Banana Pudding,Honey,3,-11.795,False
+PREDICTION (not a fact),Corn syrup,http://example.org/nutrireason/resource/ingredient/corn_syrup,used in: Pecan Pie,Dairy,1,-11.334,False
+PREDICTION (not a fact),Corn syrup,http://example.org/nutrireason/resource/ingredient/corn_syrup,used in: Pecan Pie,Wheat / Gluten,2,-11.78,False
+PREDICTION (not a fact),Corn syrup,http://example.org/nutrireason/resource/ingredient/corn_syrup,used in: Pecan Pie,Pecan,3,-11.93,False
+PREDICTION (not a fact),Creamy sauce,http://example.org/nutrireason/resource/ingredient/creamy_sauce,used in: Chicken Korma,Dairy,1,-11.674,False
+PREDICTION (not a fact),Creamy sauce,http://example.org/nutrireason/resource/ingredient/creamy_sauce,used in: Chicken Korma,Chicken,2,-11.814,False
+PREDICTION (not a fact),Creamy sauce,http://example.org/nutrireason/resource/ingredient/creamy_sauce,used in: Chicken Korma,Wheat / Gluten,3,-12.009,False
+PREDICTION (not a fact),Creamy tomato sauce,http://example.org/nutrireason/resource/ingredient/creamy_tomato_sauce,used in: Malai Kofta,Dairy,1,-11.228,False
+PREDICTION (not a fact),Creamy tomato sauce,http://example.org/nutrireason/resource/ingredient/creamy_tomato_sauce,used in: Malai Kofta,Wheat / Gluten,2,-11.931,False
+PREDICTION (not a fact),Creamy tomato sauce,http://example.org/nutrireason/resource/ingredient/creamy_tomato_sauce,used in: Malai Kofta,Celery,3,-12.227,False
+PREDICTION (not a fact),Cucumbers,http://example.org/nutrireason/resource/ingredient/cucumber,group: Cucurbitaceous vegetable; used in: Cucumber Salad; used in: Greek Salad,Dairy,1,-10.987,False
+PREDICTION (not a fact),Cucumbers,http://example.org/nutrireason/resource/ingredient/cucumber,group: Cucurbitaceous vegetable; used in: Cucumber Salad; used in: Greek Salad,Honey,2,-11.391,False
+PREDICTION (not a fact),Cucumbers,http://example.org/nutrireason/resource/ingredient/cucumber,group: Cucurbitaceous vegetable; used in: Cucumber Salad; used in: Greek Salad,Wheat / Gluten,3,-11.498,False
+PREDICTION (not a fact),Curry leaves,http://example.org/nutrireason/resource/ingredient/curry_leave,used in: Paniyaram,Dairy,1,-11.347,False
+PREDICTION (not a fact),Curry leaves,http://example.org/nutrireason/resource/ingredient/curry_leave,used in: Paniyaram,Wheat / Gluten,2,-11.773,False
+PREDICTION (not a fact),Curry leaves,http://example.org/nutrireason/resource/ingredient/curry_leave,used in: Paniyaram,Honey,3,-11.924,False
+PREDICTION (not a fact),Curry paste,http://example.org/nutrireason/resource/ingredient/curry_paste,used in: Coconut Curry; used in: Tofu Curry; used in: Vegetable Curry,Dairy,1,-11.461,False
+PREDICTION (not a fact),Curry paste,http://example.org/nutrireason/resource/ingredient/curry_paste,used in: Coconut Curry; used in: Tofu Curry; used in: Vegetable Curry,Wheat / Gluten,2,-11.877,False
+PREDICTION (not a fact),Curry paste,http://example.org/nutrireason/resource/ingredient/curry_paste,used in: Coconut Curry; used in: Tofu Curry; used in: Vegetable Curry,Chicken,3,-12.124,False
+PREDICTION (not a fact),Curry spices,http://example.org/nutrireason/resource/ingredient/curry_spice,used in: Prawn Curry,Dairy,1,-11.435,False
+PREDICTION (not a fact),Curry spices,http://example.org/nutrireason/resource/ingredient/curry_spice,used in: Prawn Curry,Honey,2,-11.962,False
+PREDICTION (not a fact),Curry spices,http://example.org/nutrireason/resource/ingredient/curry_spice,used in: Prawn Curry,Wheat / Gluten,3,-12.108,False
+PREDICTION (not a fact),Dill,http://example.org/nutrireason/resource/ingredient/dill,used in: Cucumber Salad; used in: Lemon Dill Salmon,Citrus,1,-11.434,False
+PREDICTION (not a fact),Dill,http://example.org/nutrireason/resource/ingredient/dill,used in: Cucumber Salad; used in: Lemon Dill Salmon,Dairy,2,-11.612,False
+PREDICTION (not a fact),Dill,http://example.org/nutrireason/resource/ingredient/dill,used in: Cucumber Salad; used in: Lemon Dill Salmon,Honey,3,-11.666,False
+PREDICTION (not a fact),Eggplant,http://example.org/nutrireason/resource/ingredient/eggplant,used in: Eggplant Parmesan; used in: Greek Moussaka; used in: Ratatouille,Dairy,1,-11.797,False
+PREDICTION (not a fact),Eggplant,http://example.org/nutrireason/resource/ingredient/eggplant,used in: Eggplant Parmesan; used in: Greek Moussaka; used in: Ratatouille,Wheat / Gluten,2,-12.054,False
+PREDICTION (not a fact),Eggplant,http://example.org/nutrireason/resource/ingredient/eggplant,used in: Eggplant Parmesan; used in: Greek Moussaka; used in: Ratatouille,Nightshade,3,-12.385,False
+PREDICTION (not a fact),Emulsifiers,http://example.org/nutrireason/resource/ingredient/emulsifier,used in: Soy Milk,Dairy,1,-11.71,False
+PREDICTION (not a fact),Emulsifiers,http://example.org/nutrireason/resource/ingredient/emulsifier,used in: Soy Milk,Wheat / Gluten,2,-11.94,False
+PREDICTION (not a fact),Emulsifiers,http://example.org/nutrireason/resource/ingredient/emulsifier,used in: Soy Milk,Soy / Legume,3,-11.978,False
+PREDICTION (not a fact),Enchilada sauce,http://example.org/nutrireason/resource/ingredient/enchilada_sauce,used in: Chicken Enchiladas,Wheat / Gluten,1,-11.433,False
+PREDICTION (not a fact),Enchilada sauce,http://example.org/nutrireason/resource/ingredient/enchilada_sauce,used in: Chicken Enchiladas,Dairy,2,-11.528,False
+PREDICTION (not a fact),Enchilada sauce,http://example.org/nutrireason/resource/ingredient/enchilada_sauce,used in: Chicken Enchiladas,Celery,3,-12.246,False
+PREDICTION (not a fact),Fajita seasoning,http://example.org/nutrireason/resource/ingredient/fajita_seasoning,used in: Chicken Fajitas,Dairy,1,-11.755,False
+PREDICTION (not a fact),Fajita seasoning,http://example.org/nutrireason/resource/ingredient/fajita_seasoning,used in: Chicken Fajitas,Chicken,2,-11.873,False
+PREDICTION (not a fact),Fajita seasoning,http://example.org/nutrireason/resource/ingredient/fajita_seasoning,used in: Chicken Fajitas,Wheat / Gluten,3,-11.993,False
+PREDICTION (not a fact),Fermented batter,http://example.org/nutrireason/resource/ingredient/fermented_batter,used in: Paniyaram,Dairy,1,-11.534,False
+PREDICTION (not a fact),Fermented batter,http://example.org/nutrireason/resource/ingredient/fermented_batter,used in: Paniyaram,Wheat / Gluten,2,-11.873,False
+PREDICTION (not a fact),Fermented batter,http://example.org/nutrireason/resource/ingredient/fermented_batter,used in: Paniyaram,Honey,3,-12.098,False
+PREDICTION (not a fact),Fish,http://example.org/nutrireason/resource/ingredient/fish,used in: Malabar Fish Curry; used in: Sushi Rolls,Dairy,1,-11.792,False
+PREDICTION (not a fact),Fish,http://example.org/nutrireason/resource/ingredient/fish,used in: Malabar Fish Curry; used in: Sushi Rolls,Soy / Legume,2,-11.988,False
+PREDICTION (not a fact),Fish,http://example.org/nutrireason/resource/ingredient/fish,used in: Malabar Fish Curry; used in: Sushi Rolls,Citrus,3,-12.03,False
+PREDICTION (not a fact),Fish fillets,http://example.org/nutrireason/resource/ingredient/fish_fillet,used in: Fish Sticks,Chicken,1,-12.026,False
+PREDICTION (not a fact),Fish fillets,http://example.org/nutrireason/resource/ingredient/fish_fillet,used in: Fish Sticks,Dairy,2,-12.038,False
+PREDICTION (not a fact),Fish fillets,http://example.org/nutrireason/resource/ingredient/fish_fillet,used in: Fish Sticks,Honey,3,-12.061,False
+PREDICTION (not a fact),"Fish (salmon, tuna)",http://example.org/nutrireason/resource/ingredient/fish_salmon_tuna,used in: Sushi,Dairy,1,-11.61,False
+PREDICTION (not a fact),"Fish (salmon, tuna)",http://example.org/nutrireason/resource/ingredient/fish_salmon_tuna,used in: Sushi,Wheat / Gluten,2,-11.99,False
+PREDICTION (not a fact),"Fish (salmon, tuna)",http://example.org/nutrireason/resource/ingredient/fish_salmon_tuna,used in: Sushi,Soy / Legume,3,-12.174,False
+PREDICTION (not a fact),Fresh tomatoes,http://example.org/nutrireason/resource/ingredient/fresh_tomato,used in: Margherita Pasta,Dairy,1,-11.255,False
+PREDICTION (not a fact),Fresh tomatoes,http://example.org/nutrireason/resource/ingredient/fresh_tomato,used in: Margherita Pasta,Wheat / Gluten,2,-11.544,False
+PREDICTION (not a fact),Fresh tomatoes,http://example.org/nutrireason/resource/ingredient/fresh_tomato,used in: Margherita Pasta,Citrus,3,-12.292,False
+PREDICTION (not a fact),Ghee,http://example.org/nutrireason/resource/ingredient/ghee,used in: Aloo Paratha; used in: Biryani; used in: Chicken Biryani; used in: Chicken Korma; used in: Chicken Tikka Masala; used in: Chole Bhature; used in: Chole Kulche; used in: Dal Makhani; used in: ,Dairy,1,-11.356,False
+PREDICTION (not a fact),Ghee,http://example.org/nutrireason/resource/ingredient/ghee,used in: Aloo Paratha; used in: Biryani; used in: Chicken Biryani; used in: Chicken Korma; used in: Chicken Tikka Masala; used in: Chole Bhature; used in: Chole Kulche; used in: Dal Makhani; used in: ,Nut (unspecified),2,-11.418,False
+PREDICTION (not a fact),Ghee,http://example.org/nutrireason/resource/ingredient/ghee,used in: Aloo Paratha; used in: Biryani; used in: Chicken Biryani; used in: Chicken Korma; used in: Chicken Tikka Masala; used in: Chole Bhature; used in: Chole Kulche; used in: Dal Makhani; used in: ,Wheat / Gluten,3,-11.842,False
+PREDICTION (not a fact),Graham crackers,http://example.org/nutrireason/resource/ingredient/graham_cracker,used in: S'mores,Dairy,1,-11.947,False
+PREDICTION (not a fact),Graham crackers,http://example.org/nutrireason/resource/ingredient/graham_cracker,used in: S'mores,Citrus,2,-12.284,False
+PREDICTION (not a fact),Graham crackers,http://example.org/nutrireason/resource/ingredient/graham_cracker,used in: S'mores,Banana,3,-12.434,False
+PREDICTION (not a fact),Graham cracker crust,http://example.org/nutrireason/resource/ingredient/graham_cracker_crust,used in: Key Lime Pie; used in: Raspberry Cheesecake,Dairy,1,-11.164,False
+PREDICTION (not a fact),Graham cracker crust,http://example.org/nutrireason/resource/ingredient/graham_cracker_crust,used in: Key Lime Pie; used in: Raspberry Cheesecake,Wheat / Gluten,2,-11.909,False
+PREDICTION (not a fact),Graham cracker crust,http://example.org/nutrireason/resource/ingredient/graham_cracker_crust,used in: Key Lime Pie; used in: Raspberry Cheesecake,Honey,3,-11.912,False
+PREDICTION (not a fact),Granola,http://example.org/nutrireason/resource/ingredient/granola,used in: Berry Parfait; used in: Greek Yogurt Parfait,Honey,1,-11.047,False
+PREDICTION (not a fact),Granola,http://example.org/nutrireason/resource/ingredient/granola,used in: Berry Parfait; used in: Greek Yogurt Parfait,Dairy,2,-11.696,False
+PREDICTION (not a fact),Granola,http://example.org/nutrireason/resource/ingredient/granola,used in: Berry Parfait; used in: Greek Yogurt Parfait,Wheat / Gluten,3,-12.278,False
+PREDICTION (not a fact),Ground beef,http://example.org/nutrireason/resource/ingredient/ground_beef,used in: Beef Burger; used in: Beef Burritos; used in: Beef Chili; used in: Beef Tacos; used in: Spaghetti Bolognese,Dairy,1,-12.153,False
+PREDICTION (not a fact),Ground beef,http://example.org/nutrireason/resource/ingredient/ground_beef,used in: Beef Burger; used in: Beef Burritos; used in: Beef Chili; used in: Beef Tacos; used in: Spaghetti Bolognese,Honey,2,-12.435,False
+PREDICTION (not a fact),Ground beef,http://example.org/nutrireason/resource/ingredient/ground_beef,used in: Beef Burger; used in: Beef Burritos; used in: Beef Chili; used in: Beef Tacos; used in: Spaghetti Bolognese,Wheat / Gluten,3,-12.479,False
+PREDICTION (not a fact),Ground meat,http://example.org/nutrireason/resource/ingredient/ground_meat,used in: Cabbage Rolls; used in: Greek Moussaka; used in: Stuffed Bell Peppers; used in: Stuffed Cabbage Rolls,Rice,1,-11.577,False
+PREDICTION (not a fact),Ground meat,http://example.org/nutrireason/resource/ingredient/ground_meat,used in: Cabbage Rolls; used in: Greek Moussaka; used in: Stuffed Bell Peppers; used in: Stuffed Cabbage Rolls,Dairy,2,-11.812,False
+PREDICTION (not a fact),Ground meat,http://example.org/nutrireason/resource/ingredient/ground_meat,used in: Cabbage Rolls; used in: Greek Moussaka; used in: Stuffed Bell Peppers; used in: Stuffed Cabbage Rolls,Wheat / Gluten,3,-11.865,False
+PREDICTION (not a fact),Ham,http://example.org/nutrireason/resource/ingredient/ham,used in: Hawaiian Pizza,Oral Allergy Syndrome,1,-11.813,False
+PREDICTION (not a fact),Ham,http://example.org/nutrireason/resource/ingredient/ham,used in: Hawaiian Pizza,Dairy,2,-11.901,False
+PREDICTION (not a fact),Ham,http://example.org/nutrireason/resource/ingredient/ham,used in: Hawaiian Pizza,Citrus,3,-12.084,False
+PREDICTION (not a fact),Herbs,http://example.org/nutrireason/resource/ingredient/herb,used in: Baked Brie; used in: Baked Cod; used in: Baked Salmon; used in: Gazpacho; used in: Greek Lemon Chicken; used in: Greek Lemon Potatoes; used in: Lemon Herb Roasted Chicken; used in: Mushroom a,Dairy,1,-11.355,False
+PREDICTION (not a fact),Herbs,http://example.org/nutrireason/resource/ingredient/herb,used in: Baked Brie; used in: Baked Cod; used in: Baked Salmon; used in: Gazpacho; used in: Greek Lemon Chicken; used in: Greek Lemon Potatoes; used in: Lemon Herb Roasted Chicken; used in: Mushroom a,Citrus,2,-11.605,False
+PREDICTION (not a fact),Herbs,http://example.org/nutrireason/resource/ingredient/herb,used in: Baked Brie; used in: Baked Cod; used in: Baked Salmon; used in: Gazpacho; used in: Greek Lemon Chicken; used in: Greek Lemon Potatoes; used in: Lemon Herb Roasted Chicken; used in: Mushroom a,Allium,3,-11.798,False
+PREDICTION (not a fact),Kashmiri red chili,http://example.org/nutrireason/resource/ingredient/kashmiri_red_chili,used in: Rogan Josh,Dairy,1,-11.098,False
+PREDICTION (not a fact),Kashmiri red chili,http://example.org/nutrireason/resource/ingredient/kashmiri_red_chili,used in: Rogan Josh,Wheat / Gluten,2,-11.919,False
+PREDICTION (not a fact),Kashmiri red chili,http://example.org/nutrireason/resource/ingredient/kashmiri_red_chili,used in: Rogan Josh,Celery,3,-12.222,False
+PREDICTION (not a fact),Ladyfingers,http://example.org/nutrireason/resource/ingredient/ladyfinger,used in: Tiramisu,Dairy,1,-11.328,False
+PREDICTION (not a fact),Ladyfingers,http://example.org/nutrireason/resource/ingredient/ladyfinger,used in: Tiramisu,Wheat / Gluten,2,-11.762,False
+PREDICTION (not a fact),Ladyfingers,http://example.org/nutrireason/resource/ingredient/ladyfinger,used in: Tiramisu,Banana,3,-12.037,False
+PREDICTION (not a fact),Lamb,http://example.org/nutrireason/resource/ingredient/lamb,used in: Greek Gyro Wrap; used in: Rogan Josh,Dairy,1,-11.184,False
+PREDICTION (not a fact),Lamb,http://example.org/nutrireason/resource/ingredient/lamb,used in: Greek Gyro Wrap; used in: Rogan Josh,Nightshade,2,-11.631,False
+PREDICTION (not a fact),Lamb,http://example.org/nutrireason/resource/ingredient/lamb,used in: Greek Gyro Wrap; used in: Rogan Josh,Wheat / Gluten,3,-11.819,False
+PREDICTION (not a fact),Lemon pepper seasoning,http://example.org/nutrireason/resource/ingredient/lemon_pepper_seasoning,used in: Lemon Pepper Chicken,Dairy,1,-11.84,False
+PREDICTION (not a fact),Lemon pepper seasoning,http://example.org/nutrireason/resource/ingredient/lemon_pepper_seasoning,used in: Lemon Pepper Chicken,Wheat / Gluten,2,-11.845,False
+PREDICTION (not a fact),Lemon pepper seasoning,http://example.org/nutrireason/resource/ingredient/lemon_pepper_seasoning,used in: Lemon Pepper Chicken,Chicken,3,-12.108,False
+PREDICTION (not a fact),Lemon zest,http://example.org/nutrireason/resource/ingredient/lemon_zest,used in: Lemon Poppy Seed Muffins,Dairy,1,-11.441,False
+PREDICTION (not a fact),Lemon zest,http://example.org/nutrireason/resource/ingredient/lemon_zest,used in: Lemon Poppy Seed Muffins,Wheat / Gluten,2,-11.565,False
+PREDICTION (not a fact),Lemon zest,http://example.org/nutrireason/resource/ingredient/lemon_zest,used in: Lemon Poppy Seed Muffins,Honey,3,-12.025,False
+PREDICTION (not a fact),Lentil dumplings,http://example.org/nutrireason/resource/ingredient/lentil_dumpling,used in: Dahi Vada,Dairy,1,-11.244,False
+PREDICTION (not a fact),Lentil dumplings,http://example.org/nutrireason/resource/ingredient/lentil_dumpling,used in: Dahi Vada,Wheat / Gluten,2,-12.108,False
+PREDICTION (not a fact),Lentil dumplings,http://example.org/nutrireason/resource/ingredient/lentil_dumpling,used in: Dahi Vada,Honey,3,-12.319,False
+PREDICTION (not a fact),Lobster,http://example.org/nutrireason/resource/ingredient/lobster,used in: Lobster Bisque; used in: Lobster Roll,Dairy,1,-11.301,False
+PREDICTION (not a fact),Lobster,http://example.org/nutrireason/resource/ingredient/lobster,used in: Lobster Bisque; used in: Lobster Roll,Celery,2,-11.64,False
+PREDICTION (not a fact),Lobster,http://example.org/nutrireason/resource/ingredient/lobster,used in: Lobster Bisque; used in: Lobster Roll,Wheat / Gluten,3,-11.958,False
+PREDICTION (not a fact),Manchurian sauce,http://example.org/nutrireason/resource/ingredient/manchurian_sauce,used in: Gobi Manchurian,Dairy,1,-11.601,False
+PREDICTION (not a fact),Manchurian sauce,http://example.org/nutrireason/resource/ingredient/manchurian_sauce,used in: Gobi Manchurian,Wheat / Gluten,2,-11.808,False
+PREDICTION (not a fact),Manchurian sauce,http://example.org/nutrireason/resource/ingredient/manchurian_sauce,used in: Gobi Manchurian,Honey,3,-11.859,False
+PREDICTION (not a fact),Maple syrup,http://example.org/nutrireason/resource/ingredient/maple_syrup,used in: Pancake Stack,Wheat / Gluten,1,-11.266,False
+PREDICTION (not a fact),Maple syrup,http://example.org/nutrireason/resource/ingredient/maple_syrup,used in: Pancake Stack,Dairy,2,-11.421,False
+PREDICTION (not a fact),Maple syrup,http://example.org/nutrireason/resource/ingredient/maple_syrup,used in: Pancake Stack,Celery,3,-12.225,False
+PREDICTION (not a fact),Marinara sauce,http://example.org/nutrireason/resource/ingredient/marinara_sauce,used in: Chicken Parmesan; used in: Eggplant Parmesan,Dairy,1,-10.972,False
+PREDICTION (not a fact),Marinara sauce,http://example.org/nutrireason/resource/ingredient/marinara_sauce,used in: Chicken Parmesan; used in: Eggplant Parmesan,Wheat / Gluten,2,-11.448,False
+PREDICTION (not a fact),Marinara sauce,http://example.org/nutrireason/resource/ingredient/marinara_sauce,used in: Chicken Parmesan; used in: Eggplant Parmesan,Chicken,3,-11.862,False
+PREDICTION (not a fact),Marshmallows,http://example.org/nutrireason/resource/ingredient/marshmallow,used in: S'mores,Dairy,1,-11.912,False
+PREDICTION (not a fact),Marshmallows,http://example.org/nutrireason/resource/ingredient/marshmallow,used in: S'mores,Wheat / Gluten,2,-12.17,False
+PREDICTION (not a fact),Marshmallows,http://example.org/nutrireason/resource/ingredient/marshmallow,used in: S'mores,Citrus,3,-12.173,False
+PREDICTION (not a fact),Masala spices,http://example.org/nutrireason/resource/ingredient/masala_spice,used in: Chana Masala,Dairy,1,-11.689,False
+PREDICTION (not a fact),Masala spices,http://example.org/nutrireason/resource/ingredient/masala_spice,used in: Chana Masala,Wheat / Gluten,2,-11.754,False
+PREDICTION (not a fact),Masala spices,http://example.org/nutrireason/resource/ingredient/masala_spice,used in: Chana Masala,Celery,3,-12.2,False
+PREDICTION (not a fact),Mayonnaise,http://example.org/nutrireason/resource/ingredient/mayonnaise,used in: Egg Salad; used in: Egg Salad Sandwich; used in: Lobster Roll; used in: Tuna Salad; used in: Tuna Sandwich,Celery,1,-10.066,False
+PREDICTION (not a fact),Mayonnaise,http://example.org/nutrireason/resource/ingredient/mayonnaise,used in: Egg Salad; used in: Egg Salad Sandwich; used in: Lobster Roll; used in: Tuna Salad; used in: Tuna Sandwich,Allium,2,-11.714,False
+PREDICTION (not a fact),Mayonnaise,http://example.org/nutrireason/resource/ingredient/mayonnaise,used in: Egg Salad; used in: Egg Salad Sandwich; used in: Lobster Roll; used in: Tuna Salad; used in: Tuna Sandwich,Honey,3,-11.757,False
+PREDICTION (not a fact),Meat/vegetables,http://example.org/nutrireason/resource/ingredient/meat_vegetable,used in: Hyderabadi Biryani,Wheat / Gluten,1,-11.599,False
+PREDICTION (not a fact),Meat/vegetables,http://example.org/nutrireason/resource/ingredient/meat_vegetable,used in: Hyderabadi Biryani,Dairy,2,-11.603,False
+PREDICTION (not a fact),Meat/vegetables,http://example.org/nutrireason/resource/ingredient/meat_vegetable,used in: Hyderabadi Biryani,Nut (unspecified),3,-12.039,False
+PREDICTION (not a fact),Mint,http://example.org/nutrireason/resource/ingredient/mint,used in: Watermelon Salad,Dairy,1,-11.011,False
+PREDICTION (not a fact),Mint,http://example.org/nutrireason/resource/ingredient/mint,used in: Watermelon Salad,Wheat / Gluten,2,-11.647,False
+PREDICTION (not a fact),Mint,http://example.org/nutrireason/resource/ingredient/mint,used in: Watermelon Salad,Honey,3,-12.024,False
+PREDICTION (not a fact),Miso paste,http://example.org/nutrireason/resource/ingredient/miso_paste,used in: Miso Soup,Dairy,1,-11.96,False
+PREDICTION (not a fact),Miso paste,http://example.org/nutrireason/resource/ingredient/miso_paste,used in: Miso Soup,Wheat / Gluten,2,-12.075,False
+PREDICTION (not a fact),Miso paste,http://example.org/nutrireason/resource/ingredient/miso_paste,used in: Miso Soup,Soy / Legume,3,-12.153,False
+PREDICTION (not a fact),Mixed berries,http://example.org/nutrireason/resource/ingredient/mixed_berrie,used in: Berry Cobbler; used in: Berry Crumble; used in: Berry Parfait; used in: Berry Smoothie; used in: Greek Yogurt Parfait; used in: Mixed Berry Pie,Honey,1,-11.455,False
+PREDICTION (not a fact),Mixed berries,http://example.org/nutrireason/resource/ingredient/mixed_berrie,used in: Berry Cobbler; used in: Berry Crumble; used in: Berry Parfait; used in: Berry Smoothie; used in: Greek Yogurt Parfait; used in: Mixed Berry Pie,Dairy,2,-11.469,False
+PREDICTION (not a fact),Mixed berries,http://example.org/nutrireason/resource/ingredient/mixed_berrie,used in: Berry Cobbler; used in: Berry Crumble; used in: Berry Parfait; used in: Berry Smoothie; used in: Greek Yogurt Parfait; used in: Mixed Berry Pie,Wheat / Gluten,3,-11.867,False
+PREDICTION (not a fact),Mixed fruits,http://example.org/nutrireason/resource/ingredient/mixed_fruit,used in: Fruit Salad,Dairy,1,-11.614,False
+PREDICTION (not a fact),Mixed fruits,http://example.org/nutrireason/resource/ingredient/mixed_fruit,used in: Fruit Salad,Wheat / Gluten,2,-11.801,False
+PREDICTION (not a fact),Mixed fruits,http://example.org/nutrireason/resource/ingredient/mixed_fruit,used in: Fruit Salad,Banana,3,-12.068,False
+PREDICTION (not a fact),Mixed vegetables,http://example.org/nutrireason/resource/ingredient/mixed_vegetable,used in: Pav Bhaji; used in: Vegetable Biryani; used in: Vegetable Curry; used in: Vegetable Soup; used in: Vegetable Stir-Fry; used in: Veggie Burger; used in: Veggie Omelette,Wheat / Gluten,1,-11.501,False
+PREDICTION (not a fact),Mixed vegetables,http://example.org/nutrireason/resource/ingredient/mixed_vegetable,used in: Pav Bhaji; used in: Vegetable Biryani; used in: Vegetable Curry; used in: Vegetable Soup; used in: Vegetable Stir-Fry; used in: Veggie Burger; used in: Veggie Omelette,Dairy,2,-11.565,False
+PREDICTION (not a fact),Mixed vegetables,http://example.org/nutrireason/resource/ingredient/mixed_vegetable,used in: Pav Bhaji; used in: Vegetable Biryani; used in: Vegetable Curry; used in: Vegetable Soup; used in: Vegetable Stir-Fry; used in: Veggie Burger; used in: Veggie Omelette,Honey,3,-12.224,False
+PREDICTION (not a fact),Mushrooms,http://example.org/nutrireason/resource/ingredient/mushroom,used in: Beef Stroganoff; used in: Beef Wellington; used in: Mushroom Risotto; used in: Mushroom Soup; used in: Mushroom and Goat Cheese Flatbread; used in: Stuffed Mushrooms,Dairy,1,-10.68,False
+PREDICTION (not a fact),Mushrooms,http://example.org/nutrireason/resource/ingredient/mushroom,used in: Beef Stroganoff; used in: Beef Wellington; used in: Mushroom Risotto; used in: Mushroom Soup; used in: Mushroom and Goat Cheese Flatbread; used in: Stuffed Mushrooms,Wheat / Gluten,2,-11.779,False
+PREDICTION (not a fact),Mushrooms,http://example.org/nutrireason/resource/ingredient/mushroom,used in: Beef Stroganoff; used in: Beef Wellington; used in: Mushroom Risotto; used in: Mushroom Soup; used in: Mushroom and Goat Cheese Flatbread; used in: Stuffed Mushrooms,Allium,3,-12.2,False
+PREDICTION (not a fact),Mustard seeds,http://example.org/nutrireason/resource/ingredient/mustard_seed,used in: Paniyaram,Dairy,1,-11.688,False
+PREDICTION (not a fact),Mustard seeds,http://example.org/nutrireason/resource/ingredient/mustard_seed,used in: Paniyaram,Wheat / Gluten,2,-12.17,False
+PREDICTION (not a fact),Mustard seeds,http://example.org/nutrireason/resource/ingredient/mustard_seed,used in: Paniyaram,Honey,3,-12.201,False
+PREDICTION (not a fact),Mutton,http://example.org/nutrireason/resource/ingredient/mutton,used in: Mutton Biryani,Dairy,1,-11.561,False
+PREDICTION (not a fact),Mutton,http://example.org/nutrireason/resource/ingredient/mutton,used in: Mutton Biryani,Wheat / Gluten,2,-12.004,False
+PREDICTION (not a fact),Mutton,http://example.org/nutrireason/resource/ingredient/mutton,used in: Mutton Biryani,Honey,3,-12.207,False
+PREDICTION (not a fact),Nori (seaweed),http://example.org/nutrireason/resource/ingredient/nori_seaweed,used in: Sushi Rolls,Dairy,1,-11.75,False
+PREDICTION (not a fact),Nori (seaweed),http://example.org/nutrireason/resource/ingredient/nori_seaweed,used in: Sushi Rolls,Soy / Legume,2,-11.98,False
+PREDICTION (not a fact),Nori (seaweed),http://example.org/nutrireason/resource/ingredient/nori_seaweed,used in: Sushi Rolls,Wheat / Gluten,3,-12.022,False
+PREDICTION (not a fact),Oats,http://example.org/nutrireason/resource/ingredient/oat,used in: Baked Apple; used in: Berry Crumble; used in: Oatmeal; used in: Oatmeal Raisin Cookies,Dairy,1,-11.746,False
+PREDICTION (not a fact),Oats,http://example.org/nutrireason/resource/ingredient/oat,used in: Baked Apple; used in: Berry Crumble; used in: Oatmeal; used in: Oatmeal Raisin Cookies,Wheat / Gluten,2,-11.966,False
+PREDICTION (not a fact),Oats,http://example.org/nutrireason/resource/ingredient/oat,used in: Baked Apple; used in: Berry Crumble; used in: Oatmeal; used in: Oatmeal Raisin Cookies,Citrus,3,-12.289,False
+PREDICTION (not a fact),Oil,http://example.org/nutrireason/resource/ingredient/oil,used in: Aloo Gobi; used in: Chana Masala; used in: Dosa; used in: Gobi Manchurian; used in: Masala Dosa; used in: Paneer Tikka; used in: Paniyaram; used in: Vada Pav,Rice,1,-11.743,False
+PREDICTION (not a fact),Oil,http://example.org/nutrireason/resource/ingredient/oil,used in: Aloo Gobi; used in: Chana Masala; used in: Dosa; used in: Gobi Manchurian; used in: Masala Dosa; used in: Paneer Tikka; used in: Paniyaram; used in: Vada Pav,Dairy,2,-11.798,False
+PREDICTION (not a fact),Oil,http://example.org/nutrireason/resource/ingredient/oil,used in: Aloo Gobi; used in: Chana Masala; used in: Dosa; used in: Gobi Manchurian; used in: Masala Dosa; used in: Paneer Tikka; used in: Paniyaram; used in: Vada Pav,Wheat / Gluten,3,-11.886,False
+PREDICTION (not a fact),Olives,http://example.org/nutrireason/resource/ingredient/olive,used in: Greek Salad,Dairy,1,-11.048,False
+PREDICTION (not a fact),Olives,http://example.org/nutrireason/resource/ingredient/olive,used in: Greek Salad,Wheat / Gluten,2,-11.586,False
+PREDICTION (not a fact),Olives,http://example.org/nutrireason/resource/ingredient/olive,used in: Greek Salad,Nut (unspecified),3,-12.091,False
+PREDICTION (not a fact),Orange sauce,http://example.org/nutrireason/resource/ingredient/orange_sauce,used in: Orange Chicken,Dairy,1,-11.715,False
+PREDICTION (not a fact),Orange sauce,http://example.org/nutrireason/resource/ingredient/orange_sauce,used in: Orange Chicken,Wheat / Gluten,2,-11.971,False
+PREDICTION (not a fact),Orange sauce,http://example.org/nutrireason/resource/ingredient/orange_sauce,used in: Orange Chicken,Chicken,3,-12.294,False
+PREDICTION (not a fact),Pancetta,http://example.org/nutrireason/resource/ingredient/pancetta,used in: Pancetta Pasta,Wheat / Gluten,1,-11.205,False
+PREDICTION (not a fact),Pancetta,http://example.org/nutrireason/resource/ingredient/pancetta,used in: Pancetta Pasta,Dairy,2,-11.416,False
+PREDICTION (not a fact),Pancetta,http://example.org/nutrireason/resource/ingredient/pancetta,used in: Pancetta Pasta,Allium,3,-11.572,False
+PREDICTION (not a fact),Paneer,http://example.org/nutrireason/resource/ingredient/paneer,used in: Matar Paneer; used in: Palak Paneer; used in: Paneer Tikka; used in: Rasgulla; used in: Rasmalai,Dairy,1,-11.269,False
+PREDICTION (not a fact),Paneer,http://example.org/nutrireason/resource/ingredient/paneer,used in: Matar Paneer; used in: Palak Paneer; used in: Paneer Tikka; used in: Rasgulla; used in: Rasmalai,Nut (unspecified),2,-11.884,False
+PREDICTION (not a fact),Paneer,http://example.org/nutrireason/resource/ingredient/paneer,used in: Matar Paneer; used in: Palak Paneer; used in: Paneer Tikka; used in: Rasgulla; used in: Rasmalai,Histamine,3,-12.022,False
+PREDICTION (not a fact),Pav bun,http://example.org/nutrireason/resource/ingredient/pav_bun,used in: Vada Pav,Dairy,1,-11.985,False
+PREDICTION (not a fact),Pav bun,http://example.org/nutrireason/resource/ingredient/pav_bun,used in: Vada Pav,Honey,2,-12.228,False
+PREDICTION (not a fact),Pav bun,http://example.org/nutrireason/resource/ingredient/pav_bun,used in: Vada Pav,Chicken,3,-12.296,False
+PREDICTION (not a fact),Pepper,http://example.org/nutrireason/resource/ingredient/pepper,used in: Avocado Toast; used in: Beef Burger; used in: Mashed Potatoes; used in: Omelette; used in: Tuna Sandwich; used in: Veggie Omelette,Dairy,1,-11.831,False
+PREDICTION (not a fact),Pepper,http://example.org/nutrireason/resource/ingredient/pepper,used in: Avocado Toast; used in: Beef Burger; used in: Mashed Potatoes; used in: Omelette; used in: Tuna Sandwich; used in: Veggie Omelette,Honey,2,-11.951,False
+PREDICTION (not a fact),Pepper,http://example.org/nutrireason/resource/ingredient/pepper,used in: Avocado Toast; used in: Beef Burger; used in: Mashed Potatoes; used in: Omelette; used in: Tuna Sandwich; used in: Veggie Omelette,Celery,3,-12.052,False
+PREDICTION (not a fact),Pesto sauce,http://example.org/nutrireason/resource/ingredient/pesto_sauce,used in: Pesto Chicken; used in: Pesto Pasta Salad; used in: Pesto Pizza; used in: Zucchini Noodles with Pesto,Dairy,1,-11.564,False
+PREDICTION (not a fact),Pesto sauce,http://example.org/nutrireason/resource/ingredient/pesto_sauce,used in: Pesto Chicken; used in: Pesto Pasta Salad; used in: Pesto Pizza; used in: Zucchini Noodles with Pesto,Wheat / Gluten,2,-11.617,False
+PREDICTION (not a fact),Pesto sauce,http://example.org/nutrireason/resource/ingredient/pesto_sauce,used in: Pesto Chicken; used in: Pesto Pasta Salad; used in: Pesto Pizza; used in: Zucchini Noodles with Pesto,Nightshade,3,-12.102,False
+PREDICTION (not a fact),Pizza dough,http://example.org/nutrireason/resource/ingredient/pizza_dough,used in: Chicken Alfredo Pizza; used in: Hawaiian Pizza; used in: Ratatouille Pizza; used in: Sausage and Pepper Pizza,Dairy,1,-11.818,False
+PREDICTION (not a fact),Pizza dough,http://example.org/nutrireason/resource/ingredient/pizza_dough,used in: Chicken Alfredo Pizza; used in: Hawaiian Pizza; used in: Ratatouille Pizza; used in: Sausage and Pepper Pizza,Citrus,2,-11.835,False
+PREDICTION (not a fact),Pizza dough,http://example.org/nutrireason/resource/ingredient/pizza_dough,used in: Chicken Alfredo Pizza; used in: Hawaiian Pizza; used in: Ratatouille Pizza; used in: Sausage and Pepper Pizza,Wheat / Gluten,3,-12.198,False
+PREDICTION (not a fact),Pork ribs,http://example.org/nutrireason/resource/ingredient/pork_rib,used in: BBQ Ribs,Dairy,1,-11.802,False
+PREDICTION (not a fact),Pork ribs,http://example.org/nutrireason/resource/ingredient/pork_rib,used in: BBQ Ribs,Wheat / Gluten,2,-11.973,False
+PREDICTION (not a fact),Pork ribs,http://example.org/nutrireason/resource/ingredient/pork_rib,used in: BBQ Ribs,Citrus,3,-12.222,False
+PREDICTION (not a fact),Portobello mushrooms,http://example.org/nutrireason/resource/ingredient/portobello_mushroom,used in: Grilled Portobello Mushroom Burger; used in: Stuffed Portobello Mushrooms,Dairy,1,-11.575,False
+PREDICTION (not a fact),Portobello mushrooms,http://example.org/nutrireason/resource/ingredient/portobello_mushroom,used in: Grilled Portobello Mushroom Burger; used in: Stuffed Portobello Mushrooms,Wheat / Gluten,2,-12.135,False
+PREDICTION (not a fact),Portobello mushrooms,http://example.org/nutrireason/resource/ingredient/portobello_mushroom,used in: Grilled Portobello Mushroom Burger; used in: Stuffed Portobello Mushrooms,Nut (unspecified),3,-12.631,False
+PREDICTION (not a fact),Potato masala,http://example.org/nutrireason/resource/ingredient/potato_masala,used in: Dosa; used in: Masala Dosa,Rice,1,-11.418,False
+PREDICTION (not a fact),Potato masala,http://example.org/nutrireason/resource/ingredient/potato_masala,used in: Dosa; used in: Masala Dosa,Wheat / Gluten,2,-11.444,False
+PREDICTION (not a fact),Potato masala,http://example.org/nutrireason/resource/ingredient/potato_masala,used in: Dosa; used in: Masala Dosa,Dairy,3,-11.55,False
+PREDICTION (not a fact),Prawns,http://example.org/nutrireason/resource/ingredient/prawn,used in: Prawn Biryani; used in: Prawn Curry,Dairy,1,-11.367,False
+PREDICTION (not a fact),Prawns,http://example.org/nutrireason/resource/ingredient/prawn,used in: Prawn Biryani; used in: Prawn Curry,Honey,2,-11.417,False
+PREDICTION (not a fact),Prawns,http://example.org/nutrireason/resource/ingredient/prawn,used in: Prawn Biryani; used in: Prawn Curry,Citrus,3,-12.041,False
+PREDICTION (not a fact),Puff pastry,http://example.org/nutrireason/resource/ingredient/puff_pastry,used in: Beef Wellington; used in: Ratatouille Tart,Dairy,1,-11.503,False
+PREDICTION (not a fact),Puff pastry,http://example.org/nutrireason/resource/ingredient/puff_pastry,used in: Beef Wellington; used in: Ratatouille Tart,Wheat / Gluten,2,-11.61,False
+PREDICTION (not a fact),Puff pastry,http://example.org/nutrireason/resource/ingredient/puff_pastry,used in: Beef Wellington; used in: Ratatouille Tart,Citrus,3,-12.338,False
+PREDICTION (not a fact),Pumpkin,http://example.org/nutrireason/resource/ingredient/pumpkin,group: Cucurbitaceous vegetable; used in: Pumpkin Pie; used in: Pumpkin Soup,Dairy,1,-10.825,False
+PREDICTION (not a fact),Pumpkin,http://example.org/nutrireason/resource/ingredient/pumpkin,group: Cucurbitaceous vegetable; used in: Pumpkin Pie; used in: Pumpkin Soup,Honey,2,-11.257,False
+PREDICTION (not a fact),Pumpkin,http://example.org/nutrireason/resource/ingredient/pumpkin,group: Cucurbitaceous vegetable; used in: Pumpkin Pie; used in: Pumpkin Soup,Wheat / Gluten,3,-11.398,False
+PREDICTION (not a fact),Quinoa,http://example.org/nutrireason/resource/ingredient/quinoa,used in: Quinoa Salad; used in: Quinoa Stuffed Peppers,Dairy,1,-11.74,False
+PREDICTION (not a fact),Quinoa,http://example.org/nutrireason/resource/ingredient/quinoa,used in: Quinoa Salad; used in: Quinoa Stuffed Peppers,Wheat / Gluten,2,-12.233,False
+PREDICTION (not a fact),Quinoa,http://example.org/nutrireason/resource/ingredient/quinoa,used in: Quinoa Salad; used in: Quinoa Stuffed Peppers,Citrus,3,-12.79,False
+PREDICTION (not a fact),Raisins,http://example.org/nutrireason/resource/ingredient/raisin,used in: Rice Pudding,Dairy,1,-11.363,False
+PREDICTION (not a fact),Raisins,http://example.org/nutrireason/resource/ingredient/raisin,used in: Rice Pudding,Wheat / Gluten,2,-11.787,False
+PREDICTION (not a fact),Raisins,http://example.org/nutrireason/resource/ingredient/raisin,used in: Rice Pudding,Rice,3,-11.897,False
+PREDICTION (not a fact),Raspberries,http://example.org/nutrireason/resource/ingredient/raspberrie,used in: Raspberry Cheesecake; used in: Raspberry Spinach Salad,Dairy,1,-11.056,False
+PREDICTION (not a fact),Raspberries,http://example.org/nutrireason/resource/ingredient/raspberrie,used in: Raspberry Cheesecake; used in: Raspberry Spinach Salad,Histamine,2,-11.72,False
+PREDICTION (not a fact),Raspberries,http://example.org/nutrireason/resource/ingredient/raspberrie,used in: Raspberry Cheesecake; used in: Raspberry Spinach Salad,Wheat / Gluten,3,-11.767,False
+PREDICTION (not a fact),Ratatouille vegetables,http://example.org/nutrireason/resource/ingredient/ratatouille_vegetable,used in: Ratatouille Pasta; used in: Ratatouille Pizza,Wheat / Gluten,1,-11.645,False
+PREDICTION (not a fact),Ratatouille vegetables,http://example.org/nutrireason/resource/ingredient/ratatouille_vegetable,used in: Ratatouille Pasta; used in: Ratatouille Pizza,Dairy,2,-11.697,False
+PREDICTION (not a fact),Ratatouille vegetables,http://example.org/nutrireason/resource/ingredient/ratatouille_vegetable,used in: Ratatouille Pasta; used in: Ratatouille Pizza,Citrus,3,-12.332,False
+PREDICTION (not a fact),Raw fish,http://example.org/nutrireason/resource/ingredient/raw_fish,used in: Sushi Bowl,Dairy,1,-11.864,False
+PREDICTION (not a fact),Raw fish,http://example.org/nutrireason/resource/ingredient/raw_fish,used in: Sushi Bowl,Soy / Legume,2,-12.064,False
+PREDICTION (not a fact),Raw fish,http://example.org/nutrireason/resource/ingredient/raw_fish,used in: Sushi Bowl,Wheat / Gluten,3,-12.187,False
+PREDICTION (not a fact),Red onion,http://example.org/nutrireason/resource/ingredient/red_onion,used in: Mango Salsa,Citrus,1,-11.275,False
+PREDICTION (not a fact),Red onion,http://example.org/nutrireason/resource/ingredient/red_onion,used in: Mango Salsa,Dairy,2,-11.776,False
+PREDICTION (not a fact),Red onion,http://example.org/nutrireason/resource/ingredient/red_onion,used in: Mango Salsa,Wheat / Gluten,3,-11.861,False
+PREDICTION (not a fact),Rice vinegar,http://example.org/nutrireason/resource/ingredient/rice_vinegar,used in: Sushi,Dairy,1,-11.666,False
+PREDICTION (not a fact),Rice vinegar,http://example.org/nutrireason/resource/ingredient/rice_vinegar,used in: Sushi,Soy / Legume,2,-11.956,False
+PREDICTION (not a fact),Rice vinegar,http://example.org/nutrireason/resource/ingredient/rice_vinegar,used in: Sushi,Wheat / Gluten,3,-12.13,False
+PREDICTION (not a fact),Romaine lettuce,http://example.org/nutrireason/resource/ingredient/romaine_lettuce,used in: Caesar Pasta Salad; used in: Caesar Salad; used in: Chicken Caesar Wrap,Dairy,1,-11.221,False
+PREDICTION (not a fact),Romaine lettuce,http://example.org/nutrireason/resource/ingredient/romaine_lettuce,used in: Caesar Pasta Salad; used in: Caesar Salad; used in: Chicken Caesar Wrap,Wheat / Gluten,2,-11.862,False
+PREDICTION (not a fact),Romaine lettuce,http://example.org/nutrireason/resource/ingredient/romaine_lettuce,used in: Caesar Pasta Salad; used in: Caesar Salad; used in: Chicken Caesar Wrap,Chicken,3,-12.455,False
+PREDICTION (not a fact),Rose water,http://example.org/nutrireason/resource/ingredient/rose_water,used in: Rasgulla,Dairy,1,-11.625,False
+PREDICTION (not a fact),Rose water,http://example.org/nutrireason/resource/ingredient/rose_water,used in: Rasgulla,Wheat / Gluten,2,-12.238,False
+PREDICTION (not a fact),Rose water,http://example.org/nutrireason/resource/ingredient/rose_water,used in: Rasgulla,Banana,3,-12.257,False
+PREDICTION (not a fact),Saffron syrup,http://example.org/nutrireason/resource/ingredient/saffron_syrup,used in: Jalebi,Wheat / Gluten,1,-11.351,False
+PREDICTION (not a fact),Saffron syrup,http://example.org/nutrireason/resource/ingredient/saffron_syrup,used in: Jalebi,Dairy,2,-11.565,False
+PREDICTION (not a fact),Saffron syrup,http://example.org/nutrireason/resource/ingredient/saffron_syrup,used in: Jalebi,Nut (unspecified),3,-11.992,False
+PREDICTION (not a fact),Salmon fillet,http://example.org/nutrireason/resource/ingredient/salmon_fillet,used in: Baked Salmon,Citrus,1,-11.044,False
+PREDICTION (not a fact),Salmon fillet,http://example.org/nutrireason/resource/ingredient/salmon_fillet,used in: Baked Salmon,Dairy,2,-11.779,False
+PREDICTION (not a fact),Salmon fillet,http://example.org/nutrireason/resource/ingredient/salmon_fillet,used in: Baked Salmon,Nut (unspecified),3,-12.487,False
+PREDICTION (not a fact),Sausage,http://example.org/nutrireason/resource/ingredient/sausage,used in: Sausage Pizza; used in: Sausage and Pepper Pizza,Dairy,1,-11.253,False
+PREDICTION (not a fact),Sausage,http://example.org/nutrireason/resource/ingredient/sausage,used in: Sausage Pizza; used in: Sausage and Pepper Pizza,Wheat / Gluten,2,-12.089,False
+PREDICTION (not a fact),Sausage,http://example.org/nutrireason/resource/ingredient/sausage,used in: Sausage Pizza; used in: Sausage and Pepper Pizza,Citrus,3,-12.217,False
+PREDICTION (not a fact),Seasonings,http://example.org/nutrireason/resource/ingredient/seasoning,used in: Bacon-Wrapped Shrimp; used in: Baked Chicken Wings; used in: Beef Kabobs; used in: Vegetable Soup; used in: Veggie Burger,Wheat / Gluten,1,-11.896,False
+PREDICTION (not a fact),Seasonings,http://example.org/nutrireason/resource/ingredient/seasoning,used in: Bacon-Wrapped Shrimp; used in: Baked Chicken Wings; used in: Beef Kabobs; used in: Vegetable Soup; used in: Veggie Burger,Dairy,2,-11.899,False
+PREDICTION (not a fact),Seasonings,http://example.org/nutrireason/resource/ingredient/seasoning,used in: Bacon-Wrapped Shrimp; used in: Baked Chicken Wings; used in: Beef Kabobs; used in: Vegetable Soup; used in: Veggie Burger,Chicken,3,-12.3,False
+PREDICTION (not a fact),Seaweed,http://example.org/nutrireason/resource/ingredient/seaweed,used in: Miso Soup,Dairy,1,-11.904,False
+PREDICTION (not a fact),Seaweed,http://example.org/nutrireason/resource/ingredient/seaweed,used in: Miso Soup,Wheat / Gluten,2,-11.939,False
+PREDICTION (not a fact),Seaweed,http://example.org/nutrireason/resource/ingredient/seaweed,used in: Miso Soup,Soy / Legume,3,-12.172,False
+PREDICTION (not a fact),Semolina,http://example.org/nutrireason/resource/ingredient/semolina,used in: Pani Puri,Dairy,1,-11.594,False
+PREDICTION (not a fact),Semolina,http://example.org/nutrireason/resource/ingredient/semolina,used in: Pani Puri,Wheat / Gluten,2,-11.903,False
+PREDICTION (not a fact),Semolina,http://example.org/nutrireason/resource/ingredient/semolina,used in: Pani Puri,Celery,3,-12.119,False
+PREDICTION (not a fact),Sesame oil,http://example.org/nutrireason/resource/ingredient/sesame_oil,used in: Egg Fried Rice; used in: Sushi,Soy / Legume,1,-11.771,False
+PREDICTION (not a fact),Sesame oil,http://example.org/nutrireason/resource/ingredient/sesame_oil,used in: Egg Fried Rice; used in: Sushi,Dairy,2,-11.896,False
+PREDICTION (not a fact),Sesame oil,http://example.org/nutrireason/resource/ingredient/sesame_oil,used in: Egg Fried Rice; used in: Sushi,Honey,3,-12.019,False
+PREDICTION (not a fact),Shawarma spices,http://example.org/nutrireason/resource/ingredient/shawarma_spice,used in: Chicken Shawarma,Dairy,1,-11.81,False
+PREDICTION (not a fact),Shawarma spices,http://example.org/nutrireason/resource/ingredient/shawarma_spice,used in: Chicken Shawarma,Chicken,2,-11.994,False
+PREDICTION (not a fact),Shawarma spices,http://example.org/nutrireason/resource/ingredient/shawarma_spice,used in: Chicken Shawarma,Wheat / Gluten,3,-12.052,False
+PREDICTION (not a fact),Shortcake,http://example.org/nutrireason/resource/ingredient/shortcake,used in: Strawberry Shortcake,Dairy,1,-11.313,False
+PREDICTION (not a fact),Shortcake,http://example.org/nutrireason/resource/ingredient/shortcake,used in: Strawberry Shortcake,Wheat / Gluten,2,-11.637,False
+PREDICTION (not a fact),Shortcake,http://example.org/nutrireason/resource/ingredient/shortcake,used in: Strawberry Shortcake,Citrus,3,-11.826,False
+PREDICTION (not a fact),Shrimp,http://example.org/nutrireason/resource/ingredient/shrimp,used in: Bacon-Wrapped Shrimp; used in: Caesar Shrimp Skewers; used in: Garlic Shrimp; used in: Lemon Garlic Shrimp; used in: Shrimp Fried Rice; used in: Shrimp Scampi; used in: Shrimp Scampi Pasta,Dairy,1,-11.542,False
+PREDICTION (not a fact),Shrimp,http://example.org/nutrireason/resource/ingredient/shrimp,used in: Bacon-Wrapped Shrimp; used in: Caesar Shrimp Skewers; used in: Garlic Shrimp; used in: Lemon Garlic Shrimp; used in: Shrimp Fried Rice; used in: Shrimp Scampi; used in: Shrimp Scampi Pasta,Citrus,2,-11.895,False
+PREDICTION (not a fact),Shrimp,http://example.org/nutrireason/resource/ingredient/shrimp,used in: Bacon-Wrapped Shrimp; used in: Caesar Shrimp Skewers; used in: Garlic Shrimp; used in: Lemon Garlic Shrimp; used in: Shrimp Fried Rice; used in: Shrimp Scampi; used in: Shrimp Scampi Pasta,Allium,3,-12.036,False
+PREDICTION (not a fact),Spices,http://example.org/nutrireason/resource/ingredient/spice,used in: Aloo Gobi; used in: Aloo Paratha; used in: Biryani; used in: Chicken Biryani; used in: Chicken Korma; used in: Chicken Malai Tikka; used in: Chole Bhature; used in: Chole Kulche; used in: Dah,Dairy,1,-11.45,False
+PREDICTION (not a fact),Spices,http://example.org/nutrireason/resource/ingredient/spice,used in: Aloo Gobi; used in: Aloo Paratha; used in: Biryani; used in: Chicken Biryani; used in: Chicken Korma; used in: Chicken Malai Tikka; used in: Chole Bhature; used in: Chole Kulche; used in: Dah,Wheat / Gluten,2,-11.723,False
+PREDICTION (not a fact),Spices,http://example.org/nutrireason/resource/ingredient/spice,used in: Aloo Gobi; used in: Aloo Paratha; used in: Biryani; used in: Chicken Biryani; used in: Chicken Korma; used in: Chicken Malai Tikka; used in: Chole Bhature; used in: Chole Kulche; used in: Dah,Nut (unspecified),3,-12.051,False
+PREDICTION (not a fact),Spiced water,http://example.org/nutrireason/resource/ingredient/spiced_water,used in: Pani Puri,Dairy,1,-11.437,False
+PREDICTION (not a fact),Spiced water,http://example.org/nutrireason/resource/ingredient/spiced_water,used in: Pani Puri,Wheat / Gluten,2,-11.796,False
+PREDICTION (not a fact),Spiced water,http://example.org/nutrireason/resource/ingredient/spiced_water,used in: Pani Puri,Honey,3,-12.201,False
+PREDICTION (not a fact),Strawberries,http://example.org/nutrireason/resource/ingredient/strawberrie,used in: Strawberry Shortcake; used in: Strawberry Smoothie; used in: Strawberry Spinach Salad,Dairy,1,-11.043,False
+PREDICTION (not a fact),Strawberries,http://example.org/nutrireason/resource/ingredient/strawberrie,used in: Strawberry Shortcake; used in: Strawberry Smoothie; used in: Strawberry Spinach Salad,Honey,2,-11.099,False
+PREDICTION (not a fact),Strawberries,http://example.org/nutrireason/resource/ingredient/strawberrie,used in: Strawberry Shortcake; used in: Strawberry Smoothie; used in: Strawberry Spinach Salad,Wheat / Gluten,3,-11.513,False
+PREDICTION (not a fact),Sugar,http://example.org/nutrireason/resource/ingredient/sugar,group: Sugar source; used in: Almond Cookies; used in: Apple Cider; used in: Apple Crisp; used in: Apple Pie; used in: Baked Apple; used in: Banana Bread; used in: Banana Pudding; used in: Berry Cobbl,Dairy,1,-10.464,False
+PREDICTION (not a fact),Sugar,http://example.org/nutrireason/resource/ingredient/sugar,group: Sugar source; used in: Almond Cookies; used in: Apple Cider; used in: Apple Crisp; used in: Apple Pie; used in: Baked Apple; used in: Banana Bread; used in: Banana Pudding; used in: Berry Cobbl,Wheat / Gluten,2,-11.136,False
+PREDICTION (not a fact),Sugar,http://example.org/nutrireason/resource/ingredient/sugar,group: Sugar source; used in: Almond Cookies; used in: Apple Cider; used in: Apple Crisp; used in: Apple Pie; used in: Baked Apple; used in: Banana Bread; used in: Banana Pudding; used in: Berry Cobbl,Nut (unspecified),3,-11.455,False
+PREDICTION (not a fact),Sushi rice,http://example.org/nutrireason/resource/ingredient/sushi_rice,used in: Sushi Bowl; used in: Sushi Rolls,Dairy,1,-11.713,False
+PREDICTION (not a fact),Sushi rice,http://example.org/nutrireason/resource/ingredient/sushi_rice,used in: Sushi Bowl; used in: Sushi Rolls,Soy / Legume,2,-11.878,False
+PREDICTION (not a fact),Sushi rice,http://example.org/nutrireason/resource/ingredient/sushi_rice,used in: Sushi Bowl; used in: Sushi Rolls,Wheat / Gluten,3,-12.154,False
+PREDICTION (not a fact),Syrup,http://example.org/nutrireason/resource/ingredient/syrup,used in: Rasgulla,Dairy,1,-11.736,False
+PREDICTION (not a fact),Syrup,http://example.org/nutrireason/resource/ingredient/syrup,used in: Rasgulla,Banana,2,-12.106,False
+PREDICTION (not a fact),Syrup,http://example.org/nutrireason/resource/ingredient/syrup,used in: Rasgulla,Honey,3,-12.297,False
+PREDICTION (not a fact),Taco seasoning,http://example.org/nutrireason/resource/ingredient/taco_seasoning,used in: Beef Burritos; used in: Beef Tacos,Dairy,1,-11.791,False
+PREDICTION (not a fact),Taco seasoning,http://example.org/nutrireason/resource/ingredient/taco_seasoning,used in: Beef Burritos; used in: Beef Tacos,Wheat / Gluten,2,-11.953,False
+PREDICTION (not a fact),Taco seasoning,http://example.org/nutrireason/resource/ingredient/taco_seasoning,used in: Beef Burritos; used in: Beef Tacos,Honey,3,-12.242,False
+PREDICTION (not a fact),Tamarind chutney,http://example.org/nutrireason/resource/ingredient/tamarind_chutney,used in: Dahi Vada,Dairy,1,-11.306,False
+PREDICTION (not a fact),Tamarind chutney,http://example.org/nutrireason/resource/ingredient/tamarind_chutney,used in: Dahi Vada,Wheat / Gluten,2,-12.123,False
+PREDICTION (not a fact),Tamarind chutney,http://example.org/nutrireason/resource/ingredient/tamarind_chutney,used in: Dahi Vada,Banana,3,-12.159,False
+PREDICTION (not a fact),Tandoori spices,http://example.org/nutrireason/resource/ingredient/tandoori_spice,used in: Tandoori Chicken,Dairy,1,-11.349,False
+PREDICTION (not a fact),Tandoori spices,http://example.org/nutrireason/resource/ingredient/tandoori_spice,used in: Tandoori Chicken,Wheat / Gluten,2,-11.895,False
+PREDICTION (not a fact),Tandoori spices,http://example.org/nutrireason/resource/ingredient/tandoori_spice,used in: Tandoori Chicken,Chicken,3,-12.022,False
+PREDICTION (not a fact),Teriyaki sauce,http://example.org/nutrireason/resource/ingredient/teriyaki_sauce,used in: Chicken Teriyaki; used in: Teriyaki Beef; used in: Teriyaki Salmon,Dairy,1,-11.652,False
+PREDICTION (not a fact),Teriyaki sauce,http://example.org/nutrireason/resource/ingredient/teriyaki_sauce,used in: Chicken Teriyaki; used in: Teriyaki Beef; used in: Teriyaki Salmon,Wheat / Gluten,2,-11.842,False
+PREDICTION (not a fact),Teriyaki sauce,http://example.org/nutrireason/resource/ingredient/teriyaki_sauce,used in: Chicken Teriyaki; used in: Teriyaki Beef; used in: Teriyaki Salmon,Honey,3,-11.978,False
+PREDICTION (not a fact),Tikka masala,http://example.org/nutrireason/resource/ingredient/tikka_masala,used in: Paneer Tikka,Dairy,1,-11.562,False
+PREDICTION (not a fact),Tikka masala,http://example.org/nutrireason/resource/ingredient/tikka_masala,used in: Paneer Tikka,Honey,2,-11.763,False
+PREDICTION (not a fact),Tikka masala,http://example.org/nutrireason/resource/ingredient/tikka_masala,used in: Paneer Tikka,Citrus,3,-12.055,False
+PREDICTION (not a fact),Tomato broth,http://example.org/nutrireason/resource/ingredient/tomato_broth,used in: Minestrone Soup,Dairy,1,-11.642,False
+PREDICTION (not a fact),Tomato broth,http://example.org/nutrireason/resource/ingredient/tomato_broth,used in: Minestrone Soup,Wheat / Gluten,2,-11.704,False
+PREDICTION (not a fact),Tomato broth,http://example.org/nutrireason/resource/ingredient/tomato_broth,used in: Minestrone Soup,Honey,3,-12.772,False
+PREDICTION (not a fact),Tomato sauce,http://example.org/nutrireason/resource/ingredient/tomato_sauce,used in: Baked Ziti; used in: Butter Chicken; used in: Cheese Pizza; used in: Chicken Tikka Masala; used in: Margherita Pizza; used in: Spaghetti Bolognese; used in: Vegetable Lasagna,Dairy,1,-11.073,False
+PREDICTION (not a fact),Tomato sauce,http://example.org/nutrireason/resource/ingredient/tomato_sauce,used in: Baked Ziti; used in: Butter Chicken; used in: Cheese Pizza; used in: Chicken Tikka Masala; used in: Margherita Pizza; used in: Spaghetti Bolognese; used in: Vegetable Lasagna,Wheat / Gluten,2,-11.864,False
+PREDICTION (not a fact),Tomato sauce,http://example.org/nutrireason/resource/ingredient/tomato_sauce,used in: Baked Ziti; used in: Butter Chicken; used in: Cheese Pizza; used in: Chicken Tikka Masala; used in: Margherita Pizza; used in: Spaghetti Bolognese; used in: Vegetable Lasagna,Histamine,3,-12.472,False
+PREDICTION (not a fact),Tzatziki sauce,http://example.org/nutrireason/resource/ingredient/tzatziki_sauce,used in: Greek Gyro; used in: Greek Gyro Wrap,Dairy,1,-11.563,False
+PREDICTION (not a fact),Tzatziki sauce,http://example.org/nutrireason/resource/ingredient/tzatziki_sauce,used in: Greek Gyro; used in: Greek Gyro Wrap,Wheat / Gluten,2,-11.82,False
+PREDICTION (not a fact),Tzatziki sauce,http://example.org/nutrireason/resource/ingredient/tzatziki_sauce,used in: Greek Gyro; used in: Greek Gyro Wrap,Allium,3,-12.049,False
+PREDICTION (not a fact),Vanilla extract,http://example.org/nutrireason/resource/ingredient/vanilla_extract,used in: Chocolate Mousse; used in: Milk Chocolate; used in: Vanilla Cupcakes; used in: Vanilla Ice Cream; used in: Vanilla Yogurt,Dairy,1,-10.577,False
+PREDICTION (not a fact),Vanilla extract,http://example.org/nutrireason/resource/ingredient/vanilla_extract,used in: Chocolate Mousse; used in: Milk Chocolate; used in: Vanilla Cupcakes; used in: Vanilla Ice Cream; used in: Vanilla Yogurt,Wheat / Gluten,2,-11.824,False
+PREDICTION (not a fact),Vanilla extract,http://example.org/nutrireason/resource/ingredient/vanilla_extract,used in: Chocolate Mousse; used in: Milk Chocolate; used in: Vanilla Cupcakes; used in: Vanilla Ice Cream; used in: Vanilla Yogurt,Nut (unspecified),3,-12.499,False
+PREDICTION (not a fact),Vanilla pudding mix,http://example.org/nutrireason/resource/ingredient/vanilla_pudding_mix,used in: Banana Pudding,Banana,1,-10.855,False
+PREDICTION (not a fact),Vanilla pudding mix,http://example.org/nutrireason/resource/ingredient/vanilla_pudding_mix,used in: Banana Pudding,Dairy,2,-11.57,False
+PREDICTION (not a fact),Vanilla pudding mix,http://example.org/nutrireason/resource/ingredient/vanilla_pudding_mix,used in: Banana Pudding,Wheat / Gluten,3,-12.028,False
+PREDICTION (not a fact),Vegetables,http://example.org/nutrireason/resource/ingredient/vegetable,used in: Black Bean Soup; used in: Chicken Noodle Casserole; used in: Chicken Pot Pie; used in: Chicken and Rice Soup; used in: Greek Gyro; used in: Grilled Portobello Mushroom Burger; used in: Lentil,Dairy,1,-11.429,False
+PREDICTION (not a fact),Vegetables,http://example.org/nutrireason/resource/ingredient/vegetable,used in: Black Bean Soup; used in: Chicken Noodle Casserole; used in: Chicken Pot Pie; used in: Chicken and Rice Soup; used in: Greek Gyro; used in: Grilled Portobello Mushroom Burger; used in: Lentil,Wheat / Gluten,2,-11.503,False
+PREDICTION (not a fact),Vegetables,http://example.org/nutrireason/resource/ingredient/vegetable,used in: Black Bean Soup; used in: Chicken Noodle Casserole; used in: Chicken Pot Pie; used in: Chicken and Rice Soup; used in: Greek Gyro; used in: Grilled Portobello Mushroom Burger; used in: Lentil,Chicken,3,-12.463,False
+PREDICTION (not a fact),Vegetable broth,http://example.org/nutrireason/resource/ingredient/vegetable_broth,used in: Butternut Squash Soup; used in: Mushroom Soup,Dairy,1,-10.856,False
+PREDICTION (not a fact),Vegetable broth,http://example.org/nutrireason/resource/ingredient/vegetable_broth,used in: Butternut Squash Soup; used in: Mushroom Soup,Wheat / Gluten,2,-11.502,False
+PREDICTION (not a fact),Vegetable broth,http://example.org/nutrireason/resource/ingredient/vegetable_broth,used in: Butternut Squash Soup; used in: Mushroom Soup,Honey,3,-12.087,False
+PREDICTION (not a fact),Vinaigrette,http://example.org/nutrireason/resource/ingredient/vinaigrette,used in: Raspberry Spinach Salad; used in: Strawberry Spinach Salad,Histamine,1,-11.408,False
+PREDICTION (not a fact),Vinaigrette,http://example.org/nutrireason/resource/ingredient/vinaigrette,used in: Raspberry Spinach Salad; used in: Strawberry Spinach Salad,Dairy,2,-11.657,False
+PREDICTION (not a fact),Vinaigrette,http://example.org/nutrireason/resource/ingredient/vinaigrette,used in: Raspberry Spinach Salad; used in: Strawberry Spinach Salad,Wheat / Gluten,3,-11.771,False
+PREDICTION (not a fact),Water,http://example.org/nutrireason/resource/ingredient/water,used in: Lemonade,Dairy,1,-11.799,False
+PREDICTION (not a fact),Water,http://example.org/nutrireason/resource/ingredient/water,used in: Lemonade,Wheat / Gluten,2,-11.977,False
+PREDICTION (not a fact),Water,http://example.org/nutrireason/resource/ingredient/water,used in: Lemonade,Honey,3,-12.136,False
+PREDICTION (not a fact),Zucchini,http://example.org/nutrireason/resource/ingredient/zucchini,used in: Zucchini Bread; used in: Zucchini Noodles; used in: Zucchini Noodles with Pesto,Wheat / Gluten,1,-11.649,False
+PREDICTION (not a fact),Zucchini,http://example.org/nutrireason/resource/ingredient/zucchini,used in: Zucchini Bread; used in: Zucchini Noodles; used in: Zucchini Noodles with Pesto,Dairy,2,-11.661,False
+PREDICTION (not a fact),Zucchini,http://example.org/nutrireason/resource/ingredient/zucchini,used in: Zucchini Bread; used in: Zucchini Noodles; used in: Zucchini Noodles with Pesto,Nut (unspecified),3,-12.353,False

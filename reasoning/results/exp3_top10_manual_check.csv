@@ -1,0 +1,11 @@
+status,food,context,predicted_allergen,score,as_confident_as_median_known_link,manual_check,reason
+PREDICTION (not a fact),Radish root,group: Cruciferous vegetable,Cruciferous,-8.919,False,plausible,radish is a cruciferous (cabbage-family) vegetable
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Raw",group: Composite vegetable,Ltp,-8.975,False,unsure,same plant family as lettuce (LTP in KG); LTP cross-reactivity not guaranteed
+PREDICTION (not a fact),Chicory,group: Composite vegetable,Ltp,-9.184,False,unsure,same plant family as lettuce; LTP not confirmed
+PREDICTION (not a fact),"Watercress, Raw",group: Cruciferous vegetable,Cruciferous,-9.187,False,plausible,watercress is a cruciferous vegetable
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Ckd, Bld, Drnd, Wo/Salt",group: Composite vegetable,Ltp,-9.196,False,unsure,same food as row 2 (cooked)
+PREDICTION (not a fact),"Salsify, Ckd, Bld, Drnd, W/Salt",group: Composite vegetable,Ltp,-9.22,False,unsure,same plant family as lettuce; LTP not confirmed
+PREDICTION (not a fact),Shungiku,group: Composite vegetable,Ltp,-9.24,False,unsure,same plant family as lettuce; LTP not confirmed
+PREDICTION (not a fact),"Artichokes, (Globe Or French), Frz, Ckd, Bld, Drnd, Wo/Salt",group: Composite vegetable,Ltp,-9.248,False,unsure,same food as row 2 (frozen)
+PREDICTION (not a fact),Japanese persimmon,group: Tropical fruit,Banana,-9.279,False,not plausible,a persimmon is not a banana; tropical fruits in KG mostly Oral Allergy Syndrome
+PREDICTION (not a fact),Turnip root,group: Cruciferous vegetable,Cruciferous,-9.297,False,plausible,turnip is a cruciferous vegetable

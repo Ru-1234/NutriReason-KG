@@ -89,34 +89,43 @@ Full description: `Report/DATA_PIPELINE.md`.
 - `app/llm.py` (Groq, `openai/gpt-oss-120b`, temperature 0) and `app/streamlit_app.py`.
 - `evaluation/run_eval.py`, `unseen_check.py`, `explainability.py`, `manual_review.md`, and the report builder.
 
-**Link prediction re-run on the cleaned KG (Romaisa):**
+**Link prediction (Romaisa):**
 - Re-ran `reasoning/link_prediction.py` (TransE, RotatE, popularity baseline; 3 random seeds, 200 epochs, embedding dimension 100) on the cleaned KG. The earlier numbers are kept in `reasoning/results/metrics_before_kg_fix.md` for comparison.
+- **Fixed bug B1 (type-constrained prediction).** The old sample predictions ranked every entity, so most top-1 "predictions" were the food itself (TransE gives every food the same score for itself, −‖r‖), a food group, or a class. The new `candidate_tails()` allows only instances of the relation's `rdfs:range` class: the 45 allergens or the 4 health conditions. The head itself and links already in training are excluded. Sample predictions now come from both TransE and RotatE. After the fix, no row predicts the head itself. For RotatE the hidden allergen is at rank 1 for 16 of 20 test foods and in the top 3 for all 20.
+- **Added type-constrained metrics** next to the original ones (the original rows are unchanged). The popularity baseline already ranks only real allergens/conditions, so this is the fair comparison.
+- **Analysed Experiment 2** (`reasoning/exp2_analysis.py`, `Report/LINK_PREDICTION.md` section 7). All 2,071 `unsafeFor` links are rule-derived, and each is explained by another triple in the same graph. For 1,571 of them (76%), a `HighSugarFood`/`HighSodiumFood` type triple stays in training. Random guessing among the 4 conditions already gives MRR 0.544.
+- **Exp 3: real KG completion** (`reasoning/exp3_completion.py`). RotatE was trained on the whole explicit graph and suggested allergens for the 289 foods that have no allergen but do have another link (food group, ingredients, dishes). The 10 most confident predictions were checked by hand: 3 plausible, 6 unsure, 1 not plausible. All 10 are group analogies (e.g. radish/turnip/watercress → Cruciferous; artichoke/chicory → LTP, copied from lettuce). None of the 289 top-1 scores reaches the median score of known allergen links (−8.92 best vs −7.01 median), so these are weak suggestions. They are labelled PREDICTION and never added to the KG.
+- `Report/LINK_PREDICTION.md`: how the code works (every function, TransE vs RotatE, filtered ranking, MRR/Hits@k), the B1 fix, the Exp 2 analysis and Exp 3. This is the draft of the report section.
 
-| Experiment | Model | MRR (mean ± std) | Hits@1 | Hits@3 | Hits@10 |
-|---|---|---|---|---|---|
-| Exp 1 `containsAllergen` (explicit graph, 148 test links) | RotatE | **0.612 ± 0.017** | 0.329 | 0.899 | 0.966 |
-| | TransE | 0.315 ± 0.013 | 0.059 | 0.518 | 0.750 |
-| | Popularity baseline | 0.420 ± 0.052 | 0.259 | 0.489 | 0.793 |
-| Exp 2 `unsafeFor` (materialised graph, 310 test links) | RotatE | 0.662 ± 0.037 | 0.376 | 0.999 | 1.000 |
-| | TransE | 0.535 ± 0.027 | 0.189 | 0.871 | 0.942 |
-| | Popularity baseline | **0.731 ± 0.015** | 0.510 | 0.986 | 1.000 |
+| Experiment | Model | MRR all entities (mean ± std) | MRR type-constrained | Hits@1 | Hits@3 | Hits@10 |
+|---|---|---|---|---|---|---|
+| Exp 1 `containsAllergen` (explicit graph, 148 test links) | RotatE | **0.612 ± 0.017** | **0.852 ± 0.014** | 0.329 | 0.899 | 0.966 |
+| | TransE | 0.315 ± 0.013 | 0.618 ± 0.021 | 0.059 | 0.518 | 0.750 |
+| | Popularity baseline | 0.420 ± 0.052 | 0.420 ± 0.052 | 0.259 | 0.489 | 0.793 |
+| Exp 2 `unsafeFor` (materialised graph, 310 test links) | RotatE | 0.662 ± 0.037 | **0.994 ± 0.006** | 0.376 | 0.999 | 1.000 |
+| | TransE | 0.535 ± 0.027 | 0.959 ± 0.008 | 0.189 | 0.871 | 0.942 |
+| | Popularity baseline | **0.731 ± 0.015** | 0.731 ± 0.015 | 0.510 | 0.986 | 1.000 |
 
-Before vs after the KG clean-up (MRR): Exp 1 RotatE 0.602 -> 0.612, TransE 0.303 -> 0.315; Exp 2 RotatE 0.566 -> 0.662, TransE 0.521 -> 0.535. RotatE clearly beats the baseline in Exp 1 (0.612 vs 0.420). In Exp 2 the baseline still has the best MRR and Hits@1 (see B3).
+Hits@k columns are for ranking against all entities. Random-guess MRR (type-constrained): Exp 1 0.098, Exp 2 0.544.
+
+Before vs after the KG clean-up (MRR, all entities): Exp 1 RotatE 0.602 -> 0.612, TransE 0.303 -> 0.315; Exp 2 RotatE 0.566 -> 0.662, TransE 0.521 -> 0.535. RotatE clearly beats the baseline in Exp 1 in both evaluations (0.612 vs 0.420; type-constrained 0.852 vs 0.420).
 
 10-CQ evaluation: LLM only 0/10 correct, KG-grounded 10/10. Answers with unsupported claims: 9/10 vs 1/10. This is a development-set score, because the same CQs were used to debug the retriever (see `evaluation/manual_review.md`).
 
 ## B3. Known issues
-- **Exp 2:** the popularity baseline still beats both embedding models on MRR (0.731 vs 0.662 for RotatE after the re-run), although RotatE now matches it on Hits@3/Hits@10. `unsafeFor` has only 4 possible tails, and its links are produced by the rules from other facts, so the task is partly circular. This needs analysis or a redesign.
-- **TransE Hits@1 = 0.059 in Exp 1 (below the baseline):** TransE struggles with many-to-one relations (many foods -> one allergen). RotatE handles these better.
+- **Exp 2 is a negative result (analysed, kept in the report).** Against all entities, the baseline has the best MRR (0.731 vs 0.662). That comparison was unequal: the baseline effectively ranks among 4 conditions, while the models rank among all 5,871 entities. Type-constrained, the models are near-perfect (RotatE 0.994), but only because the links are produced by our own rules and leak through `HighSugarFood`/`HighSodiumFood` type triples. So Exp 2 does not show that embeddings find new knowledge. For `unsafeFor`, symbolic rules are the right tool. Possible redesign (not done): remove the type triples and R5 links from training.
+- **TransE Hits@1 = 0.059 in Exp 1 (below the baseline):** TransE struggles with many-to-one and one-to-many relations (many foods -> one allergen, one food -> several allergens). RotatE handles these better. RotatE also uses a stronger loss (self-adversarial sampling), so part of the gap may come from the training setup.
 - **Stale numbers:** the 10-CQ evaluation and the report PDF were produced before the KG fix (the link prediction metrics are now updated). For example, the CQ11 expected answer still lists "Sugar 62". All of these must be regenerated.
 - **Workload:** the first versions of all three Iteration 2 components were committed from one account in a single session. Each member is taking ownership of their assigned part and committing their own improvements before the deadline (brief §6.2, §7).
 
-## B4. Remaining work (before the deadline)
+## B4. Remaining work 
 | Task | Owner | Status |
 |---|---|---|
 | Re-run `link_prediction.py` on the fixed KG; update metrics and predictions | Romaisa | Done |
-| Analyse/redesign Exp 2; add a third model (DistMult/ComplEx) and/or a real KG-completion experiment with manual plausibility check | Romaisa | Pending |
-| Write the "Modern KG reasoning" report section with citations (Bordes et al. 2013 TransE; Sun et al. 2019 RotatE; PyKEEN docs) | Romaisa | Pending |
+| Fix B1 (type-constrained predictions) and add type-constrained metrics | Romaisa | Done |
+| Analyse Exp 2 (negative result) | Romaisa | Done |
+| Exp 3: real KG completion (predict allergens for foods that have none, check the top 10 by hand, label as PREDICTION) | Romaisa | Done |
+| Write the "Modern KG reasoning" report section with citations (Bordes et al. 2013 TransE; Sun et al. 2019 RotatE; Ali et al. 2021 PyKEEN; Rossi et al. 2021) | Romaisa | Draft in `Report/LINK_PREDICTION.md` |
 | Review, improve and own the retrieval layer; write the retrieval report section | Maham | In progress |
 | Re-run the 10-CQ evaluation and explainability examples on the fixed KG; update the comparison table | Zamin | Pending |
 | Reload GraphDB with the updated T-Box/A-Box and rules; fresh screenshots | Maham | Pending |
@@ -126,6 +135,6 @@ Before vs after the KG clean-up (MRR): Exp 1 RotatE 0.602 -> 0.612, TransE 0.303
 ## B5. Iteration 2 member contributions (so far)
 | Member | GitHub | Work done | Representative commits |
 |---|---|---|---|
-| Romaisa | `Ru-1234` | Iteration 1 KG fixes (non-allergen labels, naming bug, gluten scope); rebuilt KG and inferred graph; re-ran queries; updated docs and this report; re-ran link prediction on the cleaned KG with before/after comparison | `c4f7f35` KG fix + rebuilt A-Box, inferred graph and query results; `a0f5c60` docs + progress report; link prediction re-run (this commit) |
+| Romaisa | `Ru-1234` | Iteration 1 KG fixes (non-allergen labels, naming bug, gluten scope); rebuilt KG and inferred graph; re-ran queries; updated docs and this report; re-ran link prediction on the cleaned KG with before/after comparison; fixed B1 (type-constrained predictions) and added type-constrained metrics; wrote how-it-works note; analysed Exp 2; Exp 3 KG completion with manual check | `c4f7f35` KG fix + rebuilt A-Box, inferred graph and query results; `a0f5c60` docs + progress report; `0e680d0` link prediction re-run; `7fc2577` B1 fix + type-constrained metrics + how-it-works note; Exp 2 analysis + Exp 3 KG completion (this commit) |
 | Muhammad Zamin | `zamin-muhammad` | First version of the link prediction, retrieval, LLM app, evaluation and report builder (AI-assisted) | `928916c` link prediction + materialisation; `10ce4f4` retrieval layer; `1f5e592` LLM client + Streamlit app; `1fc1f50` 10-CQ evaluation + explainability; `fa870c4` README + report builder; `b0724ea` report PDF |
 | Maham | `mahamanjum99` | Retrieval layer ownership and improvements | - |
