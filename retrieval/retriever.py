@@ -49,6 +49,16 @@ CONDITION_ALIASES = {
 }
 NUTRIENT_PROPS = {"sugar": "sugarPer100g", "sodium": "sodiumPer100g", "salt": "sodiumPer100g", "calories": "caloriesPer100g",
                   "calorie": "caloriesPer100g", "energy": "caloriesPer100g"}
+# Fix A: question words that describe the request, not an item. Any other content word that no linked
+# entity explains is treated as part of an item name the graph does not know (e.g. "dragon", "curry").
+INTENT_WORDS = set("""eat ate drink consume have having suffer suffering get take tell give show list explain
+ok okay fine good bad healthy unhealthy harmful dangerous risky risk problem problems issue issues allowed
+allergy allergies allergic intolerance intolerant condition conditions diabetes diabetic diabetics hypertension
+hypertensive lactose nut nuts peanut sugar sodium salt calorie calories energy
+contain contains ingredient ingredients avoid limit limits high low value values exact per g mg gram grams
+above below over under rule rules guideline guidelines amount level levels much many lot lots
+please kindly okay yes""".split())
+YESNO_STARTS = ("is ", "are ", "can ", "could ", "should ", "may ", "am ", "do ", "does ", "will ", "would ")
 
 
 def norm(s):
@@ -196,6 +206,21 @@ class KGRetriever:
                 found.append({"label": best[2], "uri": str(best[1]), "kind": best[3], "matched_text": best[4], "score": best[0]})
         return found
 
+    def unexplained(self, question, ents):
+        """Fix A. Content words of the question that no linked entity explains and that are not request words.
+        Example: "Can I eat dragon fruit curry if I have a nut allergy?" links only Fruit (food group) and
+        Nut allergy, so "dragon" and "curry" are left over -> the dish named in the question is not in the graph."""
+        covered = set()
+        for e in ents:
+            covered |= set(toks(e["matched_text"]))
+        intent = {stem(w) for w in INTENT_WORDS}
+        out = []
+        for w in toks(question):
+            if w in covered or w in intent or w.isdigit() or len(w) < 3 or w in out:
+                continue
+            out.append(w)
+        return out
+
     # ------------------------------------------------------------------ helpers
     def tag(self, s, p, o):
         if (s, p, o) in self.E:
@@ -268,8 +293,24 @@ class KGRetriever:
             if alt:
                 food, dish = sorted(alt, key=lambda u: len(str(u)))[0], None
 
+        # Fix A: the question names an item (dish/food) that the graph does not know. Only a food group, type
+        # or class (or nothing) was linked, and some content words stay unexplained.
+        unknown = self.unexplained(question, ents)
+        unknown_item = bool(unknown) and not (dish or food or alg)
+        yes_no = qn.startswith(YESNO_STARTS)
+        # Fix B: "foods with sugar above the diabetes limit" links the food "Sugar". When the only food found is the
+        # nutrient word itself and the question asks for values above a limit, answer with the list route instead.
+        nutrient_toks = {stem(w) for w in NUTRIENT_PROPS}
+        above_limit = (nutrient in ("sugarPer100g", "sodiumPer100g") and not dish and food is not None
+                       and set(toks(self.label(food))) <= nutrient_toks
+                       and has("above", "exceed", "exceeds", "exceeding", "over", "higher than", "more than", "greater than"))
+
         try:
-            if len(conds) >= 2 and has("both", "and") and has("avoid", "unsafe", "should") and not dish and not food:
+            if above_limit:
+                self.t_above_limit(ctx, nutrient)
+            elif unknown_item and yes_no:
+                self.t_unknown_item(ctx, unknown, others)
+            elif len(conds) >= 2 and has("both", "and") and has("avoid", "unsafe", "should") and not dish and not food:
                 self.t_both_conditions(ctx, conds[:2])
             elif has("above", "exceed", "exceeds", "ranked", "rank", "highest") and (nutrient or conds) and not (dish or food) and not has("average", "avg", "group", "groups"):
                 self.t_top_nutrient(ctx, nutrient or ("sodiumPer100g" if conds and conds[0] == NR.Hypertension else "sugarPer100g"))
@@ -300,6 +341,8 @@ class KGRetriever:
             elif alg or conds:
                 self.t_condition_unsafe(ctx, conds[0] if conds else self.G.value(alg, NR.triggers), alg,
                                         hidden=has("although", "without", "hidden", "not in the name", "no nut word", "name"))
+            elif grp and unknown_item:
+                self.t_unknown_item(ctx, unknown, others)
             elif grp:
                 self.t_group_members(ctx, grp)
             elif nutrient:
@@ -538,6 +581,33 @@ class KGRetriever:
                 continue
             seen.add(r.d)
             self.add_path(ctx, [(r.d, NR.hasIngredient, r.ing), (r.ing, NR.containsAllergen, alg)])
+
+    def t_unknown_item(self, ctx, unknown, others):
+        """Fix A. Return no facts on purpose, so sufficient = False and the LLM is told to decline."""
+        ctx["type"] = "unknown_item"
+        found = ", ".join(f"{e['label']} ({e['kind']})" for e in others)
+        ctx["reason"] = ("The item named in the question is not in the knowledge graph (unmatched words: "
+                         + ", ".join(f"'{w}'" for w in unknown) + ")."
+                         + (f" Only {found} matched, which is not the item asked about." if found else ""))
+
+    def t_above_limit(self, ctx, prop):
+        """Fix B. Foods whose nutrient value is above the rule threshold, highest first, with exact values.
+        The limit is read from the rule node (22.5 g sugar / 600 mg sodium), not hard-coded."""
+        ctx["type"] = "above_limit"
+        if prop == "sugarPer100g":
+            lim, cond, unit, name = self.sugar_limit, NR.Type2Diabetes, "g", "sugar"
+        else:
+            lim, cond, unit, name = self.sodium_limit, NR.Hypertension, "mg", "sodium"
+        rows = self.q(ctx, f"""SELECT ?f ?v WHERE {{ ?f nr:{prop} ?v . FILTER(?v > {lim}) }}
+                               ORDER BY DESC(?v) LIMIT 15""")
+        n = self.q(ctx, f"SELECT (COUNT(DISTINCT ?f) AS ?n) WHERE {{ ?f nr:{prop} ?v . FILTER(?v > {lim}) }}")[0].n
+        ctx["reason"] = (f"{n} foods have {name} above the {lim:g} {unit} per 100 g limit for {self.label(cond)}; "
+                         f"the 15 highest are shown with exact values.")
+        for r in rows:
+            self.add_fact(ctx, r.f, NR[prop], r.v, "explicit")
+            if (r.f, NR.unsafeFor, cond) in self.G:
+                self.add_fact(ctx, r.f, NR.unsafeFor, cond)
+        self.add_rule_chain(ctx, cond)
 
     def t_group_members(self, ctx, grp):
         ctx["type"] = "group_members"
