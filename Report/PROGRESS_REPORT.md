@@ -17,9 +17,9 @@ Team: krr-08-nutrireason | Course: AI-3001 Knowledge Representation & Reasoning 
 ## A1. Completed work
 - **Competency questions:** 14 CQs and a CQ-to-KG mapping table. Coverage: 7 multi-hop, 9 inference, 7 aggregation/filtering and 5 LLM-difficult questions (most CQs belong to more than one category).
 - **Ontology (T-Box):** 12 core classes (plus allergen and condition subclasses and 3 inferred classes), 11 object properties, 5 datatype properties and reasoning constructs RC1-RC6 (subclass hierarchy, hasValue restriction, transitive property, inverse properties, property chain, and rules R1-R5). File: `Ontology/nutrireason_tbox.ttl`, viewed in Protege.
-- **RDF knowledge graph (A-Box):** built by `build_kg.py` from D1-D4 (see A3). File: `RDF_Knowledge_Graph/abox.ttl`. Total triples: 42,424 (T-Box + A-Box; `abox.ttl` alone: 42,027), checked offline with rdflib. Re-check the count after reloading GraphDB.
-- **GraphDB:** graph loaded into the `nutrireason` repository; visual graph screenshot in `Visualization/`.
-- **Rules:** `rules_graphdb.ru` (SPARQL equivalents of R1-R5) run in GraphDB: +7,609 inferred triples (offline check, 50,033 total; Iteration 1 was +7,673 before the allergen clean-up, see B2).
+- **RDF knowledge graph (A-Box):** built by `build_kg.py` from D1-D4 (see A3). File: `RDF_Knowledge_Graph/abox.ttl`. Total triples: 42,424 (T-Box + A-Box; `abox.ttl` alone: 42,027). Confirmed in GraphDB 11.5.1 after the Iteration 2 reload (`Results/00_import_count.png`); matches the offline rdflib check.
+- **GraphDB:** graph loaded into the `nutrireason` repository (reloaded with the cleaned KG in Iteration 2, ruleset "No inference" so all inferred triples come from our rules); visual graph screenshots in `Visualization/`.
+- **Rules:** `rules_graphdb.ru` (SPARQL equivalents of R1-R5) run in GraphDB: +7,609 inferred triples, 50,033 total (confirmed in GraphDB, `Results/03_import_count_AFTER_rules_executed.png`; Iteration 1 was +7,673 before the allergen clean-up, see B2).
 - **SPARQL:** 14 queries (CQ1-CQ14), 3 inference demos (INF1-INF3) and a sanity query; outputs in `Results/`.
 
 ## A2. SPARQL feature coverage
@@ -73,7 +73,7 @@ Full description: `Report/DATA_PIPELINE.md`.
 | Member | Assigned part |
 |---|---|
 | Romaisa | Modern KG reasoning (Option A: link prediction with KG embeddings) + Iteration 1 fixes |
-| Maham | KG retrieval layer (entity linking, SPARQL templates, explicit/inferred tags, insufficient-evidence detection) |
+| Maham | KG retrieval layer (entity linking, SPARQL templates, explicit/inferred tags, insufficient-evidence detection) + GraphDB reload |
 | Zamin | LLM application + UI + 10-CQ evaluation + explainability examples |
 
 ## B2. Completed so far
@@ -82,6 +82,12 @@ Full description: `Report/DATA_PIPELINE.md`.
 - Fixed a naming bug that shortened "Oral Allergy Syndrome" to "Oral Syndrome", and could create an empty allergen URI from a bare "Allergy" label.
 - Documented in the T-Box why `GlutenAllergen` triggers no condition (scope is four conditions; D4 has no gluten rule).
 - Rebuilt `abox.ttl` (42,027 triples) and `inferred.ttl`, re-ran all 18 queries, and updated `README.md`, `DATA_PIPELINE.md`, `INFERENCE_EXAMPLES.md` and this report. CQ11 now lists only real allergens (Dairy 137, Wheat/Gluten 59, Chicken 44, ...).
+
+**GraphDB reload with the cleaned KG (Maham):**
+- Recreated the `nutrireason` repository in GraphDB 11.5.1 (ruleset "No inference"), imported the updated T-Box + A-Box and confirmed **42,424** triples; ran `rules_graphdb.ru` and confirmed **50,033** (+7,609), the same as the offline rdflib check.
+- Sanity query after the rules: Food 5,235, Dish 259, Ingredient 239, FoodGroup 33, DietaryRule 5, Allergen 37, unsafeFor 2,071, HighSodiumFood 902, HighSugarFood 669, LowSugarFood 3,602 (matches `Results/00_sanity_check.csv`).
+- Re-ran CQ1-CQ14 and INF1-INF3 in GraphDB; results match the CSVs in `Results/` (CQ11: Dairy 137, Wheat/Gluten 59, Chicken 44, no "Sugar"). CQ1 returns 0 rows before the rules run.
+- Retook all screenshots (import count, sanity before/after, CQ1 before rules, rules executed, CQ1-CQ14, INF1-INF3) and the visual graph (Chicken Satay -> Peanut butter -> Peanut -> Nut allergy). No `.rq` file needed changes: the queries are unchanged, only the data changed.
 
 **First working version of the full pipeline (committed by Zamin):**
 - `reasoning/materialize.py` keeps rule-inferred triples in a separate `inferred.ttl`. `reasoning/link_prediction.py` runs TransE and RotatE (PyKEEN) against a popularity baseline: Exp 1 hides 15% of `containsAllergen` links on the explicit graph; Exp 2 hides 15% of `unsafeFor` links on the materialised graph. Predictions are labelled "PREDICTION (not a fact)".
@@ -115,10 +121,10 @@ Before vs after the KG clean-up (MRR, all entities): Exp 1 RotatE 0.602 -> 0.612
 ## B3. Known issues
 - **Exp 2 is a negative result (analysed, kept in the report).** Against all entities, the baseline has the best MRR (0.731 vs 0.662). That comparison was unequal: the baseline effectively ranks among 4 conditions, while the models rank among all 5,871 entities. Type-constrained, the models are near-perfect (RotatE 0.994), but only because the links are produced by our own rules and leak through `HighSugarFood`/`HighSodiumFood` type triples. So Exp 2 does not show that embeddings find new knowledge. For `unsafeFor`, symbolic rules are the right tool. Possible redesign (not done): remove the type triples and R5 links from training.
 - **TransE Hits@1 = 0.059 in Exp 1 (below the baseline):** TransE struggles with many-to-one and one-to-many relations (many foods -> one allergen, one food -> several allergens). RotatE handles these better. RotatE also uses a stronger loss (self-adversarial sampling), so part of the gap may come from the training setup.
-- **Stale numbers:** the 10-CQ evaluation and the report PDF were produced before the KG fix (the link prediction metrics are now updated). For example, the CQ11 expected answer still lists "Sugar 62". All of these must be regenerated.
+- **Stale numbers:** the 10-CQ evaluation and the report PDF were produced before the KG fix (the link prediction metrics and GraphDB screenshots are now updated). For example, the CQ11 expected answer still lists "Sugar 62". The evaluation and the PDF must be regenerated.
 - **Workload:** the first versions of all three Iteration 2 components were committed from one account in a single session. Each member is taking ownership of their assigned part and committing their own improvements before the deadline (brief §6.2, §7).
 
-## B4. Remaining work 
+## B4. Remaining work
 | Task | Owner | Status |
 |---|---|---|
 | Re-run `link_prediction.py` on the fixed KG; update metrics and predictions | Romaisa | Done |
@@ -126,15 +132,15 @@ Before vs after the KG clean-up (MRR, all entities): Exp 1 RotatE 0.602 -> 0.612
 | Analyse Exp 2 (negative result) | Romaisa | Done |
 | Exp 3: real KG completion (predict allergens for foods that have none, check the top 10 by hand, label as PREDICTION) | Romaisa | Done |
 | Write the "Modern KG reasoning" report section with citations (Bordes et al. 2013 TransE; Sun et al. 2019 RotatE; Ali et al. 2021 PyKEEN; Rossi et al. 2021) | Romaisa | Draft in `Report/LINK_PREDICTION.md` |
+| Reload GraphDB with the updated T-Box/A-Box and rules; fresh screenshots | Maham | Done |
 | Review, improve and own the retrieval layer; write the retrieval report section | Maham | In progress |
 | Re-run the 10-CQ evaluation and explainability examples on the fixed KG; update the comparison table | Zamin | Pending |
-| Reload GraphDB with the updated T-Box/A-Box and rules; fresh screenshots | Maham | Pending |
 | 3-5 minute demo video (stored externally) | All | Pending |
 | Final consolidated PDF, contribution table with commit links, final commit hash, instructor repo access | All | Pending |
 
 ## B5. Iteration 2 member contributions (so far)
 | Member | GitHub | Work done | Representative commits |
 |---|---|---|---|
-| Romaisa | `Ru-1234` | Iteration 1 KG fixes (non-allergen labels, naming bug, gluten scope); rebuilt KG and inferred graph; re-ran queries; updated docs and this report; re-ran link prediction on the cleaned KG with before/after comparison; fixed B1 (type-constrained predictions) and added type-constrained metrics; wrote how-it-works note; analysed Exp 2; Exp 3 KG completion with manual check | `c4f7f35` KG fix + rebuilt A-Box, inferred graph and query results; `a0f5c60` docs + progress report; `0e680d0` link prediction re-run; `7fc2577` B1 fix + type-constrained metrics + how-it-works note; Exp 2 analysis + Exp 3 KG completion (this commit) |
+| Romaisa | `Ru-1234` | Iteration 1 KG fixes (non-allergen labels, naming bug, gluten scope); rebuilt KG and inferred graph; re-ran queries; updated docs and this report; re-ran link prediction on the cleaned KG with before/after comparison; fixed B1 (type-constrained predictions) and added type-constrained metrics; wrote how-it-works note; analysed Exp 2; Exp 3 KG completion with manual check | `c4f7f35` KG fix + rebuilt A-Box, inferred graph and query results; `a0f5c60` docs + progress report; `0e680d0` link prediction re-run; `7fc2577` B1 fix + type-constrained metrics + how-it-works note; Exp 2 analysis + Exp 3 KG completion |
 | Muhammad Zamin | `zamin-muhammad` | First version of the link prediction, retrieval, LLM app, evaluation and report builder (AI-assisted) | `928916c` link prediction + materialisation; `10ce4f4` retrieval layer; `1f5e592` LLM client + Streamlit app; `1fc1f50` 10-CQ evaluation + explainability; `fa870c4` README + report builder; `b0724ea` report PDF |
-| Maham | `mahamanjum99` | Retrieval layer ownership and improvements | - |
+| Maham Anjum | `mahamanjum99` | Reloaded GraphDB with the cleaned KG, confirmed triple counts (42,424 -> 50,033), re-ran all 18 queries and retook all GraphDB screenshots and the visual graph; updated `INFERENCE_EXAMPLES.md` and this report; retrieval layer ownership and improvements (in progress) | `28074ee` GraphDB reload + screenshots; GraphDB counts in docs (this commit) |
