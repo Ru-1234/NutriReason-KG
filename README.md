@@ -13,7 +13,7 @@ Iteration 1 = ontology + RDF knowledge graph + SPARQL + symbolic rules. Iteratio
 | `reasoning/` | **Option A link prediction**: `materialize.py`, `link_prediction.py`, `results/` (metrics + predictions) |
 | `retrieval/` | **KG retrieval layer** `retriever.py`: entity linking, SPARQL templates, explicit/inferred tags, insufficient-evidence flag |
 | `app/` | `llm.py` (prompts + Groq client), `streamlit_app.py` (UI) |
-| `evaluation/` | `run_eval.py` (10 CQ, LLM-only vs grounded), `unseen_check.py`, `results/` |
+| `evaluation/` | `run_eval.py` (10 CQ, LLM-only vs grounded), `unseen_check.py`, `check_routes.py` (retrieval regression check, no LLM), `results/` |
 
 ## Setup
 ```bash
@@ -29,6 +29,7 @@ python reasoning/materialize.py            # run rules -> RDF_Knowledge_Graph/in
 python run_all_queries.py                  # all SPARQL queries offline (rdflib), CSVs in Results/
 python reasoning/link_prediction.py        # TransE / RotatE, writes reasoning/results/
 python retrieval/retriever.py "Why is Almond Cookies unsafe?"   # prints the retrieval JSON
+python evaluation/check_routes.py --save after   # one line per question; compares the 10 CQ lines with routes_before.txt
 streamlit run app/streamlit_app.py         # the app
 python evaluation/run_eval.py              # 10-CQ comparison -> evaluation/results/
 python evaluation/unseen_check.py          # extra unseen questions
