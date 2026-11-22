@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """Produces 3 explainability examples (question, retrieved facts/paths, answer) -> evaluation/results/explainability.md"""
 import os, sys
+# rdflib returns rows of SPARQL queries without ORDER BY in an order that depends on Python's string-hash seed,
+# which is random for every new process, so two runs could send different example facts to the LLM. Fix the seed
+# (same as evaluation/check_routes.py) so the retrieval context is reproducible: restart once with seed 0.
+import subprocess
+if os.environ.get("PYTHONHASHSEED") != "0":
+    sys.exit(subprocess.run([sys.executable] + sys.argv, env={**os.environ, "PYTHONHASHSEED": "0"}).returncode)
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from retrieval.retriever import KGRetriever
 from app import llm

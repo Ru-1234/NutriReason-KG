@@ -9,6 +9,12 @@ graph with INDEPENDENT SPARQL (not through the retriever templates); hallucinati
 counted by hand in evaluation/manual_review.md (see that file).
 """
 import json, os, re, sys
+# rdflib returns rows of SPARQL queries without ORDER BY in an order that depends on Python's string-hash seed,
+# which is random for every new process, so two runs could send different example facts to the LLM. Fix the seed
+# (same as evaluation/check_routes.py) so the retrieval context is reproducible: restart once with seed 0.
+import subprocess
+if os.environ.get("PYTHONHASHSEED") != "0":
+    sys.exit(subprocess.run([sys.executable] + sys.argv, env={**os.environ, "PYTHONHASHSEED": "0"}).returncode)
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from retrieval.retriever import KGRetriever
 from app import llm
@@ -58,7 +64,7 @@ CQS = [
      "Sugar 0.52 g (passes), sodium 621 mg > 600 (fails hypertension)",
      lambda a: has(a, "0.52", "621")),
     ("CQ11", "Which allergens appear most often across all dishes?",
-     "Dairy 137 dishes, Sugar 62, Wheat/Gluten 59, Chicken 44",
+     "Dairy 137 dishes, Wheat/Gluten 59, Chicken 44, Allium 24, Soy/Legume 24",
      lambda a: has(a, "dairy", "137")),
     ("CQ12", "Which dishes contain a nut allergen although no nut word appears in the dish name?",
      "Baked Brie, Chicken Satay, Green Smoothie, Kheer, Rabri, Rasmalai",
@@ -83,7 +89,7 @@ for cid, q, exp, chk in CQS:
         a = llm.answer_llm_only(q)
         r = kg.retrieve(q)
         b = llm.answer_grounded(q, r)
-    ev_b = bool(r["sufficient"] and re.search(r"[\[【]\s*F\d+", b))
+    ev_b = bool(r["sufficient"] and re.search(r"[\[【［(]\s*F\s*\d+", b))   # [F3], [ F3 ], 【F3】, ［F3］, (F3)
     rows.append({"cq": cid, "question": q, "expected": exp, "llm_only": a, "kg_grounded": b,
                  "correct_A": bool(chk(a)), "correct_B": bool(chk(b)), "evidence_A": False, "evidence_B": ev_b,
                  "retrieval": {k: r[k] for k in ("type", "sufficient", "reason", "entities")}, "n_facts": len(r["facts"])})
