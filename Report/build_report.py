@@ -203,14 +203,27 @@ B("<b>Reading the results.</b> Hits@k is the fraction of held-out links whose tr
   "<b>Experiment 2 is a negative result:</b> against all entities the baseline has the best MRR (0.731 vs RotatE 0.662), but only because of the unequal ranking above. Type-constrained, the models are near-perfect (RotatE 0.994), yet only because all 2,071 unsafeFor links are produced by our own rules and leak through HighSugarFood/HighSodiumFood type triples (76% of them stay in training); random guessing among the 4 conditions already gives MRR 0.544. So Exp 2 does not show that embeddings find new knowledge; for such deterministic links the symbolic rules are the right tool. Full analysis and Experiment 3 (allergen suggestions for 289 foods with none, top 10 checked by hand): Report/LINK_PREDICTION.md.")
 H2("Sample predictions (labelled as predictions)")
 import csv
+B("Bug B1 fixed: the first version ranked every entity, so the model sometimes 'predicted' the food itself as its own allergen or a class such as Chronic disease. Now only the 45 allergens (Exp 1) or the 4 health conditions (Exp 2) can be predicted, never the head. "
+  "For the 20 test foods per model, RotatE puts the hidden allergen at rank 1 for 16/20 foods (Exp 1) and 19/20 (Exp 2), and in the top 3 for all 20 in both experiments.")
 for name in ["predictions_exp1_containsAllergen.csv", "predictions_exp2_unsafeFor.csv"]:
     rows = list(csv.DictReader(open(P("reasoning", "results", name), encoding="utf-8")))
-    sel = [r for r in rows if r["rank"] == "1"][:8]
+    sel = [r for r in rows if r["rank"] == "1" and r["model"] == "RotatE"][:8]
     table([["Status", "Head", "Relation", "Top-1 predicted tail", "Score", "Equals a hidden true link?"]] +
           [[r["status"], r["head"], r["relation"], r["predicted_tail"], r["score"], "yes" if r["recovers_held_out_link"] == "True" else "no"] for r in sel],
           [3.3, 3.6, 2.8, 3.2, 1.3, 1.8])
 B("<b>Prediction vs fact.</b> Every row above is a <b>PREDICTION</b>: a ranked guess from a statistical model, not a confirmed or logically inferred fact. The 'no' rows are not necessarily wrong (the link may simply be absent from the data) and need human review. "
   "Predictions are saved only in reasoning/results/ and are never loaded into the retrieval graph, so the LLM application cannot cite them as facts. Facts remain either <i>explicit</i> (stored) or <i>inferred</i> (schema/rules).")
+H2("6.4 Experiment 3: real KG completion (suggesting allergens for foods that have none)")
+B("RotatE (same settings as Exp 1) is trained on the whole explicit graph with nothing hidden and ranks the 45 allergens for foods that have none. 4,560 foods have no allergen, but only <b>289</b> of them have any other link in the graph (a food group, ingredients or a dish that uses them); the other 4,271 are bare USDA foods the model cannot learn anything about. "
+  "The scores of all 289 top-1 predictions are below the median score of the known allergen links (-7.01), so each one is a weak suggestion. Manual check of the 10 most confident predictions (script reasoning/exp3_completion.py, file reasoning/results/exp3_top10_manual_check.csv):")
+rows3 = list(csv.DictReader(open(P("reasoning", "results", "exp3_top10_manual_check.csv"), encoding="utf-8")))
+table([["#", "Status", "Food", "Predicted allergen", "Score", "Manual check", "Reason"]] +
+      [[str(i), r["status"], r["food"], r["predicted_allergen"], r["score"], r["manual_check"], r["reason"]] for i, r in enumerate(rows3, 1)],
+      [0.6, 2.6, 3.2, 2.2, 1.2, 1.7, 4.5])
+from collections import Counter
+cc = Counter(r["manual_check"] for r in rows3)
+B(f"<b>Result: {cc['plausible']} plausible, {cc['unsure']} unsure, {cc['not plausible']} not plausible.</b> The model only copies patterns inside a food group (37 of 47 cruciferous vegetables with an allergen are linked to Cruciferous, so radish, turnip and watercress get Cruciferous; lettuce's LTP is passed to artichoke, chicory and salsify). "
+  "Across all 289 targets the most common top-1 answer is Dairy (119 foods, 41%), probably popularity bias for foods with few links. Persimmon -> Banana is clearly wrong. All rows are labelled PREDICTION, are never added to the KG and are never used by the retriever or the LLM; a domain expert would have to confirm each one first.")
 
 # ----------------------------------------------------------------------------- 7 architecture
 H1("7. Knowledge-grounded LLM application")
@@ -239,7 +252,14 @@ B("<b>Design choice.</b> We use SPARQL-template-generated context (a KG-RAG vari
 B("<b>Explicit vs inferred.</b> The graph is split into two files. abox.ttl + the T-Box hold the explicit triples; inferred.ttl (made by reasoning/materialize.py, i.e. the rules script run over the explicit graph) holds <i>only</i> the derived 7,609 triples. A retrieved fact is tagged explicit if it is in the first set and inferred if it is only in the second. GraphDB gives the same split by querying with inference switched off.")
 B("<b>Insufficient evidence.</b> If no graph entity or supported question pattern is recognised, or the SPARQL returns no facts, the retriever returns sufficient = false and the prompt instructs the model to reply 'Insufficient evidence in the knowledge graph'. If the model is given facts that do not contain the answer it must also decline (see the unseen-question check). "
   "In Iteration 2 two retrieval gaps were fixed (Report/RETRIEVAL.md): a question about an item that is not in the graph (e.g. 'dragon fruit curry') now returns sufficient = false with the unmatched words named, instead of a list that only matched the word 'fruit'; and 'foods with sugar above the diabetes limit' now returns the list of foods above the 22.5 g threshold read from the rule node (669 foods) instead of the profile of the ingredient Sugar. evaluation/check_routes.py confirmed that the routes and facts of the 10 evaluation questions did not change.")
-H2("7.2 Prompts")
+H2("7.2 Retrieval fixes and GraphDB reload (Iteration 2)")
+B("Maham wrote evaluation/check_routes.py, which prints one line per question (route type, sufficiency, number of facts, a hash of all retrieved facts, linked entities) without calling the LLM. It was run on the 10 evaluation CQs and 12 extra questions before and after the fixes with PYTHONHASHSEED=0 (SPARQL rows without ORDER BY otherwise come back in a seed-dependent order). The 10 CQ lines stayed identical; only the extra questions changed. Details: Report/RETRIEVAL.md.")
+B("<b>Fix A (unknown dish or food).</b> 'Can I eat dragon fruit curry if I have a nut allergy?' used to be marked sufficient because the word 'fruit' matched the group Fruit, and 35 unrelated facts went to the LLM. Now the retriever lists the question words that no entity explains; if no dish, food, ingredient or allergen was linked, it returns the route unknown_item with sufficient = False and names the unmatched words. "
+  "<b>Fix B (sugar above the limit).</b> 'Which foods have sugar above the diabetes limit?' used to return the profile of the ingredient Sugar. The new route above_limit reads the 22.5 g threshold from the rule node and returns the 15 highest of the 669 foods above it, with exact values, the unsafeFor link and the rule -> ADA guideline chain (38 facts).")
+table([["Run", "CQ lines changed", "Extra questions with sufficient = False"], ["before the fixes", "-", "X3, X12"],
+       ["after Fix A + B", "0", "X1, X2, X3, X4, X12"]], [4, 3.5, 8.5])
+B("<b>GraphDB.</b> The cleaned graph was reloaded into GraphDB 11.5.1: 42,424 explicit triples; running the SPARQL INSERT rules R1-R5 (Ontology/rules_graphdb.ru) adds 7,609 inferred triples (50,033 in total), identical to the offline rdflib count. Iteration 1 had 7,673 inferred triples; the 64 fewer come from removing non-allergen labels from D1. All screenshots in Figures 2-14 were retaken on the cleaned graph.")
+H2("7.3 Prompts")
 from importlib import util
 spec = util.spec_from_file_location("llm", P("app", "llm.py")); llm = util.module_from_spec(spec); spec.loader.exec_module(llm)
 code("SYSTEM (LLM only): " + llm.SYSTEM_LLM_ONLY + "\n\nSYSTEM (KG-grounded):\n" + llm.SYSTEM_GROUNDED + "\n\nUSER (KG-grounded): CONTEXT FROM THE KNOWLEDGE GRAPH:\\n<question type | sufficiency | facts [id] (tag) s | p | o | paths>\\n\\nQUESTION: <question>", maxw=110)
@@ -260,7 +280,7 @@ table([["CQ / question", "Expected answer", "LLM only (A)", "KG-grounded (B)", "
       [2.9, 2.8, 3.9, 3.9, 1.3, 1.3])
 cA, cB = sum(r["correct_A"] for r in rows_ev), sum(r["correct_B"] for r in rows_ev)
 B(f"<b>Result: correct answers A = {cA}/10, B = {cB}/10. Evidence available: A = 0/10, B = {sum(r['evidence_B'] for r in rows_ev)}/10</b> (every grounded answer cites fact ids that map to tagged graph facts).")
-B("<b>Unsupported / hallucinated claims (manual review).</b> LLM only: 9 of 10 answers contain claims the graph contradicts or does not contain (e.g. Pad Thai/pesto for CQ1/CQ12, 'condiments about 6000 mg' for CQ5, AHA/DASH as the guideline for CQ14 where the KG rule is WHO). The remaining one (CQ9) is approximately right (0.5 g, 620 mg) but not exact. KG-grounded: 1 of 10 (CQ1 listed 'Peanut Butter' under dishes although it is a food node).")
+B("<b>Unsupported / hallucinated claims (manual review).</b> LLM only: 9 of 10 answers contain claims the graph contradicts or does not contain (e.g. Pad Thai/pesto for CQ1/CQ12, 'condiments about 6000 mg' for CQ5, AHA/DASH as the guideline for CQ14 where the KG rule is WHO). The remaining one (CQ9) is approximately right (0.5 g, 620 mg) but not exact. KG-grounded: 0 of 10 (the CQ1 answer lists 'Peanut Butter' as a dish; this was re-checked and Peanut Butter is typed nr:Dish in the A-Box, so it is correct).")
 B("<b>Where grounding helped:</b> dataset-specific facts (counts, exact values, hidden ingredients, which guideline the rule cites) that no model can know without the graph. <b>Where it did not:</b> LLM answers on general knowledge are often plausible in the real world but answer a different question than 'what does this graph say'; list questions are capped at 12-15 rows, so answers are partial (and say so).")
 B("<b>Caveat about the score.</b> The 10 questions were also used to debug the retriever (tie-breaking in entity linking, routing of 'above the limit' questions), so B = 10/10 is a development-set result. To test generalisation we ran 8 other questions (evaluation/unseen_check.py): the dish/food/safe-for/rule/insufficient cases were answered from the graph; two questions initially failed (the low-sugar rule was missing from the context; allergens with no linked condition such as gluten had no template) and the retriever was fixed afterwards. An unknown dish ('dragon fruit curry') was at first declined only by the LLM, because the retriever flagged the context as sufficient after the word 'fruit' matched a food group; this was fixed in the retriever (Fix A, Section 7.1), and the dish is now declined at retrieval time.")
 
@@ -277,7 +297,7 @@ for blk in exp_md.split("## Example ")[1:]:
     for p in paths[:4]:
         code("path: " + p)
     gen = rest.split("**Generated text (LLM answer):**", 1)[1].strip().lstrip("> ").replace("\n> ", "\n")
-    B("<b>Generated text:</b> " + esc(gen.strip()).replace("\n", "<br/>"))
+    B("<b>Generated text:</b> " + esc(gen.strip().replace("**", "")).replace("\n", "<br/>"))
 B("<b>Reading example 2.</b> hasIngredient and containsAllergen hops are explicit; 'triggers' and the final 'unsafeFor' are inferred by RC2/R1. Note a data-quality finding: D1 links Peanut butter to Dairy, which makes Chicken Satay unsafe for lactose intolerance too. The system faithfully reports what the graph says; the error is in the source data, not generated by the LLM.")
 
 # ----------------------------------------------------------------------------- 10 limitations
@@ -286,7 +306,7 @@ for t in ["Retriever coverage: about a dozen question templates; questions outsi
           "Open-world caveat: 'safe' means no unsafeFor fact exists. Foods without D1 allergen data are not reported as safe (the safe-for template requires a food group), but allergen annotations in D1/D2 are incomplete and sometimes wrong (e.g. Peanut butter -> Dairy). Non-allergen D1 labels such as 'Sugar' and 'Insulin' were removed in Iteration 2 (Section 3).",
           "USDA labels are abbreviated and noisy (e.g. 'Puddings, Cocnt Crm, Dry Mix'); thresholds (22.5 g sugar, 600 mg sodium per 100 g) are simplifications of the cited guidelines, applied per 100 g rather than per serving.",
           "R5 makes every dish containing table salt unsafe for hypertension, which over-flags. Nutrient values for dishes are not modelled (only ingredients).",
-          "Link prediction: small graph, embedding dimension and epochs not tuned extensively; Experiment 2 has leakage by construction (see 6.3); predictions are not clinically validated.",
+          "Link prediction: small graph, embedding dimension and epochs not tuned extensively; Experiment 2 has leakage by construction (see 6.3); Experiment 3 suggestions are weak (below the confidence of known links, 1 of the top 10 clearly wrong) and are not clinically validated.",
           "Evaluation: 10 questions, one run at T = 0, keyword-based checkers plus manual review by the team; the retriever was tuned on the same questions; a single LLM was used. This is not a statistical claim about general performance.",
           "The system is a course prototype and not medical advice."]:
     B("- " + t)
@@ -296,15 +316,17 @@ H1("11. Team contributions")
 log = run(["git", "log", "--format=%h|%an|%s"]).splitlines()
 def commits_of(author):
     return [l for l in log if author.lower() in l.split("|")[1].lower()]
-table([["Member", "GitHub", "Tasks", "Representative commits"],
-       ["Romaisa", "Ru-1234", "Ontology (T-Box), build_kg.py, data cleaning, A-Box, Iteration 1 fixes (plural bug, allergen keywords, rule order), README/DATA_PIPELINE",
-        "; ".join(l.split("|")[0] for l in commits_of("Romaisa")[:3]) or "-"],
-       ["Maham Anjum", "mahamanjum99", "GraphDB loading, SPARQL queries CQ1-CQ14 and inference demos, GraphDB result screenshots, visual graph",
-        "; ".join(l.split("|")[0] for l in commits_of("Maham")[:3]) or "-"],
-       ["Zamin Muhammad", "zamin-muhammad", "Iteration 2: link prediction (reasoning/), KG retrieval layer (retrieval/), prompts + Streamlit app (app/), evaluation and explainability (evaluation/), report. Written with AI assistance (Claude Code) which was reviewed and is explained by the member.",
-        "; ".join(l.split("|")[0] for l in commits_of("Zamin")[:4]) or "see git log"]],
-      [2.4, 2.6, 7.5, 3.5])
-B("Commit counts do not determine marks; see the repository history for the full record. <<EDIT BEFORE SUBMISSION if the division of work differs from the above.>>")
+def ids(author, *subs):
+    return "; ".join(l.split("|")[0] for l in commits_of(author) if any(s in l.split("|")[2] for s in subs)) or "-"
+table([["Member", "GitHub", "Tasks", "Commits"],
+       ["Romaisa", "Ru-1234", "Ontology (T-Box), build_kg.py, data cleaning, A-Box, Iteration 1 fixes (plural bug, allergen keywords, rule order), README/DATA_PIPELINE. Iteration 2: KG fix (non-allergen labels removed), link prediction re-run, type-constrained evaluation (bug B1), Exp 2 analysis, Exp 3 completion, Report/LINK_PREDICTION.md.",
+        "Iteration 2: c4f7f35 (KG fix), a0f5c60 (docs + progress report), 0e680d0 (link prediction re-run), 7fc2577 (B1 fix + how-it-works note), 54b49e7 (Exp 2 analysis + Exp 3 + progress report). Iteration 1: " + ids("Romaisa", "Initial", "Add complete", "Add report", "Fix plural", "Initialize")],
+       ["Maham Anjum", "mahamanjum99", "GraphDB loading, SPARQL queries CQ1-CQ14 and inference demos, GraphDB result screenshots and visual graph (re-taken on the cleaned KG); Iteration 2 retrieval fixes A and B, evaluation/check_routes.py, Report/RETRIEVAL.md.",
+        "; ".join(l.split("|")[0] for l in commits_of("Maham"))],
+       ["Zamin Muhammad", "zamin-muhammad", "Iteration 1 link prediction code and rule materialisation, KG retrieval layer (retrieval/), prompts + Streamlit app (app/), evaluation and explainability (evaluation/), report builder. Iteration 2: re-run of the evaluation, unseen-question check and explainability on the cleaned KG (B3 CQ11 expected answer, B7 evidence check, fixed hash seed), manual review, app screenshot, merged report. Written with AI assistance (Claude Code), which was reviewed and is explained by the member.",
+        "; ".join(l.split("|")[0] for l in commits_of("Zamin"))]],
+      [2.2, 2.4, 7.4, 4.0])
+B("Commit counts do not determine marks; see the repository history for the full record.")
 
 # ----------------------------------------------------------------------------- 12 refs
 H1("12. References and how they informed the work")
