@@ -18,7 +18,8 @@ st.title("NutriReason-KG: knowledge-grounded dietary advisor")
 st.caption(f"Pipeline: question -> KG retrieval (SPARQL) -> context -> LLM ({llm.MODEL}, T={llm.TEMPERATURE}) -> grounded answer + evidence")
 examples = ["Which dishes contain a nut allergen?", "Why is Almond Cookies unsafe, and for which conditions?",
             "Which foods should someone with hypertension avoid?", "Which guideline supports the rule for type 2 diabetes?",
-            "Is chocolate syrup ok for type 2 diabetes?", "What is the capital of France?"]
+            "Is chocolate syrup ok for type 2 diabetes?", "Which foods have sugar above the diabetes limit?",
+            "Can I eat dragon fruit curry if I have a nut allergy?", "What is the capital of France?"]
 c1, c2 = st.columns([3, 1])
 qp = st.query_params
 q = c1.text_input("Ask a dietary question", value=qp.get("q", examples[1]))
